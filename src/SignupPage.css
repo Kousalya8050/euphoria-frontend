@@ -1,0 +1,469 @@
+/* Base Styles (for desktop - NO CHANGES HERE from your original CSS except for comments) */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 150px;
+  font-family: 'Inter', sans-serif;
+  /* background: linear-gradient(135deg, #f9f9f9, #e3f0d1); */
+  gap: 100px;
+  min-height: auto;
+  flex-wrap: nowrap;
+ 
+}
+
+.contact-container1 {
+  
+  font-family: 'Inter', sans-serif;
+  /* background: linear-gradient(135deg, #f9f9f9, #e3f0d1); */
+  margin-bottom: 35px;
+
+  margin-top: 15px;
+
+ padding-top: 42px;
+    font-size: 40px;
+    color: #1F5706
+  
+}
+.contact-left {
+  flex: 1;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column; /* Stacks help and locations on desktop */
+}
+.help-section h2 {
+  color: #2a442d;
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-top: 0px;
+}
+.help-section p {
+  font-size: 19px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.location-section {
+  margin-top: 0px; /* Keep this for desktop spacing within contact-left */
+}
+.location-section h3 {
+  color: #2a442d;
+  font-size: 30px;
+  
+  text-align: center;
+  margin-top: 5px;
+}
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.location-box {
+  border: 1px solid #7cbf45;
+  border-radius: 10px;
+  padding: 15px;
+  color: #2a2a2a;
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.contact-right {
+  flex: 1;
+}
+/* Form Specific Styles (no changes) */
+form {
+  display: flex;
+  flex-direction: column;
+}
+.name-row {
+  display: flex;
+  gap: 10px;
+}
+.signin-input-box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.signin-label {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #333;
+}
+/* IMPORTANT: Adjust PhoneInput to be responsive */
+.react-tel-input .form-control {
+  position: relative;
+  font-size: 16px;
+  letter-spacing: .01rem;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-left: 48px;
+  margin-left: 0;
+  background: #FFFFFF;
+  border: 1px solid #CACACA;
+  line-height: 25px;
+  height: 46px;
+  width: 100%; /* Make width 100% by default, let desktop flex handle it */
+  outline: none;
+  border-radius: 8px;
+}
+.react-tel-input .flag-dropdown {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  border: 1px solid #cacaca;
+  border-radius: 8px 0 0 8px;
+}
+input,
+textarea {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 17px;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 16px;
+  width: 100%; /* Make width 100% by default */
+}
+.phone-container {
+  margin-bottom: 15px;
+}
+.phone-input {
+  width: 100% !important; /* Ensure the actual input within PhoneInput is 100% */
+  padding-left: 48px !important;
+}
+textarea {
+  resize: vertical;
+}
+.signin-button {
+  background-color: #1e4b27;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: 0.3s;
+  height: 54px;
+  width: 128px;
+  align-self: center;
+  margin-top: 30px;
+}
+button:hover {
+  background-color: #16391e;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.recaptcha-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Make it take full width of its parent */
+  max-width: 302px; /* But keep its intrinsic max-width for styling */
+  height: 78px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.recaptcha-left {
+  display: flex;
+  align-items: center;
+}
+
+.recaptcha-box {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #c1c1c1;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: background-color 0.3s, border-color 0.3s;
+  flex-shrink: 0; /* Prevent the box from shrinking */
+}
+
+.recaptcha-box.checked {
+  background-color: #0040c0;
+  border-color:  #0040c0;
+}
+
+.check-icon {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+
+.recaptcha-label {
+  font-size: 16px;
+  color: #555;
+  flex-grow: 1; /* Allow text to grow and take available space */
+}
+
+.recaptcha-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+  font-size: 10px;
+  color: #555;
+  text-align: center;
+  flex-shrink: 0; /* Prevent the reCAPTCHA logo/text from shrinking */
+}
+
+.recaptcha-image {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+}
+
+.recaptcha-logo {
+  font-weight: bold;
+  color: #555;
+}
+
+.recaptcha-terms {
+  color: #777;
+}
+
+/* --- Media Queries for Mobile and Tablet Layout --- */
+@media (max-width: 1023px) {
+  .contact-container {
+    flex-direction: column; /* Stack children vertically */
+    padding: 30px 50px;
+    gap: 60px;
+  }
+
+  .contact-left {
+    display: contents; /* This is the key change! */
+    flex: unset;
+    max-width: unset;
+  }
+
+  /* Now, explicitly set the order for all the direct children of .contact-container */
+  .help-section {
+    order: 1; /* First: How can we help? */
+    flex: none;
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .contact-right { /* The form section */
+    order: 2; /* Second: The Form */
+    max-width: 100%; /* Ensure form also takes full width */
+    flex: none;
+  }
+
+  .location-section { /* The location section */
+    order: 3; /* Third: Locations */
+    flex: none;
+    max-width: 100%;
+    margin-top: 40px;
+  }
+
+  .help-section h2,
+  .help-section p,
+  .location-section h3 {
+    text-align: center;
+  }
+  .locations-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+  }
+
+  /* Make PhoneInput and other form inputs truly responsive in this breakpoint */
+  .react-tel-input .form-control {
+    width: 100% !important; /* Override explicit widths */
+  }
+  input:not(.phone-input), textarea { /* Target general inputs/textareas, exclude phone-input which has its own class */
+    width: 100%; /* Ensure all inputs/textareas take full width */
+    max-width: 100%; /* Prevent them from exceeding container width */
+  }
+
+  /* Make reCAPTCHA wrapper responsive */
+  .recaptcha-wrapper {
+    width: 100%; /* Make it take full width of its parent */
+    max-width: 302px; /* But keep its intrinsic max-width for styling */
+    justify-content: space-around; /* Distribute space more evenly */
+    margin-left: 0px; /* Center the recaptcha-wrapper if it's less than 100% width */
+    margin-right: auto;
+  }
+
+  .signin-button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-container {
+    padding: 20px 20px;
+    gap: 40px;
+  }
+  .help-section h2 {
+    font-size: 26px;
+  }
+  .help-section p {
+    font-size: 16px;
+  }
+  .location-section h3 {
+    font-size: 26px;
+  }
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+  .name-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .signin-input-box {
+    margin-bottom: 15px;
+  }
+  .signin-input-box:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Ensure inputs are fully responsive */
+  .react-tel-input .form-control,
+  input:not(.phone-input), textarea {
+    width: 100% !important;
+    max-width: none; /* Allow inputs to take full width */
+  }
+
+  
+}
+
+
+.contactus-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.contactus-input:focus {
+  border-color: #4b8af0;
+}
+
+
+/* Overlay */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Popup box */
+.popup {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  width: 320px;
+  animation: scaleIn 0.3s ease-in-out;
+}
+
+/* Success / Error colors */
+.popup.success { border-top: 6px solid #2ecc71; }
+.popup.error { border-top: 6px solid #e74c3c; }
+
+/* Message */
+.popup-message {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Icons */
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.success-icon,
+.error-icon {
+  width: 60px;
+  height: 60px;
+}
+
+/* Success animation */
+.success-circle {
+  fill: none;
+  stroke: #2ecc71;
+  stroke-width: 3;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: drawCircle 0.6s forwards;
+}
+
+.success-check {
+  fill: none;
+  stroke: #2ecc71;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: drawCheck 0.4s 0.6s forwards;
+}
+
+/* Error animation */
+.error-circle {
+  fill: none;
+  stroke: #e74c3c;
+  stroke-width: 3;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: drawCircle 0.6s forwards;
+}
+
+.error-cross {
+  stroke: #e74c3c;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 56;
+  stroke-dashoffset: 56;
+  animation: drawCross 0.5s 0.6s forwards;
+}
+
+/* Animations */
+@keyframes drawCircle {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes drawCross {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

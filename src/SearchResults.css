@@ -1,0 +1,480 @@
+/* ================================
+   SEARCH RESULTS PAGE WRAPPER
+   ================================ */
+   .search-result-wrapper {
+    padding: 40px 5%;
+    min-height: 100vh;
+    background: #f8f9fd;
+  }
+
+  .no-results-msg {
+    /* This tells the item to start at column 1 and span until the end */
+    grid-column: 1 / -1; 
+    
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 1.2rem;
+    color: #666;
+    width: 100%;
+    display: block;
+  }
+  
+  
+  .search-result-wrapper h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #222;
+  }
+  
+  .highlight {
+    color: #007bff;
+    font-weight: 700;
+  }
+  
+  /* ================================
+     VIDEO GRID LAYOUT
+     ================================ */
+  .video-grid_s {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px; */
+    display: grid
+;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    /* padding: 20px; */
+}
+  
+  .video-card_s {
+    /* background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer; */
+    cursor: pointer;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-card_s:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
+  }
+  
+  .video-card_s img {
+    width: 100%;
+  }
+  
+  .video-card_s h4 {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+  }
+  
+  /* ================================
+     SKELETON LOADER
+     ================================ */
+  .skeleton-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  
+  .skeleton-card {
+    height: 200px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #ececec, #e0e0e0, #ececec);
+    background-size: 200% 100%;
+    animation: skeletonAnimation 1.4s infinite ease-in-out;
+  }
+  
+  @keyframes skeletonAnimation {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: 200px 0;
+    }
+  }
+  
+  /* ================================
+     PAGINATION
+     ================================ */
+  .pagination_s {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .pagination_s button {
+    margin: 5px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    background: #f1f1f1;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  
+  .pagination_s button:hover {
+    background: #e5e5e5;
+  }
+  
+  .pagination_s .active-page {
+    background: #183a0d;
+    color: #fff;
+    border-color: #183a0d;
+  }
+  
+  /* ================================
+     RESPONSIVENESS
+     ================================ */
+  
+  @media (max-width: 768px) {
+    .search-result-wrapper {
+      padding: 20px;
+    }
+  
+    .video-card_s h4 {
+      font-size: 14px;
+    }
+  
+    .pagination_s button {
+      padding: 6px 12px;
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .video-grid_s {
+      grid-template-columns: 1fr;
+    }
+  
+    .skeleton-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .thumbnail-wrapper_s {
+    position: relative;
+  }
+  
+  .duration-tag_s {
+    position: absolute;
+    bottom: 13px;
+    right: 6px;
+    background: rgb(255 255 255 / 75%);
+    color: #000000;
+    padding: 2px 6px;
+    font-size: 13px;
+    border-radius: 3px;
+  }
+  
+  .video-meta_s {
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 10px;
+  }
+  .blog-section, .video-section {
+    margin-bottom: 40px;
+  }
+  
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .blog-card {
+    cursor: pointer;
+    border: 1px solid #eee;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .blog-card img {
+    width: 100%;
+    border-radius: 6px;
+  }
+  /* Container for the list of blogs */
+.blog-results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* New Card Class */
+.search-blog-card {
+  display: flex;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 180px; /* Fixed height for clean alignment */
+}
+
+.search-blog-card:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+/* Thumbnail Styling */
+.search-blog-thumbnail {
+  width: 280px;
+  min-width: 280px;
+  overflow: hidden;
+}
+
+.search-blog-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content Info Styling */
+.search-blog-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.search-blog-title {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.search-blog-card:hover .search-blog-title {
+  color: #007bff; /* Title changes color on card hover */
+}
+
+.search-blog-snippet {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  /* Basic line clamping for the snippet */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.search-blog-readmore {
+  font-weight: 600;
+  color: #007bff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+/* Responsive fix */
+@media (max-width: 768px) {
+  .search-blog-card {
+    flex-direction: column;
+    height: auto;
+  }
+  .search-blog-thumbnail {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.search-tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #eee;
+}
+
+.search-tab {
+  padding: 12px 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #888;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.search-tab.active {
+  color: #ffb400; /* Use your brand yellow/gold */
+}
+
+/* The active line under the tab */
+.search-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ffb400;
+}
+
+
+
+/* Ensure the grid looks the same as BlogPage */
+.posts-grid1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+   max-width: 1500px;
+   margin: 0 auto 50px; 
+   padding: 0 20px;
+}
+
+@media (max-width: 992px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.post-card1 {
+  border-radius: 12px;
+background: #E1E2AD;
+  /* Set a max-width to stop the card from stretching too wide */
+  max-width: 450px; 
+  /* Center the card horizontally within its grid cell */
+  justify-self: center; 
+  
+  /* Add some other styles to make it look like a card */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.post-card1:hover {
+  transform: translateY(-5px);
+}
+
+.post-card1-image-wrapper {
+      /* background-color: #fff; */
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 5px;
+      
+}
+
+.post-card1-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px; /* Inner radius */
+  display: block;
+}
+
+.post-card1-content {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  flex-grow: 1; /* Allows the meta section to stick to the bottom */
+}
+
+.post-card1-title {
+  font-size: 1.5rem;
+  color: #222;
+  margin: 0 0 10px 0;
+}
+
+.post-card1-excerpt {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.post-card1-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: #777;
+}
+
+.read-more1-link {
+  font-weight: 700;
+  color: #1F5706;
+  text-decoration: none;
+}
+
+.read-more-link1:hover {
+  text-decoration: underline;
+}
+@media (max-width: 992px) {
+  
+  .post-card1-title {
+    font-size: 1.3rem;
+  }
+  .post-card1-excerpt {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  
+  .post-card1 {
+    max-width: 100%; /* Allow card to expand to screen width */
+    justify-self: auto; /* Reset the centering */
+    border-radius: 25px; /* Reduce radius for a cleaner mobile look */
+  }
+
+}
+
+button_s:hover {
+  background-color: white;
+}
+
+.blog-page-container_s {
+  position: relative;
+  background-color: #fff;
+ 
+  overflow-x: hidden; /* Prevents horizontal scroll from the swirl */
+}
+.blog-content_s {
+    
+  margin: 0 auto;
+  position: relative; /* To appear above the swirl */
+  z-index: 1;
+}
+.blog-header_s {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.blog-subtitle_s {
+  font-size: 24px;
+  color: #1F5706;
+  margin-top:50px;
+}
+
+.blog-main-title_s {
+  font-size: 1.6rem;
+  color: #1F5706; /* A nice, deep green */
+  font-weight: 700;
+  margin: 5px 0 0 0;
+}

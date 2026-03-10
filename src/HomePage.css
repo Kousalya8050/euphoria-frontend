@@ -1,0 +1,1248 @@
+/* HomePage.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    box-sizing: border-box;
+  }
+  
+  /* Header */
+
+  
+  
+  /* .auth-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .btn,
+  .btn-outline {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  
+  .btn {
+    background-color: green;
+    color: #fff;
+    height: 54px;
+    width: 128px;
+    font-size: 20px;
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    border: 2px solid green;
+    color: green;
+    height: 54px;
+    width: 128px;
+    font-size: 20px;
+} */
+.homepage-container {
+  position: relative;
+  overflow-x: hidden; /* Prevents horizontal scrollbars from the side images */
+}
+
+/* Base style for all decorative waves */
+.decorative-wave {
+  position: absolute;
+  pointer-events: none; /* Ensures the images are not interactive */
+  z-index: 0; /* Places waves behind the content */
+}
+
+/* Style for the top-left green wave */
+.top-left-wave {
+  top: 0;
+  left: 0;
+  width: 1107px; /* Adjust size as needed */
+  z-index: 2;
+}
+
+/* Style for the wave on the left side, vertically centered */
+.left-wave {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 1107px; /* Adjust size as needed */
+}
+
+.left-waves {
+  top: 50%;
+  left: 0;
+  transform: translateY(-66%) scaleX(-1); 
+  width: 1107px; /* A smaller, more appropriate size for the side */
+}
+/* Style for the wave on the right side, vertically centered */
+.right-wave {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 1107px; /* Adjust size as needed */
+}
+
+  /* Banner Cards */
+  .banner-grid {
+    display: grid;
+    grid-template-columns: 399px 412.387px 441px;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center; /* Centers content on wider screens */
+  }
+  
+  /* Common card styling */
+  .banner-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px !important;
+  }
+  
+  .banner-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  .image-mask {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0; /* Optional: You can add 12px here to apply uniform radius */
+    background: #fff; /* This helps hide transparent corners */
+  }
+  
+  .image-mask img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0 !important;
+  }
+  
+  .banner-text {
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35px;
+    padding: 8px -2px;
+    border-radius: 5px;
+    display: flex;
+    width: 233px;
+    height: 253px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: left;
+  }
+  .banner-text1 {
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35px;
+    padding: 8px -2px;
+    border-radius: 5px;
+    display: flex;
+    width: 250px;
+    height: 253px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .banner-text2 {
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35px;
+    padding: 8px -2px;
+    border-radius: 5px;
+    display: flex;
+    width: 360px;
+    height: 253px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .banner-text3 {
+    position: absolute;
+    top: 36%;
+    right: 33%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35px;
+    padding: 8px -2px;
+    border-radius: 5px;
+    display: flex;
+    width: 330px;
+    height: 253px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  /* Exact dimensions (for Mac + Desktop) */
+  .card-1 {
+    grid-row: 1 / span 2;
+    grid-column: 1 / 2;
+    width: 399px;
+    height: 772px;
+    border-radius: 0;
+  }
+  
+  .card-2 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    width: 412.387px;
+    height: 386px;
+    border-radius: 0;
+  }
+  
+  .card-3 {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+    width: 436.387px;
+    height: 386px;
+    border-radius: 0;
+  }
+  
+  .card-4 {
+    grid-row: 2 / 3;
+    grid-column: 2 / 4;
+    width: calc(412.387px + 441px + 20px); /* 873.387px + gap */
+    height: 364px;
+    border-radius: 0;
+  }
+  
+  
+  
+  
+  /* Introduction */
+  /* .intro-section {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .intro-title {
+    color: #1F5706;
+text-align: center;
+font-family: 'Inter', sans-serif;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 40px;
+    
+  }
+  
+  .intro-text {
+    max-width: 700px;
+    color: #000;
+
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 35px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+flex-direction: column;
+justify-content: center;
+  }
+  
+  .search-input {
+    padding: 10px;
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  
+  .category-section {
+    padding: 40px 20px;
+    background-color: #f7fff7;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 22px;
+  }
+  
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .category-card {
+    text-align: center;
+  }
+  
+  .category-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  
+  .category-label {
+    font-size: 14px;
+  } */
+  .intro-section {
+    max-width: 1204px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .intro-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #2c541d;
+    
+  }
+  
+  .intro-text {
+    
+    color: #000000;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    /* font-family: 'Inter', sans-serif; */
+font-size: 23px;
+font-style: normal;
+font-weight: 400;
+line-height: 35px;
+  }
+  
+  .intro-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 50px;
+  }
+  
+  .read-more-button {
+    background-color: #183a0d;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    height: 54px;
+    width: 173px;
+    font-size: 20px;
+   }
+
+  
+  .search-container {
+    position: relative;
+    width: 100%;
+    max-width: 498px; 
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.6rem 2.5rem 0.6rem 1rem; 
+    border: 2px solid #183a0d;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    height: 50px;
+    font-size:20px;
+  }
+  
+  .search-icon {
+    position: absolute;
+    right: 0.0rem;
+    top: 38%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 7px;
+    background: #1F5706;
+    width: 50px;
+    height: 45px;
+  }
+  
+  .search-icon img {
+    width: 20px; 
+    height: 20px; 
+    display: block; 
+
+  }
+  
+  .category-section-homepage {
+    width: 100%;
+    max-width: 1204px; 
+    margin: 0 auto 20px auto; 
+  padding: 0 0 20px 0;      
+  }
+  
+  .section-title-homepage {
+        text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #38761d;
+    margin-bottom: 50px;
+    padding: 0px;
+    margin-top: 50px;
+
+  }
+  
+  .category-grid-homepage {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px; 
+    justify-items: center;
+    padding: 0 10px;
+  }
+  
+  .category-card-homepage {
+    border: 1px solid #090909;
+    background-color: #fff; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height:100%;
+    /* max-width: 150px;  */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s ease-out;
+    position: relative; 
+  overflow: hidden; 
+  }
+  
+  .category-image-homepage {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    display: block;
+    display: block; 
+ 
+  }
+  
+  .category-label-homepage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #3a3a3a;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 18px 5px;
+    text-align: center;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .view-all-container-homepage {
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 30px;
+  }
+  
+  .post-card2-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;   
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .post-card2-excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .post-card2-excerpt p {
+    margin: 0;
+  }
+
+  .btn-view-all-homepage {
+    background-color: #fff; 
+    color: #2c541d; 
+    border: 2px solid #2c541d; 
+    padding: 8px 20px; 
+    font-size: 14px; 
+    font-weight: bold;
+    border-radius: 50px; 
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .btn-view-all-homepage:hover {
+    background-color: #2c541d;
+    color: #fff;
+  }
+  
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    .category-grid-homepage {
+      grid-template-columns: repeat(3, 1fr); 
+    }
+  }
+
+  @media (max-width: 900px) {
+    .category-grid-homepage {
+      display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+     
+    }
+     .category-card-homepage {
+      max-width: 180px; 
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .category-grid-homepage {
+      display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+    }
+  }
+  
+  @media (max-width: 300px) {
+    .category-grid-homepage {
+      grid-template-columns: 2fr;
+    }
+  }
+  
+  .text-center {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .recent-posts-section {
+    padding: 40px 20px;
+    
+    margin: 0 auto;
+  }
+  
+  .posts-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  
+  .custom-post-card {
+    position: relative;
+    overflow: hidden;
+    height: 478px; /* You can adjust this as needed */
+    display: flex;
+    flex-direction: column;
+}
+  /* .custom-post-card {
+    position: relative; 
+    overflow: hidden;   
+    height: 466px; 
+    display: flex;
+    flex-direction: column;
+  } */
+  
+  .custom-post-image-container { 
+    position: relative; 
+    width: 100%;
+    overflow: hidden; 
+  }
+  
+  .custom-post-image-background {
+    width: 100%;
+    height: 100%; 
+    display: block;
+  }
+ 
+  
+  
+  .custom-post-content-overlay {
+    position: absolute;
+    bottom: 20px; /* Adjust this value to control how much it sticks out from the bottom */
+    left: 50%;
+    transform: translateX(-50%) translateY(7%); /* Added translateY(50%) */
+    width: 70%; 
+    z-index: 2;
+    padding: 15px; 
+    color: #2c3e50; 
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: rgba(255, 249, 249, 0.54);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 192px; /* This can be increased and it will expand in all directions */
+    margin-bottom: 0; /* Adjust if needed */
+}
+  /* Text styling within the overlay */
+  .custom-post-title-overlay-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 6px;
+    line-height: 1.3;
+    color: #2c3e50; 
+  }
+  
+  
+  /* .posts-grid-container > .custom-post-card:nth-child(2) .custom-post-title-overlay-text {
+    color: white; 
+  }
+  
+
+  .posts-grid-container > .custom-post-card:nth-child(3) .custom-post-title-overlay-text {
+    color: white; 
+  } */
+  
+  
+  .custom-post-excerpt-overlay-text {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .custom-post-meta-overlay-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+  .custom-post-read-more-overlay {
+    font-size: 0.8rem;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  
+  .custom-post-author-date-overlay {
+    font-size: 0.7rem;
+    text-align: right;
+  }
+  .custom-post-author-date-overlay span { display: block; }
+  .custom-post-author-date-overlay span:first-child { font-weight: 500; }
+  /* --- FOOTER SECTION STYLES --- */
+ 
+
+
+
+/* ✅ Tablet view (2 per row) */
+@media (max-width: 992px) {
+  .recent-posts-grid-homepage {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .recent-post-image-homepage {
+    height: 220px;
+  }
+
+  .recent-post-overlay-homepage {
+    padding: 14px;
+  }
+
+  .recent-post-title-homepage {
+    font-size: 1rem;
+  }
+
+  .recent-post-excerpt-homepage {
+    font-size: 0.85rem;
+  }
+}
+
+/* ✅ Mobile view (1 per row) */
+@media (max-width: 600px) {
+  .recent-posts-grid-homepage {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .recent-post-image-homepage {
+    height: 200px;
+  }
+
+  .recent-post-overlay-homepage {
+    padding: 12px;
+  }
+
+  .recent-post-title-homepage {
+    font-size: 0.95rem;
+  }
+
+  .recent-post-excerpt-homepage {
+    font-size: 0.82rem;
+  }
+}
+
+  /* --- Media Queries for .category-label-homepage adjustments --- */
+@media (min-width: 901px) and (max-width: 992px) { /* From 901px to 992px */
+  .category-label-homepage {
+      bottom: 18px !important; /* Override for this specific range */
+  }
+}
+  /* --- Responsive Adjustments --- */
+  
+
+  /* ==========================================================================
+   ADDITIONAL RESPONSIVE STYLES
+   Add this entire block to the end of your existing CSS file.
+   ========================================================================== */
+
+/* For Tablets and Smaller Devices (992px and below) */
+@media (max-width: 992px) {
+
+  /* Hide large decorative waves that don't fit on smaller screens */
+  .decorative-wave {
+    display: none;
+  }
+
+  /* --- BANNER GRID: Tablet Layout (2 Columns) --- */
+  .banner-grid {
+    /* Change to a flexible 2-column grid */
+    grid-template-columns: 1fr 1fr;
+    /* Redefine grid areas for a tablet-friendly layout */
+    grid-template-areas:
+      "card1 card2"
+      "card1 card3"
+      "card4 card4";
+  }
+
+  /* Reset fixed dimensions and grid placements of banner cards */
+  .card-1, .card-2, .card-3, .card-4 {
+    width: 100%; /* Make cards fill the grid column */
+    height: auto; /* Let height be determined by content or aspect ratio */
+    min-height: 350px; /* Ensure cards have a decent minimum height */
+    grid-row: auto; /* Reset explicit row placement */
+    grid-column: auto; /* Reset explicit column placement */
+  }
+
+  /* Assign cards to their new grid areas */
+  .card-1 { grid-area: card1; }
+  .card-2 { grid-area: card2; }
+  .card-3 { grid-area: card3; }
+  .card-4 { grid-area: card4; }
+
+  /* Make banner text more readable and centered */
+  .banner-text, .banner-text1, .banner-text2, .banner-text3 {
+    font-size: 1.5rem; /* Slightly smaller font size */
+    width: 90%; /* Use percentage width */
+    height: auto; /* Let height be automatic */
+    text-align: center;
+    line-height: 1.4;
+  }
+  .banner-text {
+      top: 30%;
+      text-align: center;
+  }
+  .banner-text3 {
+    left: 58%;
+    top: 19%;
+    padding-right: 70px;
+
+  }
+  .banner-text2 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+  }
+  .category-label-homepage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #3a3a3a;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 0px;
+    text-align: center;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+  /* --- CATEGORIES: Tablet Layout (3 Columns) --- */
+  .category-grid-homepage {
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  }
+
+  /* Override the inline style transforms from the React component for a simpler grid */
+  .category-card-homepage {
+    transform: none !important;
+  }
+/* 1. Create the plain rectangular footer bar */
+
+}
+
+
+
+/* ==========================================================================
+   UPDATED RESPONSIVE FOOTER
+   Applies the rectangular bar style from 1550px all the way down to mobile.
+   ========================================================================== */
+
+/* This now applies to all screens 1550px wide or smaller */
+
+/* ✅ Mobile Carousel Styles */
+@media screen and (max-width: 1300px) {
+  .desktop-carousel {
+    display: none; /* Hide desktop version on small screens */
+  }
+
+  .mobile-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .mobile-carousel-container {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  
+
+ 
+  .mobile-carousel-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mobile-carousel-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar (Chrome/Safari) */
+  }
+
+
+  
+
+  .mobile-carousel-text {
+    position: absolute;
+        top: 28px;
+        left: 10%;
+        right: 10%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        color: #000000;
+        text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+        line-height: 1.4;
+  }
+
+  .mobile-carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .mobile-carousel-dots .dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 4px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mobile-carousel-dots .dot.active {
+    background-color: #2c541d; 
+    width: 20px;
+    border-radius: 30%;
+  }
+  
+}
+@media screen and (max-width: 768px) {
+  .mobile-carousel-image {
+    width: 80%;
+    height: 363px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .mobile-carousel-text {
+    font-size: 16px;
+    top: 28px;
+  }
+}
+
+/* ✅ Tablet styles */
+@media screen and (min-width: 769px) and (max-width: 1300px) {
+  .mobile-carousel-image {
+    width: 90%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .mobile-carousel-text {
+    font-size: 22px;
+    top: 40px;
+  }
+}
+
+/* ✅ Hide mobile carousel on desktop */
+@media screen and (min-width: 1301px) {
+  .mobile-carousel {
+    display: none;
+  }
+}
+
+/* ✅ Hide desktop banner-grid on mobile */
+@media screen and (max-width: 1300px) {
+  .banner-grid {
+    display: none;
+  }
+}
+
+/* For Mobile Phones (768px and below) */
+@media (max-width: 768px) {
+  
+  
+
+  /* --- INTRO SECTION --- */
+  .intro-title, .section-title-homepage {
+    font-size: 2rem; /* Make titles smaller */
+    line-height: 1.3;
+  }
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  /* --- RECENT POSTS: Mobile Layout (1 Column) --- */
+  .posts-grid-container {
+    grid-template-columns: 1fr; /* Stack posts vertically */
+  }
+
+  .posts-grid-container > .custom-post-card:nth-child(2) .custom-post-title-overlay-text {
+    color: black; /* Or #FFFFFF */
+  }
+  
+
+  .posts-grid-container > .custom-post-card:nth-child(3) .custom-post-title-overlay-text {
+    color: black; /* Or #FFFFFF */
+  }
+  
+  .custom-post-content-overlay {
+      width: 90%;
+      padding: 15px;
+  }
+  .custom-post-title-overlay-text {
+      font-size: 1.2rem;
+  }
+}
+
+
+/* For Small Mobile Phones (576px and below) */
+@media (max-width: 576px) {
+
+  /* --- CATEGORIES: Mobile Layout (2 Columns) --- */
+  .category-grid-homepage {
+    display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  }
+
+  .footer-wave-bg {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+  
+ 
+  
+}
+
+
+.search-box-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* optional: centers vertically */
+}
+.search-container {
+  position: relative;
+    width: 100%;
+    max-width: 498px; 
+}
+
+.search-input {
+  width: 100%;
+    padding: 0.6rem 2.5rem 0.6rem 1rem; 
+    border: 2px solid #183a0d;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    height: 50px;
+    font-size:20px;
+}
+.search-input:focus {
+  border-color: #183a0d !important; /* same as normal */
+  outline: none !important;
+  box-shadow: none !important;
+}
+.search-icon img {
+  width: 24px;
+  cursor: pointer;
+}
+
+.search-suggestions {
+  max-height: 320px; /* Enough space for ~10 items */
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 5px;
+  position: absolute;
+  top: 56px;
+  width: 495px;
+  z-index: 999;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.suggestion-item:hover {
+  background-color: #f5f5f5;
+}
+
+.load-more-container1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.load-more-btn1 {
+  
+    background-color: #183a0d;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    height: 54px;
+    width: 173px;
+    font-size: 20px;
+}
+
+.load-more-btn1:hover {
+  opacity: 0.9;
+}
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit; /* or your link color */
+  cursor: pointer;
+  font: inherit;
+  text-decoration: underline; /* optional */
+}
+.link-button:hover {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit; /* or your link color */
+  cursor: pointer;
+  font: inherit;
+  text-decoration: underline; /* optional */
+}
+
+
+.post-card2 {
+  border-radius: 12px;
+background: #E1E2AD;
+  /* Set a max-width to stop the card from stretching too wide */
+  max-width: 450px; 
+  /* Center the card horizontally within its grid cell */
+  justify-self: center; 
+  
+  /* Add some other styles to make it look like a card */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.post-card2:hover {
+  transform: translateY(-5px);
+}
+
+.post-card2-image-wrapper {
+      /* background-color: #fff; */
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 5px;
+      
+}
+
+.post-card2-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px; /* Inner radius */
+  display: block;
+}
+
+.post-card2-content {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  flex-grow: 1; /* Allows the meta section to stick to the bottom */
+}
+
+.post-card2-title {
+  font-size: 1.5rem;
+  color: #222;
+  margin: 0 0 10px 0;
+}
+
+.post-card2-excerpt {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.post-card2-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: #777;
+}
+
+.read-more-link2 {
+  font-weight: 700;
+  color: #1F5706;
+  text-decoration: none;
+}
+
+.read-more-link2:hover {
+  text-decoration: underline;
+}
+@media (max-width: 992px) {
+  
+  .post-card2-title {
+    font-size: 1.3rem;
+  }
+  .post-card2-excerpt {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  
+  .post-card2 {
+    max-width: 100%; /* Allow card to expand to screen width */
+    justify-self: auto; /* Reset the centering */
+    border-radius: 25px; /* Reduce radius for a cleaner mobile look */
+  }
+
+}
+
+.posts-grid2 {
+  display: grid;
+  /* Creates two equal-width columns on larger screens */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  /* Optional: Adds some padding around the whole grid */
+  padding: 20px;
+  
+  max-width: 1400px; 
+    margin: 0 auto;
+}
+@media (max-width: 1525px) {
+  .posts-grid2 {
+      /* Change to 2 columns */
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .posts-grid2 {
+      /* Change to 2 columns */
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 900px;
+  }
+}
+
+/* --- MOBILE VIEW (Approx 768px and below) --- */
+@media (max-width: 768px) {
+  .posts-grid2 {
+      /* Change to 1 column */
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 10px;
+  }
+
+  .recent-posts-section {
+      padding: 20px 10px;
+  }
+  
+  .load-more-btn {
+      width: 80%; /* Optional: make button wider on mobile */
+      padding: 15px;
+  }
+}
+.suggestion-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  vertical-align: middle;
+}

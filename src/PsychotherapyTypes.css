@@ -1,0 +1,897 @@
+.therapy-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0px 20px;
+    font-family: 'Inter', sans-serif;
+  }
+  .psy_heading_h3 {
+    position: relative;
+    z-index: 8;
+    margin-bottom: 131px !important;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #1F5706;
+    margin-top: 55px;
+
+}
+  /* Intro Section */
+  .psy-intro-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+  
+  .psy-intro-left {
+    position: relative;
+    flex: 1;
+  }
+  
+  .psy-intro-bg-box {
+    background-color: #E1E2AD;
+    position: absolute;
+    bottom: 55px;
+    right: 133px;
+    width: 87%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: 1;
+  }
+  
+  .psy-intro-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: 2;
+    object-fit: cover;
+  }
+  
+  .psy-intro-right {
+    flex: 1;
+    z-index: 3;
+    text-align: left;
+  }
+  
+  .psy-intro-title {
+    font-size: 32px;
+    color: #183a0d;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .psy-intro-paragraph {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #000;
+}
+  
+  .psy-read-more {
+    background-color: #183a0d;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 54px;
+    width: 148px;
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  
+  .psy-main-heading {
+    text-align: center;
+    color: #183a0d;
+    font-size: 32px;
+    font-weight: bold;
+    margin:0px;
+  }
+  
+  /* Section Container */
+  .therapy-type-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Standard Section Layout */
+  .therapy-type-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+  
+  /* Reverse Layout: image left, content right */
+  .therapy-type-block .reverse {
+    flex-direction: row-reverse;
+  }
+  
+  /* Farther Left Image */
+  .offset-image-left {
+    position: relative;
+    left: -125px;
+    margin-top: 85px;
+  }
+  
+  /* Image Wrapper */
+  .therapy-image-wrapper {
+    position: relative;
+    min-width: 350px;
+  }
+  
+  /* Image Styling */
+  .therapy-img {
+    width: 350px;
+    height: 250px;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+
+  .therapy-img1 {
+    width: 300px;
+    height: 250px;
+    border-radius: 15px;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+  }
+
+  
+  .therapy-img2 {
+    width: 350px;
+    height: 373px;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+  .therapy-img3 {
+    width: 350px;
+    height: 250px;
+    border-radius: 15px;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+  }
+  /* Green Circle Under Image */
+  .green-circle {
+    position: absolute;
+    bottom: 61px;
+    left: 109%;
+    transform: translateX(-50%);
+    width: 65px;
+    height: 65px;
+    
+    border-radius: 50%;
+  }
+  .green-circle1 {
+    position: absolute;
+    bottom: -126px;
+    left: 91%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 55px;
+    
+    border-radius: 50%;
+  }
+  .green-circle2 {
+    position: absolute;
+    bottom: -35px;
+    left: 2%;
+    transform: translateX(-50%);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+.green-circle3 {
+    position: absolute;
+    top: 218px;
+    left: 83%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+.green-circle4 {
+    position: absolute;
+    top: 218px;
+    left: 1%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+.green-circle5 {
+    position: absolute;
+    top: -25px;
+    left: 98%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+  
+  /* Text Area */
+  .therapy-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .therapy-text h4 {
+    color: #183a0d;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .therapy-text h5 {
+    color: #183a0d;
+    font-size: 18px;
+    /* margin-top: 20px;
+    margin-bottom: 8px; */
+  }
+  
+  .therapy-text ul {
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 38px;
+    margin: 15px;
+  }
+  
+  .therapy-text li {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #444;
+  }
+
+  .therapy-bold {
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.circle-image {
+    position: absolute;
+    bottom: -110px;
+    left: 104%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+.therapy-description {
+  display: block;
+  font-size: 16px;
+  color: #444;
+  /* margin-top: 2px;
+  margin-bottom: 15px;  */
+}
+
+/* @media (max-width: 1234px) and (min-width: 901px) {
+  .therapy-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 95px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+}
+   */
+  /* Mobile Responsiveness */
+  @media (max-width: 1234px) {
+    .psy-intro-section,
+    .therapy-type-block,
+    .therapy-type-block .reverse {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .psy-intro-bg-box{
+      display: none;
+    }
+    .psy-intro-title {
+      
+      text-align: center;
+  }
+    .therapy-img,
+    .psy-intro-img {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .offset-image-left {
+      left: 0;
+    }
+  }
+  /* Newsletter Section */
+.newsletter-section {
+    background-color: #e3f0c8;
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 5%;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 65px;
+  }
+  
+  .newsletter-left {
+    max-width: 50%;
+  }
+  
+  .newsletter-left h3 {
+    font-size: 30px;
+    color: #2a5c00;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .newsletter-left p {
+    font-size: 20px;
+    color: #000;
+    line-height: 1.6;
+    max-width: 450px;
+  }
+  
+  .newsletter-form {
+    max-width: 45%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .newsletter-form label {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2a5c00;
+  }
+  
+  .newsletter-form input[type="text"],
+  .newsletter-form input[type="email"] {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    width: 100%;
+  }
+  
+  .newsletter-form button {
+    width: 100px;
+    padding: 10px;
+    background-color: #2a5c00;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    height: 48px;
+    width: 121px;
+    font-size: 20px;
+  }
+  
+  .charity-section {
+    width: 100%;
+    background-color: #fff;
+    padding: 60px 0;
+  }
+  
+  .charity-section h3 {
+    text-align: center;
+    color: #2a5c00;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .charity-section > p {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 30px;
+    color: #444;
+    font-size: 22px;
+  }
+  
+  .charity-box {
+    
+    width: 100%;
+    border: 1px solid #E1E2AD;
+    background: #F2F2E0;
+    /* background-color: #fcfcf5; */
+    /* border-top: 1px solid #e0e0e0; */
+    padding: 20px 5%;
+    box-sizing: border-box;
+    /* margin-left: 93px; */
+    /* max-width: 1200px; */
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  
+  .charity-box p {
+    margin: 6px 0;
+    font-size: 20px;
+    color: #444;
+  }
+  
+  .charity-box strong {
+    font-weight: bold;
+    color: #000;
+    font-size: 22px;
+  }
+  
+  .charity-box span {
+    font-style: italic;
+    color: #666;
+    font-size: 18px;
+    margin-left: 5px;
+  }
+  
+  .charity-box a {
+    color: #c62828;
+    text-decoration: none;
+  }
+  
+  .charity-box a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    .charity-box {
+      padding: 20px;
+    }
+  }
+
+  .therapy-benefits-wrapper {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+  }
+  
+  .therapy-svg-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 600px;
+    z-index: 0;
+  }
+  
+  /* Positioning icons in a circle */
+  .therapy-icon {
+    position: absolute;
+    object-fit: contain;
+    z-index: 2;
+  }
+  /* .vector1 { top: 255px; right: 28px; height: 115px; } 
+  .vector2 { top: 255px; right: 36px; height: 115px; } 
+  .vector3 { top: 255px; left: 50px; height: 115px; } 
+  .vector4 { top: 255px; left: 36px; height: 115px; } 
+  .vector5 { top: 91px; left: 168px; width: 174px; } 
+  .vector6 { 
+    top: 18px;
+    right: 198px;
+    height: 163px;
+    position: absolute;
+    transform: rotate(290deg);
+  } 
+  .vector7 { top: 26px;
+    right: 176px;
+    height: 174px;
+    position: absolute;
+    transform: rotate(290deg);} 
+
+    .vector8 {
+      top: 31px;
+      left: 215px;
+      height: 163px;
+      position: absolute;
+      transform: rotate(258deg);
+  }
+  .vector9 {
+    top: 31px;
+    left: 215px;
+    height: 163px;
+    position: absolute;
+    transform: rotate(258deg);
+} */
+
+
+  
+
+
+  .icon1 { top: 55px; left: 360px; }     /* Top center */
+  .icon2 { top: 160px; left: 667px; }    /* Top right */
+  .icon3 { top: 365px; left: 690px; }    /* Bottom right */
+  .icon4 { bottom: 13px; left: 330px; }  /* Bottom center */
+  .icon5 { top: 365px; left: 13px; }    /* Bottom left */
+  .icon6 { top: 160px; left: 10px; }    /* Top left */
+  
+  /* Center text */
+  .therapy-center-text {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    color: #183a0d;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 3;
+    text-align: center;
+    
+  }
+  
+  /* Benefit text positioning */
+  .benefit-text {
+    position: absolute;
+    font-size: 18px;
+    font-weight: 600;
+    color: #3b7c2c;
+    z-index: 1;
+    white-space: nowrap;
+  }
+  
+  .bt1 { top: 232px; left: 210px; }
+  .bt2 { top: 286px; left: 180px; }
+  .bt3 { top: 360px; left: 162px; }
+  .bt5 { top: 455px; left: 315px; }
+  .bt4 { top: 419px; left: 205px; }
+  .bt6 { top: 394px; left: 392px; }
+  .bt7 { top: 347px; left: 490px; }
+  .bt8 { top: 319px; left: 331px; }
+  .bt9 { top: 285px; left: 480px; }
+  .bt10 { top: 232px; left: 468px; }
+  
+
+
+  .region-heading {
+   
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    
+    
+    padding-bottom: 5px;
+    color: #2a442d;
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+    margin-top: 65px;
+  }
+
+  .region-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 45px;
+    justify-content: center;
+  }
+  
+  .region-button {
+    width: 100px;
+    padding: 10px;
+    background-color: #2a5c00;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    height: 48px;
+    width: 121px;
+    font-size: 20px;
+    transition: background 0.3s ease;
+  }
+  
+  .region-button:hover {
+    background-color: #388e3c;
+  }
+
+  /* @media (min-width: 768px) and (max-width: 1024px) {
+    .therapy-type-block {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 40px;
+    }
+  
+    .therapy-type-block.reverse {
+      flex-direction: row-reverse;
+    }
+  
+    .therapy-image-wrapper img {
+      display: block;
+    }
+    .psy-read-more {
+      display: block;
+      margin: 20px auto 0; 
+      text-align: center;
+    }
+    
+    .therapy-img,
+    .therapy-img1,
+    .therapy-img2,
+    .therapy-img3 {
+      width: 350px;
+      height: 250px;
+    }
+  } */
+  /* ✅ Make 1260px down to 768px same as mobile */
+@media (max-width: 1260px) and (min-width: 768px) {
+  .therapy-type-block {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 20px !important;
+    margin-top: 40px !important;
+  }
+  .therapy-text h5 {
+    color: #183a0d;
+    font-size: 24px;
+}
+  .offset-image-left {
+    left: 0;
+  }
+
+  .therapy-type-block.reverse {
+    flex-direction: column !important;
+  }
+
+  .therapy-image-wrapper {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .therapy-text {
+    order: 2;
+    width: 100%;
+  }
+
+  /* ✅ Same image size for all */
+  .therapy-img,
+  .therapy-img1,
+  .therapy-img2,
+  .therapy-img3 {
+    width: 350px !important;
+    height: 250px !important;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  /* ✅ Hide decorations */
+  .circle-image,
+  .green-circle,
+  .green-circle1,
+  .green-circle2,
+  .green-circle3,
+  .green-circle4,
+  .green-circle5 {
+    display: none !important;
+  }
+
+  /* ✅ Center Read More button */
+  .psy-read-more {
+    display: block !important;
+    margin: 20px auto 0 !important;
+    text-align: center !important;
+  }
+}
+/* ✅ For all screens below 1260px */
+@media (max-width: 1260px) {
+  .therapy-type-block {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 25px !important;
+    margin-top: 40px !important;
+  }
+
+  /* ✅ Apply same stacking for reversed blocks */
+  .therapy-type-block.reverse {
+    flex-direction: column !important;
+  }
+
+  /* ✅ Ensure image comes first and centered */
+  .therapy-image-wrapper {
+    order: 1 !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* ✅ Ensure text appears below the image */
+  .therapy-text {
+    order: 2 !important;
+    width: 90%;
+    max-width: 700px;
+  }
+
+  /* ✅ Uniform image sizing for mobile/tablet */
+  .therapy-image-wrapper img,
+  .therapy-img,
+  .therapy-img1,
+  .therapy-img2,
+  .therapy-img3 {
+    
+    max-width: 350px !important;
+    width: 350px !important;
+    height: 250px !important;
+    border-radius: 12px;
+    object-fit: cover;
+    position: relative !important;
+    z-index: 1;
+  }
+  
+
+  /* ✅ Hide decorative circles */
+  .circle-image,
+  .green-circle,
+  .green-circle1,
+  .green-circle2,
+  .green-circle3,
+  .green-circle4,
+  .green-circle5 {
+    display: none !important;
+  }
+
+  /* ✅ Center “Read More” button */
+  .psy-read-more {
+    display: block !important;
+    margin: 20px auto 0 !important;
+    text-align: center !important;
+  }
+  .therapy-text li {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #444;
+    text-align: left;
+}
+}
+.desktop-layout {
+  display: block;
+}
+
+.therapy-benefits-wrapper-mobile {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .desktop-layout {
+    display: none !important;
+  }
+
+  .therapy-benefits-wrapper-mobile {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .therapy-center-text {
+    position: relative !important; /* override absolute desktop positioning */
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2a442d;
+    margin-bottom: 20px;
+    z-index: 20;
+  }
+
+  .therapy-mobile-pair {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    gap: 20px;
+  }
+
+  .therapy-mobile-pair:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .therapy-mobile-pair:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .therapy-icon {
+    position: relative !important;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .therapy-icon5 {
+    position: relative !important;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .therapy-text h5 {
+    color: #183a0d;
+    font-size: 24px;
+}
+
+  .therapy-benefit-texts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+  }
+
+  .benefit-text {
+    position: relative !important;
+    font-size: 16px;
+    color: #3b7c2c;
+    font-weight: 500;
+  }
+  /* newsletter-section */
+  .newsletter-section {
+    width: 100vw; /* fill full viewport width */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .newsletter-left,
+  .newsletter-form {
+    width: 100%; /* stretch both to full width */
+    max-width: none;
+  }
+
+  .newsletter-form {
+    padding: 0 10px; /* optional – adds slight side padding for better look */
+  }
+
+  
+  .newsletter-form button {
+    margin-top: 15px;
+    width: 121px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto; /* ✅ Centers the button horizontally */
+  }
+
+  .charity-box {
+    width:97%
+  }
+  .newsletter-form input[type="email"] {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    width: 97%;
+}
+.newsletter-form input[type="text"] {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  width: 97%;
+}
+.newsletter-left p {
+  
+  max-width: 100%;
+  text-align: center;
+}
+.newsletter-left h3 {
+  
+  text-align: center;
+}
+
+}

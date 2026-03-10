@@ -1,0 +1,541 @@
+.faq-container {
+  font-family: 'Inter', sans-serif;
+    /* background-color: #fff; */
+    background: #F2F2E0;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-heading {
+    text-align: center;
+    color: #2c2c2c;
+    margin-bottom: 30px;
+  }
+  
+  .faq-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-left:110px;
+  }
+  
+  .faq-question {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 6px;
+    font-size: 20px;
+  }
+  
+  .faq-answer {
+    color: #666;
+    line-height: 1.6;
+    font-size: 20px;
+  }
+  
+  .faq-pagination {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .faqpage-button {
+    margin: 0 5px;
+    padding: 6px 12px;
+    background-color: unset;
+    border-color: #1F5706;
+    border-radius: 50px;
+    color: #1F5706;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+  }
+  
+  .faqpage-button:hover,
+  .faqpage-button.active {
+    background: #1F5706;
+    color: #fff;
+  }
+  
+  .faqpage-button.next {
+    margin-left: 15px;
+  }
+  
+
+
+  .faq-banner-wrapper {
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 30px;
+    margin-top: 12px;
+    
+  }
+  
+  .faq-banner-image {
+    border-radius: 8px;
+    position: relative;
+    display: block;
+    width: 86%;
+    margin: 0 auto; /* ✅ Default center alignment */
+  }
+  
+  /* Heading Styling */
+  .faq-banner-heading {
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #3d3d3d;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+  }
+  
+ 
+  
+  /* Ellipse Image Styling */
+  .ellipse-img1 {
+    position: absolute;
+    width: 70px; /* increased size */
+    height: 70px;
+    z-index: 1;
+  }
+  .ellipse-img2 {
+    position: absolute;
+    width: 70px; /* increased size */
+    height: 70px;
+    z-index: 1;
+  }
+  .ellipse-img3 {
+    position: absolute;
+    width: 51px; /* increased size */
+    height: 70px;
+    z-index: 1;
+  }
+  .ellipse1 {
+    top: 20px;
+    left: 8%;
+  }
+  
+  .ellipse2 {
+    top: 87%;
+    right: 54%;
+  }
+  
+  .ellipse3 {
+    top: 83%;
+    right: 55%;
+  }
+  .faq-title-container {
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .faq-banner-heading {
+    font-size: 40px;
+    color: #3d3d3d;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+    margin: 0;
+  }
+  
+  .faq-underline {
+    width: 150px;
+  height: 2px;
+  background-color: #3f9b48;
+  margin-top: 65px;
+  }
+  
+/* ========================================================= */
+/* Additional Responsive CSS - Start of Responsive Overrides */
+/* ========================================================= */
+
+/* --- GENERAL MOBILE-FIRST LAYOUT --- */
+/* Applies to all screens initially, putting title ABOVE image */
+
+/* New outer wrapper for banner section */
+.faq-banner-outer-wrapper {
+  text-align: center; /* Center children */
+  margin-bottom: 25px; /* Adjust spacing */
+  padding-top: 15px; /* Adjust spacing */
+  position: relative; /* For potential absolute positioning later */
+  display: flex; /* Use flexbox for vertical stacking */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+/* Section for the title and underline */
+.faq-banner-title-section {
+  position: static; /* Ensure it's in normal flow */
+  transform: none; /* Reset transform */
+  width: 100%; /* Take full width for centering content */
+  padding: 15px 0;
+  margin-bottom: 10px; /* Space between title and image */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center heading and underline */
+  justify-content: center;
+  /* Removed any `top`, `left`, `right` properties here that might have been inherited */
+}
+
+
+.faq-banner-heading {
+  font-size: 40px; /* Responsive font size */
+  white-space: normal; /* Allow text to wrap */
+  word-break: break-word;
+  line-height: 1.2;
+  margin: 0; /* Reset margins */
+  margin-bottom: 5px; /* Space to underline */
+  position: static; /* Ensure it's not absolutely positioned */
+  transform: none; /* Reset transform */
+}
+
+.faq-underline {
+  width: 80px; /* Shorter underline */
+  height: 2px;
+  background-color: #3f9b48;
+  margin-top: 5px; /* Adjust margin as needed */
+  position: static; /* Ensure it's not absolutely positioned */
+}
+
+/* Section for the banner image and ellipses */
+.faq-banner-image-section {
+  position: relative; /* Container for ellipses */
+  width: 95%; /* Make this section responsive */
+  margin: 0 auto; /* Center this section */
+  overflow: hidden; /* Hide potential ellipse overflow */
+  border-radius: 8px; /* Apply border radius here */
+  display: flex; /* Helps to center image if it's smaller than width */
+  justify-content: center;
+  align-items: center;
+  /* Ensure no fixed `left` or `right` here that would offset the whole image section */
+  left: auto;
+  right: auto;
+}
+
+
+/* Hide ellipses by default for all screen sizes up to 1630px */
+.ellipse-img1,
+.ellipse-img2,
+.ellipse-img3 {
+  display: none !important;
+}
+
+/* --- GENERAL FAQ CONTENT ADJUSTMENTS --- */
+.faq-container {
+  padding: 15px;
+  margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.faq-heading { /* For the main FAQ heading "Q1. What is React?" etc */
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  margin-left: 0;
+  padding: 10px 15px;
+  max-width: 95%;
+  margin: 0 auto 25px auto;
+}
+
+.faq-question {
+  font-size: 1.1em;
+  line-height: 1.4;
+}
+
+.faq-answer {
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.faqpage-button {
+  padding: 8px 12px;
+  font-size: 0.9em;
+}
+
+/* ========================================================= */
+/* Media Queries for Tablets (min-width: 768px) */
+/* ========================================================= */
+@media (min-width: 768px) {
+  .faq-container {
+    padding: 25px;
+  }
+
+  .faq-heading {
+    font-size: 2.2em;
+  }
+
+  .faq-item {
+    padding: 15px 20px;
+    max-width: 80%;
+  }
+
+  .faq-question {
+    font-size: 1.25em;
+  }
+
+  .faq-answer {
+    font-size: 1em;
+  }
+
+  .faqpage-button {
+    padding: 10px 16px;
+    font-size: 1em;
+  }
+
+  .faq-banner-outer-wrapper {
+    padding-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .faq-banner-title-section {
+    padding: 20px 0;
+    margin-bottom: 15px;
+  }
+
+  .faq-banner-heading {
+    font-size: 2em;
+  }
+
+  .faq-underline {
+    width: 120px;
+    margin-top: 10px;
+  }
+  .faq-banner-image {
+    border-radius: 8px;
+    position: relative;
+    display: block;
+    width: 86%;
+    margin: 0 auto; /* ✅ Default center alignment */
+  }
+  .faq-banner-image-section {
+    width: 85%;
+  }
+}
+
+/* ========================================================= */
+/* Media Queries for Large Desktops (min-width: 1024px to 1630px) */
+/* Title ABOVE image, no ellipses */
+/* ========================================================= */
+@media (min-width: 1024px) and (max-width: 1630px) {
+  .faq-container {
+    padding: 0;
+    max-width: unset;
+  }
+
+  .faq-heading {
+    font-size: 20px;
+  }
+
+  .faq-item {
+    margin-left: 110px;
+    max-width: unset;
+    padding: 0 0 15px 0;
+  }
+
+  .faq-question {
+    font-size: 20px;
+  }
+
+  .faq-answer {
+    font-size: 20px;
+  }
+
+  .faq-banner-outer-wrapper {
+    padding-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  .faq-banner-title-section {
+    padding: 30px 0; /* More padding for desktop */
+    margin-bottom: 20px; /* Space between title and image */
+  }
+
+  .faq-banner-heading {
+    font-size: 40px; /* Restore original heading size */
+    white-space: normal; /* Allow wrapping, but desktop width usually means no wrapping */
+  }
+
+  .faq-underline {
+    width: 150px;
+    margin-top: 10px;
+  }
+  .faq-banner-image {
+    margin: 0 auto;
+    right: auto;
+    left: auto;
+  }
+  .faq-banner-image-section {
+    width: 86%; /* Match the original 86% width for image container */
+  }
+ 
+  
+  /* Ellipses remain hidden in this range */
+}
+
+
+/* ========================================================= */
+/* Media Queries for EXTRA Large Desktops (min-width: 1631px) */
+/* Restore original MacBook layout (title OVER image, ellipses visible) */
+/* ========================================================= */
+@media (min-width: 1631px) {
+  .faq-container {
+    padding: 0;
+    max-width: unset;
+  }
+
+  .faq-heading {
+    font-size: 20px;
+  }
+
+  .faq-item {
+    margin-left: 110px;
+    max-width: unset;
+    padding: 0 0 15px 0;
+  }
+
+  .faq-question {
+    font-size: 20px;
+  }
+
+  .faq-answer {
+    font-size: 20px;
+  }
+
+  .faq-banner-outer-wrapper {
+    position: relative; /* Original banner wrapper was relative */
+    padding-top: 30px;
+    margin-top: 12px;
+    margin-bottom: 40px;
+    overflow: visible; /* Make overflows visible again for ellipses */
+    /* Reset flex properties for this breakpoint if they interfere with absolute positioning */
+    display: block; /* Go back to block display to allow absolute positioning of children */
+    align-items: unset;
+    flex-direction: unset;
+  }
+
+  /* Title section goes OVER the image */
+  .faq-banner-title-section {
+    position: absolute; /* Reintroduce absolute positioning */
+    top: 50%;
+    left: 58%; /* Restore original left offset */
+    transform: translate(-50%, -50%);
+    width: auto;
+    padding: 0;
+    background: transparent; /* No background */
+    margin: 0; /* Reset margins */
+    border-radius: 0;
+    flex-direction: column; /* Ensure vertical layout */
+    align-items: center; /* Center within its own space */
+    justify-content: center;
+  }
+
+  .faq-banner-heading {
+    font-size: 40px; /* Restore original font size */
+    white-space: nowrap; /* Restore original nowrap */
+    word-break: normal;
+    margin: 0; /* No external margins */
+    position: static; /* Still static within its parent, but parent is abs positioned */
+    transform: none;
+  }
+
+  .faq-underline {
+    width: 150px; /* Restore original width */
+    margin-top: 65px; /* Restore original margin */
+    position: static; /* Still static within its parent */
+  }
+
+  /* Image section is just for the image and ellipses */
+  .faq-banner-image-section {
+    width: unset; /* Let image define width or use specific percentage */
+    position: relative; /* For ellipses to position against */
+    right: 350px; /* Restore original fixed offset for image section */
+    left: 0; /* Ensure no left offset */
+    margin: 0; /* No auto margin */
+    overflow: visible;
+    border-radius: 8px; /* Re-apply if image doesn't have it */
+    display: block; /* No flexbox needed here, let it be block */
+  }
+ 
+
+  
+
+  /* Ellipse Images - Re-enable and restore original positioning for EXTRA large desktops */
+  .ellipse-img1,
+  .ellipse-img2,
+  .ellipse-img3 {
+    display: block !important;
+  }
+
+  .ellipse-img1 {
+    top: 20px;
+    left: 8%;
+    width: 70px;
+    height: 70px;
+  }
+  .ellipse-img2 {
+    top: 87%;
+    right: 54%;
+    width: 70px;
+    height: 70px;
+  }
+  .ellipse-img3 {
+    top: 83%;
+    right: 55%;
+    width: 51px;
+    height: 70px;
+  }
+  .faq-banner-image {
+    right: 350px !important;
+    height: 100%;
+    width: 50%;
+    
+  }
+}
+
+/* ========================================================= */
+/* Specific adjustment for very small mobile screens (max-width: 480px) */
+/* ========================================================= */
+@media (max-width: 480px) {
+  .faq-heading {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  .faq-question {
+    font-size: 1em;
+  }
+  .faq-banner-title-section {
+    padding: 10px 15px;
+    margin-bottom: 5px;
+  }
+  .faq-answer {
+    font-size: 0.9em;
+  }
+  .faq-banner-heading {
+    font-size: 1.3em;
+  }
+  .faq-underline {
+    width: 60px;
+    margin-top: 5px;
+  }
+  .faqpage-button {
+    padding: 6px 10px;
+    font-size: 0.85em;
+  }
+  .faq-banner-image {
+    margin: 0 auto;
+    left: auto;
+    right: auto;
+    width: 95%;
+  }
+}

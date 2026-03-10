@@ -1,0 +1,394 @@
+/* src/components/BlogPage.css */
+
+/* --- General Page Layout --- */
+.blog-page-container {
+    position: relative;
+    background-color: #fff;
+   
+    overflow-x: hidden; /* Prevents horizontal scroll from the swirl */
+  }
+  
+  .blog-swirl-graphic {
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    width: 400px;
+    height: auto;
+    z-index: 0;
+    opacity: 0.8;
+  }
+  
+  .blog-content {
+    
+    margin: 0 auto;
+    position: relative; /* To appear above the swirl */
+    z-index: 1;
+  }
+  
+  /* --- Header and Titles --- */
+  .blog-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .blog-subtitle {
+    position: relative;
+    z-index: 8;
+    
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #1F5706;
+  }
+  
+  .blog-main-title {
+    font-size: 2.8rem;
+    color: #1F5706; /* A nice, deep green */
+    font-weight: 700;
+    margin: 5px 0 0 0;
+  }
+  
+  /* --- Tags Section --- */
+  /* --- Tags Section (Corrected for Uniform Size) --- */
+    .tags-container {
+        display: grid;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 95px;
+        margin-right: 95px;
+        /* This is the key change: it creates exactly 5 equal-width columns */
+        grid-template-columns: repeat(5, 1fr); 
+        gap: 12px;
+        
+      }
+  
+  /* The button styles are slightly adjusted to fill their new grid cells */
+  .tag-button {
+    padding: 12px; /* Adjusted for better vertical centering */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #1F5706;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 50px;
+    text-align: center; /* Ensure text is centered inside the larger button */
+    /* No width property is needed here, the grid handles it! */
+  }
+  
+  .tag-button:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+  }
+  
+  .tag-button--active {
+    background-color: #fcf8e3; /* Light beige for active state */
+    border-color: #d6b85d;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* --- Blog Post Cards Grid --- */
+  .posts-grid {
+    display: grid;
+    /* Creates two equal-width columns on larger screens */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    /* Optional: Adds some padding around the whole grid */
+    padding: 20px;
+    margin: 155px;
+  }
+  
+  /* --- The Grid Item (Your Card) --- */
+  .post-card {
+    border-radius: 12px;
+background: #E1E2AD;
+    /* Set a max-width to stop the card from stretching too wide */
+    max-width: 450px; 
+    /* Center the card horizontally within its grid cell */
+    justify-self: center; 
+    
+    /* Add some other styles to make it look like a card */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .post-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .post-card-image-wrapper {
+        /* background-color: #fff; */
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 5px;
+        
+  }
+  
+  .post-card-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px; /* Inner radius */
+    display: block;
+  }
+  
+  .post-card-content {
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    flex-grow: 1; /* Allows the meta section to stick to the bottom */
+  }
+  
+  .post-card-title {
+    font-size: 1.5rem;
+    color: #222;
+    margin: 0 0 10px 0;
+  }
+  
+  .post-card-excerpt {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+  }
+  
+  .post-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: #777;
+  }
+  
+  .read-more-link {
+    font-weight: 700;
+    color: #1F5706;
+    text-decoration: none;
+  }
+  
+  .read-more-link:hover {
+    text-decoration: underline;
+  }
+ 
+  /* ==========================================================================
+   RESPONSIVE STYLES FOR BLOG PAGE
+   Add this entire block to the end of your existing CSS file.
+   ========================================================================== */
+   @media (max-width: 1300px) {
+    /* Reduce the large fixed margins on the tag and post containers */
+    .tags-container,
+    .posts-grid {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+    .posts-grid {
+      display: grid;
+      /* Creates two equal-width columns on larger screens */
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      /* Optional: Adds some padding around the whole grid */
+      padding: 20px;
+      margin: 155px;
+    }
+  }
+
+/* --- For Tablets and Smaller Desktops (1200px and below) --- */
+@media (max-width: 1200px) {
+  /* Reduce the large fixed margins on the tag and post containers */
+  .tags-container,
+  .posts-grid {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  .posts-grid {
+    display: grid;
+    /* Creates two equal-width columns on larger screens */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    /* Optional: Adds some padding around the whole grid */
+    padding: 20px;
+    margin: 155px;
+  }
+
+  /* Change the tag grid to 4 columns */
+  .tags-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --- For Tablets (992px and below) --- */
+@media (max-width: 992px) {
+  /* Reduce margins further */
+  .tags-container,
+  .posts-grid {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px; /* Reduce top margin on posts grid */
+  }
+
+  /* Change the tag grid to 3 columns */
+  .tags-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* Adjust font sizes for better readability */
+  .blog-main-title {
+    font-size: 2.2rem;
+  }
+  .tag-button {
+    font-size: 16px;
+    padding: 10px;
+  }
+  .post-card-title {
+    font-size: 1.3rem;
+  }
+  .post-card-excerpt {
+    font-size: 1rem;
+  }
+}
+
+/* --- For Mobile Phones (768px and below) --- */
+@media (max-width: 768px) {
+  /* 
+   * This is the most important change for mobile.
+   * Switch the main posts grid to a single vertical column.
+   */
+  .posts-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+    padding: 0; /* Remove side padding to use full width */
+  }
+  
+  /* Make the post card fill the new single column layout */
+  .post-card {
+    max-width: 100%; /* Allow card to expand to screen width */
+    justify-self: auto; /* Reset the centering */
+    border-radius: 25px; /* Reduce radius for a cleaner mobile look */
+  }
+
+  /* Change the tag grid to 2 columns */
+  .tags-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Further reduce font sizes for small screens */
+  .blog-main-title {
+    font-size: 1.8rem;
+  }
+  .blog-subtitle {
+    font-size: 1rem;
+  }
+}
+/* --- EXPLORE MORE & POPUP STYLES --- */
+
+/* --- EXPLORE MORE & POPUP STYLES --- */
+
+.explore-more-btn {
+  display: none;
+}
+
+/* Popup styling */
+.tags-popup {
+  position: fixed;
+  top: 75px;
+  right: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  width: 295px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 999;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+}
+
+.popup-header h4 {
+  font-size: 18px;
+  color: #1F5706;
+  margin: 0;
+}
+
+.popup-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #1F5706;
+}
+.popup-close-btn:active {
+  color: #FF4C00; /* change to your preferred color */
+}
+
+.popup-close-btn:hover {
+  color: #FF4C00; /* choose your hover color */
+}
+
+.popup-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- TABLET & MOBILE BEHAVIOR --- */
+@media (max-width: 992px) {
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    max-height: none;
+    overflow: hidden;
+  }
+
+  /* Limit to 2 rows dynamically */
+  .tags-container {
+    max-height: calc(2 * 42px + 10px); 
+    overflow: hidden;
+  }
+
+  .explore-more-btn {
+    display: inline-block;
+    margin: 15px auto 0; 
+    background: #1F5706;
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease-in-out;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); 
+  }
+
+  .explore-more-btn:hover {
+    background: #3b6419;
+  }
+}
+@media (max-width: 400px) {
+  .popup-container {
+    width: 95%;
+    padding: 15px;
+  }
+}

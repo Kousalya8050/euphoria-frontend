@@ -1,0 +1,620 @@
+/* === Universal & Container Styles === */
+.resources-container {
+    /* background-color: #F2F2E0; */
+  
+    position: relative;
+    overflow-x: hidden; /* Prevents accidental horizontal scrolling on mobile */
+  }
+  
+  .resources-heading {
+    
+    font-size: 40px;
+    font-weight: bold;
+    color: #1F5706;
+    text-align: center;
+    /* margin-bottom: 40px; */
+    position: relative;
+    z-index: 10;
+    top: 34px;
+    left: -45px;
+  }
+  
+  /* === MOBILE-FIRST LAYOUT (Default for all screens) === */
+  /* On mobile, images will stack vertically in a single column. */
+  
+  .images-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px; /* Provides nice spacing between stacked images on mobile */
+    height: auto; /* Allow height to be determined by content */
+  }
+  
+  .img-box {
+    position: relative; /* This is the positioning context for the image and its background */
+    width: 85%;
+    max-width: 350px; /* Good max size for a single image on mobile */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .img-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    position: relative; /* Puts image on top of its background square */
+    z-index: 2;
+  }
+  
+  /* Background Squares (Mobile & Desktop) */
+  .bg-square {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    z-index: 1; /* Sits behind the image */
+  }
+  
+  /* Color classes with transforms for a dynamic feel */
+  .green-bg {
+    background-color: #85CC65;
+    top: 165px;
+    left: -42px;
+    height: 291px;
+    width: 329px;
+    border-bottom-right-radius: 0px;
+  }
+  .lightgreen-bg {
+    background: rgba(200, 245, 82, 0.65);
+    top: -36px;
+    width: 390px;
+    left: -0px;
+  }
+  .darkgreen-bg {
+    background-color: #85CC65;
+    left: -45px;
+    /* bottom: 40px; */
+    width: 475px;
+    height: 168px;
+    top: -52px;
+    border-bottom-left-radius: 0px;
+  }
+  .lime-bg {
+    background: rgba(200, 245, 82, 0.65);
+    top: 51px;
+    left: -40px;
+    height: 295px;
+    width: 370px;
+    border-top-left-radius: 0px;
+  }
+  
+  
+  /* === DESKTOP & WIDE TABLET LAYOUT (768px and up) === */
+  /* We use a media query to apply these styles only on larger screens. */
+  @media (min-width: 768px) {
+  
+    .resources-heading {
+      text-align: center; /* Align heading to the left on desktop */
+    }
+    
+    /* Here we switch to CSS Grid to create the collage effect */
+    .images-layout {
+      display: grid;
+      /* A 10-column grid gives us fine-grained control */
+      grid-template-columns: repeat(10, 1fr); 
+      grid-template-rows: repeat(8, 1fr); /* 8 flexible rows */
+      height: 550px; /* A fixed height for the collage area */
+      max-width: 1100px; /* Center the layout on very wide screens */
+      margin: 0 auto;
+      position: relative;
+      /* Reset mobile styles */
+      flex-direction: row; 
+      gap: 0;
+    }
+  
+    .img-box {
+      /* Reset mobile styles */
+      width: auto;
+      max-width: none;
+      position: absolute; /* We need absolute positioning within the grid container */
+    }
+    
+    /* --- Image Placements for the Collage --- */
+    /* We use percentage-based positioning for true responsiveness */
+  
+    .never-give-up {
+      width: 30%;
+      top: -62px;
+      left: -6%;
+      z-index: 4;
+    }
+    
+    .blurry-focus {
+      width: 35%;
+      top: 0%;
+        right: -5%;
+      z-index: 3;
+    }
+  
+    .learn-to-rest {
+      width: 55%;
+      top: 21%;
+      left: 20%;
+      z-index: 2;
+    }
+    
+    .success-revenge {
+        width: 26%;
+        top: 37%;
+        right: -8%;
+      z-index: 5; /* Highest z-index to be on top */
+    }
+  }
+
+
+  /* Newsletter Section */
+.newsletter-section_r {
+    background-color: #e3f0c8;
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 5%;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+  
+  .newsletter-left_r {
+    max-width: 50%;
+  }
+  
+  .newsletter-left_r h3 {
+    font-size: 30px;
+    color: #1F5706;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .newsletter-left_r p {
+    font-size: 20px;
+    color: #000;
+    line-height: 1.6;
+    max-width: 450px;
+  }
+  
+  .newsletter-form_r {
+    max-width: 45%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .newsletter-form_r label {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1F5706;
+  }
+  
+  .newsletter-form_r input[type="text"],
+  .newsletter-form_r input[type="email"] {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    width: 100%;
+  }
+  
+  .newsletter-form_r button {
+    width: 100px;
+    padding: 10px;
+    background-color: #1F5706;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    height: 48px;
+    width: 121px;
+    font-size: 20px;
+  }
+  
+  .contact-section_r {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* background-color: #F2F2E0; */
+    /* padding: 60px 20px; */
+    /* border-top: 2px solid #e2e6c7; */
+    position: relative;
+    max-width: 1434px;
+    margin: 0 auto;
+    padding-bottom: 41px;
+    
+  }
+  
+  .contact-left_r {
+    flex: 0 0 59%;
+    padding-right: 35px;
+    max-width: 60%;
+    
+    padding-bottom: 15px;
+    
+  }
+  
+  .contact-title {
+    color: #1F5706;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 0px;
+    padding-bottom: 15px;
+  }
+  
+  .contact-left_r h3 {
+    color: #40423F;
+    font-family: 'Inter', sans-serif;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 40px; /* 125% */
+margin-top:5px;
+margin-bottom: 0px;
+  }
+  
+  .contact-left_r p {
+    font-size: 20px;
+    color: #40423F;
+    line-height: 1.6;
+    margin-bottom: 0px;
+    margin-top: 20px;
+  }
+  
+  .contact-note {
+    font-size: 15px;
+    margin-top: 20px;
+    color: #1F5706;
+  }
+  
+  .green-link {
+    color: #1F5706;
+  }
+  
+  .connect-button {
+    margin-top: 20px;
+    padding: 10px 22px;
+    background-color: #1F5706;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    height: 48px;
+    width: 206px;
+    font-size: 20px;
+  }
+  
+  .connect-button:hover {
+    background-color: #1F5706;
+  }
+  
+  .contact-right_r {
+    flex: 0 0 41%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-right_r img {
+    margin-top: 50px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .mobile-carousel_r {
+    display: none;
+  }
+  
+  .mobile-carousel-container_r {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+  scrollbar-width: none;     /* Hide scrollbar in Firefox */
+}
+
+.mobile-carousel-container_r::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari and Opera */
+}
+  
+  .mobile-carousel-slide_r {
+    min-width: 100%;
+    scroll-snap-align: start;
+    position: relative;
+    text-align: center;
+  }
+  
+  .mobile-carousel-image_r {
+    width: 600px;
+    height: 400px;
+    border-radius: 50px;
+    margin-top: 40px;
+  }
+  
+  .mobile-carousel-text_r {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 8px 16px;
+    border-radius: 6px;
+  }
+  
+  .mobile-carousel-dots_r {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .mobile-carousel-dots_r .dot {
+    height: 8px;
+    width: 8px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mobile-carousel-dots_r .dot.active {
+    background-color: #1F5706; 
+    width: 20px;
+    border-radius: 30%;
+  }
+  
+  /* === Responsive Toggle === */
+  @media (max-width: 1024px) {
+    .desktop-only_r {
+      display: none;
+    }
+  
+    .mobile-carousel_r {
+      display: block;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1364px) {
+    .images-layout {
+      display: grid;
+      /* A 10-column grid gives us fine-grained control */
+      grid-template-columns: repeat(10, 1fr); 
+      grid-template-rows: repeat(8, 1fr); /* 8 flexible rows */
+      height: 550px; /* A fixed height for the collage area */
+      max-width: 850px; /* Center the layout on very wide screens */
+      margin: 0 auto;
+      position: relative;
+      /* Reset mobile styles */
+      flex-direction: row; 
+      gap: 0;
+    }
+    .green-bg {
+      background-color: #85CC65;
+      top: 165px;
+      left: -45px;
+      height: 198px;
+      width: 262px;
+      border-bottom-right-radius: 0px;
+  }
+  .darkgreen-bg {
+    background-color: #85CC65;
+    left: -45px;
+    /* bottom: 40px; */
+    width: 386px;
+    height: 168px;
+    top: -52px;
+    border-bottom-left-radius: 0px;
+}
+.img-box img {
+  width: 102%;
+  height: auto;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+}
+.lime-bg {
+  background: rgba(200, 245, 82, 0.65);
+  top: -17px;
+  left: -45px;
+  height: 295px;
+  width: 318px;
+  border-top-left-radius: 0px;
+}
+.success-revenge {
+  width: 26%;
+  top: 37%;
+  right: -4%;
+  z-index: 0;
+}
+
+    
+  }
+
+  @media (min-width: 287px) and (max-width: 614px) {
+    .mobile-carousel-image_r {
+      width: 86%;
+      height: 400px;
+      border-radius: 12px;
+      margin-top: 40px;
+  }
+  }
+
+  @media (max-width: 992px) {
+    /* newsletter-section */
+    .newsletter-section_r {
+      width: 100vw; /* fill full viewport width */
+     
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  
+    .newsletter-left_r,
+    .newsletter-form_r {
+      width: 100%; /* stretch both to full width */
+      max-width: none;
+    }
+  
+    .newsletter-form_r {
+      padding: 0 10px; /* optional – adds slight side padding for better look */
+    }
+  
+    
+    .newsletter-form_r button {
+      margin-top: 15px;
+      width: 121px;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-left: auto;
+      margin-right: auto; /* ✅ Centers the button horizontally */
+    }
+  
+    .charity-box_r {
+      width:97%
+    }
+    .newsletter-form_r input[type="email"] {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 18px;
+      width: 97%;
+  }
+  .newsletter-form_r input[type="text"] {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    width: 97%;
+  }
+  .newsletter-left_r p {
+    
+    max-width: 100%;
+    text-align: center;
+  }
+  .newsletter-left_r h3 {
+    
+    text-align: center;
+  }
+  
+  }
+  @media (min-width: 993px) and (max-width: 1468px) {
+  .contact-section_r {
+    display: flex
+  ;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* background-color: #F2F2E0; */
+    /* padding: 60px 20px; */
+    /* border-top: 2px solid #e2e6c7; */
+    position: relative;
+    max-width: 1064px;
+    margin: 0 auto;
+    padding-bottom: 41px;
+  }
+  .contact-right_r img {
+    margin-top: 50px;
+    height: auto;
+    border-radius: 8px;
+    width: 93%;
+    /* padding-right: 57px; */
+    position: relative;
+    top: 80px;
+}
+
+.contact-left_r {
+  flex: 0 0 59%;
+  padding-right: 0px;
+  max-width: 50%;
+  padding-bottom: 15px;
+  padding-left: 30px;
+}
+}
+
+@media (max-width: 992px) {
+  .contact-section_r {
+    flex-direction: column; /* stack vertically */
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .contact-right_r {
+    order: 1; 
+  }
+
+  .contact-left_r {
+    order: 2; /* text below image */
+    width: 100% !important;
+    max-width: 95% !important;
+    margin-top: 20px;
+  }
+
+  
+  
+
+  .contact-left_r h4 {
+    order: 1;
+    text-align: center;
+    width: 100%;
+    
+  }
+  .contact-left_r h3 {
+    order: 3;
+    text-align: left;
+    font-size: 22px;
+    line-height: 31px;
+  }
+
+  .contact-left_r p {
+    order: 4;
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  /* Button (last) */
+  .connect-button {
+    order: 5;
+    text-align: center;
+    margin: 20px auto 0;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #1F5706;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .connect-button:hover {
+    background-color: #3b621a;
+  }
+
+  .contact-left_r {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .contact-right_r img {
+    width: 100%;
+    max-width: 400px;
+  }
+}

@@ -1,0 +1,312 @@
+.video-lessons-container {
+   
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .video-heading h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2a442d;
+    font-size: 32px;
+    margin-top: 55px;
+  }
+  .video_heading_h3 {
+    position: relative;
+    z-index: 8;
+    
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #1F5706;
+
+}
+  
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+  }
+  
+  .tab-buttons button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 50px;
+    text-align: center;
+    margin: 30px 0;
+    color: #2a442d;
+    font-size: 25px;
+    background: transparent; /* explicitly set */
+  }
+  
+  /* Active button */
+  .tab-buttons button.active-tab {
+    background: #2a442d;
+    color: white;
+  }
+  
+  /* Hover should look like inactive */
+  .tab-buttons button:hover:not(.active-tab) {
+    background: rgb(206, 204, 204);
+    color: #2a442d;
+  }
+  
+  .video-card {
+    cursor: pointer;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .video-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .video-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .video-title {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+  }
+  
+  .video-meta {
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 10px;
+  }
+  
+  .video-modal {
+    background: #000;
+    padding: 0;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+    outline: none;
+  }
+  
+  .video-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loading-state {
+    text-align: center;
+    padding: 4rem;
+    font-size: 1.5rem;
+  }
+  
+  /* --- Load More Button Styles --- */
+  .load-more-container {
+    text-align: center;
+    margin: 2rem 0; /* Adds space above and below the button */
+  }
+  
+  .load-more-container button {
+    background-color: #2E5332 !important;
+    color: white !important;
+    /* border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer; */
+    transition: background-color 0.2s;
+    font-family: Inter, sans-serif;
+
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 50px;
+    text-align: center;
+    margin: 30px 0;
+    
+    font-size: 20px;
+    background: transparent;
+  }
+  
+  .load-more-container button:hover:not(:disabled) {
+    background-color: #1e3a21;
+  }
+  
+  .load-more-container button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+  }
+  
+  /* --- FIX: Styles for react-modal and the responsive iframe --- */
+  .video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .video-modal {
+    position: relative;
+    width: 90vw;
+    max-width: 1100px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+  }
+  
+  /* This wrapper creates the responsive 16:9 box */
+  .modal-player-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+    height: 0;
+    overflow: hidden;
+  }
+  
+  /* This makes the iframe fill its responsive parent */
+  .modal-player-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .first_img_container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .first_image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .thumbnail-wrapper {
+    position: relative;
+  }
+  
+  .video-duration {
+    position: absolute;
+    bottom: 13px;
+    right: 6px;
+    background: rgb(255 255 255 / 75%);
+    color: #000000;
+    padding: 2px 6px;
+    font-size: 13px;
+    border-radius: 3px;
+  }
+
+  /* Modal Layout */
+.modal-content-wrapper {
+  display: flex;
+  gap: 20px;
+  height: 90vh;
+}
+
+/* LEFT: Player */
+.modal-player-left {
+  flex: 2;
+}
+
+.modal-player-left iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* RIGHT: Up Next */
+.modal-next-videos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal-next-videos h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.next-video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Each next video item */
+.next-video-item {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.next-video-item:hover {
+  background: #f2f2f2;
+}
+
+.next-video-item img {
+  width: 120px;
+  height: 70px;
+  border-radius: 6px;
+}
+
+.next-video-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.next-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.next-meta {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Scrollbar */
+.modal-next-videos::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-next-videos::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 10px;
+}
+

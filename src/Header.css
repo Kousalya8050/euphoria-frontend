@@ -1,0 +1,303 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    box-sizing: border-box;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+        /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
+        padding-left: 28px;
+        padding-right: 0px;
+        padding-top: 34px;
+  }
+  
+  .logo {
+    position: relative;
+    font-size: 35px;
+    font-weight: bold;
+    color: green;
+    z-index: 10;
+    text-decoration: none;
+  }
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin-right: 70px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 25px;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  /* .btn,
+  .btn-outline {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+  } */
+
+  .btn,
+.btn-outline {
+  /* 1. Use Flexbox for perfect centering */
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center;     /* Vertically center */
+
+  /* 2. Set consistent sizing and font */
+  width: 128px;
+  height: 54px;
+  font-size: 20px;
+  font-weight: 600;
+
+  /* 3. Add styles to make <a> tags behave */
+  text-decoration: none; /* Removes the underline from the <Link> */
+  cursor: pointer;
+  
+  /* 4. General appearance */
+  border-radius: 4px;
+  box-sizing: border-box; /* Important: makes border and padding part of the total width/height */
+}
+  
+  .btn {
+    background-color: green;
+    color: #fff;
+    height: 54px;
+    width: 128px;
+    font-size: 24px;
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    border: 2px solid green;
+    color: green;
+    height: 54px;
+    width: 128px;
+    font-size: 24px;
+}
+.top-left-wave {
+  top: 0;
+  left: 0;
+  width: 1107px; /* Adjust size as needed */
+  z-index: 2;
+}
+
+/* Style for the wave on the left side, vertically centered */
+.left-wave {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 1107px; /* Adjust size as needed */
+}
+
+/* ==========================================================================
+   RESPONSIVE HEADER STYLES
+   Add this entire block to the end of your existing Header.css file.
+   ========================================================================== */
+
+/* --- Hamburger Menu Button (Hidden on Desktop) --- */
+.hamburger-menu {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001; /* Must be on top of everything */
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 5px;
+  
+}
+.hamburger-menu:hover {
+  background: transparent !important;
+}
+.hamburger-menu span:hover {
+  background-color: #333 !important;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* --- Media Query for Tablets and Mobile Phones (992px and below) --- */
+@media (max-width: 1629px) {
+
+  /* Make the header padding smaller */
+  .header {
+    padding: 20px;
+  }
+  
+  /* Hide the decorative waves */
+  .decorative-wave {
+      display: none;
+  }
+
+  /* Show the hamburger menu button */
+  .hamburger-menu {
+    display: flex;
+  }
+
+  /* --- Styles for the Mobile Navigation Panel --- */
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 80vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background-color: #d8e3c2;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+    transition: right 0.3s ease-in-out;
+    z-index: 11;
+    margin-top: 75px;
+}
+
+  /* This is the magic: The 'active' class slides the menu into view */
+  .nav.active {
+    right: 10px;
+  }
+
+  /* Make nav links larger and more tappable */
+  .nav a {
+    font-size: 1.5rem; /* 24px */
+    color: rgb(0, 0, 0);
+  }
+
+  /* The Login/Sign up buttons were commented out, but if you re-add them,
+     this will make them stack vertically in the mobile menu. */
+  .auth-buttons {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE STYLES FOR FAQ PAGE
+   Add this entire block to the end of your CSS file.
+   ========================================================================== */
+
+/* --- For Tablets and Smaller Desktops (992px and below) --- */
+@media (max-width: 992px) {
+
+  /* 1. Simplify the banner layout */
+  .faq-banner-wrapper {
+    /* Change to a simple vertical layout */
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  
+  /* Hide the decorative ellipses that won't fit on smaller screens */
+  .ellipse-img1, .ellipse-img2, .ellipse-img3 {
+    display: none;
+  }
+
+  .faq-banner-image {
+    max-width: 100%; /* Allow image to fill the container */
+  }
+
+  .faq-title-container {
+    /* Make the title a normal block below the image, not an overlay */
+    position: static;
+    color: #1F5706; /* Change color for visibility on white background */
+    margin-top: 20px;
+  }
+
+  .faq-banner-heading {
+    font-size: 2.2rem;
+    text-shadow: none; /* Remove shadow */
+  }
+
+  .faq-underline {
+    background-color: #1F5706; /* Change underline color */
+  }
+
+
+  /* 2. Make FAQ items flexible */
+  .faq-item {
+    /* No max-width needed, it will fill the container */
+    padding: 15px;
+  }
+  
+  .faq-question {
+    font-size: 1.3rem;
+  }
+  
+  .faq-answer {
+    font-size: 1rem;
+  }
+}
+
+
+/* --- For Mobile Phones (576px and below) --- */
+@media (max-width: 576px) {
+  
+  /* Reduce padding on the main container */
+  .faq-container {
+    padding-top: 15px;
+  }
+
+  /* Further reduce font sizes for mobile */
+  .faq-banner-heading {
+    font-size: 1.8rem;
+  }
+
+  .faq-question {
+    font-size: 1.1rem;
+  }
+  
+  .faq-answer {
+    font-size: 0.9rem;
+  }
+
+  /* Adjust pagination buttons for smaller screens */
+  .faq-pagination {
+    margin-top: 30px;
+  }
+
+  .faqpage-button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}

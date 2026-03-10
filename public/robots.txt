@@ -1,3 +1,11 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Allow: /blogs/
+Allow: /video/
+
+# Block search results from being indexed
+Disallow: /search
+Disallow: /admin
+Disallow: /login
+
+Sitemap: http://localhost:3001/sitemap.xml

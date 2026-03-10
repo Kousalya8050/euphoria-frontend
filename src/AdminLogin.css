@@ -1,0 +1,78 @@
+main {
+    min-height: 100vh;
+  }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .admin-login-container {
+    min-height: 100vh;                /* Fills full screen */
+    background: #f5f6fa;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    display: flex;                    /* Centers form */
+    justify-content: center;
+    align-items: center;
+  }
+.login-container {
+    
+    width: 100%;
+    background: #f5f6fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter, sans-serif;
+  }
+  
+  .login-box {
+    width: 350px;
+    padding: 30px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+    text-align: center;
+  }
+  
+  .login-title {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .login-input {
+    width:auto;
+    padding: 12px;
+    margin: 8px 0 18px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .login-input:focus {
+    border-color: #0078ff;
+    box-shadow: 0 0 0 2px rgba(0,120,255,0.2);
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 12px;
+    background: #0078ff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login-button:hover {
+    background: #005dc1;
+  }
+  

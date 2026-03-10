@@ -1,0 +1,359 @@
+/* General body styling for the page */
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background-color: #ffffff;
+}
+
+.about-us-page-container {
+  position: relative;
+  overflow-x: hidden; /* Prevents horizontal scroll from oversized waves */
+}
+
+
+
+/* --- MAIN CONTENT --- */
+.about-us-content {
+  
+  text-align: center;
+}
+
+.about-us-banner-image {
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.about-us-text-section {
+  max-width: 1400px; /* Use max-width instead of width */
+  width: 90%;       /* Take up 90% of the screen width */
+  margin: 0 auto;   /* Keep it centered */
+  box-sizing: border-box; /* Ensures padding doesn't add to the width */
+}
+
+.about-us-subtitle {
+  color: #1F5706;
+text-align: center;
+font-family: Inter, sans-serif;
+
+font-style: normal;
+
+line-height: 40px;
+  margin-bottom: 10px;
+  
+    font-size: 40px;
+    font-weight: bold;
+    
+}
+
+.about-us-title {
+  font-size: 2.8rem;
+  color: #1F5706;
+  margin-bottom: 20px;
+}
+
+.about-us-paragraph {
+  color: #000;
+
+text-align: center;
+font-family: Inter, sans-serif;
+font-style: normal;
+font-weight: 400;
+line-height: 35px;
+  font-size: 23px;
+}
+
+/* --- IMAGE GRID SECTION --- */
+
+/* 
+  The background container. 
+  It takes up 100% width and crucially hides the horizontal overflow of its wider child,
+  preventing a scrollbar on the page.
+*/
+.collage-background {
+  width: 100%; /* As requested */
+  padding-top: 40px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  overflow-x: hidden; /* IMPORTANT: This prevents a horizontal scrollbar */
+}
+
+/* 
+  The main container for the collage.
+  It's made wider than the screen to contain images positioned outside the normal 0-100% range.
+*/
+
+  .collage-container {
+    position: relative;
+    width: 130%;
+    margin-left: 13%;
+    margin-right: 13%;
+    height: 0;
+    padding-bottom: 40%;
+}
+/*
+  Wrapper for each image - no changes needed.
+*/
+.collage-image-wrapper {
+  position: absolute;
+  padding: 10px;
+ 
+  
+}
+
+/* Styling for the actual image tag - no changes needed. */
+.collage-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* --- YOUR PREFERRED IMAGE POSITIONS --- */
+/* This is your exact code, which will now display correctly. */
+
+.image-1  { top: 2%;   left: -15%;   width: 17%; } /* Drugs Abuse */
+.image-2  { top: 48%;  left: -15%;  width: 17%; } /* #Say NO */
+.image-3  { top: 17%;  left: 6%;    width: 17%; } /* Man with lightbulb */
+.image-4  { top: 50%;  left: 3%;    width: 28%; } /* Friends laughing */
+.image-5  { top: -2%;  left: 24%;   width: 16%; } /* Dark Hands */
+.image-6  { top: 30%;  left: 34%;   width: 26%; } /* Autism Silhouette */
+.image-7  { top: 60%;  left: 37%;   width: 21%; } /* Stay Fit */
+.image-8  { top: -2%;  left: 43%;   width: 16%; } /* Happy Family Day */
+.image-9  { top: -6%;  left: 61%;   width: 16%; } /* Signs of Depression */
+.image-10 { top: 27%;  left: 63%;   width: 14%; } /* Autism Boy */
+.image-11 { top: 62%;  left: 60%;   width: 19%; } /* Person in Clouds */
+.image-12 { top: -2%;  left: 79%;   width: 15%; } /* Torn Paper */
+.image-13 { top: 40%;  left: 81%;   width: 15%; } /* Child Abuse */
+.image-14 { top: 7%;   left: 96%;   width: 17%; } /* Speaking for Healing */
+.image-15 { top: 45%;  left: 98%;   width: 15%; } /* Mental Health Day */
+
+
+/* --- ALTERNATING INFO SECTIONS --- */
+
+/* Container for all the new sections */
+.info-sections-container {
+  margin-top: 60px; /* Space above the first section */
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* Space between the two sections */
+  margin:95px;
+}
+
+/* 
+  A single row containing text and an image.
+  Using flexbox to create the side-by-side layout.
+*/
+.info-section {
+  display: flex;
+  align-items: center; /* Vertically aligns text and image */
+  gap: 50px; /* Space between text and image */
+}
+
+/* A modifier class to reverse the order of items for the second section */
+.info-section--reverse {
+  flex-direction: row-reverse;
+}
+
+/* Container for the text block */
+.info-text-block {
+  flex: 1; /* Each block takes up 50% of the available space */
+  text-align: center; /* Aligns text to the left */
+}
+
+/* Container for the image block */
+.info-image-block {
+  flex: 1;
+}
+
+/* Styles for the images themselves */
+.info-image-block img {
+  width: 100%;
+  border-radius: 10px; /* Creates the nice rounded corners */
+  display: block; /* Removes any extra space below the image */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+.collage-carousel {
+  display: none; /* shown only for <=992 via media query below */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 0; /* optional small vertical padding */
+}
+
+/* Swiper slide sizing: control exact slide size here */
+.collage-swiper-slide {
+  width: 260px !important;   /* fixed slide width on tablet/phone */
+  height: 260px !important;  /* fixed height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Inner slide container */
+.collage-carousel-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The image — fills the slide */
+.collage-carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  user-select: none;        /* prevents selecting images while dragging */
+  -webkit-user-drag: none;  /* prevents native image drag */
+  pointer-events: none;
+}
+
+/* Reduce slide size on small phones */
+@media (max-width: 576px) {
+  .collage-swiper-slide { width: 200px !important; height: 200px !important; }
+}
+
+/* Show carousel and hide desktop grid for <=992 */
+@media (max-width: 992px) {
+  .desktop-collage { display: none !important; }
+  .collage-carousel { display: block; }
+
+  /* remove large margins/paddings that create visual gaps */
+  .collage-carousel .swiper { padding: 0; }
+  .collage-carousel .swiper-wrapper { align-items: center; } /* vertical centering */
+}
+
+/* If you previously had big padding/margins on .collage-carousel-slide or .swiper container, override them */
+.collage-carousel .swiper-slide,
+.collage-carousel .collage-swiper-slide {
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE STYLES FOR ABOUT US PAGE
+   Add this entire block to the end of your existing CSS file.
+   ========================================================================== */
+
+/* --- For Tablets and Smaller Devices (992px and below) --- */
+@media (max-width: 992px) {
+
+  /* 1. Adjust main text section for smaller screens */
+  .about-us-text-section {
+    width: 90%; /* Change fixed width to a percentage */
+    margin: 0 auto; /* Keep it centered */
+  }
+
+  /* Reduce title and paragraph font sizes */
+  .about-us-title {
+    font-size: 2.2rem;
+  }
+  .about-us-paragraph {
+    font-size: 1.1rem; /* A more readable size for tablets */
+    line-height: 1.6;
+  }
+  
+  /* Reduce the top margin for the collage */
+  .collage-background {
+      margin-top: 30px;
+  }
+
+  /* 
+   * 2. IMPORTANT: Transform the complex image collage into a simple grid.
+   * The absolute positioning is not suitable for mobile.
+   */
+  /* .collage-container {
+    
+    position: static;
+    width: 100%;
+    height: auto;
+    padding-bottom: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+
+   
+    display: grid;
+    
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; 
+  }
+
+  
+  .collage-image-wrapper {
+    position: static;
+    width: 100%;
+    height: auto;
+    top: auto;
+    left: auto;
+    padding: 0; 
+  } */
+
+  
+
+  /* 3. Stack the alternating info sections */
+  .info-sections-container {
+    margin: 60px 20px; /* Reduce side margins */
+    gap: 40px;
+  }
+
+  .info-section {
+    /* Change flex direction to stack items vertically */
+    flex-direction: column !important; /* !important to override --reverse */
+    gap: 30px;
+  }
+  
+
+  .info-image-block {
+    order: 1; /* Image comes first */
+  }
+
+  .info-text-block {
+    order: 2; /* Text comes below image */
+  }
+}
+
+
+/* --- For Mobile Phones (576px and below) --- */
+@media (max-width: 576px) {
+  
+  /* Make the main banner image smaller */
+  .about-us-banner-image {
+      margin-bottom: 20px;
+  }
+
+  /* Further reduce font sizes for phones */
+  .about-us-title {
+    font-size: 1.8rem;
+  }
+  .about-us-paragraph {
+    font-size: 1rem;
+  }
+
+  /* Change the collage grid to 2 columns for better viewing */
+  /* .collage-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  } */
+  
+
+  /* Adjust info section margins for phones */
+  .info-sections-container {
+    margin: 40px 15px;
+  }
+  .info-image-block img {
+    width: 100%;
+    height: auto;
+  }
+
+  .info-text-block {
+    text-align: center;
+  }
+}
