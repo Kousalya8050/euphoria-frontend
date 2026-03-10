@@ -8,7 +8,7 @@ import learnToRest from './assets/resources/learn-to-rest.png';
 import whenLifeGetsBlurry from './assets/resources/when-life-blurry.png';
 import successRevenge from './assets/resources/success-revenge.png';
 import contactIllustration from './assets/resources/contact2.jpg';
-import footerWaveImage from './assets/homepage/footer.png'; // Your main wave background
+
 
 const ResourcesSection = () => {
   const [popup, setPopup] = useState({
@@ -16,24 +16,7 @@ const ResourcesSection = () => {
       type: "", // "success" | "error"
       message: ""
     });
-    const navLinks = [
-        { name: 'Home', path: '#', marginLeft: '0px' },
-        { name: 'About Us', path: '#', marginLeft: '44px' }, // Example value
-        { name: 'Academic', path: '#', marginLeft: '113px' }, // Example value
-        { name: 'Casual', path: '#', marginLeft: '187px' }, // Example value
-        { name: 'Blog', path: '#', marginLeft: '238px' },   // Example value
-        { name: 'Video Lessons', path: '#', marginLeft: '268px' }, // Example value
-      ];
-      
-      // IMPORTANT: Replace placeholder icon paths with your actual icon image files.
-      // These should ideally be white icons, possibly within a light circle as suggested by the image.
-      const socialLinks = [
-        { name: 'Email', icon: 'path/to/envelope-icon.svg', path: 'mailto:info@example.com' },
-        { name: 'Twitter', icon: 'path/to/x-icon.svg', path: '#' },
-        { name: 'LinkedIn', icon: 'path/to/linkedin-icon.svg', path: '#' },
-        { name: 'WhatsApp', icon: 'path/to/whatsapp-icon.svg', path: '#' },
-        { name: 'Info', icon: 'path/to/info-icon.svg', path: '#' }, // Or Instagram, etc.
-      ];
+   
       const images = [
         { src: neverGiveUp, text: "Never Give Up" },
         { src: learnToRest, text: "Learn to Rest" },

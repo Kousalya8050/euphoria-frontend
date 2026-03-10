@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal'; // Using react-modal as requested
 import './VideoLessonsPage.css';
@@ -7,8 +7,7 @@ import video_lesson1 from './assets/video_lessonspage/video_lesson1.png';
 
 Modal.setAppElement('#root');
 
-const API_KEY = 'AIzaSyCngySm9tpqUTHvEqP6jaOHUsDVlov3AKI';
-const CHANNEL_ID = 'UC7IcJI8PUf5Z3zKxnZvTBog'; 
+
 
 
 
@@ -16,7 +15,7 @@ const VideoLessons = () => {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [loadingMore, setLoadingMore] = useState(false);
+  const [loadingMore] = useState(false);
   // const [nextPageToken, setNextPageToken] = useState('');
   const [allVideos, setAllVideos] = useState([]);
   const [activeTab, setActiveTab] = useState('playlists'); // 'lessons' or 'shorts'
@@ -32,12 +31,30 @@ const VideoLessons = () => {
     }
     return `${minutes}:${seconds.toString().padStart(2, '0')}`;
   };
+  const fetchVideos = useCallback(async () => {
+    setLoading(true);
+    try {
+      const url =
+        activeTab === "shorts"
+          ? "http://localhost:3000/api/youtube/shorts"
+          : "http://localhost:3000/api/youtube/playlists";
 
-  useEffect(() => {
-    setVideos([]);   // reset grid
-    fetchVideos();   // fetch based on activeTab (shorts or playlists)
+      const res = await axios.get(url);
+      const all = res.data.data || [];
+
+      setAllVideos(all);
+      setVideos(all.slice(0, 10));
+    } catch (error) {
+      console.error("Error loading videos", error);
+    }
+    setLoading(false);
   }, [activeTab]);
+  useEffect(() => {
+    setVideos([]); 
+    fetchVideos();
+  }, [activeTab, fetchVideos]);
 
+  
   // const fetchVideos = async (pageToken = '', isNewTab = false) => {
   //   if (pageToken) setLoadingMore(true);
   //   else setLoading(true);
@@ -104,27 +121,27 @@ const VideoLessons = () => {
   //   setLoading(false);
   // };
 
-  const fetchVideos = async () => {
-    setLoading(true);
+  // const fetchVideos = async () => {
+  //   setLoading(true);
   
-    try {
-      const url = 
-        activeTab === "shorts"
-          ? "http://localhost:3000/api/youtube/shorts"
-          : "http://localhost:3000/api/youtube/playlists";
+  //   try {
+  //     const url = 
+  //       activeTab === "shorts"
+  //         ? "http://localhost:3000/api/youtube/shorts"
+  //         : "http://localhost:3000/api/youtube/playlists";
   
-      const res = await axios.get(url);
+  //     const res = await axios.get(url);
   
-      const all = res.data.data || [];
+  //     const all = res.data.data || [];
   
-      setAllVideos(all);
-      setVideos(all.slice(0, 10));
-    } catch (error) {
-      console.error("Error loading videos", error);
-    }
+  //     setAllVideos(all);
+  //     setVideos(all.slice(0, 10));
+  //   } catch (error) {
+  //     console.error("Error loading videos", error);
+  //   }
   
-    setLoading(false);
-  };
+  //   setLoading(false);
+  // };
   const handleLoadMore = () => {
     const currentCount = videos.length;
   

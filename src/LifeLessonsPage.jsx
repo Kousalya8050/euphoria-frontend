@@ -7,8 +7,8 @@ import video_lesson1 from './assets/video_lessonspage/video_lesson1.png';
 
 Modal.setAppElement('#root');
 
-const API_KEY = 'AIzaSyCngySm9tpqUTHvEqP6jaOHUsDVlov3AKI';
-const CHANNEL_ID = 'UC9pRPRlo6wIOakEOi_2RWwA'; 
+// const API_KEY = 'AIzaSyCngySm9tpqUTHvEqP6jaOHUsDVlov3AKI';
+// const CHANNEL_ID = 'UC9pRPRlo6wIOakEOi_2RWwA'; 
 
 
 
@@ -16,7 +16,7 @@ const LifeLessons = () => {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [loadingMore, setLoadingMore] = useState(false);
+  const [loadingMore] = useState(false);
   // const [nextPageToken, setNextPageToken] = useState('');
   const [allVideos, setAllVideos] = useState([]);
   const [activeTab, setActiveTab] = useState('lessons'); // 'lessons' or 'shorts'
@@ -35,8 +35,8 @@ const LifeLessons = () => {
 
   useEffect(() => {
     fetchVideos_l('', true);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTab]);
-
   // const fetchVideos = async (pageToken = '', isNewTab = false) => {
   //   if (pageToken) setLoadingMore(true);
   //   else setLoading(true);

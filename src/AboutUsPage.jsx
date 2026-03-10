@@ -10,7 +10,7 @@ import "swiper/css/autoplay";
 
 // Import decorative assets
 import aboutUsBanner from './assets/aboutuspage/aboutUsBanner.png'; 
-import footerWaveImage from './assets/homepage/footer.png'; // Your main wave background
+
 
 // Import all 15 grid images
 import gridImg1 from './assets/aboutuspage/gridImg101.png';
@@ -40,24 +40,11 @@ const AboutUsPage = () => {
     gridImg11, gridImg12, gridImg13, gridImg14, gridImg15
   ];
   const paragraphText = `When I first built Psych2Go in 2008, my vision was to establish a platform for people to communicate, create, and discuss all things psychology, mental health and life. Being the loner in high school, and an introvert, I didn’t know there was a place that allowed friendships, learning and community to develop. Thanks to Tumblr, I was able to post content about psychology, mental health awareness, and other content related to psychology. From there, a small community was formed. You all came to offer answers to questions I had, and even ask more questions on topics I myself was starting to learn about. Those were the best days of Psych2Go, at least for me. Now, we have so many animators, writers, voice actors, and over a thousand videos on Youtube about all things psychology and mental health and everything in between. However, things at Psych2Go is beginning to feel a little too corporate. Too repetitive, too distant from what we used to be.`;
-  const navLinks = [
-    { name: 'Home', path: '#', marginLeft: '0px' },
-    { name: 'About Us', path: '#', marginLeft: '44px' }, // Example value
-    { name: 'Academic', path: '#', marginLeft: '113px' }, // Example value
-    { name: 'Casual', path: '#', marginLeft: '187px' }, // Example value
-    { name: 'Blog', path: '#', marginLeft: '238px' },   // Example value
-    { name: 'Video Lessons', path: '#', marginLeft: '268px' }, // Example value
-  ];
+ 
   
   // IMPORTANT: Replace placeholder icon paths with your actual icon image files.
   // These should ideally be white icons, possibly within a light circle as suggested by the image.
-  const socialLinks = [
-    { name: 'Email', icon: 'path/to/envelope-icon.svg', path: 'mailto:info@example.com' },
-    { name: 'Twitter', icon: 'path/to/x-icon.svg', path: '#' },
-    { name: 'LinkedIn', icon: 'path/to/linkedin-icon.svg', path: '#' },
-    { name: 'WhatsApp', icon: 'path/to/whatsapp-icon.svg', path: '#' },
-    { name: 'Info', icon: 'path/to/info-icon.svg', path: '#' }, // Or Instagram, etc.
-  ];
+
   
 
   return (

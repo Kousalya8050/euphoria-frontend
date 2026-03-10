@@ -8,7 +8,7 @@ import psychodynamicImg from './assets/psychotherapy/woman-lying-couch-therapy-s
 import Ellipse1 from './assets/psychotherapy/Ellipse1.svg';
 import Ellipse2 from './assets/psychotherapy/Ellipse2.svg';
 import Ellipse3 from './assets/psychotherapy/Ellipse3.svg';
-import Ellipse4 from './assets/psychotherapy/Ellipse4.svg';
+
 import circleImage from './assets/psychotherapy/caucasian-teenage-girl.png';
 import behavioralImg from './assets/psychotherapy/children-psyhology-concept-session-psychologist-treatment.png';
 import cognitiveImg from './assets/psychotherapy/visuals-psychiatric-therapy-counseling-sessions.png';
@@ -22,7 +22,6 @@ import Icon3 from './assets/psychotherapy/icon3.svg';
 import Icon4 from './assets/psychotherapy/icon4.svg';
 import Icon5 from './assets/psychotherapy/icon5.svg';
 import Icon6 from './assets/psychotherapy/icon6.svg';
-import footerWaveImage from './assets/homepage/footer.png'; // Your main wave background
 
 // import Vector1 from './assets/psychotherapy/Vector1.svg';
 // import Vector2 from './assets/psychotherapy/Vector2.svg';
@@ -45,24 +44,6 @@ const PsychotherapyTypes = () => {
         message: ""
       });
       
-  const navLinks = [
-    { name: 'Home', path: '#', marginLeft: '0px' },
-    { name: 'About Us', path: '#', marginLeft: '44px' }, // Example value
-    { name: 'Academic', path: '#', marginLeft: '113px' }, // Example value
-    { name: 'Casual', path: '#', marginLeft: '187px' }, // Example value
-    { name: 'Blog', path: '#', marginLeft: '238px' },   // Example value
-    { name: 'Video Lessons', path: '#', marginLeft: '268px' }, // Example value
-  ];
-  
-  // IMPORTANT: Replace placeholder icon paths with your actual icon image files.
-  // These should ideally be white icons, possibly within a light circle as suggested by the image.
-  const socialLinks = [
-    { name: 'Email', icon: 'path/to/envelope-icon.svg', path: 'mailto:info@example.com' },
-    { name: 'Twitter', icon: 'path/to/x-icon.svg', path: '#' },
-    { name: 'LinkedIn', icon: 'path/to/linkedin-icon.svg', path: '#' },
-    { name: 'WhatsApp', icon: 'path/to/whatsapp-icon.svg', path: '#' },
-    { name: 'Info', icon: 'path/to/info-icon.svg', path: '#' }, // Or Instagram, etc.
-  ];
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -173,9 +154,9 @@ useEffect(() => {
           </div>
           <div className="therapy-image-wrapper">
             <img src={psychodynamicImg} alt="Psychodynamic Therapy" className="therapy-img" />
-            <img src={circleImage} alt="Circle Image" className="circle-image" />
-            <img src={Ellipse1} alt="Circle Image" className="green-circle" />
-            <img src={Ellipse2} alt="Circle Image" className="green-circle1" />
+            <img src={circleImage} alt="Circle graphic" className="circle-image" />
+            <img src={Ellipse1} alt="Circle graphic" className="green-circle" />
+            <img src={Ellipse2} alt="Circle graphic" className="green-circle1" />
            
           </div>
         </div>
@@ -184,7 +165,7 @@ useEffect(() => {
         <div className="therapy-type-block reverse">
           <div className="therapy-image-wrapper">
             <img src={behavioralImg} alt="Behavioral Therapy" className="therapy-img3" />
-            <img src={Ellipse3} alt="Circle Image" className="green-circle2" />
+            <img src={Ellipse3} alt="Circle graphic" className="green-circle2" />
           </div>
           <div className="therapy-text">
             <h4>Behavioral Therapy</h4>
@@ -200,7 +181,7 @@ useEffect(() => {
         <div className="therapy-type-block reverse offset-image-left">
           <div className="therapy-image-wrapper offset-img-wrapper">
             <img src={cognitiveImg} alt="Cognitive Therapy" className="therapy-img1" />
-            <img src={Ellipse1} alt="Circle Image" className="green-circle3" />
+            <img src={Ellipse1} alt="Circle graphic" className="green-circle3" />
           </div>
           <div className="therapy-text">
             <h4>Cognitive Therapy</h4>
@@ -224,7 +205,7 @@ useEffect(() => {
           </div>
           <div className="therapy-image-wrapper">
             <img src={humanisticImg} alt="Humanistic Therapy" className="therapy-img3" />
-            <img src={Ellipse2} alt="Circle Image" className="green-circle4" />
+            <img src={Ellipse2} alt="Circle graphic" className="green-circle4" />
           </div>
         </div>
 
@@ -259,7 +240,7 @@ useEffect(() => {
           </div>
           <div className="therapy-image-wrapper">
             <img src={familyImg} alt="Humanistic Therapy" className="therapy-img3" />
-            <img src={Ellipse3} alt="Circle Image" className="green-circle5" />
+            <img src={Ellipse3} alt="Circle graphic" className="green-circle5" />
           </div>
         </div>
         {/* Section 7: Image Left, Content Right */}

@@ -8,7 +8,7 @@ import Twitter from './assets/footer/twiwhi.webp';
 import Bluesky from './assets/footer/bluesky.png'
 
 import footerWaveImage from './assets/homepage/footer.png';
-import rightWave from './assets/homepage/wave-middle-right.png';
+
 
 /* ---- Footer data ---- */
 const navLinks = [

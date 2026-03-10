@@ -7,7 +7,6 @@ import Footer from "./Footer_page";
 
 // Import your assets - you will need to add these images to your project
 
-import footerWaveImage from './assets/homepage/footer.png'; // Your main wave background
 
 // --- Data for the page (can be replaced with API data later) ---
 // const tags = [
@@ -19,24 +18,10 @@ import footerWaveImage from './assets/homepage/footer.png'; // Your main wave ba
 //   'Interviews-Team', 'Intelligence', 'Interviews', 'Interesting Facts'
 // ];
 
-const navLinks = [
-    { name: 'Home', path: '#', marginLeft: '0px' },
-    { name: 'About Us', path: '#', marginLeft: '44px' }, // Example value
-    { name: 'Academic', path: '#', marginLeft: '113px' }, // Example value
-    { name: 'Casual', path: '#', marginLeft: '187px' }, // Example value
-    { name: 'Blogs', path: '#', marginLeft: '238px' },   // Example value
-    { name: 'Video Lessons', path: '#', marginLeft: '268px' }, // Example value
-  ];
-  
+
   // IMPORTANT: Replace placeholder icon paths with your actual icon image files.
   // These should ideally be white icons, possibly within a light circle as suggested by the image.
-  const socialLinks = [
-    { name: 'Email', icon: 'path/to/envelope-icon.svg', path: 'mailto:info@example.com' },
-    { name: 'Twitter', icon: 'path/to/x-icon.svg', path: '#' },
-    { name: 'LinkedIn', icon: 'path/to/linkedin-icon.svg', path: '#' },
-    { name: 'WhatsApp', icon: 'path/to/whatsapp-icon.svg', path: '#' },
-    { name: 'Info', icon: 'path/to/info-icon.svg', path: '#' }, // Or Instagram, etc.
-  ];
+ 
   
 
 // const blogPosts = [
@@ -125,7 +110,7 @@ const BlogPostCard = ({ post }) => {
 
         <div className="post-card-meta">
         <a
-          href="#"
+          href="/blog"
           className="read-more-link"
           onClick={(e) => {
             e.preventDefault();

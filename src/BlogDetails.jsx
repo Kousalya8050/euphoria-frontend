@@ -118,7 +118,11 @@ return (
 <section className="blog-banner">
 
 {blog.banner_image && (
-<img src={blog.banner_image} className="banner-image" />
+  <img 
+  src={blog.banner_image} 
+  alt="Blog banner"
+  className="banner-image" 
+/>
 )}
 </section>
 

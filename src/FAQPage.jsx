@@ -4,28 +4,10 @@ import faqBanner from './assets/faq/photo-woman-with-sad-happy-paper-faces.png';
 import ellipse1 from './assets/faq/ellipse1.svg';
 import ellipse2 from './assets/faq/ellipse2.svg';
 import ellipse3 from './assets/faq/ellipse3.svg';
-import rightWave from './assets/homepage/wave-middle-right.png';
-import footerWaveImage from './assets/homepage/footer.png'; // Your main wave background
+
 import Footer from "./Footer_page";
 
-const navLinks = [
-  { name: 'Home', path: '#', marginLeft: '0px' },
-  { name: 'About Us', path: '#', marginLeft: '44px' }, // Example value
-  { name: 'Academic', path: '#', marginLeft: '113px' }, // Example value
-  { name: 'Casual', path: '#', marginLeft: '187px' }, // Example value
-  { name: 'Blog', path: '#', marginLeft: '238px' },   // Example value
-  { name: 'Video Lessons', path: '#', marginLeft: '268px' }, // Example value
-];
 
-// IMPORTANT: Replace placeholder icon paths with your actual icon image files.
-// These should ideally be white icons, possibly within a light circle as suggested by the image.
-const socialLinks = [
-  { name: 'Email', icon: 'path/to/envelope-icon.svg', path: 'mailto:info@example.com' },
-  { name: 'Twitter', icon: 'path/to/x-icon.svg', path: '#' },
-  { name: 'LinkedIn', icon: 'path/to/linkedin-icon.svg', path: '#' },
-  { name: 'WhatsApp', icon: 'path/to/whatsapp-icon.svg', path: '#' },
-  { name: 'Info', icon: 'path/to/info-icon.svg', path: '#' }, // Or Instagram, etc.
-];
 const ITEMS_PER_PAGE = 10;
 
 const allQuestions = [

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import {  useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import Modal from "react-modal";
 import "./SearchResults.css";
@@ -31,7 +31,7 @@ const BlogPostCard = ({ post }) => {
           dangerouslySetInnerHTML={{ __html: post.blog_content1_text?.substring(0, 120) + "..." }}
         />
         <div className="post-card1-meta">
-          <a href="#" className="read-more1-link" onClick={(e) => { e.preventDefault(); handleReadMore(); }}>
+          <a href="/blogs" className="read-more1-link" onClick={(e) => { e.preventDefault(); handleReadMore(); }}>
             Read More →
           </a>
           <span className="post-card1-author-date">
@@ -44,7 +44,7 @@ const BlogPostCard = ({ post }) => {
 };
 
 export default function SearchResults() {
-  const navigate = useNavigate();
+  
   const [searchParams] = useSearchParams();
 
   const query = searchParams.get("query") || "";
@@ -92,7 +92,8 @@ export default function SearchResults() {
         }
       })
       .catch(() => setLoading(false));
-  }, [query]);
+  
+}, [query, typeParam]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

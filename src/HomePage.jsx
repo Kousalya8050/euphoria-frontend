@@ -30,7 +30,6 @@ import blogIcon from "./assets/homepage/blog4.png";
 // import linkedinIcon from './assets/social-linkedin.svg';
 // import whatsappIcon from './assets/social-whatsapp.svg';
 // import facebookIcon from './assets/social-facebook.svg';
-import footerWaveImage from './assets/homepage/footer.png';
 import rightWave from './assets/homepage/wave-middle-right.png';
 
 
@@ -78,7 +77,7 @@ const HomePage = () => {
   
           <div className="post-card2-meta">
           <a
-            href="#"
+            href="/blogs"
             className="read-more-link2"
             onClick={(e) => {
               e.preventDefault();
@@ -156,29 +155,22 @@ const HomePage = () => {
   const [recentPosts, setRecentPosts] = useState([]);
 
 
-  const navLinks = [
-    { name: 'Home', path: '/', marginLeft: '0px' },
-    { name: 'About Us', path: '/about', marginLeft: '0px' }, // Example value
-    { name: 'Blogs', path: '/blogs', marginLeft: '0px' }, // Example value
-    { name: 'Video Lessons', path: '/videolessons', marginLeft: '0px' }, // Example value
-    { name: 'Life Lessons', path: '/lifelessons', marginLeft: '0px' },   // Example value
-    { name: 'Psychotherapy Types', path: '/psychotherapy', marginLeft: '0px' }, // Example value
+  // const navLinks = [
+  //   { name: 'Home', path: '/', marginLeft: '0px' },
+  //   { name: 'About Us', path: '/about', marginLeft: '0px' }, // Example value
+  //   { name: 'Blogs', path: '/blogs', marginLeft: '0px' }, // Example value
+  //   { name: 'Video Lessons', path: '/videolessons', marginLeft: '0px' }, // Example value
+  //   { name: 'Life Lessons', path: '/lifelessons', marginLeft: '0px' },   // Example value
+  //   { name: 'Psychotherapy Types', path: '/psychotherapy', marginLeft: '0px' }, // Example value
     
-    { name: 'Resources', path: '/resources', marginLeft: '268px' }, // Example value
-    { name: 'Contact Us', path: '/contactus', marginLeft: '268px' }, // Example value
-    { name: 'FAQ', path: '/faq', marginLeft: '330px' }, // Example value
-  ];
-  const firstColumnLinks = navLinks.slice(0, 6);
-const secondColumnLinks = navLinks.slice(6);
+  //   { name: 'Resources', path: '/resources', marginLeft: '268px' }, // Example value
+  //   { name: 'Contact Us', path: '/contactus', marginLeft: '268px' }, // Example value
+  //   { name: 'FAQ', path: '/faq', marginLeft: '330px' }, // Example value
+  // ];
+ 
   // IMPORTANT: Replace placeholder icon paths with your actual icon image files.
   // These should ideally be white icons, possibly within a light circle as suggested by the image.
-  const socialLinks = [
-    { name: 'Email', icon: '/assets/homepage/homepage103.jpg', path: 'mailto:info@example.com' },
-    { name: 'Twitter', icon: 'path/to/x-icon.svg', path: '#' },
-    { name: 'LinkedIn', icon: 'path/to/linkedin-icon.svg', path: '#' },
-    { name: 'WhatsApp', icon: 'path/to/whatsapp-icon.svg', path: '#' },
-    { name: 'Info', icon: 'path/to/info-icon.svg', path: '#' }, // Or Instagram, etc.
-  ];
+ 
   
   const handleCategoryClick = (categoryLabel) => {
     // We add src=category so the results page knows to change the title
