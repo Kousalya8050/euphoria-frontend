@@ -7,7 +7,10 @@ import video_lesson1 from './assets/video_lessonspage/video_lesson1.png';
 
 Modal.setAppElement('#root');
 
-
+const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://euphoria-backend-oii0.onrender.com";
 
 
 
@@ -35,9 +38,9 @@ const VideoLessons = () => {
     setLoading(true);
     try {
       const url =
-        activeTab === "shorts"
-          ? "http://localhost:3000/api/youtube/shorts"
-          : "http://localhost:3000/api/youtube/playlists";
+  activeTab === "shorts"
+    ? `${API_URL}/api/youtube/shorts`
+    : `${API_URL}/api/youtube/playlists`;
 
       const res = await axios.get(url);
       const all = res.data.data || [];
