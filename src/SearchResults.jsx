@@ -14,9 +14,13 @@ const BlogPostCard = ({ post }) => {
     if (!post.slug) return;
     navigate(`/blogs/${post.slug}`);
   };
+  const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://euphoria-backend-oii0.onrender.com";
 
   const imageUrl = post.banner_image 
-    ? `http://localhost:3000/${post.banner_image.replace(/\\/g, '/')}` 
+    ? `${API_URL}/${post.banner_image.replace(/\\/g, '/')}` 
     : "https://via.placeholder.com/400x250";
 
   return (
@@ -63,7 +67,7 @@ export default function SearchResults() {
   useEffect(() => {
     if (!query) return;
     setLoading(true);
-    axios.get(`http://localhost:3000/api/search-all?q=${query}`)
+    axios.get(`${API_URL}/api/search-all?q=${query}`)
       .then((res) => {
         const vids = res.data.videos || [];
         const blgs = res.data.blogs || [];

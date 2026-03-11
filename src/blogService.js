@@ -1,7 +1,10 @@
 // src/services/blogService.js
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api";
+const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://euphoria-backend-oii0.onrender.com";
 
 // CREATE BLOG
 export const createBlog = async (formData) => {

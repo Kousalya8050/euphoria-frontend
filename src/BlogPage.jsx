@@ -153,16 +153,21 @@ const BlogPage = () => {
   // Show all tags for desktop, limited for mobile
   const visibleTags = isMobile ? tags.slice(0, 10) : tags;
 
- 
+  const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://euphoria-backend-oii0.onrender.com";
+
+
   useEffect(() => {
-    fetch("http://localhost:3000/api/blog-categories")
+    fetch(`${API_URL}/api/blog-categories`)
       .then(res => res.json())
       .then(data => {
         setTags(["All", ...data]); 
       })
       .catch(err => console.log(err));
   
-      fetch("http://localhost:3000/api/blogs_listing")
+      fetch(`${API_URL}/api/blogs_listing`)
       .then(async (res) => {
         if (!res.ok) {
           const txt = await res.text();

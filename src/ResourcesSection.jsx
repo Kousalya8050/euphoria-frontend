@@ -56,6 +56,10 @@ const ResourcesSection = () => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://euphoria-backend-oii0.onrender.com";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -90,7 +94,7 @@ const ResourcesSection = () => {
     }
   
     try {
-      const res = await axios.post("http://localhost:3000/api/newsletter/subscribe", {
+      const res = await axios.post(`${API_URL}/api/newsletter/subscribe`, {
         name,
         email,
       });

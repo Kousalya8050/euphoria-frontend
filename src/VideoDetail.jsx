@@ -9,11 +9,14 @@ const VideoDetail = () => {
   const navigate = useNavigate();
   const [videoData, setVideoData] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://euphoria-backend-oii0.onrender.com";
   useEffect(() => {
     setLoading(true);
     // Ensure backend API handles ID search specifically
-    axios.get(`http://localhost:3000/api/search-all?q=${id}`)
+    axios.get(`${API_URL}/api/search-all?q=${id}`)
       .then((res) => {
         const found = res.data.videos?.find(v => (v.id?.videoId || v.id) === id);
         setVideoData(found);
@@ -43,7 +46,7 @@ const VideoDetail = () => {
       "name": "Euphoria",
       "logo": {
         "@type": "ImageObject",
-        "url": "http://localhost:3001/logo.png" 
+        "url": "https://hilarious-travesseiro-4a5013.netlify.app/logo.png" 
       }
     }
   };

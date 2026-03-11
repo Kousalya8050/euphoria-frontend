@@ -256,6 +256,10 @@ const HomePage = () => {
 const [suggestions, setSuggestions] = useState([]);
 
 const navigate = useNavigate();
+const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://euphoria-backend-oii0.onrender.com";
 useEffect(() => {
   if (searchText.trim().length < 2) {
     setSuggestions([]);
@@ -264,7 +268,7 @@ useEffect(() => {
 
   // Call the new unified API
   axios
-    .get(`http://localhost:3000/api/search-all?q=${searchText}`)
+    .get(`${API_URL}/api/search-all?q=${searchText}`)
     .then((res) => {
       // Combine blogs and videos into one list for suggestions
       const videoSuggestions = (res.data.videos || []).map(v => ({ ...v, type: 'video' }));
@@ -293,7 +297,7 @@ useEffect(() => {
 
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/blogs_listing")
+    fetch(`${API_URL}/api/blogs_listing`)
       .then(res => res.json())
       .then(data => {
   

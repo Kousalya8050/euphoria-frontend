@@ -113,8 +113,13 @@ const ContactUs = () => {
         formDataToSend.append("file", file);
       }
   
+      const API_URL =
+      window.location.hostname === "localhost"
+        ? "http://localhost:3000"
+        : "https://euphoria-backend-oii0.onrender.com";
+
       const response = await axios.post(
-        "http://localhost:3000/api/contact-us",
+        `${API_URL}/api/contact-us`,
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" }

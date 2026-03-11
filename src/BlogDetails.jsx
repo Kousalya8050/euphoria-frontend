@@ -60,12 +60,17 @@ const BlogDetails = () => {
     }, [slug]);
     
     
-    useEffect(() => {
-    fetch("http://localhost:3000/api/blog-categories")
-    .then(res => res.json())
-    .then(setCategories)
-    .catch(console.error);
-    }, []);
+    const API_URL =
+    window.location.hostname === "localhost"
+      ? "http://localhost:3000"
+      : "https://euphoria-backend-oii0.onrender.com";
+  
+  useEffect(() => {
+    fetch(`${API_URL}/api/blog-categories`)
+      .then(res => res.json())
+      .then(setCategories)
+      .catch(console.error);
+  }, []);
     
     
     const headings = useMemo(() => {

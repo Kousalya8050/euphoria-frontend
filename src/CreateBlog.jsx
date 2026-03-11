@@ -151,7 +151,10 @@ const [editContents, setEditContents] = useState(null);
   //     setLoading(false);
   //   }
   // };
-
+  const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://euphoria-backend-oii0.onrender.com";
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -188,7 +191,7 @@ const [editContents, setEditContents] = useState(null);
       if (isEdit && editId) {
         // ✅ UPDATE EXISTING BLOG
         await axios.put(
-          `http://localhost:3000/api/blogs/${editId}`,
+          `${API_URL}/api/blogs/${editId}`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -196,7 +199,7 @@ const [editContents, setEditContents] = useState(null);
       } else {
         // ✅ CREATE NEW BLOG
         await axios.post(
-          "http://localhost:3000/api/blogs",
+          `${API_URL}/api/blogs`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -356,7 +359,7 @@ const [editContents, setEditContents] = useState(null);
   const fetchBlogs = useCallback(async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/api/blogs_listing?status=${statusTab}`
+        `h${API_URL}/api/blogs_listing?status=${statusTab}`
       );
   
       setBlogs(res.data);
@@ -374,7 +377,7 @@ const [editContents, setEditContents] = useState(null);
   const handleView = async (slug) => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/api/blogs/${slug}`
+        `${API_URL}/api/blogs/${slug}`
       );
   
       console.log("BLOG DETAILS:", res.data);
@@ -391,11 +394,11 @@ const [editContents, setEditContents] = useState(null);
     console.log("▶ handleStatus triggered");
     console.log("ID:", id);
     console.log("STATUS:", status);
-    console.log("URL:", `http://localhost:3000/api/blogs/${id}/status`);
+    console.log("URL:", `${API_URL}/api/blogs/${id}/status`);
   
     try {
       const response = await axios.patch(
-        `http://localhost:3000/api/blogs/${id}/status`,
+        `${API_URL}/api/blogs/${id}/status`,
         { status },
         {
           headers: {
@@ -437,7 +440,7 @@ const [editContents, setEditContents] = useState(null);
   
     try {
       await axios.delete(
-        `http://localhost:3000/api/blogs/${id}`
+        `${API_URL}0/api/blogs/${id}`
       );
       alert("Blog deleted");
       fetchBlogs();
@@ -527,7 +530,7 @@ const [editContents, setEditContents] = useState(null);
   const handleEdit = async (blog) => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/api/blogs/${blog.slug}`
+        `${API_URL}/api/blogs/${blog.slug}`
       );
   
       const fullBlog = res.data;
