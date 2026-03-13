@@ -256,11 +256,12 @@ const HomePage = () => {
 const [suggestions, setSuggestions] = useState([]);
 
 const navigate = useNavigate();
-const API_URL =
+
+useEffect(() => {
+  const API_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:3000"
     : "https://euphoria-backend-oii0.onrender.com";
-useEffect(() => {
   if (searchText.trim().length < 2) {
     setSuggestions([]);
     return;
@@ -297,6 +298,10 @@ useEffect(() => {
 
 
   useEffect(() => {
+    const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://euphoria-backend-oii0.onrender.com";
     fetch(`${API_URL}/api/blogs_listing`)
       .then(res => res.json())
       .then(data => {

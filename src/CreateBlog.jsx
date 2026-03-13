@@ -357,6 +357,10 @@ const [editContents, setEditContents] = useState(null);
   // };
   
   const fetchBlogs = useCallback(async () => {
+    const API_URL =
+    window.location.hostname === "localhost"
+      ? "http://localhost:3000"
+      : "https://euphoria-backend-oii0.onrender.com";
     try {
       const res = await axios.get(
         `h${API_URL}/api/blogs_listing?status=${statusTab}`

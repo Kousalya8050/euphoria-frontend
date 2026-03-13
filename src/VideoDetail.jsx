@@ -9,11 +9,12 @@ const VideoDetail = () => {
   const navigate = useNavigate();
   const [videoData, setVideoData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const API_URL =
+  
+  useEffect(() => {
+    const API_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:3000"
     : "https://euphoria-backend-oii0.onrender.com";
-  useEffect(() => {
     setLoading(true);
     // Ensure backend API handles ID search specifically
     axios.get(`${API_URL}/api/search-all?q=${id}`)

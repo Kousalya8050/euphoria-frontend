@@ -60,12 +60,13 @@ const BlogDetails = () => {
     }, [slug]);
     
     
-    const API_URL =
-    window.location.hostname === "localhost"
-      ? "http://localhost:3000"
-      : "https://euphoria-backend-oii0.onrender.com";
+   
   
   useEffect(() => {
+    const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://euphoria-backend-oii0.onrender.com";
     fetch(`${API_URL}/api/blog-categories`)
       .then(res => res.json())
       .then(setCategories)
