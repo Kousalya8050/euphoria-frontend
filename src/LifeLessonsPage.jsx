@@ -102,13 +102,17 @@ const LifeLessons = () => {
   
   //   setLoading(false);
   // };
+  const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://euphoria-backend-oii0.onrender.com";
 
   const fetchVideos_l = async () => {
     setLoading(true);
   
     try {
       const res = await axios.get(
-        `http://localhost:3000/api/youtube_l/${activeTab}`
+        `${API_URL}/api/youtube_l/${activeTab}`
       );
   
       const all = res.data.data || [];

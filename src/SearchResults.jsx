@@ -65,6 +65,10 @@ export default function SearchResults() {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   useEffect(() => {
+    const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://euphoria-backend-oii0.onrender.com";
     if (!query) return;
     setLoading(true);
     axios.get(`${API_URL}/api/search-all?q=${query}`)
