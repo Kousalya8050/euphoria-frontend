@@ -363,7 +363,7 @@ const [editContents, setEditContents] = useState(null);
       : "https://euphoria-backend-oii0.onrender.com";
     try {
       const res = await axios.get(
-        `h${API_URL}/api/blogs_listing?status=${statusTab}`
+        `${API_URL}/api/blogs_listing?status=${statusTab}`
       );
   
       setBlogs(res.data);

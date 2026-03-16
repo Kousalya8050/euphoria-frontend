@@ -442,7 +442,7 @@ useEffect(() => {
         region: "UK",
         focus: "Raising awareness about mental health issues, promoting well-being, and advocating for better mental health support and services",
         website: "www.mentalhealth-uk.org",
-        url: "hhttps://mentalhealth-uk.org/",
+        url: "https://mentalhealth-uk.org/",
       },
       {
         name: "Mind",
