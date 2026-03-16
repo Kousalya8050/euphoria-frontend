@@ -8,7 +8,7 @@ const API_URL =
 
 // CREATE BLOG
 export const createBlog = async (formData) => {
-  const res = await axios.post(`${API_URL}/blogs`, formData, {
+  const res = await axios.post(`${API_URL}/api/blogs`, formData, {
     headers: { "Content-Type": "multipart/form-data" },
   });
   return res.data;
@@ -16,12 +16,12 @@ export const createBlog = async (formData) => {
 
 // GET ALL BLOGS
 export const getAllBlogs = async () => {
-  const res = await axios.get(`${API_URL}/blogs_listing`);
+  const res = await axios.get(`${API_URL}/api/blogs_listing`);
   return res.data;
 };
 
 // GET BLOG BY SLUG ✅
 export const getBlogBySlug = async (slug) => {
-  const res = await axios.get(`${API_URL}/blogs/${slug}`);
+  const res = await axios.get(`${API_URL}/api/blogs/${slug}`);
   return res.data;
 };
