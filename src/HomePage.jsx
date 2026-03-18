@@ -7,8 +7,8 @@ import Footer from "./Footer_page";
 
 
 import homepage1 from './assets/homepage/homepage103.jpg';
-import homepage2 from './assets/homepage/homepage105.jpg';
-import homepage3 from './assets/homepage/homepage102.jpg';
+import homepage2 from './assets/homepage/h2.jpeg';
+import homepage3 from './assets/homepage/h3.jpg';
 import homepage4 from './assets/homepage/homepage107.jpg';
 import homepage5 from './assets/homepage/homepage5.png';
 import homepage6 from './assets/homepage/homepage6.png';

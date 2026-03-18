@@ -39,6 +39,7 @@
 
 // export default BlogDetails;import { useParams } from "react-router-dom";
 import { useEffect, useState, useMemo } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { getBlogBySlug } from "./blogService";
@@ -47,6 +48,7 @@ import Footer from "./Footer_page";
 
 
 const BlogDetails = () => {
+  const [tocOpen, setTocOpen] = useState(false);
     const navigate = useNavigate(); 
     const [categories, setCategories] = useState([]);
     const { slug } = useParams();
@@ -137,44 +139,58 @@ return (
 <section className="blog-layout">
 {/* LEFT – Table of Contents */}
 <aside className="toc">
-<h4>Table of Contents</h4>
-<ul>
-{headings.map((h, i) => (
-<li key={i} className={h.tag === "H3" ? "sub" : ""}>
-<a
-  href={`#${h.id}`}
-  onClick={(e) => {
-    e.preventDefault();
-    const el = document.getElementById(h.id);
-    if (el) {
-      el.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-      window.history.pushState(null, "", `#${h.id}`);
-    }
-  }}
->
-  {h.text}
-</a>
-</li>
-))}
-</ul>
-<hr className="toc-divider" />
-<h4 className="categories-title">Categories</h4>
+  <div 
+    className="toc-header"
+    onClick={() => setTocOpen(!tocOpen)}
+  >
+    <h4>Table of Contents</h4>
+    <span className={`arrow ${tocOpen ? "open" : ""}`}>⌄</span>
+  </div>
 
-<div className="categories">
-{categories.map((cat, i) => (
-    <span
-  key={i}
-  className={cat === blog.product_category ? "active" : ""}
-  onClick={() => navigate(`/blogs?category=${encodeURIComponent(cat)}`)}
-  style={{ cursor: "pointer" }}
->
-  {cat}
-</span>
-))}
-</div>
+  <div className={`toc-body ${tocOpen ? "show" : ""}`}>
+    <ul>
+      {headings.map((h, i) => (
+        <li key={i} className={h.tag === "H3" ? "sub" : ""}>
+          <a
+            href={`#${h.id}`}
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById(h.id);
+              if (el) {
+                el.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+                window.history.pushState(null, "", `#${h.id}`);
+              }
+
+              setTocOpen(false); // close after click (mobile UX)
+            }}
+          >
+            {h.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <hr className="toc-divider" />
+
+    <h4 className="categories-title">Categories</h4>
+
+    <div className="categories">
+      {categories.map((cat, i) => (
+        <span
+          key={i}
+          className={cat === blog.product_category ? "active" : ""}
+          onClick={() =>
+            navigate(`/blogs?category=${encodeURIComponent(cat)}`)
+          }
+        >
+          {cat}
+        </span>
+      ))}
+    </div>
+  </div>
 </aside>
 
 
