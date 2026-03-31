@@ -532,39 +532,46 @@ const [editContents, setEditContents] = useState(null);
   }, [editContents, mainTab]);
    
   const handleEdit = async (blog) => {
+    console.log("--- DEBUG START: EDIT PROCESS ---");
+    console.log("1. Clicked Blog Object:", blog);
+  
     try {
-      const res = await axios.get(
-        `${API_URL}/api/blogs/${blog.slug}`
-      );
-  
+      const res = await axios.get(`${API_URL}/api/blogs/${blog.slug}`);
       const fullBlog = res.data;
-      console.log("FULL BLOG DATA:", fullBlog);
   
-      // 🔥 MUST COME FIRST
+      console.log("2. API Response (Full Blog):", fullBlog);
+  
+      // 🔥 Check specifically for the missing fields in the API response
+      console.log("3. Checking Headings in API:", {
+        h2_1: fullBlog.h2_1,
+        h3_1: fullBlog.h3_1,
+        meta_title: fullBlog.blog_meta_title,
+        content1: fullBlog.blog_content1 ? "Present" : "MISSING"
+      });
+  
       setIsEdit(true);
       setEditId(fullBlog.id);
-  
-      // Switch tab
       setMainTab("create");
       setEditContents(fullBlog);
   
       const trimmedCategory = fullBlog.product_category?.trim() || "";
+      const isStandardCategory = categories.includes(trimmedCategory);
   
-      const headingFields = Object.fromEntries(
-        Array.from({ length: 10 }, (_, i) => [
-          [`h2_${i + 1}`, fullBlog[`h2_${i + 1}`] || ""],
-          [`h3_${i + 1}`, fullBlog[`h3_${i + 1}`] || ""],
-        ]).flat()
-      );
+      // Manually constructing headings to ensure no mapping errors
+      const headingFields = {};
+      for (let i = 1; i <= 10; i++) {
+        headingFields[`h2_${i}`] = fullBlog[`h2_${i}`] || "";
+        headingFields[`h3_${i}`] = fullBlog[`h3_${i}`] || "";
+      }
       
-      setForm(prev => ({
-        ...prev,
+      console.log("4. Constructed Headings Object:", headingFields);
+  
+      const newFormData = {
+        ...form, // Keep initial structure
         id: fullBlog.id,
         blog_title: fullBlog.blog_title || "",
         slug: fullBlog.slug || "",
-        product_category: categories.includes(trimmedCategory)
-          ? trimmedCategory
-          : "Others",
+        product_category: isStandardCategory ? trimmedCategory : "Others",
         blog_meta_title: fullBlog.blog_meta_title || "",
         blog_meta_description: fullBlog.blog_meta_description || "",
         banner_metatag: fullBlog.banner_metatag || "",
@@ -573,16 +580,29 @@ const [editContents, setEditContents] = useState(null);
         image2_metatag: fullBlog.image2_metatag || "",
         image3_metatag: fullBlog.image3_metatag || "",
         ...headingFields
-      }));
+      };
   
-      if (!categories.includes(trimmedCategory)) {
+      console.log("5. Final Object being sent to setForm:", newFormData);
+  
+      setForm(newFormData);
+  
+      if (!isStandardCategory && trimmedCategory !== "") {
         setCustomCategory(trimmedCategory);
       }
   
-      for (let i = 1; i <= 5; i++) {
-        const el = document.getElementById(`content${i}`);
-        if (el) el.innerHTML = fullBlog[`blog_content${i}`] || "";
-      }
+      // Checking DOM for contentEditable
+      setTimeout(() => {
+        console.log("6. Attempting to inject HTML into contentEditable divs...");
+        for (let i = 1; i <= 5; i++) {
+          const el = document.getElementById(`content${i}`);
+          if (el) {
+            el.innerHTML = fullBlog[`blog_content${i}`] || "";
+            console.log(`Div content${i} found and populated.`);
+          } else {
+            console.error(`Div content${i} NOT FOUND in DOM!`);
+          }
+        }
+      }, 200);
   
       setPreview({
         banner_image: fullBlog.banner_image || null,
@@ -592,12 +612,13 @@ const [editContents, setEditContents] = useState(null);
         image3: fullBlog.image3 || null,
       });
   
+      console.log("--- DEBUG END: EDIT PROCESS ---");
+  
     } catch (err) {
-      console.error("Failed to load blog for edit", err);
+      console.error("DEBUG ERROR:", err);
       alert("Unable to load blog for editing");
     }
   };
-  
 
 
 
