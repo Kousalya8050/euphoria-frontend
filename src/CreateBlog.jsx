@@ -538,6 +538,7 @@ const [editContents, setEditContents] = useState(null);
       );
   
       const fullBlog = res.data;
+      console.log("FULL BLOG DATA:", fullBlog);
   
       // 🔥 MUST COME FIRST
       setIsEdit(true);
@@ -549,8 +550,16 @@ const [editContents, setEditContents] = useState(null);
   
       const trimmedCategory = fullBlog.product_category?.trim() || "";
   
-      setForm({
-        id: fullBlog.id, // ✅ ADD THIS
+      const headingFields = Object.fromEntries(
+        Array.from({ length: 10 }, (_, i) => [
+          [`h2_${i + 1}`, fullBlog[`h2_${i + 1}`] || ""],
+          [`h3_${i + 1}`, fullBlog[`h3_${i + 1}`] || ""],
+        ]).flat()
+      );
+      
+      setForm(prev => ({
+        ...prev,
+        id: fullBlog.id,
         blog_title: fullBlog.blog_title || "",
         slug: fullBlog.slug || "",
         product_category: categories.includes(trimmedCategory)
@@ -563,13 +572,8 @@ const [editContents, setEditContents] = useState(null);
         image1_metatag: fullBlog.image1_metatag || "",
         image2_metatag: fullBlog.image2_metatag || "",
         image3_metatag: fullBlog.image3_metatag || "",
-        ...Object.fromEntries(
-          Array.from({ length: 10 }, (_, i) => [
-            [`h2_${i + 1}`, fullBlog[`h2_${i + 1}`] || ""],
-            [`h3_${i + 1}`, fullBlog[`h3_${i + 1}`] || ""],
-          ]).flat()
-        )
-      });
+        ...headingFields
+      }));
   
       if (!categories.includes(trimmedCategory)) {
         setCustomCategory(trimmedCategory);
@@ -637,7 +641,7 @@ const [editContents, setEditContents] = useState(null);
 
       <h2 style={{ textAlign: "center", marginBottom: "30px" }}>{isEdit ? "Edit Blog" : "Create Blog"}</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form  key={editId || "new"} onSubmit={handleSubmit}>
       <input type="hidden" name="id" value={form.id || ""} />
         {/* Blog Title */}
         <label>Blog Title</label>
