@@ -532,21 +532,22 @@ const [editContents, setEditContents] = useState(null);
   }, [editContents, mainTab]);
    
   const handleEdit = async (blog) => {
-    console.log("--- DEBUG START: EDIT PROCESS ---");
-    console.log("1. Clicked Blog Object:", blog);
+    console.log("--- [1] EDIT START ---");
+    console.log("Input Blog Overview:", blog);
   
     try {
       const res = await axios.get(`${API_URL}/api/blogs/${blog.slug}`);
       const fullBlog = res.data;
   
-      console.log("2. API Response (Full Blog):", fullBlog);
+      console.log("--- [2] API RESPONSE RECEIVED ---");
+      console.log("Full Data from DB:", fullBlog);
   
-      // 🔥 Check specifically for the missing fields in the API response
-      console.log("3. Checking Headings in API:", {
+      // CRITICAL CHECK: Are the fields actually in the response?
+      console.log("Check Specific Fields in API Response:", {
         h2_1: fullBlog.h2_1,
         h3_1: fullBlog.h3_1,
         meta_title: fullBlog.blog_meta_title,
-        content1: fullBlog.blog_content1 ? "Present" : "MISSING"
+        product_category: fullBlog.product_category
       });
   
       setIsEdit(true);
@@ -554,55 +555,55 @@ const [editContents, setEditContents] = useState(null);
       setMainTab("create");
       setEditContents(fullBlog);
   
-      const trimmedCategory = fullBlog.product_category?.trim() || "";
-      const isStandardCategory = categories.includes(trimmedCategory);
+      const clean = (val) => (val === null || val === undefined ? "" : val);
   
-      // Manually constructing headings to ensure no mapping errors
-      const headingFields = {};
-      for (let i = 1; i <= 10; i++) {
-        headingFields[`h2_${i}`] = fullBlog[`h2_${i}`] || "";
-        headingFields[`h3_${i}`] = fullBlog[`h3_${i}`] || "";
-      }
-      
-      console.log("4. Constructed Headings Object:", headingFields);
-  
-      const newFormData = {
-        ...form, // Keep initial structure
+      const updatedForm = {
         id: fullBlog.id,
-        blog_title: fullBlog.blog_title || "",
-        slug: fullBlog.slug || "",
-        product_category: isStandardCategory ? trimmedCategory : "Others",
-        blog_meta_title: fullBlog.blog_meta_title || "",
-        blog_meta_description: fullBlog.blog_meta_description || "",
-        banner_metatag: fullBlog.banner_metatag || "",
-        thumbnail_metatag: fullBlog.thumbnail_metatag || "",
-        image1_metatag: fullBlog.image1_metatag || "",
-        image2_metatag: fullBlog.image2_metatag || "",
-        image3_metatag: fullBlog.image3_metatag || "",
-        ...headingFields
+        blog_title: clean(fullBlog.blog_title),
+        slug: clean(fullBlog.slug),
+        product_category: clean(fullBlog.product_category),
+        blog_meta_title: clean(fullBlog.blog_meta_title),
+        blog_meta_description: clean(fullBlog.blog_meta_description),
+        banner_metatag: clean(fullBlog.banner_metatag),
+        thumbnail_metatag: clean(fullBlog.thumbnail_metatag),
+        image1_metatag: clean(fullBlog.image1_metatag),
+        image2_metatag: clean(fullBlog.image2_metatag),
+        image3_metatag: clean(fullBlog.image3_metatag),
       };
   
-      console.log("5. Final Object being sent to setForm:", newFormData);
-  
-      setForm(newFormData);
-  
-      if (!isStandardCategory && trimmedCategory !== "") {
-        setCustomCategory(trimmedCategory);
+      // Mapping H2 and H3
+      for (let i = 1; i <= 10; i++) {
+        updatedForm[`h2_${i}`] = clean(fullBlog[`h2_${i}`]);
+        updatedForm[`h3_${i}`] = clean(fullBlog[`h3_${i}`]);
       }
   
-      // Checking DOM for contentEditable
+      console.log("--- [3] FORM OBJECT MAPPED ---");
+      console.log("Final object being sent to setForm:", updatedForm);
+  
+      setForm(updatedForm);
+  
+      // Category check
+      const isStandard = categories.includes(fullBlog.product_category?.trim());
+      console.log(`Is category "${fullBlog.product_category}" standard?`, isStandard);
+      
+      if (!isStandard) {
+        console.log("Setting Custom Category to:", fullBlog.product_category);
+        setCustomCategory(fullBlog.product_category || "");
+      }
+  
+      // DOM Injection check
       setTimeout(() => {
-        console.log("6. Attempting to inject HTML into contentEditable divs...");
+        console.log("--- [4] TIMEOUT CONTENT CHECK ---");
         for (let i = 1; i <= 5; i++) {
           const el = document.getElementById(`content${i}`);
           if (el) {
             el.innerHTML = fullBlog[`blog_content${i}`] || "";
-            console.log(`Div content${i} found and populated.`);
+            console.log(`Element content${i} found and injected.`);
           } else {
-            console.error(`Div content${i} NOT FOUND in DOM!`);
+            console.warn(`Element content${i} NOT found in DOM. The tab might not have switched yet.`);
           }
         }
-      }, 200);
+      }, 300); // Increased slightly for safer DOM check
   
       setPreview({
         banner_image: fullBlog.banner_image || null,
@@ -612,11 +613,9 @@ const [editContents, setEditContents] = useState(null);
         image3: fullBlog.image3 || null,
       });
   
-      console.log("--- DEBUG END: EDIT PROCESS ---");
-  
     } catch (err) {
-      console.error("DEBUG ERROR:", err);
-      alert("Unable to load blog for editing");
+      console.error("--- [ERROR] EDIT FAILED ---");
+      console.error(err);
     }
   };
 
