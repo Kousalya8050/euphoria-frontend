@@ -76,15 +76,42 @@ const BlogDetails = () => {
   }, []);
     
     
+    // const headings = useMemo(() => {
+    // if (!blog) return [];
+    // const container = document.createElement("div");
+    // container.innerHTML = `${blog.blog_content1 || ""}${blog.blog_content2 || ""}${blog.blog_content3 || ""}${blog.blog_content4 || ""}${blog.blog_content5 || ""}`;
+    // return Array.from(container.querySelectorAll("h2, h3")).map(h => ({
+    // id: h.innerText.replace(/\s+/g, "-").toLowerCase(),
+    // text: h.innerText,
+    // tag: h.tagName
+    // }));
+    // }, [blog]);
     const headings = useMemo(() => {
-    if (!blog) return [];
-    const container = document.createElement("div");
-    container.innerHTML = `${blog.blog_content1 || ""}${blog.blog_content2 || ""}${blog.blog_content3 || ""}${blog.blog_content4 || ""}${blog.blog_content5 || ""}`;
-    return Array.from(container.querySelectorAll("h2, h3")).map(h => ({
-    id: h.innerText.replace(/\s+/g, "-").toLowerCase(),
-    text: h.innerText,
-    tag: h.tagName
-    }));
+      if (!blog) return [];
+    
+      const container = document.createElement("div");
+      container.innerHTML = `
+        ${blog.blog_content1 || ""}
+        ${blog.blog_content2 || ""}
+        ${blog.blog_content3 || ""}
+        ${blog.blog_content4 || ""}
+        ${blog.blog_content5 || ""}
+      `;
+    
+      const seen = new Set();
+    
+      return Array.from(container.querySelectorAll("h2, h3"))
+        .map(h => ({
+          id: h.innerText.replace(/\s+/g, "-").toLowerCase(),
+          text: h.innerText,
+          tag: h.tagName
+        }))
+        .filter(h => {
+          if (seen.has(h.id)) return false;
+          seen.add(h.id);
+          return true;
+        });
+    
     }, [blog]);
     useEffect(() => {
         if (!blog) return;
@@ -200,7 +227,7 @@ return (
 <h1>{blog.blog_title}</h1>
 
 
-<div id="content">
+{/* <div id="content">
 <div dangerouslySetInnerHTML={{ __html: blog.blog_content1 }} />
 <div dangerouslySetInnerHTML={{ __html: blog.blog_content2 }} />
 <div dangerouslySetInnerHTML={{ __html: blog.blog_content3 }} />
@@ -208,6 +235,29 @@ return (
 <div dangerouslySetInnerHTML={{ __html: blog.blog_content4 }} />
 {blog.image3 && <img src={blog.image3} alt={blog.image3_metatag} />}
 <div dangerouslySetInnerHTML={{ __html: blog.blog_content5 }} />
+</div> */}
+
+<div id="content">
+  <div dangerouslySetInnerHTML={{ __html: blog.blog_content1 }} />
+
+  {blog.image1 && (
+    <img src={blog.image1} alt={blog.image1_metatag} />
+  )}
+
+  <div dangerouslySetInnerHTML={{ __html: blog.blog_content2 }} />
+  <div dangerouslySetInnerHTML={{ __html: blog.blog_content3 }} />
+
+  {blog.image2 && (
+    <img src={blog.image2} alt={blog.image2_metatag} />
+  )}
+
+  <div dangerouslySetInnerHTML={{ __html: blog.blog_content4 }} />
+
+  {blog.image3 && (
+    <img src={blog.image3} alt={blog.image3_metatag} />
+  )}
+
+  <div dangerouslySetInnerHTML={{ __html: blog.blog_content5 }} />
 </div>
 </article>
 </section>
