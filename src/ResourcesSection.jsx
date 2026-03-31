@@ -419,14 +419,8 @@ const ResourcesSection = () => {
                 website: "www.dzpg.org",
                 url: "https://www.dzpg.org/en/",
               },
-              ,
-              {
-                name: "Irrsinnig Menschlich",
-                region: "Germany",
-                focus: "Raise awareness and end public and structural discrimination",
-                website: "www.sangath.in",
-                url: "https://www.sangath.in/",
-              },
+              
+              
               {
                 name: "American Psychological Association",
                 region: "USA",
