@@ -6,10 +6,10 @@ import "./HomePage.css";
 import Footer from "./Footer_page";
 
 
-import homepage1 from './assets/homepage/homepage103.jpg';
+import homepage1 from './assets/homepage/h5.jpg';
 import homepage2 from './assets/homepage/h2.jpeg';
 import homepage3 from './assets/homepage/h3.jpg';
-import homepage4 from './assets/homepage/homepage107.jpg';
+import homepage4 from './assets/homepage/h6.jpg';
 import homepage5 from './assets/homepage/homepage5.png';
 import homepage6 from './assets/homepage/homepage6.png';
 import homepage7 from './assets/homepage/homepage7.png';
@@ -102,7 +102,7 @@ const HomePage = () => {
   
   const categoriesList = [
     { id: 'abnormal-psychology',label: 'Abnormal Psychology', imgSrc: homepage5 }, 
-    { id: 'abuse', label: 'abuse', imgSrc: homepage6 },                         
+    { id: 'abuse', label: 'Abuse', imgSrc: homepage6 },                         
     { id: 'addiction', label: 'Addiction', imgSrc: homepage7 },                   
     { id: 'ambiverts', label: 'Ambiverts', imgSrc: homepage8 },                 
     { id: 'autism', label: 'Autism', imgSrc: homepage9 },                       

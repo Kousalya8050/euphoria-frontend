@@ -13,14 +13,14 @@
 .toc {
     background: #f6f7ef;
     border-radius: 12px;
+    
+    /* max-height: none; */
+    /* overflow: visible; */
     padding: 30px;
-  
     position: sticky;
     top: 40px;
-  
-    height: auto;          /* default, but safe to be explicit */
-    max-height: none;      /* remove any restriction */
-    overflow: visible;     /* allow full expansion */
+    height: calc(100vh - 80px);
+    overflow-y: auto;
   }
 .toc h4 { margin-bottom: 16px; }
 .toc ul { list-style: none; padding: 0; }

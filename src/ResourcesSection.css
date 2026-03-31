@@ -618,3 +618,94 @@ margin-bottom: 0px;
     max-width: 400px;
   }
 }
+
+
+
+.charity-section {
+  /* width: 100%;
+  background-color: #fff;
+  padding: 60px 0; */
+
+  margin-top: 60px;
+  padding: 60px 20px;
+  background: #f9fdf9;
+  border-top: 1px solid #e0f2e9;
+}
+
+.charity-section h3 {
+  text-align: center;
+  color: #2a5c00;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.charity-section > p {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 30px;
+  color: #444;
+  font-size: 22px;
+}
+
+.charity-box {
+  
+  width: 100%;
+  border: 1px solid #E1E2AD;
+  background: #F2F2E0;
+  /* background-color: #fcfcf5; */
+  /* border-top: 1px solid #e0e0e0; */
+  padding: 20px 5%;
+  box-sizing: border-box;
+  /* margin-left: 93px; */
+  /* max-width: 1200px; */
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.charity-box p {
+  margin: 6px 0;
+  font-size: 20px;
+  color: #444;
+}
+
+.charity-box strong {
+  font-weight: bold;
+  color: #000;
+  font-size: 22px;
+}
+
+.charity-box span {
+  font-style: italic;
+  color: #666;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.charity-box a {
+  color: #c62828;
+  text-decoration: none;
+}
+
+.charity-box a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .charity-box {
+    padding: 20px;
+  }
+}
+
+/* .section-divider {
+  width: 80%;
+  margin: 60px auto;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #4CAF50,
+    transparent
+  );
+} */

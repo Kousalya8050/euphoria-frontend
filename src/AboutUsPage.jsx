@@ -9,7 +9,7 @@ import Footer from "./Footer_page";
 import "swiper/css/autoplay";
 
 // Import decorative assets
-import aboutUsBanner from './assets/aboutuspage/aboutUsBanner.png'; 
+import aboutUsBanner from './assets/aboutuspage/head1A3.jpg'; 
 
 
 // Import all 15 grid images

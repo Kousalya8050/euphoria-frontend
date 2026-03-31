@@ -221,7 +221,7 @@ const [editContents, setEditContents] = useState(null);
   
   
 
-  const categories = ["Health", "Beauty", "Food", "Tech", "Travel", "Others"];
+  const categories = ["Self-Assessments", "Toxic Behaviors", "Mindfulness", "Therapy Techniques", "Emotional Intelligence & Growth", "General Wellbeing", "Others"];
   const [customCategory, setCustomCategory] = useState("");
 
 

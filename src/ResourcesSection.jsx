@@ -207,7 +207,350 @@ const ResourcesSection = () => {
           ))}
         </div>
       </div>
+      <div className="section-divider"></div>
+        {/* Charitable Organizations Section */}
+        <div className="charity-section">
+        <div className="region-buttons">
+            {[
+              ...new Set(
+                [
+                  "Canada",
+                  "Ireland",
+                  "UK",
+                  "India",
+                  "Germany",
+                  "USA",
+                ] 
+              ),
+            ].map((region) => (
+              <button
+                key={region}
+                className="region-button"
+                onClick={() =>
+                  document.getElementById(region.replace(/\s+/g, "-")).scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  })
+                }
+              >
+                {region}
+              </button>
+            ))}
+          </div>
+          <h3>Charitable Organizations for Mental Health</h3>
+          <p>
+            Here’s a list of well-known and reputable charitable organizations focused on mental health. These organizations work on advocacy, awareness, support services, and research globally and regionally.
+          </p>
 
+          {Object.entries(
+            [
+              {
+                name: "Canadian Mental Health Association",
+                region: "Canada",
+                focus: "Research, Promoting Mental Health, Supporting Individuals with Mental Illness",
+                website: "www.cmha.ca",
+                url: "https://cmha.ca/",
+              },
+              {
+                name: "Mental Health Commission of Canada",
+                region: "Canada",
+                focus: "National Mental Health Strategy, Improved Access to Services, Recovery-Oriented Car, Reducing Stigma and Discrimination",
+                website: "www.mentalhealthcommission.ca",
+                url: "https://mentalhealthcommission.ca/",
+              },
+              {
+                name: "Youth Mental Health Canada",
+                region: "Canada",
+                focus: "Youth Engagement, Early Intervention and Prevention, Culturally Sensitive Services, Community-Based Solutions",
+                website: "www.ymhc.ngo",
+                url: "https://ymhc.ngo/",
+              },
+              {
+                name: "Centre for Addiction and Mental Health",
+                region: "Canada",
+                focus: "Research, Better Mental Health Care for All",
+                website: "www.camh.ca",
+                url: "https://www.camh.ca/",
+              },
+              {
+                name: "Alzheimer Society of Canada",
+                region: "Canada",
+                focus: "Supporting individuals with Alzheimer's disease and other forms of dementia, as well as their caregivers",
+                website: "www.alzheimer.ca",
+                url: "https://alzheimer.ca/",
+              },
+              {
+                name: "Mental Health Ireland",
+                region: "Ireland",
+                focus: "Promoting understanding and improving mental health across Ireland",
+                website: "www.mentalhealthireland.ie",
+                url: "https://www.mentalhealthireland.ie/",
+              },
+              {
+                name: "Pieta House",
+                region: "Ireland",
+                focus: "Provide free, therapeutic approach to people who are in suicidal distress, engage in self-harm, or bereaved by suicide",
+                website: "www.pieta.ie",
+                url: "https://www.pieta.ie/",
+              },
+              {
+                name: "Samaritans",
+                region: "Ireland",
+                focus: "Providing emotional support to individuals struggling with emotional distress, difficult life situations, or suicidal thoughts",
+                website: "www.samaritans.org",
+                url: "https://www.samaritans.org/samaritans-ireland/",
+              },
+              {
+                name: "Bodywhys",
+                region: "Ireland",
+                focus: "Voluntary organisation supporting people affected by eating disorders",
+                website: "www.bodywhys.ie",
+                url: "https://www.bodywhys.ie/",
+              },
+              {
+                name: "AWARE",
+                region: "Ireland",
+                focus: "Providing support, education, and information services to individuals affected by anxiety, depression, bipolar disorder, and related mood conditions",
+                website: "www.aware.ie",
+                url: "https://www.aware.ie/",
+              },
+              {
+                name: "Mental Health Foundation",
+                region: "UK",
+                focus: "Promoting good mental health and addressing mental health issues through research, prevention, and advocacy",
+                website: "www.mentalhealth.org.uk",
+                url: "https://www.mentalhealth.org.uk/",
+              },
+              {
+                name: "Mental Health UK",
+                region: "UK",
+                focus: "Raising awareness about mental health issues, promoting well-being, and advocating for better mental health support and services",
+                website: "www.mentalhealth-uk.org",
+                url: "https://mentalhealth-uk.org/",
+              },
+              {
+                name: "Mind",
+                region: "UK",
+                focus: "Provide support, campaign for change, and offer workplace training to create mentally healthy environments",
+                website: "www.mentalhealth-uk.org",
+                url: "https://mentalhealth-uk.org/",
+              },
+              {
+                name: "Rethink Mental Illness",
+                region: "UK",
+                focus: "Equality, rights, fair treatment, and the maximum quality of life for all those severely affected by mental illness",
+                website: "www.rethink.org",
+                url: "https://www.rethink.org/",
+              },
+              {
+                name: "YoungMinds",
+                region: "UK",
+                focus: "Offers information and advice to young people, parents and carers for improving the mental health and well-being",
+                website: "www.youngminds.org.uk",
+                url: "https://www.youngminds.org.uk/",
+              },
+              {
+                name: "Sangath",
+                region: "India",
+                focus: "Transforming Mental Health Rooted in Care, Driven by Research, Powered by Community",
+                website: "www.sangath.in",
+                url: "https://www.sangath.in/",
+              },
+              {
+                name: "The MINDS Foundation",
+                region: "India",
+                focus: "Eliminating the stigma surrounding mental illness through education, training, and providing access to cost-effective, high-quality care",
+                website: "www.mindsfoundation.org",
+                url: "https://www.mindsfoundation.org/",
+              },
+              {
+                name: "The Banyan",
+                region: "India",
+                focus: "Enabling Access To Comprehensive, Integrated, Person-Centred Mental Health Care For Persons Living In Poverty And Homelessness ",
+                website: "www.thebanyan.org",
+                url: "https://thebanyan.org/",
+              },
+              {
+                name: "AASRA",
+                region: "India",
+                focus: "Suicide prevention and emotional support through crisis intervention",
+                website: "www.aasra.info",
+                url: "https://www.aasra.info/",
+              },
+              {
+                name: "Mindroot Foundation",
+                region: "India",
+                focus: "Combating mental health and substance use disorders through awareness campaigns and educational programs",
+                website: "www.mindroot.org",
+                url: "https://www.mindroot.org/",
+              },
+              {
+                name: "Irrsinnig Menschlich",
+                region: "Germany",
+                focus: "Raise awareness and end public and structural discrimination",
+                website: "www.sangath.in",
+                url: "https://www.sangath.in/",
+              },
+              {
+                name: "Caritas",
+                region: "Germany",
+                focus: "Promoting social solidarity and cohesion, particularly for vulnerable populations, through initiatives and campaigns",
+                website: "www.irrsinnig-menschlich.de",
+                url: "https://www.irrsinnig-menschlich.de/en/",
+              },
+              {
+                name: "Deutsche Depressionshilfe",
+                region: "Germany",
+                focus: "Dedicated to research and raising awareness about depression, providing information and support to individuals",
+                website: "www.deutsche-depressionshilfe.de",
+                url: "https://www.deutsche-depressionshilfe.de/",
+              },
+              {
+                name: "DGPPN",
+                region: "Germany",
+                focus: "Setting standards for mental health care and promoting research",
+                website: "www.dgppn.de",
+                url: "https://www.dgppn.de/",
+              },
+              {
+                name: "The German Center for Mental Health",
+                region: "Germany",
+                focus: "Improving mental healthcare through collaborative research, prevention, and early intervention",
+                website: "www.dzpg.org",
+                url: "https://www.dzpg.org/en/",
+              },
+              ,
+              {
+                name: "Irrsinnig Menschlich",
+                region: "Germany",
+                focus: "Raise awareness and end public and structural discrimination",
+                website: "www.sangath.in",
+                url: "https://www.sangath.in/",
+              },
+              {
+                name: "American Psychological Association",
+                region: "USA",
+                focus: "One of the largest psychology organizations globally. Focus on: research, clinical practice, education, policy",
+                website: "www.apa.org",
+                url: "https://www.apa.org/",
+              },
+              {
+                name: "American Academy of Child & Adolescent Psychiatry",
+                region: "USA",
+                focus: "Promoting the healthy development of children, adolescents, and families through research, advocacy, training, and evidence-based clinical care",
+                website: "www.aacap.org",
+                url: "https://www.aacap.org/",
+              },
+              {
+                name: "American Psychiatric Association",
+                region: "USA",
+                focus: "Focuses on advancing high-quality psychiatric care, research, and education",
+                website: "www.psychiatry.org",
+                url: "https://www.psychiatry.org/",
+              },
+              {
+                name: "National Institute of Mental Health",
+                region: "USA",
+                focus: "Focuses on transforming the understanding and treatment of mental illnesses through basic and clinical research, aiming to prevent, cure, and improve public health",
+                website: "www.nimh.nih.gov",
+                url: "https://www.nimh.nih.gov/",
+              },
+              {
+                name: "Substance Abuse and Mental Health Services Administration",
+                region: "USA",
+                focus: "Focuses on preventing substance use and overdoses, improving mental health and suicide prevention access, promoting youth/family resilience, integrating behavioral and physical healthcare, and strengthening the behavioral health workforce",
+                website: "www.samhsa.gov",
+                url: "https://www.samhsa.gov/",
+              },
+              {
+                name: "Swiss Society of Psychiatry and Psychotherapy",
+                region: "Switzerland",
+                focus: "Advancing psychiatric excellence through professional training, high clinical standards, and research in Switzerland",
+                website: "www.so-psy.ch",
+                url: "https://so-psy.ch/en/",
+              },
+              {
+                name: "Swiss Conference for Academic Psychiatry",
+                region: "Switzerland",
+                focus: "Promoting academic careers in psychiatry, facilitating scientific exchange, and enhancing the visibility of psychiatric research and teaching at Swiss universities",
+                website: "www.scapsy.ch",
+                url: "https://scapsy.ch/",
+              },
+              {
+                name: "Swiss Psychological Society",
+                region: "Switzerland",
+                focus: "Focuses on high-quality academic research, education, and professional development",
+                website: "www.swisspsychologicalsociety.ch",
+                url: "https://www.swisspsychologicalsociety.ch/",
+              },
+              {
+                name: "Federation of Swiss Psychologists",
+                region: "Switzerland",
+                focus: "Ensuring high professional standards, promoting evidence-based practice",
+                website: "www.psychologie.ch",
+                url: "https://www.psychologie.ch/en",
+              },
+              {
+                name: "The Mental Health Association Switzerland",
+                region: "Switzerland",
+                focus: "Community-driven prevention movement dedicated to building a mentally fit future through early intervention and awareness",
+                website: "www.thementalhealthassociation.com",
+                url: "https://www.thementalhealthassociation.com/",
+              },
+              {
+                name: "Australian Psychological Society",
+                region: "Australia",
+                focus: "Focus on promoting community wellbeing, advancing ethical standards, and advocating for the profession",
+                website: "www.psychology.org.au",
+                url: "https://psychology.org.au/",
+              },
+              {
+                name: "Royal Australian and New Zealand College of Psychiatrists",
+                region: "Australia",
+                focus: "Training psychiatrists, setting professional standards, and influencing mental health policy to ensure high-quality care in Australia and New Zealand",
+                website: "www.ranzcp.org",
+                url: "https://www.ranzcp.org/",
+              },
+              {
+                name: "Psychotherapy and Counselling Federation of Australia",
+                region: "Australia",
+                focus: "Focuses on regulating, supporting, and promoting the counselling and psychotherapy profession in Australia",
+                website: "www.pacfa.org.au",
+                url: "https://www.pacfa.org.au/",
+              },
+              {
+                name: "SANE Australia",
+                region: "Australia",
+                focus: "Focuses on reducing stigma, providing peer-supported services, and offering resources for individuals, families, and professionals",
+                website: "www.sane.org",
+                url: "https://www.sane.org/",
+              }
+            
+            ].reduce((groups, org) => {
+              if (!groups[org.region]) groups[org.region] = [];
+              groups[org.region].push(org);
+              return groups;
+            }, {})
+          ).map(([region, orgs]) => (
+            <div key={region} className="region-section" id={region.replace(/\s+/g, "-")}>
+              <h2 className="region-heading">{region}</h2>
+              {orgs.map((org, index) => (
+                <div className="charity-box" key={index}>
+                  <p>
+                    <strong>{org.name}</strong>
+                  </p>
+                  <p>Focus: {org.focus}</p>
+                  <p>
+                    Website:{" "}
+                    <a href={org.url} target="_blank" rel="noreferrer">
+                      {org.website}
+                    </a>
+                  </p>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
         {/* Newsletter Section */}
         <div className="newsletter-section_r">
         <div className="newsletter-left_r">
