@@ -606,11 +606,11 @@ const [editContents, setEditContents] = useState(null);
       }, 300); // Increased slightly for safer DOM check
   
       setPreview({
-        banner_image: fullBlog.banner_image || null,
-        thumbnail_image: fullBlog.thumbnail_image || null,
-        image1: fullBlog.image1 || null,
-        image2: fullBlog.image2 || null,
-        image3: fullBlog.image3 || null,
+        banner_image: fullBlog.banner_image ? encodeURI(fullBlog.banner_image) : null,
+        thumbnail_image: fullBlog.thumbnail_image ? encodeURI(fullBlog.thumbnail_image) : null,
+        image1: fullBlog.image1 ? encodeURI(fullBlog.image1) : null,
+        image2: fullBlog.image2 ? encodeURI(fullBlog.image2) : null,
+        image3: fullBlog.image3 ? encodeURI(fullBlog.image3) : null,
       });
   
     } catch (err) {
@@ -717,7 +717,13 @@ const [editContents, setEditContents] = useState(null);
         {/* Banner */}
         <label>Banner Image</label>
         <input type="file" onChange={(e) => handleFile(e, "banner_image")} className="form-control mb-3" />
-        {preview.banner_image && <img src={preview.banner_image} alt="Banner Preview" style={{ height: "80px", width: "120px", objectFit: "cover", borderRadius: "4px", marginBottom: "22px"}}/>}
+        {preview.banner_image && <img 
+    src={preview.banner_image} // The URL is now encoded from handleEdit
+    alt="Preview" 
+    style={{ height: "80px", width: "120px", objectFit: "cover" }}
+    onError={(e) => { e.target.src = "https://placehold.co/120x80?text=Error+Loading"; }} 
+  />
+  }
 
         <label>Banner Metatag</label>
         <input name="banner_metatag" value={form.banner_metatag} onChange={handleChange} className="form-control mb-3" placeholder="Banner metatag" />
@@ -864,7 +870,7 @@ const [editContents, setEditContents] = useState(null);
 
       {/* BLOG DETAILS */}
       <div className="blog-page_d">
-        <section className="blog-banner_d">
+        {/* <section className="blog-banner_d">
           {selectedBlog.banner_image && (
             <img
               src={selectedBlog.banner_image}
@@ -872,9 +878,18 @@ const [editContents, setEditContents] = useState(null);
               alt="Banner"
             />
           )}
+        </section> */}
+        <section className="blog-banner_d">
+          {selectedBlog.banner_image && (
+            <img
+              src={encodeURI(selectedBlog.banner_image)} // Added encodeURI for safety
+              className="banner-image_d"
+              alt="Banner"
+            />
+          )}
         </section>
 
-        <section className="blog-layout_d">
+        {/* <section className="blog-layout_d">
           <article className="content">
             <p className="category">{selectedBlog.product_category}</p>
             <h1>{selectedBlog.blog_title}</h1>
@@ -895,7 +910,35 @@ const [editContents, setEditContents] = useState(null);
 
             <div dangerouslySetInnerHTML={{ __html: selectedBlog.blog_content5 }} />
           </article>
-        </section>
+        </section> */}
+        <section className="blog-layout_d">
+    <article className="content">
+      <p className="category">{selectedBlog.product_category}</p>
+      <h1>{selectedBlog.blog_title}</h1>
+
+      <div dangerouslySetInnerHTML={{ __html: selectedBlog.blog_content1 }} />
+      
+      {/* ADDED IMAGE 1 HERE */}
+      {selectedBlog.image1 && (
+        <img src={encodeURI(selectedBlog.image1)} alt="" style={{ maxWidth: '100%', margin: '20px 0' }} />
+      )}
+
+      <div dangerouslySetInnerHTML={{ __html: selectedBlog.blog_content2 }} />
+      <div dangerouslySetInnerHTML={{ __html: selectedBlog.blog_content3 }} />
+
+      {selectedBlog.image2 && (
+        <img src={encodeURI(selectedBlog.image2)} alt="" style={{ maxWidth: '100%', margin: '20px 0' }} />
+      )}
+
+      <div dangerouslySetInnerHTML={{ __html: selectedBlog.blog_content4 }} />
+
+      {selectedBlog.image3 && (
+        <img src={encodeURI(selectedBlog.image3)} alt="" style={{ maxWidth: '100%', margin: '20px 0' }} />
+      )}
+
+      <div dangerouslySetInnerHTML={{ __html: selectedBlog.blog_content5 }} />
+    </article>
+  </section>
       </div>
 
       {/* ACTION BUTTONS */}
