@@ -36,8 +36,76 @@
 
 .content .category { color: #6a8b2c; font-weight: 500; }
 .content h1 { font-size: 32px; margin: 10px 0 20px; }
-.content img { width: 100%; border-radius: 12px; margin: 24px 0; }
-.content p { line-height: 1.7; color: #444; }
+/* .content img { width: 100%; border-radius: 12px; margin: 24px 0; } */
+/* .content p { line-height: 1.7; color: #444; } */
+.content h2, 
+.content h2 span {
+  text-align: left !important;
+  display: block !important;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #222;
+  font-size: 25px !important;
+  background-color: transparent !important;
+}
+
+
+.content h3,
+.content h3 span {
+  text-align: left !important;
+  display: block !important;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #222;
+  font-size: 20px !important;
+  background-color: transparent !important;
+}
+
+.content p, 
+.content p span {
+  font-size: 18px !important; 
+  line-height: 1.8 !important;
+  color: #333 !important;
+  text-align: left !important;
+  font-family: 'Inter', sans-serif !important; 
+}
+
+.content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 40px auto; 
+  border-radius: 12px;
+}
+
+
+.content div {
+  text-align: left;
+}
+
+.content ul, 
+.content ol {
+  margin-left: 20px;
+  margin-bottom: 24px;
+  text-align: left !important;
+}
+
+.content li, 
+.content li span {
+  font-size: 18px !important;
+  line-height: 1.8 !important;
+  color: #333 !important;
+  margin-bottom: 10px;
+  text-align: left !important;
+}
+
+
+
+
+
+
 .toc-divider {
     margin: 24px 0;
     border: none;

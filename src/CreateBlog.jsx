@@ -242,25 +242,28 @@ const [editContents, setEditContents] = useState(null);
 
 
 
-  const cleanPastedContent = (e) => {
-    e.preventDefault();
-  
-    const html = e.clipboardData.getData("text/html");
-  
-    if (html) {
-      const cleanHtml = DOMPurify.sanitize(html, {
-        ALLOWED_TAGS: [
-          "p", "span", "br", "b", "strong", "i", "em",
-          "h1", "h2", "h3", "h4", "div"
-        ],
-        ALLOWED_ATTR: [
-          "style", "dir"
-        ]
-      });
-  
-      document.execCommand("insertHTML", false, cleanHtml);
-    }
-  };
+const cleanPastedContent = (e) => {
+  e.preventDefault();
+
+  const html = e.clipboardData.getData("text/html");
+  const text = e.clipboardData.getData("text/plain");
+
+  if (html) {
+    const cleanHtml = DOMPurify.sanitize(html, {
+      ALLOWED_TAGS: [
+        "p", "span", "br", "b", "strong", "i", "em",
+        "h1", "h2", "h3", "h4", "div", 
+        "ul", "ol", "li" 
+      ],
+      ALLOWED_ATTR: ["style", "dir"],
+    });
+
+    document.execCommand("insertHTML", false, cleanHtml);
+  } else {
+    
+    document.execCommand("insertText", false, text);
+  }
+};
 
   const renderBlogTable = () => (
     <table className="table">

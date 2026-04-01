@@ -238,25 +238,32 @@ return (
 </div> */}
 
 <div id="content">
+  {/* Content 1 */}
   <div dangerouslySetInnerHTML={{ __html: blog.blog_content1 }} />
 
+  {/* Image 1 with Encoding Fix */}
   {blog.image1 && (
-    <img src={blog.image1} alt={blog.image1_metatag} />
+    <img src={encodeURI(blog.image1)} alt={blog.image1_metatag || "Blog image 1"} />
   )}
 
+  {/* Content 2 & 3 */}
   <div dangerouslySetInnerHTML={{ __html: blog.blog_content2 }} />
   <div dangerouslySetInnerHTML={{ __html: blog.blog_content3 }} />
 
+  {/* Image 2 with Encoding Fix */}
   {blog.image2 && (
-    <img src={blog.image2} alt={blog.image2_metatag} />
+    <img src={encodeURI(blog.image2)} alt={blog.image2_metatag || "Blog image 2"} />
   )}
 
+  {/* Content 4 */}
   <div dangerouslySetInnerHTML={{ __html: blog.blog_content4 }} />
 
+  {/* Image 3 with Encoding Fix */}
   {blog.image3 && (
-    <img src={blog.image3} alt={blog.image3_metatag} />
+    <img src={encodeURI(blog.image3)} alt={blog.image3_metatag || "Blog image 3"} />
   )}
 
+  {/* Content 5 */}
   <div dangerouslySetInnerHTML={{ __html: blog.blog_content5 }} />
 </div>
 </article>
