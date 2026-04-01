@@ -445,7 +445,7 @@ const cleanPastedContent = (e) => {
   
     try {
       await axios.delete(
-        `${API_URL}0/api/blogs/${id}`
+        `${API_URL}/api/blogs/${id}`
       );
       alert("Blog deleted");
       fetchBlogs();
