@@ -55,7 +55,7 @@ const [selectedBlog, setSelectedBlog] = useState(null);
 
 const [isEdit, setIsEdit] = useState(false);
 const [editId, setEditId] = useState(null);
-const [editContents, setEditContents] = useState(null);
+const [editContents] = useState(null);
 
 
 
