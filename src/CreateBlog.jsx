@@ -155,70 +155,68 @@ const [editContents, setEditContents] = useState(null);
   window.location.hostname === "localhost"
     ? "http://localhost:3000"
     : "https://euphoria-backend-oii0.onrender.com";
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    // 🔍 DEBUG (KEEP FOR NOW)
-    console.log("SUBMIT", {
-      isEdit,
-      editId,
-      formId: form.id
-    });
-  
-    const formData = new FormData();
-  
-    // Append form fields
-    Object.keys(form).forEach((key) => {
-      formData.append(key, form[key]);
-    });
-  
-    // Append contentEditable HTML
-    for (let i = 1; i <= 5; i++) {
-      formData.append(
-        `blog_content${i}`,
-        document.getElementById(`content${i}`)?.innerHTML || ""
-      );
-    }
-  
-    // Append files ONLY if selected
-    if (bannerImage) formData.append("banner_image", bannerImage);
-    if (thumbnailImage) formData.append("thumbnail_image", thumbnailImage);
-    if (image1) formData.append("image1", image1);
-    if (image2) formData.append("image2", image2);
-    if (image3) formData.append("image3", image3);
-  
-    try {
-      if (isEdit && editId) {
-        // ✅ UPDATE EXISTING BLOG
-        await axios.put(
-          `${API_URL}/api/blogs/${editId}`,
-          formData,
-          { headers: { "Content-Type": "multipart/form-data" } }
-        );
-        alert("Blog updated successfully");
-      } else {
-        // ✅ CREATE NEW BLOG
-        await axios.post(
-          `${API_URL}/api/blogs`,
-          formData,
-          { headers: { "Content-Type": "multipart/form-data" } }
-        );
-        alert("Blog created successfully");
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+    
+      // Create FormData
+      const formData = new FormData();
+    
+      // 1. Append text fields (Exclude 'id' from body as it's in the URL)
+      Object.keys(form).forEach((key) => {
+        if (key !== "id") {
+          formData.append(key, form[key] || "");
+        }
+      });
+    
+      // 2. Append HTML Content
+      for (let i = 1; i <= 5; i++) {
+        const html = document.getElementById(`content${i}`)?.innerHTML || "";
+        formData.append(`blog_content${i}`, html);
       }
-  
-      // 🔄 Reset state AFTER submit
-      setIsEdit(false);
-      setEditId(null);
-      setForm(initialFormState);
-      setMainTab("list");
-      fetchBlogs();
-  
-    } catch (err) {
-      console.error(err);
-      alert("Submission failed");
-    }
-  };
-  
+    
+      // 3. Append Files
+      if (bannerImage) formData.append("banner_image", bannerImage);
+      if (thumbnailImage) formData.append("thumbnail_image", thumbnailImage);
+      if (image1) formData.append("image1", image1);
+      if (image2) formData.append("image2", image2);
+      if (image3) formData.append("image3", image3);
+    
+      try {
+        if (isEdit && editId) {
+          // ✅ UPDATE
+          await axios.put(`${API_URL}/api/blogs/${editId}`, formData);
+          alert("Blog updated successfully");
+        } else {
+          // ✅ CREATE
+          await axios.post(`${API_URL}/api/blogs`, formData);
+          alert("Blog created successfully");
+        }
+    
+        // 4. RESET EVERYTHING (Prevents duplicates and leaks)
+        setIsEdit(false);
+        setEditId(null);
+        setForm(initialFormState);
+        setPreview({});
+        setBannerImage(null);
+        setThumbnailImage(null);
+        setImage1(null);
+        setImage2(null);
+        setImage3(null);
+        
+        // Clear contentEditable manually
+        for (let i = 1; i <= 5; i++) {
+          const el = document.getElementById(`content${i}`);
+          if (el) el.innerHTML = "";
+        }
+    
+        setMainTab("list");
+        fetchBlogs();
+    
+      } catch (err) {
+        console.error("Submission failed:", err);
+        alert("Error: " + (err.response?.data?.details || "Failed to save"));
+      }
+    };
   
 
   const categories = ["Self-Assessments", "Toxic Behaviors", "Mindfulness", "Therapy Techniques", "Emotional Intelligence & Growth", "General Wellbeing", "Others"];
@@ -535,31 +533,25 @@ const cleanPastedContent = (e) => {
   }, [editContents, mainTab]);
    
   const handleEdit = async (blog) => {
-    console.log("--- [1] EDIT START ---");
-    console.log("Input Blog Overview:", blog);
-  
     try {
       const res = await axios.get(`${API_URL}/api/blogs/${blog.slug}`);
       const fullBlog = res.data;
   
-      console.log("--- [2] API RESPONSE RECEIVED ---");
-      console.log("Full Data from DB:", fullBlog);
-  
-      // CRITICAL CHECK: Are the fields actually in the response?
-      console.log("Check Specific Fields in API Response:", {
-        h2_1: fullBlog.h2_1,
-        h3_1: fullBlog.h3_1,
-        meta_title: fullBlog.blog_meta_title,
-        product_category: fullBlog.product_category
-      });
-  
+      // 1. Set Edit Mode and ID immediately
       setIsEdit(true);
       setEditId(fullBlog.id);
       setMainTab("create");
-      setEditContents(fullBlog);
+  
+      // 2. Clear current file selections (so old files don't stay in memory)
+      setBannerImage(null);
+      setThumbnailImage(null);
+      setImage1(null);
+      setImage2(null);
+      setImage3(null);
   
       const clean = (val) => (val === null || val === undefined ? "" : val);
   
+      // 3. Map Form Fields
       const updatedForm = {
         id: fullBlog.id,
         blog_title: clean(fullBlog.blog_title),
@@ -574,40 +566,26 @@ const cleanPastedContent = (e) => {
         image3_metatag: clean(fullBlog.image3_metatag),
       };
   
-      // Mapping H2 and H3
       for (let i = 1; i <= 10; i++) {
         updatedForm[`h2_${i}`] = clean(fullBlog[`h2_${i}`]);
         updatedForm[`h3_${i}`] = clean(fullBlog[`h3_${i}`]);
       }
-  
-      console.log("--- [3] FORM OBJECT MAPPED ---");
-      console.log("Final object being sent to setForm:", updatedForm);
-  
       setForm(updatedForm);
   
-      // Category check
-      const isStandard = categories.includes(fullBlog.product_category?.trim());
-      console.log(`Is category "${fullBlog.product_category}" standard?`, isStandard);
-      
-      if (!isStandard) {
-        console.log("Setting Custom Category to:", fullBlog.product_category);
+      // 4. Handle Custom Category
+      if (!categories.includes(fullBlog.product_category?.trim())) {
         setCustomCategory(fullBlog.product_category || "");
       }
   
-      // DOM Injection check
+      // 5. Inject HTML into contentEditable
       setTimeout(() => {
-        console.log("--- [4] TIMEOUT CONTENT CHECK ---");
         for (let i = 1; i <= 5; i++) {
           const el = document.getElementById(`content${i}`);
-          if (el) {
-            el.innerHTML = fullBlog[`blog_content${i}`] || "";
-            console.log(`Element content${i} found and injected.`);
-          } else {
-            console.warn(`Element content${i} NOT found in DOM. The tab might not have switched yet.`);
-          }
+          if (el) el.innerHTML = fullBlog[`blog_content${i}`] || "";
         }
-      }, 300); // Increased slightly for safer DOM check
+      }, 400);
   
+      // 6. Set Previews (using encodeURI for filenames with spaces)
       setPreview({
         banner_image: fullBlog.banner_image ? encodeURI(fullBlog.banner_image) : null,
         thumbnail_image: fullBlog.thumbnail_image ? encodeURI(fullBlog.thumbnail_image) : null,
@@ -617,11 +595,10 @@ const cleanPastedContent = (e) => {
       });
   
     } catch (err) {
-      console.error("--- [ERROR] EDIT FAILED ---");
-      console.error(err);
+      console.error("Edit failed:", err);
+      alert("Could not load blog data");
     }
   };
-
 
 
 
