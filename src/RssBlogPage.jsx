@@ -41,8 +41,15 @@ const RssBlogPage = () => {
     if (blog.image && blog.image.trim() !== "" && blog.image !== "null") {
       return blog.image;
     }
-    const imageNumber = (blog.id % 20) + 1;
-    return `/assets/rss-fallback/${imageNumber}.jpg`;
+  
+    try {
+      const imageNumber = (blog.id % 20) + 1;
+      // We use require to tell Webpack to include this file in the build
+      return require(`./assets/rss-fallback/${imageNumber}.jpg`);
+    } catch (err) {
+      // Fallback if the specific image is missing
+      return require("./assets/rss-fallback/1.jpg");
+    }
   };
 
   // 5. Data Fetching Effect
