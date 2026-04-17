@@ -14,24 +14,29 @@ const RssBlogPage = () => {
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(12);
 
-  // --- HELPER FUNCTION: Capitalize Each Word ---
+  // 1. Set Tab Title on Mount
+  useEffect(() => {
+    document.title = "News And Updates | Euphoria";
+  }, []);
+
+  // 2. Formatting Helper: Capitalize Each Word (Handle ADHD specifically)
   const formatCategory = (str) => {
     if (!str) return "";
-    // Special case for ADHD to keep it uppercase
     if (str.toUpperCase() === "ADHD") return "ADHD";
-    
     return str
       .split(" ")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
       .join(" ");
   };
 
+  // 3. Helper to strip HTML tags for descriptions
   const stripHtml = (html) => {
     const div = document.createElement("div");
     div.innerHTML = html;
     return div.textContent || div.innerText || "";
   };
 
+  // 4. Helper to assign consistent fallback images
   const getImageUrl = (blog) => {
     if (blog.image && blog.image.trim() !== "" && blog.image !== "null") {
       return blog.image;
@@ -40,32 +45,33 @@ const RssBlogPage = () => {
     return `/assets/rss-fallback/${imageNumber}.jpg`;
   };
 
-  const fetchBlogs = async () => {
-    try {
-      const API_URL = window.location.hostname === "localhost"
-        ? "http://localhost:3000"
-        : "https://euphoria-backend-oii0.onrender.com";
-
-      let url = `${API_URL}/api/rss-blogs`;
-      if (selectedCategory !== "All") {
-        url += `?category=${encodeURIComponent(selectedCategory)}`;
-      }
-
-      const res = await fetch(url);
-      const data = await res.json();
-      setBlogs(data);
-    } catch (error) {
-      console.error("Error fetching blogs:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+  // 5. Data Fetching Effect
   useEffect(() => {
-    setLoading(true);
-    setVisibleCount(12);
+    const fetchBlogs = async () => {
+      setLoading(true);
+      try {
+        const API_URL = window.location.hostname === "localhost"
+          ? "http://localhost:3000"
+          : "https://euphoria-backend-oii0.onrender.com";
+
+        let url = `${API_URL}/api/rss-blogs`;
+        if (selectedCategory !== "All") {
+          url += `?category=${encodeURIComponent(selectedCategory)}`;
+        }
+
+        const res = await fetch(url);
+        const data = await res.json();
+        setBlogs(data);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchBlogs();
-  }, [selectedCategory]);
+    setVisibleCount(12); // Reset pagination when category changes
+  }, [selectedCategory]); // ESLint is happy because fetchBlogs is defined inside
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 12);
@@ -84,7 +90,6 @@ const RssBlogPage = () => {
               className={`filter-btn ${selectedCategory === cat ? "active" : ""}`}
               onClick={() => setSelectedCategory(cat)}
             >
-              {/* ✅ Applied Capitalization here */}
               {formatCategory(cat)}
             </button>
           ))}
@@ -117,7 +122,6 @@ const RssBlogPage = () => {
                         {stripHtml(blog.description)}
                       </p>
                       <div className="rss-footer">
-                        {/* ✅ Applied Capitalization here */}
                         <span className="rss-category-tag">{formatCategory(blog.category)}</span>
                         <a href={blog.link} target="_blank" rel="noreferrer" className="rss-read-link">
                           Read More →
