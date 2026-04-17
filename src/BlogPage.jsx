@@ -80,13 +80,18 @@ import Footer from "./Footer_page";
 // --- Sub-component for a single blog post card ---
 const BlogPostCard = ({ post }) => {
 
-  const getImageUrl = (imagePath) => {
-    if (!imagePath) return "https://via.placeholder.com/400x300?text=No+Image";
-    
-    // If it's already a full cloud URL (DigitalOcean/Cloudinary), return it as is
+  const getSafeImageUrl = (imagePath) => {
+    if (!imagePath || imagePath === "null") return "https://via.placeholder.com/400x300?text=No+Image";
+  
+    // 1. If the URL is already broken (contains two https), try to extract the second one
+    if (imagePath.includes("https://") && imagePath.lastIndexOf("https://") > 0) {
+      return imagePath.substring(imagePath.lastIndexOf("https://"));
+    }
+  
+    // 2. If it's already a full URL, return as is
     if (imagePath.startsWith("http")) return imagePath;
   
-    // Otherwise, it's a local relative path, prepend your backend URL
+    // 3. Otherwise, it's an old local relative path
     const API_URL = window.location.hostname === "localhost"
       ? "http://localhost:3000"
       : "https://euphoria-backend-oii0.onrender.com";
@@ -104,7 +109,7 @@ const BlogPostCard = ({ post }) => {
     <div className="post-card">
       <div className="post-card-image-wrapper">
         <img
-          src={getImageUrl(post.image)}
+          src={getSafeImageUrl(post.image)}
           alt={post.title || "Blog image"}
           className="post-card-image"
         />
