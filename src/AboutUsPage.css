@@ -208,7 +208,7 @@ line-height: 35px;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
   display: block;
   user-select: none;        /* prevents selecting images while dragging */
   -webkit-user-drag: none;  /* prevents native image drag */

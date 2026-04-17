@@ -18,6 +18,7 @@ import AdminLogin from "./AdminLogin";
 import SearchResults from "./SearchResults"
 import BlogPage from "./BlogPage";
 import BlogDetails from "./BlogDetails";
+import RssBlogPage from "./RssBlogPage";
 
 function App() {
   const location = useLocation();
@@ -47,6 +48,7 @@ function App() {
           <Route path="/resources" element={<ResourcesSection />} />
           <Route path="/admin_login" element={<AdminLogin />} />
           <Route path="/search" element={<SearchResults />} />
+          <Route path="/rss_feeds" element={<RssBlogPage />} />
 
           <Route
             path="/create-blog"

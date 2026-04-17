@@ -21,6 +21,7 @@ const navLinks = [
   { name: "Resources", path: "/resources" },
   { name: "Contact Us", path: "/contactus" },
   { name: "FAQ", path: "/faq" },
+  { name: "News", path: "/rss_feeds" },
 ];
 
 const socialLinks = [

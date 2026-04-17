@@ -6,6 +6,11 @@ import DOMPurify from "dompurify";
 import "./CreateBlog.css";
 
 const CreateBlog = () => {
+
+  useEffect(() => {
+      document.title = "Create Blog | Euphoria";
+    }, []);
+
   const initialFormState = {
     id: "",
     blog_title: "",

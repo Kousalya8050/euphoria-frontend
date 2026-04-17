@@ -50,14 +50,14 @@
   
   /* Active button */
   .tab-buttons button.active-tab {
-    background: #2a442d;
+    background: #1F5706;
     color: white;
   }
   
   /* Hover should look like inactive */
   .tab-buttons button:hover:not(.active-tab) {
     background: rgb(206, 204, 204);
-    color: #2a442d;
+    color: #1F5706;
   }
   
   .video-card {
@@ -123,7 +123,7 @@
   }
   
   .load-more-container button {
-    background-color: #2E5332 !important;
+    background-color: #1F5706 !important;
     color: white !important;
     /* border: none;
     border-radius: 50px;
@@ -147,7 +147,7 @@
   }
   
   .load-more-container button:hover:not(:disabled) {
-    background-color: #1e3a21;
+    background-color: #1F5706;
   }
   
   .load-more-container button:disabled {

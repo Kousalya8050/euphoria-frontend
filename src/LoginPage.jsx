@@ -7,6 +7,10 @@ import './LoginPage.css';
 import rightWave from './assets/homepage/wave-middle-right.png';
 
 const LoginPage = () => {
+
+  useEffect(() => {
+      document.title = "Login Page | Euphoria";
+   }, []);
     
         useEffect(() => {
           document.body.classList.add('no-scroll');

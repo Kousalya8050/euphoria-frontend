@@ -1,125 +1,55 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
-    color: #333;
-    box-sizing: border-box;
-  }
-  
-  /* Header */
-  .header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: #fff;
-        /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
-        padding-left: 28px;
-        padding-right: 0px;
-        padding-top: 34px;
-  }
-  
-  .logo {
-    position: relative;
-    font-size: 35px;
-    font-weight: bold;
-    color: green;
-    z-index: 10;
-    text-decoration: none;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* --- Header --- */
+.header {
+  display: flex;
+  flex-wrap: nowrap; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 34px 20px 20px 28px;
+  background: #fff;
+  position: relative;
+  z-index: 1000;
+  gap: 57px;
+}
+
+.logo {
+  position: relative;
+  font-size: 35px;
+  font-weight: bold;
+  color: green;
+  z-index: 1010;
+  text-decoration: none;
+  white-space: nowrap;
+}
 
 .nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 35px;
-    margin-right: 70px;
-  }
-  
-  .nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 25px;
-  }
-  
-  .auth-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  /* .btn,
-  .btn-outline {
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    font-weight: 600;
-  } */
-
-  .btn,
-.btn-outline {
-  /* 1. Use Flexbox for perfect centering */
   display: flex;
-  justify-content: center; /* Horizontally center */
-  align-items: center;     /* Vertically center */
-
-  /* 2. Set consistent sizing and font */
-  width: 128px;
-  height: 54px;
-  font-size: 20px;
-  font-weight: 600;
-
-  /* 3. Add styles to make <a> tags behave */
-  text-decoration: none; /* Removes the underline from the <Link> */
-  cursor: pointer;
-  
-  /* 4. General appearance */
-  border-radius: 4px;
-  box-sizing: border-box; /* Important: makes border and padding part of the total width/height */
-}
-  
-  .btn {
-    background-color: green;
-    color: #fff;
-    height: 54px;
-    width: 128px;
-    font-size: 24px;
-  }
-  
-  .btn-outline {
-    background-color: transparent;
-    border: 2px solid green;
-    color: green;
-    height: 54px;
-    width: 128px;
-    font-size: 24px;
-}
-.top-left-wave {
-  top: 0;
-  left: 0;
-  width: 1107px; /* Adjust size as needed */
-  z-index: 2;
+  flex-wrap: nowrap;
+  gap: 22px; /* Reduced slightly from 35px to help fit on one line */
+  margin-right: 40px;
+  align-items: center;
 }
 
-/* Style for the wave on the left side, vertically centered */
-.left-wave {
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 1107px; /* Adjust size as needed */
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 22px; /* Adjusted from 25px to fit 11 items on desktop screens */
+  white-space: nowrap;
+  transition: color 0.3s;
 }
 
-/* ==========================================================================
-   RESPONSIVE HEADER STYLES
-   Add this entire block to the end of your existing Header.css file.
-   ========================================================================== */
-
-/* --- Hamburger Menu Button (Hidden on Desktop) --- */
+/* --- Hamburger Menu Button --- */
 .hamburger-menu {
-  display: none; /* Hidden by default */
+  display: none; /* Hidden on Desktop */
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
@@ -128,7 +58,7 @@ body, html {
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 1001; /* Must be on top of everything */
+  z-index: 1100;
 }
 
 .hamburger-menu span {
@@ -136,168 +66,206 @@ body, html {
   height: 3px;
   background-color: #333;
   border-radius: 5px;
-  
-}
-.hamburger-menu:hover {
-  background: transparent !important;
-}
-.hamburger-menu span:hover {
-  background-color: #333 !important;
+  transition: all 0.3s ease;
 }
 
-.hamburger-menu.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+@media screen and (max-width: 1800px) and (min-width: 1432px) {
+ 
+.header {
+  padding: 30px 20px 20px 28px !important;
+  gap: 108px !important;
+  justify-content: left !important;
 }
-
-.hamburger-menu.active span:nth-child(2) {
-  opacity: 0;
+.nav a { font-size: 21px; }
 }
-
-.hamburger-menu.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* --- Media Query for Tablets and Mobile Phones (992px and below) --- */
-@media (max-width: 1629px) {
-
-  /* Make the header padding smaller */
+@media screen and (max-width: 1432px) and (min-width: 1301px) {
   .header {
+    padding: 30px 20px 20px 28px;
+    gap: 85px;
+  }
+  .logo { font-size: 30px; }
+  .nav { gap: 20px; }
+  .nav a { font-size: 19px; }
+}
+@media screen and (max-width: 1300px) and (min-width: 1252px) {
+  .header {
+    padding: 25px 20px 20px 20px;
+    gap: 116px;
+  }
+  .logo { font-size: 28px; }
+  .nav { gap: 15px; }
+  .nav a { font-size: 19px; }
+}
+/* --- [3] Medium Laptops / Tablets (1300px to 1134px) --- */
+@media screen and (max-width: 1252px) and (min-width: 1134px) {
+  .header {
+    padding: 25px 20px 20px 20px;
+    gap: 104px;
+  }
+  .logo { font-size: 28px; }
+  .nav { gap: 12px; }
+  .nav a { font-size: 17px; }
+}
+
+/* --- [4] Small Laptops - Maximum Tightness (1133px to 1111px) --- */
+@media screen and (max-width: 1133px) and (min-width: 1111px) {
+  .header {
+    padding: 20px 15px;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  .logo { font-size: 26px; }
+  .nav { 
+    gap: 12px; 
+    margin-right: 0;
+  }
+  .nav a { 
+    font-size: 17px; 
+    letter-spacing: -0.3px; 
+  }
+}
+
+/* --- [5] Mobile/Tablet Trigger (< 1110px) --- */
+@media (max-width: 1110px) {
+  .header {
+    justify-content: space-between;
     padding: 20px;
   }
-  
-  /* Hide the decorative waves */
-  .decorative-wave {
-      display: none;
-  }
-
-  /* Show the hamburger menu button */
-  .hamburger-menu {
-    display: flex;
-  }
-
-  /* --- Styles for the Mobile Navigation Panel --- */
+  .hamburger-menu { display: flex; }
   .nav {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
-    height: 80vh;
+    width: 300px;
+    height: 100vh;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 25px;
     background-color: #d8e3c2;
-    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
-    transition: right 0.3s ease-in-out;
-    z-index: 11;
-    margin-top: 75px;
+    transition: right 0.4s ease;
+    z-index: 1050;
+  }
+  .nav.active { right: 0; }
+  /* Ensure hover effect still works on mobile */
+  .nav a { font-size: 1.5rem; color: #000; margin-bottom: 10px;}
 }
 
-  /* This is the magic: The 'active' class slides the menu into view */
+/* Base Nav fix to ensure horizontal layout on all desktops */
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevents items from dropping to a second line */
+}
+/* --- Media Query Trigger: 1025px --- */
+@media (max-width: 1110px) {
+  /* .header {
+      padding-top: 20px; 
+  } */
+  .header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 34px 20px 20px 28px;
+    background: #fff;
+    position: relative;
+    z-index: 1000;
+    /* gap: 70px; */
+}
+
+  .decorative-wave {
+      display: none;
+  }
+
+  .hamburger-menu {
+      display: flex; /* Show hamburger at 1025px */
+  }
+
+  .nav {
+      position: fixed;
+      top: 0;
+      right: -100%; /* Off-screen */
+      width: 300px;
+      height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      background-color: #d8e3c2; /* Kept your specific color */
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      transition: right 0.4s ease-in-out;
+      z-index: 1050;
+      margin-right: 0;
+  }
+
   .nav.active {
-    right: 10px;
+      right: 0; /* Slide in */
   }
 
-  /* Make nav links larger and more tappable */
   .nav a {
-    font-size: 1.5rem; /* 24px */
-    color: rgb(0, 0, 0);
+      font-size: 1.5rem; /* Large text in mobile menu */
+      color: #000;
   }
 
-  /* The Login/Sign up buttons were commented out, but if you re-add them,
-     this will make them stack vertically in the mobile menu. */
-  .auth-buttons {
-    flex-direction: column;
-    margin-top: 20px;
+  /* Hamburger Animation to X */
+  .hamburger-menu.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
   }
-}
-
-
-/* ==========================================================================
-   RESPONSIVE STYLES FOR FAQ PAGE
-   Add this entire block to the end of your CSS file.
-   ========================================================================== */
-
-/* --- For Tablets and Smaller Desktops (992px and below) --- */
-@media (max-width: 992px) {
-
-  /* 1. Simplify the banner layout */
-  .faq-banner-wrapper {
-    /* Change to a simple vertical layout */
-    flex-direction: column;
-    margin-bottom: 40px;
+  .hamburger-menu.active span:nth-child(2) {
+      opacity: 0;
   }
-  
-  /* Hide the decorative ellipses that won't fit on smaller screens */
-  .ellipse-img1, .ellipse-img2, .ellipse-img3 {
-    display: none;
-  }
-
-  .faq-banner-image {
-    max-width: 100%; /* Allow image to fill the container */
-  }
-
-  .faq-title-container {
-    /* Make the title a normal block below the image, not an overlay */
-    position: static;
-    color: #1F5706; /* Change color for visibility on white background */
-    margin-top: 20px;
-  }
-
-  .faq-banner-heading {
-    font-size: 2.2rem;
-    text-shadow: none; /* Remove shadow */
-  }
-
-  .faq-underline {
-    background-color: #1F5706; /* Change underline color */
-  }
-
-
-  /* 2. Make FAQ items flexible */
-  .faq-item {
-    /* No max-width needed, it will fill the container */
-    padding: 15px;
-  }
-  
-  .faq-question {
-    font-size: 1.3rem;
-  }
-  
-  .faq-answer {
-    font-size: 1rem;
+  .hamburger-menu.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
   }
 }
 
+/* Waves Styles */
+.decorative-wave {
+  position: absolute;
+  pointer-events: none;
+}
+.top-left-wave, .left-wave {
+  top: 0;
+  left: 0;
+  width: 1107px;
+  z-index: 2;
+}
 
-/* --- For Mobile Phones (576px and below) --- */
-@media (max-width: 576px) {
-  
-  /* Reduce padding on the main container */
-  .faq-container {
-    padding-top: 15px;
-  }
+/* --- Beautiful Hover Effects for Menu Items --- */
 
-  /* Further reduce font sizes for mobile */
-  .faq-banner-heading {
-    font-size: 1.8rem;
-  }
+.nav a {
+  position: relative; /* Necessary to position the underline */
+  transition: color 0.3s ease; /* Smooth transition for the text color */
+}
 
-  .faq-question {
-    font-size: 1.1rem;
-  }
-  
-  .faq-answer {
-    font-size: 0.9rem;
-  }
+/* Change text color to green on hover to match your logo */
+.nav a:hover {
+  color: #1F5706;
+}
 
-  /* Adjust pagination buttons for smaller screens */
-  .faq-pagination {
-    margin-top: 30px;
-  }
+/* Create the underline using a pseudo-element */
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: green; /* Underline color */
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
 
-  .faqpage-button {
-    padding: 8px 14px;
-    font-size: 0.9rem;
-  }
+/* Animate the underline width from 0 to 100% on hover */
+.nav a:hover::after {
+  width: 100%;
+  left: 0;
+  background: green;
+}
+
+/* Optional: Slight lift effect */
+.nav a:hover {
+  transform: translateY(-2px);
+  display: inline-block; /* Required for transform to work on <a> */
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect} from "react";
 import './AboutUsPage.css';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -33,6 +33,9 @@ import infoImage2 from './assets/aboutuspage/infoImage2.png'; // Meditating silh
 
 
 const AboutUsPage = () => {
+  useEffect(() => {
+    document.title = "About Us | Euphoria";
+  }, []);
   // Array to make mapping over grid images easier
   const collageImages = [
     gridImg1, gridImg2, gridImg3, gridImg4, gridImg5,

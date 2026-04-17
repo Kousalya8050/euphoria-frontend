@@ -11,6 +11,11 @@ import contactIllustration from './assets/resources/contact2.jpg';
 
 
 const ResourcesSection = () => {
+
+  useEffect(() => {
+          document.title = "Resources | Euphoria";
+       }, []);
+
   const [popup, setPopup] = useState({
       show: false,
       type: "", // "success" | "error"

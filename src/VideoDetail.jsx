@@ -9,6 +9,10 @@ const VideoDetail = () => {
   const navigate = useNavigate();
   const [videoData, setVideoData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+      document.title = "Video Detail Page | Euphoria";
+  }, []);
   
   useEffect(() => {
     const API_URL =

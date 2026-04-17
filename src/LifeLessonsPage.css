@@ -51,7 +51,7 @@
   
   /* Active button */
   .tab-buttons_l button.active-tab {
-    background: #2a442d;
+    background: #1F5706;
     color: white;
   }
   
@@ -125,7 +125,7 @@
   
   .load-more-container_l button {
     
-      background-color: #2E5332 !important;
+      background-color: #1F5706 !important;
       color: white !important;
       /* border: none;
       border-radius: 50px;
@@ -150,7 +150,7 @@
   
   
   .load-more-container_l button:hover:not(:disabled) {
-    background-color: #1e3a21;
+    background-color: #1F5706;
   }
   
   .load-more-container_l button:disabled {

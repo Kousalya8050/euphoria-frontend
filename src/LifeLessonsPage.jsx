@@ -13,6 +13,11 @@ Modal.setAppElement('#root');
 
 
 const LifeLessons = () => {
+
+useEffect(() => {
+    document.title = "Life Lessons | Euphoria";
+ }, []);
+
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [loading, setLoading] = useState(true);

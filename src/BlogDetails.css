@@ -10,28 +10,45 @@
 
 
 /* .toc { background: #f6f7ef; border-radius: 12px; padding: 30px; position: sticky; top: 40px; } */
-.toc {
+/* .toc {
     background: #f6f7ef;
     border-radius: 12px;
     
-    /* max-height: none; */
-    /* overflow: visible; */
+   
     padding: 30px;
     position: sticky;
     top: 40px;
     height: calc(100vh - 80px);
     overflow-y: auto;
+  } */
+
+  .toc {
+    background: #f6f7ef;
+    border-radius: 10px;
+    padding: 30px;
+    position: sticky;
+    top: 40px;
+    max-height: 90vh; /* Limits height to screen */
+    overflow-y: auto;  /* Adds scrollbar if there are many questions */
   }
+  .toc::-webkit-scrollbar {
+    width: 4px;
+  }
+  .toc::-webkit-scrollbar-thumb {
+    background: #dce7a1;
+    border-radius: 10px;
+  }
+  
 .toc h4 { margin-bottom: 16px; }
 .toc ul { list-style: none; padding: 0; }
 .toc li { margin-bottom: 10px; }
-.toc li.sub { margin-left: 14px; font-size: 14px; }
+.toc li.sub { margin-left: 14px; font-size: 14px; cursor: default !important;  }
 .toc a { text-decoration: none; color: #333; }
 
 
 .categories { margin-top: 30px; display: flex; flex-direction: column; gap: 10px; }
 .categories span { cursor: pointer; }
-.categories .active { background: #dce7a1; padding: 8px 16px; border-radius: 12px; }
+.categories .active { background: #dce7a1; padding: 8px 16px; border-radius: 10px; }
 
 
 .content .category { color: #6a8b2c; font-weight: 500; }
@@ -78,7 +95,7 @@
   height: 500px !important;
   width: 500px !important;
   margin: 40px auto; 
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 
@@ -182,4 +199,49 @@
   .toc {
     padding: 20px;
   }
+}
+
+
+/* Table of Contents Indentation for Subheadings (H3) */
+/* Target the link specifically inside the subheading list item */
+.toc li.sub a {
+  cursor: default !important;
+  text-decoration: none; /* Optional: keeps it looking like plain text */
+}
+
+/* You can also apply it to the li just to be safe, but the 'a' is the key */
+.toc li.sub {
+  margin-left: 20px !important;
+  font-size: 14px;
+  border-left: 2px solid #dce7a1;
+  padding-left: 10px;
+  margin-top: 5px;
+  display: block !important;
+  cursor: default !important; 
+}
+
+/* If you want to make sure it doesn't change color on hover either */
+.toc li.sub a:hover {
+  color: inherit; 
+}
+/* Fix Centering and Font Size for pasted content */
+.content h2, .content h3 {
+  text-align: left !important;
+  display: block !important;
+  margin-top: 30px;
+}
+
+.content p, .content p span {
+  font-size: 18px !important;
+  line-height: 1.8;
+  text-align: left !important;
+}
+
+/* Image handling */
+.content img.blog-mid-img {
+  max-width: 100%;
+  height: auto;
+  margin: 40px auto;
+  display: block;
+  border-radius: 10px;
 }

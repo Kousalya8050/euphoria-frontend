@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from "react";
 import './FAQPage.css';
 import faqBanner from './assets/faq/photo-woman-with-sad-happy-paper-faces.png';
 import ellipse1 from './assets/faq/ellipse1.svg';
@@ -118,6 +118,11 @@ const allQuestions = [
 ];
 
 const FAQPage = () => {
+
+  useEffect(() => {
+     document.title = "FAQ Page | Euphoria";
+  }, []);
+
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(allQuestions.length / ITEMS_PER_PAGE);
 

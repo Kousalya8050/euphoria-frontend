@@ -205,6 +205,10 @@ const HomePage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
+    document.title = "Home Page | Euphoria";
+ }, []);
+
+  useEffect(() => {
     const container = containerRef.current;
   
     const handleScroll = () => {

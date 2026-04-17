@@ -15,6 +15,12 @@ const API_URL =
 
 
 const VideoLessons = () => {
+
+
+  useEffect(() => {
+        document.title = "Video Lessons Page | Euphoria";
+    }, []);
+
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [loading, setLoading] = useState(true);

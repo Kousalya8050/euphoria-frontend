@@ -38,6 +38,10 @@ import Icon6 from './assets/psychotherapy/icon6.svg';
 
 const PsychotherapyTypes = () => {
 
+  useEffect(() => {
+        document.title = "Psychotherapy Types | Euphoria";
+     }, []);
+
   const [popup, setPopup] = useState({
         show: false,
         type: "", // "success" | "error"

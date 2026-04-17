@@ -87,14 +87,31 @@ body, html {
 }
 
   /* Banner Cards */
-  .banner-grid {
+  /* .banner-grid {
     display: grid;
     grid-template-columns: 399px 412.387px 441px;
     grid-template-rows: auto auto;
     gap: 20px;
     padding: 20px;
-    justify-content: center; /* Centers content on wider screens */
-  }
+    justify-content: center; 
+  } */
+  .banner-grid {
+    display: grid;
+    /* We use 'fr' to keep the original proportions (roughly 1 : 1.03 : 1.1) 
+       but allow them to shrink below 1300px */
+    grid-template-columns: 1fr 1.03fr 1.1fr;
+    
+    /* This prevents the grid from growing larger than your original design on big screens */
+    max-width: 1292px; 
+    
+    width: 100%;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto; /* Centers the grid */
+    justify-content: center;
+    box-sizing: border-box; /* Ensures padding doesn't add to the width */
+}
   
   /* Common card styling */
   /* .banner-card {
@@ -119,14 +136,21 @@ body, html {
   }
   
   /* Image */
-  .banner-card img {
+  /* .banner-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px; /* ✅ match parent */
+    border-radius: 20px; 
     display: block;
-  }
+  } */
   
+  .banner-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px; /* Optional: matches your mobile carousel style */
+}
   /* 🔥 Frosted Overlay */
   .banner-card::after {
     content: "";
@@ -184,7 +208,7 @@ body, html {
     top: 83%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #ffffff;
+    color: #040404;
     font-family: 'Inter', sans-serif;
     font-size: 24px;
     font-style: normal;
@@ -246,38 +270,47 @@ body, html {
     z-index: 2;
   }
   /* Exact dimensions (for Mac + Desktop) */
-  .card-1 {
-    grid-row: 1 / span 2;
-    grid-column: 1 / 2;
-    width: 399px;
-    height: 772px;
-    border-radius: 0;
-  }
-  
-  .card-2 {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-    width: 412.387px;
-    height: 386px;
-    border-radius: 0;
-  }
-  
-  .card-3 {
-    grid-row: 1 / 2;
-    grid-column: 3 / 4;
-    width: 436.387px;
-    height: 386px;
-    border-radius: 0;
-  }
-  
-  .card-4 {
-    grid-row: 2 / 3;
-    grid-column: 2 / 4;
-    width: calc(412.387px + 441px + 20px); /* 873.387px + gap */
-    height: 364px;
-    border-radius: 0;
-  }
-  
+  /* --- UPDATED BANNER CARD DIMENSIONS --- */
+
+.card-1 {
+  grid-row: 1 / span 2;
+  grid-column: 1 / 2;
+  width: 100%;       /* Changed from 399px */
+  height: 772px;     /* Keep height for the "tall" look */
+  border-radius: 0;
+}
+
+.card-2 {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  width: 100%;       /* Changed from 412.387px */
+  height: 386px;
+  border-radius: 0;
+}
+
+.card-3 {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+  width: 100%;       /* Changed from 436.387px */
+  height: 386px;
+  border-radius: 0;
+}
+
+.card-4 {
+  grid-row: 2 / 3;
+  grid-column: 2 / 4;
+  width: 100%;       /* Changed from calc(...) */
+  height: 364px;
+  border-radius: 0;
+}
+
+/* Ensure images inside cards don't "push" the container wide */
+.banner-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
   
   
   
@@ -368,7 +401,7 @@ justify-content: center;
   .intro-title {
     font-size: 2.8rem;
     font-weight: bold;
-    color: #2c541d;
+    color: #1F5706;
     
   }
   
@@ -393,7 +426,7 @@ line-height: 35px;
   }
   
   .read-more-button {
-    background-color: #183a0d;
+    background-color: #1F5706;
     color: white;
     padding: 0.5rem 1.5rem;
     border: none;
@@ -457,7 +490,7 @@ line-height: 35px;
         text-align: center;
     font-size: 2.8rem;
     font-weight: bold;
-    color: #38761d;
+    color: #1F5706;
     margin-bottom: 50px;
     padding: 0px;
     margin-top: 50px;
@@ -501,7 +534,7 @@ line-height: 35px;
     bottom: 0;
     left: 0;
     width: 100%;
-    color: #3a3a3a;
+    color: #1F5706;
     font-size: 20px;
     font-weight: 500;
     padding: 18px 5px;
@@ -536,7 +569,7 @@ line-height: 35px;
 
   .btn-view-all-homepage {
     background-color: #fff; 
-    color: #2c541d; 
+    color: #1F5706; 
     border: 2px solid #2c541d; 
     padding: 8px 20px; 
     font-size: 14px; 
@@ -549,7 +582,7 @@ line-height: 35px;
   }
   
   .btn-view-all-homepage:hover {
-    background-color: #2c541d;
+    background-color: #1F5706;
     color: #fff;
   }
   
@@ -642,7 +675,7 @@ line-height: 35px;
     width: 70%; 
     z-index: 2;
     padding: 15px; 
-    color: #2c3e50; 
+    color: #1F5706; 
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     background: rgba(255, 249, 249, 0.54);
@@ -660,7 +693,7 @@ line-height: 35px;
     margin-top: 0;
     margin-bottom: 6px;
     line-height: 1.3;
-    color: #2c3e50; 
+    color: #1F5706; 
   }
   
   
@@ -833,7 +866,7 @@ line-height: 35px;
     bottom: 0;
     left: 0;
     width: 100%;
-    color: #3a3a3a;
+    color: #1F5706;
     font-size: 18px;
     font-weight: 500;
     padding: 12px 0px;
@@ -868,9 +901,10 @@ line-height: 35px;
 /* This now applies to all screens 1550px wide or smaller */
 
 /* ✅ Mobile Carousel Styles */
-@media screen and (max-width: 1300px) {
+/* ✅ Updated breakpoint to 1200px */
+@media screen and (max-width: 1025px) {
   .desktop-carousel {
-    display: none; /* Hide desktop version on small screens */
+    display: none; /* Hide desktop version on screens smaller than 1200px */
   }
 
   .mobile-carousel {
@@ -886,8 +920,6 @@ line-height: 35px;
     scroll-behavior: smooth;
   }
   
-
- 
   .mobile-carousel-slide {
     flex: 0 0 100%;
     scroll-snap-align: start;
@@ -896,24 +928,22 @@ line-height: 35px;
     flex-direction: column;
     align-items: center;
   }
+
   .mobile-carousel-container::-webkit-scrollbar {
     display: none; /* Hide scrollbar (Chrome/Safari) */
   }
 
-
-  
-
   .mobile-carousel-text {
     position: absolute;
-        top: 28px;
-        left: 10%;
-        right: 10%;
-        text-align: center;
-        font-size: 16px;
-        font-weight: 600;
-        color: #000000;
-        text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
-        line-height: 1.4;
+    top: 28px;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+    line-height: 1.4;
   }
 
   .mobile-carousel-dots {
@@ -933,12 +963,12 @@ line-height: 35px;
   }
   
   .mobile-carousel-dots .dot.active {
-    background-color: #2c541d; 
+    background-color: #1F5706; 
     width: 20px;
     border-radius: 30%;
   }
-  
 }
+
 @media screen and (max-width: 768px) {
   .mobile-carousel-image {
     width: 80%;
@@ -953,8 +983,8 @@ line-height: 35px;
   }
 }
 
-/* ✅ Tablet styles */
-@media screen and (min-width: 769px) and (max-width: 1300px) {
+/* ✅ Updated tablet range: 769px to 1200px */
+@media screen and (min-width: 769px) and (max-width: 1025px) {
   .mobile-carousel-image {
     width: 90%;
     height: 500px;
@@ -968,20 +998,44 @@ line-height: 35px;
   }
 }
 
-/* ✅ Hide mobile carousel on desktop */
-@media screen and (min-width: 1301px) {
+@media screen and (min-width: 1025px) and (max-width: 1170px) {
+  .banner-text3 {
+    position: absolute;
+    top: 36%;
+    right: 25% !important;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35px;
+    padding: 8px -2px;
+    border-radius: 5px;
+    display: flex;
+    width: 330px;
+    height: 253px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+    z-index: 2;
+}
+}
+
+/* ✅ Hide mobile carousel on desktop (starting at 1201px) */
+@media screen and (min-width: 1026px) {
   .mobile-carousel {
     display: none;
   }
 }
 
-/* ✅ Hide desktop banner-grid on mobile */
-@media screen and (max-width: 1300px) {
+/* ✅ Hide desktop banner-grid on mobile (under 1200px) */
+@media screen and (max-width: 1025px) {
   .banner-grid {
     display: none;
   }
 }
-
 /* For Mobile Phones (768px and below) */
 @media (max-width: 768px) {
   
@@ -1064,7 +1118,7 @@ line-height: 35px;
     font-size:20px;
 }
 .search-input:focus {
-  border-color: #183a0d !important; /* same as normal */
+  border-color: #1F5706 !important; /* same as normal */
   outline: none !important;
   box-shadow: none !important;
 }
@@ -1125,7 +1179,7 @@ line-height: 35px;
 
 .load-more-btn1 {
   
-    background-color: #183a0d;
+    background-color: #1F5706;
     color: white;
     padding: 0.5rem 1.5rem;
     border: none;

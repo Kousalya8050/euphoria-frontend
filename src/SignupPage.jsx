@@ -8,6 +8,11 @@ import Footer from "./Footer_page";
 import catpcha  from './assets/contactus/recaptcha-logo.jpeg';
 
 const ContactUs = () => {
+
+  useEffect(() => {
+    document.title = "Contact Us | Euphoria";
+}, []);
+
   const [popup, setPopup] = useState({
     show: false,
     type: "", // "success" | "error"
@@ -196,6 +201,7 @@ useEffect(() => {
           <Link to="/psychotherapy" onClick={closeMenu}>Psychotherapy Types</Link>
           <Link to="/resources" onClick={closeMenu}>Resources</Link>
           <Link to="/contactus" onClick={closeMenu}>Contact Us</Link>
+          <Link to="/rss_feeds" onClick={closeMenu}>News</Link>
         </nav>
         <button
           className={`hamburger-menu ${isMenuOpen ? "active" : ""}`}

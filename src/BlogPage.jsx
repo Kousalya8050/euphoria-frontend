@@ -153,7 +153,9 @@ const BlogPage = () => {
   // Show all tags for desktop, limited for mobile
   const visibleTags = isMobile ? tags.slice(0, 10) : tags;
 
-
+  useEffect(() => {
+    document.title = "Blog Page | Euphoria";
+  }, []);
 
 
   useEffect(() => {

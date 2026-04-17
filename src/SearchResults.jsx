@@ -63,8 +63,13 @@ export default function SearchResults() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const [selectedVideo, setSelectedVideo] = useState(null);
+  useEffect(() => {
+    document.title = "Search Results | Euphoria";
+}, []);
 
   useEffect(() => {
+
+  
     const API_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:3000"
