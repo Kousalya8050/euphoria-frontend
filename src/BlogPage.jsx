@@ -79,6 +79,20 @@ import Footer from "./Footer_page";
 
 // --- Sub-component for a single blog post card ---
 const BlogPostCard = ({ post }) => {
+
+  const getImageUrl = (imagePath) => {
+    if (!imagePath) return "https://via.placeholder.com/400x300?text=No+Image";
+    
+    // If it's already a full cloud URL (DigitalOcean/Cloudinary), return it as is
+    if (imagePath.startsWith("http")) return imagePath;
+  
+    // Otherwise, it's a local relative path, prepend your backend URL
+    const API_URL = window.location.hostname === "localhost"
+      ? "http://localhost:3000"
+      : "https://euphoria-backend-oii0.onrender.com";
+  
+    return `${API_URL}/${imagePath}`;
+  };
   const navigate = useNavigate();
 
   const handleReadMore = () => {
@@ -90,7 +104,7 @@ const BlogPostCard = ({ post }) => {
     <div className="post-card">
       <div className="post-card-image-wrapper">
         <img
-          src={post.image}
+          src={getImageUrl(post.image)}
           alt={post.title || "Blog image"}
           className="post-card-image"
         />
