@@ -19,12 +19,13 @@ import SearchResults from "./SearchResults"
 import BlogPage from "./BlogPage";
 import BlogDetails from "./BlogDetails";
 import RssBlogPage from "./RssBlogPage";
+import LandingPage from "./LandingPage";
 
 function App() {
   const location = useLocation();
 
-
-  const hideHeaderOn = ["/admin_login", "/contactus", "/search"];
+  // ✅ Added "/" and "/landing_page" to hide the Header on the Landing Page
+  const hideHeaderOn = ["/", "/landing_page", "/admin_login", "/contactus", "/search"];
 
   const shouldShowHeader = !hideHeaderOn.includes(location.pathname);
 
@@ -34,7 +35,12 @@ function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          {/* ✅ THE CHANGE: The root path now points to the Landing Page */}
+          <Route path="/" element={<LandingPage />} />
+          
+          {/* ✅ Move the original HomePage to /home if you still want it accessible */}
+          <Route path="/home" element={<HomePage />} />
+
           <Route path="/about" element={<AboutUsPage />} />
           <Route path="/videolessons" element={<VideoLessonsPage />} />
           <Route path="/lifelessons" element={<LifeLessonsPage />} />
@@ -49,6 +55,9 @@ function App() {
           <Route path="/admin_login" element={<AdminLogin />} />
           <Route path="/search" element={<SearchResults />} />
           <Route path="/rss_feeds" element={<RssBlogPage />} />
+          
+          {/* Optional: keeps the specific path working too */}
+          <Route path="/landing_page" element={<LandingPage />} />
 
           <Route
             path="/create-blog"

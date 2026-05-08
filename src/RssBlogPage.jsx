@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./RssBlogPage.css";
 import Footer from "./Footer_page";
 
+// --- DYNAMIC IMAGE LOADER ---
+// This automatically finds all images in your fallback folder.
+// If you add 13.jpg tomorrow, it will automatically detect it.
+const importAll = (r) => r.keys().map(r);
+const fallbackImages = importAll(require.context('./assets/rss-fallback', false, /\.(png|jpe?g|svg)$/));
+
 const categories = [
   "All", "Abuse", "Regulation", "Sex and relationship", "ADHD",
   "Diet and nutrition", "Personality disorder", "Trauma", "Therapy",
@@ -14,45 +20,34 @@ const RssBlogPage = () => {
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(12);
 
-  // 1. Set Tab Title on Mount
   useEffect(() => {
     document.title = "News And Updates | Euphoria";
   }, []);
 
-  // 2. Formatting Helper: Capitalize Each Word (Handle ADHD specifically)
   const formatCategory = (str) => {
     if (!str) return "";
     if (str.toUpperCase() === "ADHD") return "ADHD";
-    return str
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-      .join(" ");
+    return str.split(" ").map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(" ");
   };
 
-  // 3. Helper to strip HTML tags for descriptions
   const stripHtml = (html) => {
     const div = document.createElement("div");
     div.innerHTML = html;
     return div.textContent || div.innerText || "";
   };
 
-  // 4. Helper to assign consistent fallback images
-  const getImageUrl = (blog) => {
+  // --- UPDATED IMAGE PICKER ---
+  // It takes 'index' as an argument to ensure sequential use of images
+  const getImageUrl = (blog, index) => {
     if (blog.image && blog.image.trim() !== "" && blog.image !== "null") {
       return blog.image;
     }
-  
-    try {
-      const imageNumber = (blog.id % 20) + 1;
-      // We use require to tell Webpack to include this file in the build
-      return require(`./assets/rss-fallback/${imageNumber}.jpg`);
-    } catch (err) {
-      // Fallback if the specific image is missing
-      return require("./assets/rss-fallback/1.jpg");
-    }
+    
+    // index 0 gets image 1, index 1 gets image 2...
+    // once index 12 is reached, it loops back to 0 (image 1)
+    return fallbackImages[index % fallbackImages.length];
   };
 
-  // 5. Data Fetching Effect
   useEffect(() => {
     const fetchBlogs = async () => {
       setLoading(true);
@@ -77,8 +72,8 @@ const RssBlogPage = () => {
     };
 
     fetchBlogs();
-    setVisibleCount(12); // Reset pagination when category changes
-  }, [selectedCategory]); // ESLint is happy because fetchBlogs is defined inside
+    setVisibleCount(12);
+  }, [selectedCategory]);
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 12);
@@ -89,11 +84,10 @@ const RssBlogPage = () => {
       <div className="rss-container">
         <h1 className="rss-title">News And Updates</h1>
 
-        {/* Category Filters */}
         <div className="rss-filters">
-          {categories.map((cat, index) => (
+          {categories.map((cat, idx) => (
             <button
-              key={index}
+              key={idx}
               className={`filter-btn ${selectedCategory === cat ? "active" : ""}`}
               onClick={() => setSelectedCategory(cat)}
             >
@@ -103,31 +97,27 @@ const RssBlogPage = () => {
         </div>
 
         {loading ? (
-          <div className="rss-loading-state">
-             <p className="loading">Loading insightful content...</p>
-          </div>
+          <div className="rss-loading-state"><p>Loading...</p></div>
         ) : (
           <>
             <div className="rss-grid">
               {blogs.length === 0 ? (
-                <p className="no-results">No feeds found in this category.</p>
+                <p className="no-results">No feeds found.</p>
               ) : (
                 blogs.slice(0, visibleCount).map((blog, index) => (
-                  <div key={index} className="rss-card">
+                  <div key={blog.id || index} className="rss-card">
                     <div className="rss-card-image">
+                      {/* ✅ Pass 'index' here to guarantee unique sequence */}
                       <img 
-                        src={getImageUrl(blog)} 
+                        src={getImageUrl(blog, index)} 
                         alt={blog.title} 
-                        loading="lazy"
-                        onError={(e) => { e.target.src = "/assets/rss-fallback/1.jpg"; }}
+                        loading="lazy" 
                       />
                     </div>
                     
                     <div className="rss-card-body">
                       <h3 title={blog.title}>{blog.title}</h3>
-                      <p className="rss-description">
-                        {stripHtml(blog.description)}
-                      </p>
+                      <p className="rss-description">{stripHtml(blog.description)}</p>
                       <div className="rss-footer">
                         <span className="rss-category-tag">{formatCategory(blog.category)}</span>
                         <a href={blog.link} target="_blank" rel="noreferrer" className="rss-read-link">

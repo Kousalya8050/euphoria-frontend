@@ -85,6 +85,22 @@ const [editContents] = useState(null);
     }
   };
 
+
+  const getSafeUrl = (path) => {
+    if (!path || path === "null") return "";
+  
+    // 1. Fix Double URL if it contains two https:// strings
+    if (path.includes("https://") && path.lastIndexOf("https://") > 0) {
+      return path.substring(path.lastIndexOf("https://"));
+    }
+  
+    // 2. If it's already a Cloud URL, return it as is
+    if (path.startsWith("http")) return path;
+  
+    // 3. If it's an old local path, prepend the API URL
+    return `${API_URL}/${path}`;
+  };
+
   const handleContentChange = (e, field) => {
     
     setForm({ ...form, [field]: e.target.innerHTML });
@@ -867,10 +883,11 @@ const cleanPastedContent = (e) => {
         <section className="blog-banner_d">
           {selectedBlog.banner_image && (
             <img
-              src={encodeURI(selectedBlog.banner_image)} // Added encodeURI for safety
-              className="banner-image_d"
-              alt="Banner"
-            />
+            src={getSafeUrl(selectedBlog.banner_image)} // ✅ Use helper
+            className="banner-image_d"
+            alt="Banner"
+            onError={(e) => e.target.style.display = 'none'}
+          />
           )}
         </section>
 
@@ -905,20 +922,32 @@ const cleanPastedContent = (e) => {
       
       {/* ADDED IMAGE 1 HERE */}
       {selectedBlog.image1 && (
-        <img src={encodeURI(selectedBlog.image1)} alt="" style={{ maxWidth: '100%', margin: '20px 0' }} />
+        <img 
+        src={getSafeUrl(selectedBlog.image1)} // ✅ Use helper
+        alt="" 
+        style={{ maxWidth: '100%', margin: '20px 0' }} 
+    />
       )}
 
       <div dangerouslySetInnerHTML={{ __html: selectedBlog.blog_content2 }} />
       <div dangerouslySetInnerHTML={{ __html: selectedBlog.blog_content3 }} />
 
       {selectedBlog.image2 && (
-        <img src={encodeURI(selectedBlog.image2)} alt="" style={{ maxWidth: '100%', margin: '20px 0' }} />
+        <img 
+        src={getSafeUrl(selectedBlog.image2)} // ✅ Use helper
+        alt="" 
+        style={{ maxWidth: '100%', margin: '20px 0' }} 
+    />
       )}
 
       <div dangerouslySetInnerHTML={{ __html: selectedBlog.blog_content4 }} />
 
       {selectedBlog.image3 && (
-        <img src={encodeURI(selectedBlog.image3)} alt="" style={{ maxWidth: '100%', margin: '20px 0' }} />
+        <img 
+        src={getSafeUrl(selectedBlog.image3)} // ✅ Use helper
+        alt="" 
+        style={{ maxWidth: '100%', margin: '20px 0' }} 
+    />
       )}
 
       <div dangerouslySetInnerHTML={{ __html: selectedBlog.blog_content5 }} />
