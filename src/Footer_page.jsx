@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer_page.css";
-import Instagram from './assets/footer/instawhi.webp';
-import Facebook from './assets/footer/fbwhi.webp';
-import Linkedin from './assets/footer/linkewhi.webp';
-import Twitter from './assets/footer/twiwhi.webp';
-import Bluesky from './assets/footer/bluesky.png'
+import YouTube from './assets/footer/Youtube_final_icon.png';
+import Instagram from './assets/footer/Instagram_final_icon.png';
+import Facebook from './assets/footer/facebook_final_icon.png';
+import Linkedin from './assets/footer/linkedin_finale_icon.png';
+import Twitter from './assets/footer/Twitter_final_icon.png';
+import Bluesky from './assets/footer/bsky_final_icon.png'
 
 import footerWaveImage from './assets/homepage/footer.png';
 
@@ -25,6 +26,7 @@ const navLinks = [
 ];
 
 const socialLinks = [
+  { name: "YouTube", icon: YouTube, path: "#" },
   { name: "Instagram", icon: Instagram, path: "#" },
   { name: "Facebook", icon: Facebook, path: "#" },
   { name: "LinkedIn", icon: Linkedin, path: "#" },
@@ -75,7 +77,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label={social.name}
                 >
-                  <img src={social.icon} alt={social.name} />
+                  <img src={social.icon} alt={social.name} style={{ height: "45px", width: "45px" }} />
                 </a>
               ))}
             </div>

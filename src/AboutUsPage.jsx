@@ -42,8 +42,13 @@ const AboutUsPage = () => {
     gridImg6, gridImg7, gridImg8, gridImg9, gridImg10,
     gridImg11, gridImg12, gridImg13, gridImg14, gridImg15
   ];
-  const paragraphText = `When I first built Psych2Go in 2008, my vision was to establish a platform for people to communicate, create, and discuss all things psychology, mental health and life. Being the loner in high school, and an introvert, I didn’t know there was a place that allowed friendships, learning and community to develop. Thanks to Tumblr, I was able to post content about psychology, mental health awareness, and other content related to psychology. From there, a small community was formed. You all came to offer answers to questions I had, and even ask more questions on topics I myself was starting to learn about. Those were the best days of Psych2Go, at least for me. Now, we have so many animators, writers, voice actors, and over a thousand videos on Youtube about all things psychology and mental health and everything in between. However, things at Psych2Go is beginning to feel a little too corporate. Too repetitive, too distant from what we used to be.`;
- 
+  const paragraphText = `We’re committed to keeping MindWork360 supportive, respectful, and constructive. That means we encourage empathy, privacy, and thoughtful discussion—and we prioritize content that helps people move forward (not feel judged, dismissed, or overwhelmed). If you’re sharing, you’ll be met with compassion. If you’re looking for ideas, you’ll find tools and perspectives. And if you’re not ready to post, you’re welcome to simply read and learn at your own pace.
+  
+  
+  MindWork360 is for anyone who wants to improve well-being and performance in a healthy way—whether you’re dealing with a specific mental health challenge, trying to build better habits, seeking stronger relationships, or working toward personal or professional growth.
+  `;
+  const paragraphText1 = `Over time, we also plan to add access to therapists who may be able to help with mental health concerns, psychotherapy, and improving human performance and relationships, so members can more easily find additional support when they want it. MindWork360 is a community and educational platform and does not provide medical advice, diagnosis, or emergency services. If you’re in immediate danger or think you may harm yourself or someone else, please contact your local emergency number right now or reach out to a crisis hotline in your country.`;
+
   
   // IMPORTANT: Replace placeholder icon paths with your actual icon image files.
   // These should ideally be white icons, possibly within a light circle as suggested by the image.
@@ -62,7 +67,7 @@ const AboutUsPage = () => {
           <h3 className="about-us-subtitle">About Us</h3>
           <h1 className="about-us-title"> A Place To Have Fun, Learn and Heal</h1>
           <p className="about-us-paragraph">
-          When I first built Psych2Go in 2008, my vision was to establish a platform for people to communicate, create, and discuss all things psychology, mental health and life. Being the loner in high school, and an introvert, I didn’t know there was a place that allowed friendships, learning and community to develop. Thanks to Tumblr, I was able to post content about psychology, mental health awareness, and other content related to psychology. From there, a small community was formed. You all came to offer answers to questions I had, and even ask more questions on topics I myself was starting to learn about. Those were the best days of Psych2Go, at least for me. Now, we have so many animators, writers, voice actors, and over a thousand videos on Youtube about all things psychology and mental health and everything in between. However, things at Psych2Go is beginning to feel a little too corporate. Too repetitive, too distant from what we used to be.
+          MindWork360 is a community built for people who want to better understand their mental health, strengthen their relationships, and improve how they show up in everyday life. We believe meaningful change happens when support is practical, honest, and grounded in both lived experience and credible information—so you can take the next step with more clarity and less isolation.
           </p>
         </div>
 
@@ -146,7 +151,7 @@ const AboutUsPage = () => {
 </div>
     <div className="about-us-text-section">
           <p className="about-us-paragraph">
-          When I first built Psych2Go in 2008, my vision was to establish a platform for people to communicate, create, and discuss all things psychology, mental health and life. Being the loner in high school, and an introvert, I didn’t know there was a place that allowed friendships, learning and community to develop. Thanks to Tumblr, I was able to post content about psychology, mental health awareness, and other content related to psychology. From there, a small community was formed. You all came to offer answers to questions I had, and even ask more questions on topics I myself was starting to learn about. Those were the best days of Psych2Go, at least for me. Now, we have so many animators, writers, voice actors, and over a thousand videos on Youtube about all things psychology and mental health and everything in between. However, things at Psych2Go is beginning to feel a little too corporate. Too repetitive, too distant from what we used to be.
+          At MindWork360, you’ll find multiple ways to engage depending on what you need today. Our forums are a place to ask questions, share wins and setbacks, and connect with others who “get it.” Our blogs offer approachable, real-world guidance you can actually use—whether you’re managing stress, navigating anxiety, recovering from burnout, or working on communication and connection. We also share research papers and summaries to help bridge the gap between clinical concepts and daily life, along with curated links to trusted resources so you can explore further with confidence.
           </p>
         </div>
         {/* --- NEW ALTERNATING INFO SECTIONS --- */}
@@ -164,7 +169,7 @@ const AboutUsPage = () => {
           {/* Section 2: Image Left, Text Right */}
           <div className="info-section info-section--reverse">
             <div className="info-text-block">
-              <p className="about-us-paragraph">{paragraphText}</p>
+              <p className="about-us-paragraph">{paragraphText1}</p>
             </div>
             <div className="info-image-block">
               <img

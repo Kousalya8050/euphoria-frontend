@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './LandingPage.css';
-
+import banner from './assets/homepage/banner_for_landing.jpg';
 const LandingPage = () => {
   const [formData, setFormData] = useState({ fname: '', lname: '', email: '' });
   const [loading, setLoading] = useState(false);
@@ -77,30 +77,66 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="hero-image-container">
-          <img 
-            src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&q=80&w=1400" 
-            alt="Wellness Background" 
-            className="hero-bg" 
-          />
-          <div className="hero-overlay">
-            <div className="hero-text-box">
-              <h1>The professional network for Mental Health & Wellness.</h1>
-              <p>A global digital forum for caregivers, practitioners, and those on a journey to heal and grow.</p>
-              <p className="launch-tag">Launching shortly... register to stay updated.</p>
-              <button className="btn-primary" onClick={scrollToSignup}>Connect With Us</button>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="hero-image-container">
+    <img 
+      src={banner} 
+      alt="MindWork360 Banner" 
+      className="hero-bg" 
+    />
+
+    <div className="hero-overlay">
+      <div className="hero-text-box">
+        
+        {/* Logo */}
+        <img 
+          src="/logo.png" 
+          alt="MindWork360 Logo" 
+          className="hero-logo"
+        />
+
+        <h1>MindWork360</h1>
+
+        <p>
+          A Mental Health and Healing Community for Those Looking to Heal, Learn and Improve Their Lives.
+        </p>
+
+        <p>
+          We Want you to Live Your Best Life.
+        </p>
+
+        <p>
+          Share with Someone Who You Think May Benefit From Our Work.
+        </p>
+
+        <p className="launch-tag">
+          Launching Shortly….Register to Stay Updated.
+        </p>
+
+        <button 
+          className="btn-primary" 
+          onClick={scrollToSignup}
+        >
+          Connect With Us
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* About Section */}
       <section className="about-section">
         <div className="content-container">
-          <h2>About Euphoria Community <span className="green-line"></span></h2>
+          <h2>About the MindWork360 Community <span className="green-line"></span></h2>
           <p>
-          When I first built Psych2Go in 2008, my vision was to establish a platform for people to communicate, create, and discuss all things psychology, mental health and life. Being the loner in high school, and an introvert, I didn’t know there was a place that allowed friendships, learning and community to develop. Thanks to Tumblr, I was able to post content about psychology, mental health awareness, and other content related to psychology. From there, a small community was formed. You all came to offer answers to questions I had, and even ask more questions on topics I myself was starting to learn about. Those were the best days of Psych2Go, at least for me. Now, we have so many animators, writers, voice actors, and over a thousand videos on Youtube about all things psychology and mental health and everything in between. However, things at Psych2Go is beginning to feel a little too corporate. Too repetitive, too distant from what we used to be.
+          Welcome to MindWork360—a supportive community for mental health, personal growth, and stronger relationships. Whether you’re navigating stress, anxiety, burnout, life transitions, or simply working to improve how you feel and function, you’re welcome here.          
           </p>
+          <p>
+          Inside MindWork360, you’ll find member forums for open discussion, blogs with practical insights, research papers to deepen understanding, and curated links to trusted resources. Over time, we also plan to add access to therapists who may be able to help with mental health concerns, psychotherapy, and improving human performance and relationships.          
+          </p>
+          <p>
+          MindWork360 is a community and educational space and does not provide medical advice, diagnosis, or emergency services. If you’re in immediate danger or thinking about harming yourself, please contact your local emergency number right now or reach out to a crisis hotline in your country.          
+          </p>
+
         </div>
       </section>
 

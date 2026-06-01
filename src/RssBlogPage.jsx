@@ -2,11 +2,42 @@ import React, { useEffect, useState } from "react";
 import "./RssBlogPage.css";
 import Footer from "./Footer_page";
 
-// --- DYNAMIC IMAGE LOADER ---
-// This automatically finds all images in your fallback folder.
-// If you add 13.jpg tomorrow, it will automatically detect it.
-const importAll = (r) => r.keys().map(r);
-const fallbackImages = importAll(require.context('./assets/rss-fallback', false, /\.(png|jpe?g|svg)$/));
+// --- DYNAMIC IMAGE LOADER (category-aware) ---
+// Recursively loads all images from rss-fallback and its category subfolders.
+// Add images named 1.jpg, 2.jpg... inside a category folder (e.g. rss-fallback/abuse/)
+// and they will be used automatically for feeds with that category.
+const rssImageContext = require.context('./assets/rss-fallback', true, /\.(png|jpe?g|svg)$/);
+const { rootFallbacks, categoryFallbacks } = rssImageContext.keys().reduce(
+  (acc, key) => {
+    const parts = key.split('/'); // ['.',  'folder', 'file.jpg'] or ['.', 'file.jpg']
+    if (parts.length === 3) {
+      const folder = parts[1];
+      if (!acc.categoryFallbacks[folder]) acc.categoryFallbacks[folder] = [];
+      acc.categoryFallbacks[folder].push(rssImageContext(key));
+    } else {
+      acc.rootFallbacks.push(rssImageContext(key));
+    }
+    return acc;
+  },
+  { rootFallbacks: [], categoryFallbacks: {} }
+);
+
+const categoryToFolder = {
+  'Abuse': 'abuse',
+  'Regulation': 'regulation',
+  'Sex and relationship': 'sex-and-relationship',
+  'ADHD': 'adhd',
+  'Diet and nutrition': 'diet-and-nutrition',
+  'Personality disorder': 'personality-disorder',
+  'Trauma': 'trauma',
+  'Therapy': 'therapy',
+  'Stress and anxiety': 'stress-and-anxiety',
+  'Health': 'health',
+  'Child development': 'child-development',
+  'Cognition': 'cognition',
+  'Grief': 'grief',
+  'Mental Health': 'mental-health',
+};
 
 const categories = [
   "All", "Abuse", "Regulation", "Sex and relationship", "ADHD",
@@ -36,16 +67,13 @@ const RssBlogPage = () => {
     return div.textContent || div.innerText || "";
   };
 
-  // --- UPDATED IMAGE PICKER ---
-  // It takes 'index' as an argument to ensure sequential use of images
   const getImageUrl = (blog, index) => {
     if (blog.image && blog.image.trim() !== "" && blog.image !== "null") {
       return blog.image;
     }
-    
-    // index 0 gets image 1, index 1 gets image 2...
-    // once index 12 is reached, it loops back to 0 (image 1)
-    return fallbackImages[index % fallbackImages.length];
+    const folder = categoryToFolder[blog.category];
+    const imgs = folder && categoryFallbacks[folder]?.length ? categoryFallbacks[folder] : rootFallbacks;
+    return imgs[index % imgs.length];
   };
 
   useEffect(() => {

@@ -187,7 +187,7 @@
 .euphoria-nav-and-socials-container 
 { display: flex; 
   align-items: flex-start; 
-  gap: 120px; /* space between nav and socials */ 
+  /* gap: 120px; */
 } 
 .euphoria-footer-nav { 
   display: flex; 
@@ -198,12 +198,18 @@
   flex-direction: column; 
   gap: 4px; 
 } 
-.euphoria-footer-socials { 
+.euphoria-footer-socials {
   margin-left: 110px;
-    margin-top: 220px;
-    display: flex;
-    gap: 21px;
- } /* --- Media Queries for .category-label-homepage adjustments --- */ 
+  margin-top: 220px;
+  display: flex;
+  gap: 21px;
+  position: relative;
+  z-index: 2;
+}
+
+.euphoria-footer-socials img {
+  filter: brightness(0) invert(1);
+} /* --- Media Queries for .category-label-homepage adjustments --- */ 
  
 /* ========================================================================== 
    RESPONSIVE FOOTER BAR
@@ -211,7 +217,7 @@
    Below 1255px: Vertical 3-row stack (Auto height)
    ========================================================================== */
 
-   @media (max-width: 1550px) {
+  @media (max-width: 1550px) {
     .euphoria-footer-wave-bg {
       background-image: none !important;
       background-color: #1F5706 !important;
@@ -219,93 +225,96 @@
       height: 70px !important;
       display: flex !important;
       align-items: center !important;
-      overflow: hidden;
+      overflow: visible !important;
     }
-  
+
     .euphoria-footer-content {
       display: flex !important;
       flex-direction: row !important;
       justify-content: space-between !important;
-      align-items: center !important; /* Vertically centers children */
+      align-items: center !important;
       width: 100% !important;
-      max-width: 1400px;
-      margin: 0 auto !important;
-      padding-left: 0 !important;
-      height: 100%;
-    }
-  
-    /* Reset margins and ensure containers allow vertical centering */
-    .euphoria-footer-nav, 
-    .footer-nav-column, 
-    .footer-nav-column1, 
-    .euphoria-footer-socials, 
-    .euphoria-nav-and-socials-container {
-      margin-top: 0 !important;
-      margin-left: 0 !important;
+      max-width: 100% !important;
+      margin: 0 !important;
       padding: 0 !important;
-      top: 0 !important;
-      display: flex !important;
-      align-items: center !important; /* Ensures vertical centering inside the container */
+      height: 100% !important;
+      gap: 0 !important;
     }
-  
+
     .euphoria-footer-logo {
-      font-size: 1.6rem !important;
+      font-size: 1.4rem !important;
       color: white !important;
-      flex: 0.5 !important; 
+      flex-shrink: 0 !important;
       line-height: 1 !important;
       white-space: nowrap;
-      display: flex !important;
-      align-items: center !important; /* Centers text vertically */
-      height: 100%;
+      margin: 0 !important;
     }
-  
+
+    .euphoria-nav-and-socials-container {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      flex: 1 !important;
+      margin: 0 0 0 40px !important;
+      padding: 0 !important;
+      height: 100% !important;
+      gap: 20px !important;
+    }
+
     .euphoria-footer-nav {
       display: flex !important;
-      flex-direction: column !important; /* Rows inside the column */
+      flex-direction: column !important;
       align-items: center !important;
       justify-content: center !important;
       gap: 2px !important;
-      flex: 5 !important; 
-      height: 100%;
+      flex: 1 !important;
+      margin: 0 !important;
+      height: 100% !important;
     }
-  
+
     .footer-nav-column, .footer-nav-column1 {
       display: flex !important;
       flex-direction: row !important;
-      gap: 15px !important;
+      flex-wrap: wrap !important;
+      gap: 10px !important;
       align-items: center !important;
+      justify-content: center !important;
+      margin: 0 !important;
     }
-  
+
     .footer-nav-column a:not(:last-child)::after,
     .footer-nav-column1 a:not(:last-child)::after {
       content: "|";
-      margin-left: 15px;
-      color: rgba(255,255,255,0.4);
+      margin-left: 10px;
+      color: rgba(255, 255, 255, 0.4);
     }
-  
+
     .euphoria-footer-nav a {
       color: #d4edd4 !important;
-      font-size: 15px !important;
+      font-size: 13px !important;
       text-decoration: none !important;
       margin-bottom: 0 !important;
     }
-  
-    /* FIXED: Social Icons Centering */
+
     .euphoria-footer-socials {
       display: flex !important;
-      gap: 15px !important;
+      flex-direction: row !important;
+      gap: 12px !important;
       justify-content: flex-end !important;
-      align-items: center !important; /* This centers icons vertically */
-      flex: 0.5 !important; 
-      height: 100% !important; /* Makes container take full 70px to allow centering */
+      align-items: center !important;
+      flex-shrink: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 100% !important;
     }
-    
-    .euphoria-footer-socials img { 
-      height: 20px !important; 
-      width: auto !important;
+
+    .euphoria-footer-socials img {
+      height: 22px !important;
+      width: 22px !important;
       display: block !important;
     }
-}
+  }
   
   /* --- BELOW 1255px: FORCE 3 DISTINCT ROWS --- */
   @media (max-width: 1255px) {
