@@ -22,22 +22,10 @@ const { rootFallbacks, categoryFallbacks } = rssImageContext.keys().reduce(
   { rootFallbacks: [], categoryFallbacks: {} }
 );
 
-const categoryToFolder = {
-  'Abuse': 'abuse',
-  'Regulation': 'regulation',
-  'Sex and relationship': 'sex-and-relationship',
-  'ADHD': 'adhd',
-  'Diet and nutrition': 'diet-and-nutrition',
-  'Personality disorder': 'personality-disorder',
-  'Trauma': 'trauma',
-  'Therapy': 'therapy',
-  'Stress and anxiety': 'stress-and-anxiety',
-  'Health': 'health',
-  'Child development': 'child-development',
-  'Cognition': 'cognition',
-  'Grief': 'grief',
-  'Mental Health': 'mental-health',
-};
+// Derives the folder name from a category string regardless of casing.
+// e.g. "Mental Health" → "mental-health", "ADHD" → "adhd"
+const categoryToFolder = (category) =>
+  category ? category.toLowerCase().replace(/\s+/g, '-') : null;
 
 const categories = [
   "All", "Abuse", "Regulation", "Sex and relationship", "ADHD",
@@ -71,7 +59,7 @@ const RssBlogPage = () => {
     if (blog.image && blog.image.trim() !== "" && blog.image !== "null") {
       return blog.image;
     }
-    const folder = categoryToFolder[blog.category];
+    const folder = categoryToFolder(blog.category);
     const imgs = folder && categoryFallbacks[folder]?.length ? categoryFallbacks[folder] : rootFallbacks;
     return imgs[index % imgs.length];
   };

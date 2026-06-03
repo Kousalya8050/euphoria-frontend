@@ -606,13 +606,13 @@ const cleanPastedContent = (e) => {
         }
       }, 400);
   
-      // 6. Set Previews (using encodeURI for filenames with spaces)
+      // 6. Set Previews — use getSafeUrl so relative paths and double-URLs are resolved correctly
       setPreview({
-        banner_image: fullBlog.banner_image ? encodeURI(fullBlog.banner_image) : null,
-        thumbnail_image: fullBlog.thumbnail_image ? encodeURI(fullBlog.thumbnail_image) : null,
-        image1: fullBlog.image1 ? encodeURI(fullBlog.image1) : null,
-        image2: fullBlog.image2 ? encodeURI(fullBlog.image2) : null,
-        image3: fullBlog.image3 ? encodeURI(fullBlog.image3) : null,
+        banner_image: getSafeUrl(fullBlog.banner_image) || null,
+        thumbnail_image: getSafeUrl(fullBlog.thumbnail_image) || null,
+        image1: getSafeUrl(fullBlog.image1) || null,
+        image2: getSafeUrl(fullBlog.image2) || null,
+        image3: getSafeUrl(fullBlog.image3) || null,
       });
   
     } catch (err) {
