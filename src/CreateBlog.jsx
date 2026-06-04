@@ -182,14 +182,14 @@ const [editContents] = useState(null);
       // Create FormData
       const formData = new FormData();
     
-      // 1. Append text fields (Exclude 'id' from body as it's in the URL)
+      // 1. Append text fields — skip blog_content* because step 2 reads them from the DOM
       Object.keys(form).forEach((key) => {
-        if (key !== "id") {
+        if (key !== "id" && !key.startsWith("blog_content")) {
           formData.append(key, form[key] || "");
         }
       });
-    
-      // 2. Append HTML Content
+
+      // 2. Append HTML Content from contentEditable DOM nodes (single source of truth)
       for (let i = 1; i <= 5; i++) {
         const html = document.getElementById(`content${i}`)?.innerHTML || "";
         formData.append(`blog_content${i}`, html);
