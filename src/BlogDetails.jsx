@@ -70,29 +70,36 @@ const BlogDetails = () => {
     if (!blog) return [];
     const seenText = new Set();
     const result = [];
+
     const addHeading = (text, tag) => {
       if (!text || text.trim() === "") return;
-      const cleanText = text.trim();
-      if (!seenText.has(cleanText.toLowerCase())) {
-        seenText.add(cleanText.toLowerCase());
-        result.push({
-          id: cleanText.replace(/\s+/g, "-").toLowerCase().replace(/[?.,!]/g, ""),
-          text: cleanText,
-          tag: tag.toUpperCase(),
-        });
-      }
+      // Headings never contain commas, so splitting on "," is safe for fields
+      // where the admin stored multiple headings as "H1, H2, H3"
+      const parts = text.split(",");
+      parts.forEach(part => {
+        const cleanText = part.trim();
+        if (cleanText && !seenText.has(cleanText.toLowerCase())) {
+          seenText.add(cleanText.toLowerCase());
+          result.push({
+            id: cleanText.replace(/\s+/g, "-").toLowerCase().replace(/[?.,!]/g, ""),
+            text: cleanText,
+            tag: tag.toUpperCase(),
+          });
+        }
+      });
     };
 
-    // Database fields take priority — process them first
+    // Primary: HTML content h2/h3 tags in correct document order
+    const container = document.createElement("div");
+    container.innerHTML = [1, 2, 3, 4, 5].map(i => blog[`blog_content${i}`] || "").join("");
+    container.querySelectorAll("h2, h3").forEach(el => addHeading(el.textContent, el.tagName));
+
+    // Secondary: database heading fields — deduplicated against HTML above.
+    // Useful for supplemental entries (e.g. FAQ h3 subheadings) not tagged in HTML.
     for (let i = 1; i <= 10; i++) {
       if (blog[`h2_${i}`]) addHeading(blog[`h2_${i}`], "H2");
       if (blog[`h3_${i}`]) addHeading(blog[`h3_${i}`], "H3");
     }
-
-    // Fall back to scanning HTML content for any headings not already in database fields
-    const container = document.createElement("div");
-    container.innerHTML = [1, 2, 3, 4, 5].map(i => blog[`blog_content${i}`] || "").join("");
-    container.querySelectorAll("h2, h3").forEach(el => addHeading(el.textContent, el.tagName));
 
     return result;
   }, [blog]);
