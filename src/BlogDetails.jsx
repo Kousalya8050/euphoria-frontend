@@ -72,28 +72,28 @@ const BlogDetails = () => {
     const result = [];
     const addHeading = (text, tag) => {
       if (!text || text.trim() === "") return;
-      const items = text.includes(",") ? text.split(/,(?=\s+[A-Z])|,(?=\s*")|(?<=\?)\s*,/) : [text];
-      items.forEach(item => {
-        const cleanText = item.trim().replace(/^,|,$/g, "");
-        if (cleanText && !seenText.has(cleanText.toLowerCase())) {
-          seenText.add(cleanText.toLowerCase());
-          result.push({
-            id: cleanText.replace(/\s+/g, "-").toLowerCase().replace(/[?.,!]/g, ""),
-            text: cleanText,
-            tag: tag.toUpperCase(),
-          });
-        }
-      });
+      const cleanText = text.trim();
+      if (!seenText.has(cleanText.toLowerCase())) {
+        seenText.add(cleanText.toLowerCase());
+        result.push({
+          id: cleanText.replace(/\s+/g, "-").toLowerCase().replace(/[?.,!]/g, ""),
+          text: cleanText,
+          tag: tag.toUpperCase(),
+        });
+      }
     };
 
-    const container = document.createElement("div");
-    container.innerHTML = [1, 2, 3, 4, 5].map(i => blog[`blog_content${i}`] || "").join("");
-    container.querySelectorAll("h2, h3").forEach(el => addHeading(el.innerText, el.tagName));
-
+    // Database fields take priority — process them first
     for (let i = 1; i <= 10; i++) {
       if (blog[`h2_${i}`]) addHeading(blog[`h2_${i}`], "H2");
       if (blog[`h3_${i}`]) addHeading(blog[`h3_${i}`], "H3");
     }
+
+    // Fall back to scanning HTML content for any headings not already in database fields
+    const container = document.createElement("div");
+    container.innerHTML = [1, 2, 3, 4, 5].map(i => blog[`blog_content${i}`] || "").join("");
+    container.querySelectorAll("h2, h3").forEach(el => addHeading(el.textContent, el.tagName));
+
     return result;
   }, [blog]);
 
@@ -103,7 +103,7 @@ const BlogDetails = () => {
     if (!content) return;
     const headingEls = content.querySelectorAll("h2, h3");
     headingEls.forEach((h) => {
-      const id = h.innerText.trim().replace(/\s+/g, "-").toLowerCase().replace(/[?]/g, "");
+      const id = h.textContent.trim().replace(/\s+/g, "-").toLowerCase().replace(/[?.,!]/g, "");
       h.setAttribute("id", id);
     });
   }, [blog]);
