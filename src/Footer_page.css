@@ -1,7 +1,7 @@
 /* .euphoria-footer {
     font-family: "Inter", sans-serif;
   }
-  
+
   .euphoria-footer-wave-bg {
     background-repeat: no-repeat;
     background-position: bottom center;
@@ -12,7 +12,7 @@
     height: 260px;
 
   }
-  
+
   .euphoria-footer-content {
     margin: 0 auto;
     display: flex;
@@ -24,8 +24,8 @@
     gap: 30px;
     padding-left: 88px;
   }
-  
-  
+
+
   .euphoria-footer-logo {
     font-size: 2.8rem;
     font-weight: 700;
@@ -33,22 +33,22 @@
     flex-shrink: 0;
     line-height: 1.1;
   }
-  
-  
+
+
   .euphoria-nav-and-socials-container {
     display: flex;
     gap: 120px;
     align-items: flex-start;
   }
-  
- 
+
+
   .euphoria-footer-nav {
     display: flex;
     gap: 40px;
     align-items: flex-start;
     margin-top: 51px;
   }
-  
+
   .footer-nav-column {
     display: flex;
     flex-direction: column;
@@ -62,19 +62,19 @@
     margin-left: 25px;
     margin-top: 80px;
   }
-  
+
   .euphoria-footer-nav a {
     color: #d4edd4;
     text-decoration: none;
     font-size: 1.1rem;
   }
-  
+
   .euphoria-footer-nav a:hover {
     color: #fff;
     text-decoration: underline;
   }
-  
-  
+
+
   .euphoria-footer-socials {
     display: flex;
     gap: 12px;
@@ -83,13 +83,13 @@
     margin-left: 0;
     margin-top: 220px;
   }
-  
+
   .euphoria-footer-socials img {
     width: 28px;
     height: 28px;
   }
-  
-  
+
+
   @media (max-width: 992px) {
     .euphoria-footer-content {
       flex-direction: column;
@@ -97,107 +97,109 @@
       padding-left: 0;
       text-align: center;
     }
-  
+
     .euphoria-nav-and-socials-container {
       flex-direction: column;
       gap: 20px;
     }
-  
+
     .euphoria-footer-socials {
       justify-content: center;
     }
   }
    */
 
-   .euphoria-footer { 
-    margin-top: 50px; 
-    line-height: 1.6; 
-    font-family: 'Inter', sans-serif; 
-  } 
-  
-  .euphoria-footer-wave-bg { 
-    background-repeat: no-repeat; 
+   .euphoria-footer {
+    margin-top: 50px;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .euphoria-footer-wave-bg {
+    background-repeat: no-repeat;
     background-position: bottom center;
-     background-size: cover; 
-     padding: 92px 20px 40px; 
-     color: #e0f0d8; 
-     position: relative; 
-     height: 260px; 
-    } 
-    
-  .euphoria-footer-content { 
-    margin: 0 auto; 
-    display: flex; 
-    align-items: flex-start;  
-    justify-content: flex-start; 
-    flex-wrap: wrap; 
-    position: relative; 
-    z-index: 1; 
-    gap: 30px; /* Space between logo and the nav-socials group */ 
-    padding-left: 88px; 
-  } 
-.euphoria-footer-logo { 
-  font-size: 2.8rem; 
-  font-weight: 700; 
-  color: #f0fff0; 
-  flex-shrink: 0; 
-  line-height: 1.1; /* Adjust for better visual alignment if needed */ /* margin-right is now handled by 'gap' on parent */
- } /* New container for nav and socials */ 
- .euphoria-nav-and-socials-container 
- { display: flex; /* flex-direction: column; */ 
-  align-items: flex-start; /* Children (nav, socials) will align to the start */ /* If "Home" should be slightly lower than top of "Euphoria", add small margin-top here. Otherwise, flex-start on parent should align their tops fairly well. */ /* margin-top: 5px; Example for slight offset */ 
-} 
-.euphoria-footer-nav { 
-  display: flex; /* flex-direction: column; */ 
-  align-items: flex-start; 
-  margin-top: 51px; 
-  gap: 30px; 
-} 
-.footer-nav-column { 
-  display: flex; 
+     background-size: cover;
+     padding: 92px 20px 40px;
+     color: #e0f0d8;
+     position: relative;
+     height: 260px;
+    }
+
+  .euphoria-footer-content {
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    gap: 30px; /* Space between logo and the nav-socials group */
+    padding-left: 88px;
+  }
+.euphoria-footer-logo {
+  flex-shrink: 0;
+}
+
+.footer-logo-img {
+  width: 235px;
+  height: auto;
+  display: block;
+} /* New container for nav and socials */
+ .euphoria-nav-and-socials-container
+ { display: flex; /* flex-direction: column; */
+  align-items: flex-start; /* Children (nav, socials) will align to the start */ /* If "Home" should be slightly lower than top of "Euphoria", add small margin-top here. Otherwise, flex-start on parent should align their tops fairly well. */ /* margin-top: 5px; Example for slight offset */
+}
+.euphoria-footer-nav {
+  display: flex; /* flex-direction: column; */
+  align-items: flex-start;
+  margin-top: 51px;
+  gap: 30px;
+}
+.footer-nav-column {
+  display: flex;
   flex-direction: column;
-  gap: 4px; 
-  margin-left: 25px; 
+  gap: 4px;
+  margin-left: 25px;
   text-align: left !important;
-} 
-.footer-nav-column1 { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 4px; 
-  margin-left: 25px; 
-  margin-top: 80px; 
+}
+.footer-nav-column1 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 25px;
+  margin-top: 80px;
   text-align: left !important;
-} 
-.euphoria-footer-nav a { 
-  color: #d4edd4; 
-  text-decoration: none; 
-  font-size: 1.2rem; 
-  font-weight: 500; 
-  transition: color 0.2s ease; 
-  margin-bottom: 8px; 
-  line-height: 1.4; 
-} 
-.euphoria-footer-nav a:last-child { 
-  margin-bottom: 0; /* No bottom margin on the very last nav link */ 
-} 
-.euphoria-footer-nav a:hover { 
-  color: #ffffff; 
-  text-decoration: underline; 
-} 
-.euphoria-nav-and-socials-container 
-{ display: flex; 
-  align-items: flex-start; 
+}
+.euphoria-footer-nav a {
+  color: #d4edd4;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.euphoria-footer-nav a:last-child {
+  margin-bottom: 0; /* No bottom margin on the very last nav link */
+}
+.euphoria-footer-nav a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.euphoria-nav-and-socials-container
+{ display: flex;
+  align-items: flex-start;
   /* gap: 120px; */
-} 
-.euphoria-footer-nav { 
-  display: flex; 
-  gap: 30px; /* space between nav columns */ 
-} 
-.footer-nav-column 
-{ display: flex; 
-  flex-direction: column; 
-  gap: 4px; 
-} 
+}
+.euphoria-footer-nav {
+  display: flex;
+  gap: 30px; /* space between nav columns */
+}
+.footer-nav-column
+{ display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 .euphoria-footer-socials {
   margin-left: 110px;
   margin-top: 220px;
@@ -209,9 +211,9 @@
 
 .euphoria-footer-socials img {
   filter: brightness(0) invert(1);
-} /* --- Media Queries for .category-label-homepage adjustments --- */ 
- 
-/* ========================================================================== 
+} /* --- Media Queries for .category-label-homepage adjustments --- */
+
+/* ==========================================================================
    RESPONSIVE FOOTER BAR
    1550px - 1255px: Horizontal 3-column bar (70px height)
    Below 1255px: Vertical 3-row stack (Auto height)
@@ -242,12 +244,13 @@
     }
 
     .euphoria-footer-logo {
-      font-size: 1.4rem !important;
-      color: white !important;
       flex-shrink: 0 !important;
-      line-height: 1 !important;
-      white-space: nowrap;
       margin: 0 !important;
+    }
+
+    .footer-logo-img {
+      height: 42px !important;
+      width: auto !important;
     }
 
     .euphoria-nav-and-socials-container {
@@ -315,73 +318,105 @@
       display: block !important;
     }
   }
-  
+
   /* --- BELOW 1255px: FORCE 3 DISTINCT ROWS --- */
   @media (max-width: 1255px) {
     .euphoria-footer-wave-bg {
-      height: auto !important; /* Expand background to fit 3 rows */
+      height: auto !important;
+      min-height: unset !important;
       padding: 30px 20px !important;
       display: block !important;
+      align-items: unset !important;
+      overflow: visible !important;
     }
-  
+
     .euphoria-footer-content {
-      flex-direction: column !important; /* Vertical Stack */
-      gap: 25px !important; 
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 25px !important;
       height: auto !important;
       text-align: center !important;
     }
-  
-    /* Container for Nav and Socials - force vertical stacking */
+
     .euphoria-nav-and-socials-container {
-      flex-direction: column !important; 
+      flex-direction: column !important;
       align-items: center !important;
-      gap: 25px !important; 
-      width: 100%;
+      gap: 25px !important;
+      width: 100% !important;
+      margin: 0 !important;
     }
-  
+
     /* Row 1: Logo */
     .euphoria-footer-logo {
+      display: flex !important;
       justify-content: center !important;
-      font-size: 2rem !important;
-      width: 100%;
+      width: 100% !important;
     }
-  
-    /* Row 2: Navigation Items */
+
+    .footer-logo-img {
+      width: min(320px, 80%) !important;
+      height: auto !important;
+    }
+
+    /* Row 2: Navigation */
     .euphoria-footer-nav {
-      width: 100%;
-      margin-top: 0 !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      width: 100% !important;
+      margin: 0 !important;
       gap: 10px !important;
     }
-  
-    .footer-nav-column, .footer-nav-column1 {
+
+    .footer-nav-column,
+    .footer-nav-column1 {
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
       justify-content: center !important;
-      gap: 12px !important;
-      flex-wrap: wrap;
+      gap: 8px 16px !important;
+      margin: 0 !important;
     }
-  
+
     .euphoria-footer-nav a {
       font-size: 0.95rem !important;
+      margin-bottom: 0 !important;
     }
-  
+
     /* Row 3: Social Icons */
     .euphoria-footer-socials {
       justify-content: center !important;
-      width: 100%;
-      margin-top: 0 !important; /* Reset desktop 220px margin */
-      gap: 25px !important;
+      width: 100% !important;
+      margin: 0 !important;
+      gap: 20px !important;
     }
-  
+
     .euphoria-footer-socials img {
-      height: 24px !important;
+      height: 30px !important;
+      width: 30px !important;
     }
   }
-  
-  /* --- Small Mobile Adjustments --- */
+
+  /* --- Small Mobile --- */
   @media (max-width: 576px) {
-    .footer-nav-column, .footer-nav-column1 {
-      gap: 8px !important;
+    .euphoria-footer-wave-bg {
+      padding: 24px 16px !important;
     }
+
+    .footer-nav-column,
+    .footer-nav-column1 {
+      gap: 6px 12px !important;
+    }
+
     .euphoria-footer-nav a {
       font-size: 0.8rem !important;
+    }
+
+    .footer-logo-img {
+      width: min(220px, 85%) !important;
+      height: auto !important;
+    }
+
+    .euphoria-footer-socials img {
+      height: 26px !important;
+      width: 26px !important;
     }
   }

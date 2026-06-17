@@ -3,7 +3,9 @@ import 'react-phone-input-2/lib/style.css';
 import axios from "axios";
 import PhoneInput from 'react-phone-input-2';
 import { Link } from 'react-router-dom';
-import './SignupPage.css'; 
+import './SignupPage.css';
+import './Disclaimer.css';
+import Header from "./Header";
 import Footer from "./Footer_page";
 import catpcha  from './assets/contactus/recaptcha-logo.jpeg';
 
@@ -159,10 +161,6 @@ const ContactUs = () => {
       });
     }
   };
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
-
   useEffect(() => {
     document.body.classList.add('no-scroll');
     return () => {
@@ -186,33 +184,7 @@ useEffect(() => {
 
   return (
     <>
-      {/* Header (no changes here) */}
-      <header className="header">
-        <Link to="/" className="logo" onClick={closeMenu}>Euphoria</Link>
-        <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
-          <Link to="/" onClick={closeMenu}>Home</Link>
-          <Link to="/about" onClick={closeMenu}>About Us</Link>
-          {/* <Link to="#" onClick={closeMenu}>Academic</Link>
-          <Link to="#" onClick={closeMenu}>Casual</Link> */}
-          <Link to="/blog" onClick={closeMenu}>Blog</Link>
-          <Link to="/videolessons" onClick={closeMenu}>Video Lessons</Link>
-          <Link to="/lifelessons" onClick={closeMenu}>Life Lessons</Link>
-          <Link to="/faq" onClick={closeMenu}>FAQ</Link>
-          <Link to="/psychotherapy" onClick={closeMenu}>Psychotherapy Types</Link>
-          <Link to="/resources" onClick={closeMenu}>Resources</Link>
-          <Link to="/contactus" onClick={closeMenu}>Contact Us</Link>
-          <Link to="/rss_feeds" onClick={closeMenu}>News</Link>
-        </nav>
-        <button
-          className={`hamburger-menu ${isMenuOpen ? "active" : ""}`}
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </header>
+      <Header />
 
       {/* ✅ Contact Form Section - ORIGINAL JSX STRUCTURE (NO CHANGES) */}
       <h2 className="contact-container1">Contact Us</h2>
@@ -229,16 +201,11 @@ useEffect(() => {
           </div>
 
           <div className="location-section">
-            <h3>Locations</h3>
-            <div className="locations-grid">
-              {[...Array(4)].map((_, i) => (
-                <div className="location-box" key={i}>
-                  <p><strong>Singapore</strong></p>
-                  <p>1 Raffles Pl</p>
-                  <p>Tower 2, Level 19</p>
-                  <p>Singapore 048616</p>
-                </div>
-              ))}
+            <h3>Location</h3>
+            <div className="location-box">
+              <p><strong>MindWork360</strong></p>
+              <p>111 C St</p>
+              <p>Encinitas, CA 92024</p>
             </div>
           </div>
         </div>
@@ -410,7 +377,18 @@ useEffect(() => {
   </div>
 )}
 
-<Footer />
+      <div className="disclaimer-section">
+        <h2 className="disclaimer-heading">Disclaimer</h2>
+        <p className="disclaimer-text">
+          MindWork360 is a community and educational platform and does not provide medical advice,
+          diagnosis, or emergency services. If you're in immediate danger or think you may harm
+          yourself or someone else, please contact your local mental health emergency number right
+          now or reach out to a crisis hotline in your country of residence. You can find such
+          resources on our website at <a href="https://www.mindwork360.com" target="_blank" rel="noopener noreferrer">www.mindwork360.com</a>
+        </p>
+      </div>
+
+      <Footer />
     </>
   );
 };

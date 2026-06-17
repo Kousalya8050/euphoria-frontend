@@ -6,7 +6,7 @@ import Footer from "./Footer_page";
 // Recursively loads all images from rss-fallback and its category subfolders.
 // Add images named 1.jpg, 2.jpg... inside a category folder (e.g. rss-fallback/abuse/)
 // and they will be used automatically for feeds with that category.
-const rssImageContext = require.context('./assets/rss-fallback', true, /\.(png|jpe?g|svg)$/);
+const rssImageContext = require.context('./assets/rss-fallback-resized', true, /\.(png|jpe?g|svg)$/);
 const { rootFallbacks, categoryFallbacks } = rssImageContext.keys().reduce(
   (acc, key) => {
     const parts = key.split('/'); // ['.',  'folder', 'file.jpg'] or ['.', 'file.jpg']

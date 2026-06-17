@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './ResourcesSection.css';
 import Footer from "./Footer_page";
+import './Disclaimer.css';
 import neverGiveUp from './assets/resources/never-give-up.png';
 import learnToRest from './assets/resources/learn-to-rest.png';
 import whenLifeGetsBlurry from './assets/resources/when-life-blurry.png';
@@ -550,6 +551,16 @@ const ResourcesSection = () => {
             </div>
           ))}
         </div>
+        <div className="disclaimer-section">
+              <h2 className="disclaimer-heading">Disclaimer</h2>
+              <p className="disclaimer-text">
+                MindWork360 is a community and educational platform and does not provide medical advice,
+                diagnosis, or emergency services. If you're in immediate danger or think you may harm
+                yourself or someone else, please contact your local mental health emergency number right
+                now or reach out to a crisis hotline in your country of residence. You can find such
+                resources on our website at <a href="https://www.mindwork360.com" target="_blank" rel="noopener noreferrer">www.mindwork360.com</a>
+              </p>
+            </div>
         {/* Newsletter Section */}
         <div className="newsletter-section_r">
         <div className="newsletter-left_r">

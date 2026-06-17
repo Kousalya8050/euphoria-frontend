@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 import './FAQPage.css';
+import './Disclaimer.css';
 import faqBanner from './assets/faq/photo-woman-with-sad-happy-paper-faces.png';
 import ellipse1 from './assets/faq/ellipse1.svg';
 import ellipse2 from './assets/faq/ellipse2.svg';
@@ -12,109 +13,85 @@ const ITEMS_PER_PAGE = 10;
 
 const allQuestions = [
   {
-    question: 'Q1. What is React?',
-    answer: 'React is a JavaScript library for building user interfaces.',
+    question: 'Q1. What is the purpose of this website?',
+    answer: 'MindWork360 provides educational mental health content, expert insights, practical wellness resources, and videos designed to help people better understand mental health and emotional well-being. Our content is also focused on helping our community live high performing personal and professional lives, achieving their goals, stay healthy and live through fulfillment in the best sense.',
   },
   {
-    question: 'Q2. What is a component in React?',
-    answer: 'A component is a reusable piece of UI that can have its own state and props.',
+    question: 'Q2. Is the information on MindWork360 a substitute for professional medical advice?',
+    answer: 'No. The content on this website is for educational and informational purposes only. It should not replace professional medical, psychological, or psychiatric advice, diagnosis, or treatment.',
   },
   {
-    question: 'Q3. What is JSX?',
-    answer: 'JSX stands for JavaScript XML. It allows us to write HTML in React.',
+    question: 'Q3. Who creates the content and videos?',
+    answer: 'Our content is created and reviewed by mental health professionals, subject matter experts, researchers, and experienced content creators committed to providing accurate and helpful information for our community. Professionals in these areas are welcome to partner with us to showcase their content and research. Please submit a query on our online form found on the Contact Us page of your website.',
   },
   {
-    question: 'Q4. What are props in React?',
-    answer: 'Props are inputs passed to components to configure them.',
+    question: 'Q4. Are the videos free to watch?',
+    answer: 'Most of our educational videos are available free of charge. Some premium content, courses, or specialized resources may require registration or a subscription.',
   },
   {
-    question: 'Q5. What is state in React?',
-    answer: 'State is a built-in object that stores property values that belong to the component.',
+    question: 'Q5. How can mental health education help me?',
+    answer: 'Mental health education can help you better understand emotions, recognize common mental health challenges, develop coping skills, reduce stigma, and make informed decisions about seeking support.',
   },
   {
-    question: 'Q6. What is useState?',
-    answer: 'useState is a React Hook that lets you add state to functional components.',
+    question: 'Q6. Can I use this website if I have a diagnosed mental health condition?',
+    answer: 'Yes. Many people with diagnosed mental health conditions find educational resources helpful. However, these resources should complement—not replace—the guidance of your mental healthcare provider.',
   },
   {
-    question: 'Q7. What is useEffect?',
-    answer: 'useEffect is a Hook that runs side effects in function components.',
+    question: 'Q7. Is my personal information kept confidential?',
+    answer: 'We take privacy seriously and follow applicable privacy and data protection practices. Please review our Privacy Policy to learn how your information is collected, stored, and used.',
   },
   {
-    question: 'Q8. How do you pass data between components?',
-    answer: 'You pass data using props from parent to child.',
+    question: 'Q8. Do I need to create an account to access content?',
+    answer: 'Many resources can be accessed without creating an account. However, some features, personalized recommendations, or premium content may require registration.',
   },
   {
-    question: 'Q9. What is conditional rendering?',
-    answer: 'Conditional rendering allows you to render different UI based on conditions.',
+    question: 'Q9. How often is new content added?',
+    answer: 'We regularly update the website with new articles, videos, expert interviews, and mental health and wellness resources to ensure our content remains relevant, informative and up to date.',
   },
   {
-    question: 'Q10. What is React Router?',
-    answer: 'React Router is a library for routing in React applications.',
-  },
-
-  // Page 2
-  {
-    question: 'Q11. What is a key in React lists?',
-    answer: 'A key is a special string attribute needed to keep track of list items.',
+    question: 'Q10. What mental health topics do you cover?',
+    answer: 'We cover a wide range of topics, including stress management, anxiety, depression, self-care, mindfulness, health, emotional resilience, relationships & marriage, workplace well-being, and personal growth.',
   },
   {
-    question: 'Q12. What is a fragment in React?',
-    answer: 'A fragment lets you group elements without adding extra nodes to the DOM.',
+    question: 'Q11. What should I do if I am experiencing a mental health crisis?',
+    answer: 'If you believe you may be in immediate danger or are having thoughts of harming yourself or others, contact emergency services, a crisis helpline, or a qualified mental health professional immediately. You can find some non-profit resources on our website if you reside in certain countries.',
   },
   {
-    question: 'Q13. What is context in React?',
-    answer: 'Context provides a way to pass data through the component tree without passing props manually.',
+    question: 'Q12. How do I know if I should seek professional help?',
+    answer: 'If emotional, behavioral, or mental health concerns are affecting your daily life, relationships, work, or overall well-being, consider consulting a licensed mental health professional for support.',
   },
   {
-    question: 'Q14. What are controlled components?',
-    answer: 'Components that are controlled by React state are called controlled components.',
+    question: 'Q13. Are the videos suitable for teenagers?',
+    answer: 'Many of our videos are appropriate for teenagers, but some content may be intended for adults. We recommend reviewing content descriptions and consulting parents or guardians when appropriate.',
   },
   {
-    question: 'Q15. What is memoization in React?',
-    answer: 'Memoization is an optimization to avoid unnecessary re-renders.',
+    question: 'Q14. Can I share your videos and articles with others?',
+    answer: 'You may share links to our publicly available content. Reproducing, modifying, or redistributing content is restricted and will require our permission. Please review our Terms of Use for details. All of our content is subject to copyright laws.',
   },
   {
-    question: 'Q16. What is lazy loading?',
-    answer: 'Lazy loading lets you load components only when they are needed.',
+    question: 'Q15. Do you offer online counseling or therapy services?',
+    answer: 'Unless specifically stated, this website provides educational content only and does not offer therapy, counseling, or clinical treatment services. We may offer these services in the future.',
   },
   {
-    question: 'Q17. What is Redux?',
-    answer: 'Redux is a state management library often used with React.',
+    question: 'Q16. How can I stay updated on new content?',
+    answer: 'You can subscribe to our newsletter, follow our social media channels, or create an account to receive updates about new videos, articles, and resources.',
   },
   {
-    question: 'Q18. What is a reducer function?',
-    answer: 'A reducer is a function that determines changes to an application’s state.',
+    question: 'Q17. Can I suggest topics for future videos or articles?',
+    answer: 'Yes. We welcome suggestions from our community and encourage users to submit ideas for topics they would like us to cover. Please submit your requests on our Contact Us form on the MindWork360 website.',
   },
   {
-    question: 'Q19. What is the virtual DOM?',
-    answer: 'The virtual DOM is a programming concept where a virtual representation of the UI is kept in memory.',
+    question: 'Q18. Are mental health challenges common?',
+    answer: 'Yes. Mental health challenges affect people of all ages, backgrounds, and cultures. Seeking information and support is a positive step toward maintaining overall well-being.',
   },
   {
-    question: 'Q20. What is hydration in React?',
-    answer: 'Hydration is the process of React attaching event handlers to server-rendered HTML.',
-  },
-
-  // Page 3 (dummy extras)
-  {
-    question: 'Q21. Dummy Question 21?',
-    answer: 'This is dummy answer for question 21.',
+    question: 'Q19. Do you provide resources for family members and caregivers?',
+    answer: 'Yes. We offer content designed to help family members, caregivers, and loved ones better understand mental health and learn supportive communication and care strategies.',
   },
   {
-    question: 'Q22. Dummy Question 22?',
-    answer: 'This is dummy answer for question 22.',
+    question: 'Q20. How can I contact your team?',
+    answer: 'You can reach us through our Contact Us page or by using the contact information provided on the website. We aim to respond to inquiries as promptly as possible.',
   },
-  {
-    question: 'Q23. Dummy Question 23?',
-    answer: 'This is dummy answer for question 23.',
-  },
-  {
-    question: 'Q24. Dummy Question 24?',
-    answer: 'This is dummy answer for question 24.',
-  },
-  {
-    question: 'Q25. Dummy Question 25?',
-    answer: 'This is dummy answer for question 25.',
-  }
 ];
 
 const FAQPage = () => {
@@ -209,6 +186,16 @@ const FAQPage = () => {
             </div>
            
           </footer> */}
+          <div className="disclaimer-section">
+            <h2 className="disclaimer-heading">Disclaimer</h2>
+            <p className="disclaimer-text">
+              MindWork360 is a community and educational platform and does not provide medical advice,
+              diagnosis, or emergency services. If you're in immediate danger or think you may harm
+              yourself or someone else, please contact your local mental health emergency number right
+              now or reach out to a crisis hotline in your country of residence. You can find such
+              resources on our website at <a href="https://www.mindwork360.com" target="_blank" rel="noopener noreferrer">www.mindwork360.com</a>
+            </p>
+          </div>
           <Footer />
     </div>
   );

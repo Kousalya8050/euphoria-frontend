@@ -44,7 +44,10 @@
   text-align: center;
 }
 .location-section {
-  margin-top: 0px; /* Keep this for desktop spacing within contact-left */
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .location-section h3 {
   color: #2a442d;
@@ -58,14 +61,17 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+
 .location-box {
   border: 1px solid #7cbf45;
   border-radius: 10px;
-  padding: 15px;
+  padding: 15px 50px;
   color: #2a2a2a;
   background: #fff;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.8;
+  width: fit-content;
+  text-align: center;
 }
 .contact-right {
   flex: 1;
@@ -365,6 +371,7 @@ button:hover {
 .contactus-input:focus {
   border-color: #4b8af0;
 }
+
 
 
 /* Overlay */

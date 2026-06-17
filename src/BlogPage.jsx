@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 
 
 import './BlogPage.css';
+import './Disclaimer.css';
 import Footer from "./Footer_page";
 
 // Import your assets - you will need to add these images to your project
@@ -370,6 +371,16 @@ const BlogPage = () => {
                       </div>
                       
                     </footer> */}
+                    <div className="disclaimer-section">
+                      <h2 className="disclaimer-heading">Disclaimer</h2>
+                      <p className="disclaimer-text">
+                        MindWork360 is a community and educational platform and does not provide medical advice,
+                        diagnosis, or emergency services. If you're in immediate danger or think you may harm
+                        yourself or someone else, please contact your local mental health emergency number right
+                        now or reach out to a crisis hotline in your country of residence. You can find such
+                        resources on our website at <a href="https://www.mindwork360.com" target="_blank" rel="noopener noreferrer">www.mindwork360.com</a>
+                      </p>
+                    </div>
                     <Footer />
       </main>
     </div>

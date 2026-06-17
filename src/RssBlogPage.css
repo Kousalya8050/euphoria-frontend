@@ -78,7 +78,7 @@
   /* Uniform Image Size (16:9 Aspect Ratio) */
   .rss-card-image {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 14 / 10;
     overflow: hidden;
     background-color: #f8f8f8;
   }

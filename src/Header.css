@@ -10,46 +10,79 @@ body, html {
 /* --- Header --- */
 .header {
   display: flex;
-  flex-wrap: nowrap; 
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 34px 20px 20px 28px;
+  padding: 20px 30px;
   background: #fff;
   position: relative;
   z-index: 1000;
-  gap: 57px;
 }
 
+/* --- Logo --- */
 .logo {
   position: relative;
-  font-size: 35px;
-  font-weight: bold;
-  color: green;
   z-index: 1010;
   text-decoration: none;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
+.logo-img {
+  width: 180px;
+  height: auto;
+  display: block;
+}
+
+/* --- Nav --- */
 .nav {
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
-  gap: 22px; /* Reduced slightly from 35px to help fit on one line */
-  margin-right: 40px;
   align-items: center;
+  gap: 14px;
 }
 
 .nav a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  font-size: 22px; /* Adjusted from 25px to fit 11 items on desktop screens */
+  font-size: 15px;
   white-space: nowrap;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
+  position: relative;
+  display: inline-block;
 }
 
-/* --- Hamburger Menu Button --- */
+.nav a:hover {
+  color: #1F5706;
+  transform: translateY(-2px);
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: green;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+  left: 0;
+  background: green;
+}
+
+/* --- Hamburger Menu --- */
 .hamburger-menu {
-  display: none; /* Hidden on Desktop */
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
@@ -59,6 +92,7 @@ body, html {
   cursor: pointer;
   padding: 0;
   z-index: 1100;
+  flex-shrink: 0;
 }
 
 .hamburger-menu span {
@@ -69,157 +103,17 @@ body, html {
   transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 1800px) and (min-width: 1432px) {
- 
-.header {
-  padding: 30px 20px 20px 28px !important;
-  gap: 108px !important;
-  justify-content: left !important;
+.hamburger-menu.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
 }
-.nav a { font-size: 21px; }
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
 }
-@media screen and (max-width: 1432px) and (min-width: 1301px) {
-  .header {
-    padding: 30px 20px 20px 28px;
-    gap: 85px;
-  }
-  .logo { font-size: 30px; }
-  .nav { gap: 20px; }
-  .nav a { font-size: 19px; }
-}
-@media screen and (max-width: 1300px) and (min-width: 1252px) {
-  .header {
-    padding: 25px 20px 20px 20px;
-    gap: 116px;
-  }
-  .logo { font-size: 28px; }
-  .nav { gap: 15px; }
-  .nav a { font-size: 19px; }
-}
-/* --- [3] Medium Laptops / Tablets (1300px to 1134px) --- */
-@media screen and (max-width: 1252px) and (min-width: 1134px) {
-  .header {
-    padding: 25px 20px 20px 20px;
-    gap: 104px;
-  }
-  .logo { font-size: 28px; }
-  .nav { gap: 12px; }
-  .nav a { font-size: 17px; }
+.hamburger-menu.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-/* --- [4] Small Laptops - Maximum Tightness (1133px to 1111px) --- */
-@media screen and (max-width: 1133px) and (min-width: 1111px) {
-  .header {
-    padding: 20px 15px;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  .logo { font-size: 26px; }
-  .nav { 
-    gap: 12px; 
-    margin-right: 0;
-  }
-  .nav a { 
-    font-size: 17px; 
-    letter-spacing: -0.3px; 
-  }
-}
-
-/* --- [5] Mobile/Tablet Trigger (< 1110px) --- */
-@media (max-width: 1110px) {
-  .header {
-    justify-content: space-between;
-    padding: 20px;
-  }
-  .hamburger-menu { display: flex; }
-  .nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 300px;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #d8e3c2;
-    transition: right 0.4s ease;
-    z-index: 1050;
-  }
-  .nav.active { right: 0; }
-  /* Ensure hover effect still works on mobile */
-  .nav a { font-size: 1.5rem; color: #000; margin-bottom: 10px;}
-}
-
-/* Base Nav fix to ensure horizontal layout on all desktops */
-.nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: nowrap; /* Prevents items from dropping to a second line */
-}
-/* --- Media Query Trigger: 1025px --- */
-@media (max-width: 1110px) {
-  /* .header {
-      padding-top: 20px; 
-  } */
-  .header {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 34px 20px 20px 28px;
-    background: #fff;
-    position: relative;
-    z-index: 1000;
-    /* gap: 70px; */
-}
-
-  .decorative-wave {
-      display: none;
-  }
-
-  .hamburger-menu {
-      display: flex; /* Show hamburger at 1025px */
-  }
-
-  .nav {
-      position: fixed;
-      top: 0;
-      right: -100%; /* Off-screen */
-      width: 300px;
-      height: 100vh;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      background-color: #d8e3c2; /* Kept your specific color */
-      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-      transition: right 0.4s ease-in-out;
-      z-index: 1050;
-      margin-right: 0;
-  }
-
-  .nav.active {
-      right: 0; /* Slide in */
-  }
-
-  .nav a {
-      font-size: 1.5rem; /* Large text in mobile menu */
-      color: #000;
-  }
-
-  /* Hamburger Animation to X */
-  .hamburger-menu.active span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-  }
-  .hamburger-menu.active span:nth-child(2) {
-      opacity: 0;
-  }
-  .hamburger-menu.active span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-  }
-}
-
-/* Waves Styles */
+/* --- Waves --- */
 .decorative-wave {
   position: absolute;
   pointer-events: none;
@@ -231,41 +125,80 @@ body, html {
   z-index: 2;
 }
 
-/* --- Beautiful Hover Effects for Menu Items --- */
+/* =============================================
+   RESPONSIVE BREAKPOINTS (desktop → mobile)
+   ============================================= */
 
-.nav a {
-  position: relative; /* Necessary to position the underline */
-  transition: color 0.3s ease; /* Smooth transition for the text color */
+/* Large desktop */
+@media (min-width: 1600px) {
+  .header { padding: 30px 40px; }
+  .logo-img { width: 300px; }
+  .nav { gap: 22px; }
+  .nav a { font-size: 21px; }
 }
 
-/* Change text color to green on hover to match your logo */
-.nav a:hover {
-  color: #1F5706;
+/* Medium desktop */
+@media (max-width: 1599px) and (min-width: 1400px) {
+  .logo-img { width: 240px; }
+  .nav { gap: 18px; }
+  .nav a { font-size: 20px; }
 }
 
-/* Create the underline using a pseudo-element */
-.nav a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  display: block;
-  margin-top: 5px;
-  right: 0;
-  background: green; /* Underline color */
-  transition: width 0.3s ease;
-  -webkit-transition: width 0.3s ease;
+/* Small desktop / large laptop */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .logo-img { width: 200px; }
+  .nav { gap: 14px; }
+  .nav a { font-size: 18px; }
 }
 
-/* Animate the underline width from 0 to 100% on hover */
-.nav a:hover::after {
-  width: 100%;
-  left: 0;
-  background: green;
+/* Large tablet / small laptop */
+@media (max-width: 1199px) and (min-width: 1111px) {
+  .header { padding: 18px 20px; }
+  .logo-img { width: 170px; }
+  .nav { gap: 10px; }
+  .nav a { font-size: 17px; letter-spacing: -0.2px; }
 }
 
-/* Optional: Slight lift effect */
-.nav a:hover {
-  transform: translateY(-2px);
-  display: inline-block; /* Required for transform to work on <a> */
+/* --- Mobile: hamburger menu (≤ 1110px) --- */
+@media (max-width: 1110px) {
+  .header {
+    padding: 16px 20px;
+  }
+
+  .logo-img { width: 150px; }
+
+  .hamburger-menu { display: flex; }
+
+  .decorative-wave { display: none; }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    background-color: #d8e3c2;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s ease-in-out;
+    z-index: 1050;
+    margin-right: 0;
+  }
+
+  .nav.active { right: 0; }
+
+  .nav a {
+    font-size: 1.4rem;
+    color: #000;
+    margin-bottom: 0;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .logo-img { width: 130px; }
+  .nav { width: 100%; }
 }

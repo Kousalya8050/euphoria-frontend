@@ -7,6 +7,7 @@ import Facebook from './assets/footer/facebook_final_icon.png';
 import Linkedin from './assets/footer/linkedin_finale_icon.png';
 import Twitter from './assets/footer/Twitter_final_icon.png';
 import Bluesky from './assets/footer/bsky_final_icon.png'
+import footerLogo from './assets/header/320px90pxwithoutbackground.png'
 
 import footerWaveImage from './assets/homepage/footer.png';
 
@@ -47,7 +48,10 @@ const Footer = () => {
         <div className="euphoria-footer-content">
 
           {/* Logo */}
-          <div className="euphoria-footer-logo">Euphoria</div>
+          <div className="euphoria-footer-logo">
+            <Link to="/"><img src={footerLogo} alt="Euphoria" className="footer-logo-img" />
+            </Link>           
+            </div>
 
           {/* Nav + Socials */}
           <div className="euphoria-nav-and-socials-container">
