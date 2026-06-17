@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import 'react-phone-input-2/lib/style.css';
 import axios from "axios";
 import PhoneInput from 'react-phone-input-2';
-import { Link } from 'react-router-dom';
 import './SignupPage.css';
 import './Disclaimer.css';
 import Header from "./Header";
