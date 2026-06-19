@@ -8,7 +8,7 @@ function AdminLogin() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "Admin Login | Euphoria";
+    document.title = "Admin Login | MindWork360";
   }, []);
 
   const handleLogin = (e) => {

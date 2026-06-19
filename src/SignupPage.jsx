@@ -11,7 +11,7 @@ import catpcha  from './assets/contactus/recaptcha-logo.jpeg';
 const ContactUs = () => {
 
   useEffect(() => {
-    document.title = "Contact Us | Euphoria";
+    document.title = "Contact Us | MindWork360";
 }, []);
 
   const [popup, setPopup] = useState({

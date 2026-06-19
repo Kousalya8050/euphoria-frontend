@@ -174,7 +174,7 @@ const BlogPage = () => {
   const visibleTags = isMobile ? tags.slice(0, 10) : tags;
 
   useEffect(() => {
-    document.title = "Blog Page | Euphoria";
+    document.title = "Blog Page | MindWork360";
   }, []);
 
 

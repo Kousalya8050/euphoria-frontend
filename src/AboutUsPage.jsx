@@ -35,7 +35,7 @@ import infoImage2 from './assets/aboutuspage/infoImage2.png'; // Meditating silh
 
 const AboutUsPage = () => {
   useEffect(() => {
-    document.title = "About Us | Euphoria";
+    document.title = "About Us | MindWork360";
   }, []);
   // Array to make mapping over grid images easier
   const collageImages = [

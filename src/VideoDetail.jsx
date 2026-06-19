@@ -11,7 +11,7 @@ const VideoDetail = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-      document.title = "Video Detail Page | Euphoria";
+      document.title = "Video Detail Page | MindWork360";
   }, []);
   
   useEffect(() => {
@@ -70,7 +70,7 @@ const VideoDetail = () => {
   return (
     <div className="video-detail-page">
       <Helmet>
-        <title>{videoTitle} | Euphoria Video Lessons</title>
+        <title>{videoTitle} | MindWork360 Video Lessons</title>
         <meta name="description" content={videoDesc.substring(0, 160)} />
         <meta property="og:title" content={videoTitle} />
         <meta property="og:image" content={thumbnail} />

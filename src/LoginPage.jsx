@@ -9,7 +9,7 @@ import rightWave from './assets/homepage/wave-middle-right.png';
 const LoginPage = () => {
 
   useEffect(() => {
-      document.title = "Login Page | Euphoria";
+      document.title = "Login Page | MindWork360";
    }, []);
     
         useEffect(() => {

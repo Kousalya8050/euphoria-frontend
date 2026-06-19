@@ -33,7 +33,7 @@ const BlogDetails = () => {
 
   useEffect(() => {
     if (blog?.blog_title) {
-      document.title = `${blog.blog_title} | Euphoria`;
+      document.title = `${blog.blog_title} | MindWork360`;
     }
   }, [blog]);
 

@@ -205,7 +205,7 @@ const HomePage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    document.title = "Home Page | Euphoria";
+    document.title = "Home Page | MindWork360";
  }, []);
 
   useEffect(() => {

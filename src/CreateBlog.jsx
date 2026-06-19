@@ -8,7 +8,7 @@ import "./CreateBlog.css";
 const CreateBlog = () => {
 
   useEffect(() => {
-      document.title = "Create Blog | Euphoria";
+      document.title = "Create Blog | MindWork360";
     }, []);
 
   const initialFormState = {

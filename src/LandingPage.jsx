@@ -12,7 +12,7 @@ const LandingPage = () => {
   const [modalMessage, setModalMessage] = useState("");
 
   useEffect(() => {
-    document.title = "Join the Community | Euphoria";
+    document.title = "Join the Community | MindWork360";
   }, []);
 
   const handleChange = (e) => {

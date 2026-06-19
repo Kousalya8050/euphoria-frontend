@@ -15,7 +15,7 @@ Modal.setAppElement('#root');
 const LifeLessons = () => {
 
 useEffect(() => {
-    document.title = "Life Lessons | Euphoria";
+    document.title = "Life Lessons | MindWork360";
  }, []);
 
   const [videos, setVideos] = useState([]);

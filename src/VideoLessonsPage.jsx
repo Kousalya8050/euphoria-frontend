@@ -20,7 +20,7 @@ const VideoLessons = () => {
   const [activeTab, setActiveTab] = useState('lessons'); // 'lessons' (Videos) or 'shorts'
 
   useEffect(() => {
-    document.title = "Video Lessons | Euphoria";
+    document.title = "Video Lessons | MindWork360";
   }, []);
 
   // Format ISO duration (e.g. PT5M30S -> 5:30)

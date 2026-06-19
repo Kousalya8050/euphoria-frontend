@@ -14,7 +14,7 @@ import contactIllustration from './assets/resources/contact2.jpg';
 const ResourcesSection = () => {
 
   useEffect(() => {
-          document.title = "Resources | Euphoria";
+          document.title = "Resources | MindWork360";
        }, []);
 
   const [popup, setPopup] = useState({

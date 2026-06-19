@@ -40,7 +40,7 @@ const RssBlogPage = () => {
   const [visibleCount, setVisibleCount] = useState(12);
 
   useEffect(() => {
-    document.title = "News And Updates | Euphoria";
+    document.title = "News And Updates | MindWork360";
   }, []);
 
   const formatCategory = (str) => {

@@ -63,7 +63,7 @@ export default function SearchResults() {
   const itemsPerPage = 10;
   const [selectedVideo, setSelectedVideo] = useState(null);
   useEffect(() => {
-    document.title = "Search Results Page | Euphoria";
+    document.title = "Search Results Page | MindWork360";
 }, []);
 
   useEffect(() => {

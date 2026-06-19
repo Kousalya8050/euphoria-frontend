@@ -97,7 +97,7 @@ const allQuestions = [
 const FAQPage = () => {
 
   useEffect(() => {
-     document.title = "FAQ Page | Euphoria";
+     document.title = "FAQ Page | MindWork360";
   }, []);
 
   const [currentPage, setCurrentPage] = useState(1);

@@ -40,7 +40,7 @@ import Icon6 from './assets/psychotherapy/icon6.svg';
 const PsychotherapyTypes = () => {
 
   useEffect(() => {
-        document.title = "Psychotherapy Types | Euphoria";
+        document.title = "Psychotherapy Types | MindWork360";
      }, []);
 
   const [popup, setPopup] = useState({
