@@ -1,7 +1,38 @@
 .life-lessons-container {
-    
     font-family: 'Inter', sans-serif;
-  }
+}
+
+/* ── Hero Banner ─────────────────────────────── */
+.lessons-hero-banner {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
+}
+
+.lessons-hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.lessons-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 768px) {
+  .lessons-hero-banner { height: 240px; }
+  .lessons-hero-title { font-size: 2rem; }
+  .lessons-hero-subtitle { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .lessons-hero-banner { height: 200px; }
+  .lessons-hero-title { font-size: 1.6rem; }
+}
   
 
   .life_heading_h3 {

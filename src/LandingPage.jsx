@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './LandingPage.css';
 import banner from './assets/homepage/banner_for_landing.jpg';
+import logo from './assets/header/320px90pxwithoutbackground.png';
 const LandingPage = () => {
   const [formData, setFormData] = useState({ fname: '', lname: '', email: '' });
   const [loading, setLoading] = useState(false);
@@ -89,12 +90,12 @@ const LandingPage = () => {
         
         {/* Logo */}
         <img 
-          src="/logo.png" 
+          src={logo}
           alt="MindWork360 Logo" 
           className="hero-logo"
         />
 
-        <h1>MindWork360</h1>
+        {/* <h1>MindWork360</h1> */}
 
         <p>
           A Mental Health and Healing Community for Those Looking to Heal, Learn and Improve Their Lives.

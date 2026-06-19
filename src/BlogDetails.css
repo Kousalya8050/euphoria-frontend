@@ -1,247 +1,289 @@
-.blog-page { font-family: 'Inter', sans-serif; background: #fff; }
+.blog-page { font-family: 'Inter', sans-serif; background: #f9faf4; }
 
+/* ── Banner ─────────────────────────────────────────── */
+.blog-banner {
+  position: relative;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.banner-bg {
+  position: absolute;
+  inset: 0;
+  background: #e8edc3;
+  border-radius: 12px;
+  width: 80%;
+  margin: auto;
+}
+.banner-image {
+  position: relative;
+  width: 90%;
+  border-radius: 16px;
+  z-index: 1;
+  box-shadow: 0 8px 32px rgba(31, 87, 6, 0.13);
+}
 
-.blog-banner { position: relative; padding-top: 50px; display: flex; justify-content: center; }
-.banner-bg { position: absolute; inset: 0; background: #e8edc3; border-radius: 12px; width: 80%; margin: auto; }
-.banner-image { position: relative; width: 90%; border-radius: 12px; z-index: 1; }
+/* ── Layout ──────────────────────────────────────────── */
+.blog-layout {
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  max-width: 1510px;
+  margin: 60px auto;
+  padding: 0 30px;
+}
 
+/* ── Table of Contents ───────────────────────────────── */
+.toc {
+  background: linear-gradient(160deg, #f3f7e6, #e8f0d0);
+  border-radius: 12px;
+  border-left: 4px solid #1F5706;
+  padding: 28px;
+  position: sticky;
+  top: 40px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 2px 12px rgba(31, 87, 6, 0.07);
+}
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: #b5cc82; border-radius: 10px; }
 
-.blog-layout { display: grid; align-items: flex-start;grid-template-columns: 300px 1fr; gap: 40px; max-width: 1510px; margin: 80px auto; }
+.toc h4 {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1F5706;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
 
-
-/* .toc { background: #f6f7ef; border-radius: 12px; padding: 30px; position: sticky; top: 40px; } */
-/* .toc {
-    background: #f6f7ef;
-    border-radius: 12px;
-    
-   
-    padding: 30px;
-    position: sticky;
-    top: 40px;
-    height: calc(100vh - 80px);
-    overflow-y: auto;
-  } */
-
-  .toc {
-    background: #f6f7ef;
-    border-radius: 10px;
-    padding: 30px;
-    position: sticky;
-    top: 40px;
-    max-height: 90vh; /* Limits height to screen */
-    overflow-y: auto;  /* Adds scrollbar if there are many questions */
-  }
-  .toc::-webkit-scrollbar {
-    width: 4px;
-  }
-  .toc::-webkit-scrollbar-thumb {
-    background: #dce7a1;
-    border-radius: 10px;
-  }
-  
-.toc h4 { margin-bottom: 16px; }
 .toc ul { list-style: none; padding: 0; }
-.toc li { margin-bottom: 10px; }
-.toc li.sub { margin-left: 14px; font-size: 14px; cursor: default !important;  }
-.toc a { text-decoration: none; color: #333; }
+.toc li { margin-bottom: 8px; }
 
-
-.categories { margin-top: 30px; display: flex; flex-direction: column; gap: 10px; }
-.categories span { cursor: pointer; }
-.categories .active { background: #dce7a1; padding: 8px 16px; border-radius: 10px; }
-
-
-.content .category { color: #6a8b2c; font-weight: 500; }
-.content h1 { font-size: 32px; margin: 10px 0 20px; }
-/* .content img { width: 100%; border-radius: 12px; margin: 24px 0; } */
-/* .content p { line-height: 1.7; color: #444; } */
-.content h2, 
-.content h2 span {
-  text-align: left !important;
-  display: block !important;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-weight: 700;
-  color: #222;
-  font-size: 25px !important;
-  background-color: transparent !important;
+.toc a {
+  text-decoration: none;
+  color: #444;
+  font-size: 13.5px;
+  line-height: 1.4;
+  transition: color 0.2s;
 }
-
-
-.content h3,
-.content h3 span {
-  text-align: left !important;
-  display: block !important;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-weight: 700;
-  color: #222;
-  font-size: 20px !important;
-  background-color: transparent !important;
-}
-
-.content p, 
-.content p span {
-  font-size: 18px !important; 
-  line-height: 1.8 !important;
-  color: #333 !important;
-  text-align: left !important;
-  font-family: 'Inter', sans-serif !important; 
-}
-
-.content img {
-  display: block;
-  max-width: 100%;
-  height: 500px !important;
-  width: 500px !important;
-  margin: 40px auto; 
-  border-radius: 10px;
-}
-
-
-.content div {
-  text-align: left;
-}
-
-.content ul, 
-.content ol {
-  margin-left: 20px;
-  margin-bottom: 24px;
-  text-align: left !important;
-}
-
-.content li, 
-.content li span {
-  font-size: 18px !important;
-  line-height: 1.8 !important;
-  color: #333 !important;
-  margin-bottom: 10px;
-  text-align: left !important;
-}
-
-
-
-
-
+.toc a:hover { color: #1F5706; font-weight: 600; }
 
 .toc-divider {
-    margin: 24px 0;
-    border: none;
-    border-top: 1px solid #e5e5e5;
-  }
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #c9dba0;
+}
 
+.categories-title {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1F5706;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
 
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.categories span {
+  cursor: pointer;
+  font-size: 13px;
+  color: #555;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.categories span:hover { background: #d8e3c2; color: #1F5706; }
+.categories .active {
+  background: #1F5706;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
 
-
-
-  /* TOC header (for mobile/tablet) */
+/* TOC collapsible header */
 .toc-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
 }
+.arrow { transition: transform 0.3s ease; }
+.arrow.open { transform: rotate(180deg); }
+.toc-body { display: block; }
 
-.arrow {
-  transition: transform 0.3s ease;
+/* H3 sub-items */
+.toc li.sub {
+  margin-left: 16px !important;
+  font-size: 13px;
+  border-left: 2px solid #b5cc82;
+  padding-left: 10px;
+  margin-top: 4px;
+  display: block !important;
+}
+.toc li.sub a { color: #666; cursor: default !important; }
+.toc li.sub a:hover { color: #1F5706; }
+
+/* ── Article ─────────────────────────────────────────── */
+.content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 48px 52px;
+  box-shadow: 0 2px 16px rgba(31, 87, 6, 0.06);
 }
 
-.arrow.open {
-  transform: rotate(180deg);
+/* Category pill */
+.content .category {
+  display: inline-block;
+  background: #e8f0d0;
+  color: #1F5706;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 14px;
 }
 
-/* Hide by default for mobile */
-.toc-body {
+/* Title */
+.content h1 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1F5706;
+  margin: 0 0 14px;
+  line-height: 1.25;
+}
+
+/* Title underline accent */
+.content h1::after {
+  content: '';
   display: block;
+  width: 72px;
+  height: 4px;
+  background: #ffb400;
+  border-radius: 2px;
+  margin-top: 12px;
+  margin-bottom: 28px;
 }
 
-/* Tablet & Mobile */
+/* H2 — section headings */
+.content h2,
+.content h2 span {
+  text-align: left !important;
+  display: block !important;
+  margin-top: 44px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  color: #1F5706 !important;
+  font-size: 24px !important;
+  background-color: transparent !important;
+  padding-left: 14px;
+  border-left: 4px solid #1F5706;
+  line-height: 1.3;
+}
+
+/* H3 — sub-section headings */
+.content h3,
+.content h3 span {
+  text-align: left !important;
+  display: block !important;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #2d6b0f !important;
+  font-size: 19px !important;
+  background-color: transparent !important;
+}
+
+/* Body text */
+.content p,
+.content p span {
+  font-size: 17px !important;
+  line-height: 1.85 !important;
+  color: #3a3a3a !important;
+  text-align: left !important;
+  font-family: 'Inter', sans-serif !important;
+  margin-bottom: 14px;
+}
+
+/* Lists */
+.content ul,
+.content ol {
+  margin-left: 22px;
+  margin-bottom: 24px;
+  text-align: left !important;
+}
+.content li,
+.content li span {
+  font-size: 17px !important;
+  line-height: 1.8 !important;
+  color: #3a3a3a !important;
+  margin-bottom: 8px;
+  text-align: left !important;
+}
+
+.content div { text-align: left; }
+
+/* Inline images */
+.content img {
+  display: block;
+  max-width: 100%;
+  height: 500px !important;
+  width: 500px !important;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+.content img.blog-mid-img {
+  max-width: 100%;
+  height: auto !important;
+  width: auto !important;
+  margin: 40px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  font-size: 18px;
+  color: #1F5706;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 1024px) {
   .blog-layout {
     grid-template-columns: 1fr;
     gap: 20px;
-    margin: 40px 20px;
+    margin: 30px 16px;
+    padding: 0;
   }
-
-  .toc {
-    position: static;
-    
-  }
-
-  .toc-body {
-    display: none;
-  }
-
-  .toc-body.show {
-    display: block;
-    margin-top: 15px;
-  }
-
-  .blog-banner {
-    padding-top: 20px;
-  }
-
-  .banner-image {
-    width: 95%;
-  }
+  .toc { position: static; }
+  .toc-body { display: none; }
+  .toc-body.show { display: block; margin-top: 15px; }
+  .blog-banner { padding-top: 20px; }
+  .banner-image { width: 95%; }
+  .content { padding: 32px 28px; }
 }
 
-/* Mobile specific */
 @media (max-width: 600px) {
-  .content h1 {
-    font-size: 24px;
-  }
-
-  .content p {
-    font-size: 14px;
-  }
-
-  .toc {
-    padding: 20px;
-  }
-}
-
-
-/* Table of Contents Indentation for Subheadings (H3) */
-/* Target the link specifically inside the subheading list item */
-.toc li.sub a {
-  cursor: default !important;
-  text-decoration: none; /* Optional: keeps it looking like plain text */
-}
-
-/* You can also apply it to the li just to be safe, but the 'a' is the key */
-.toc li.sub {
-  margin-left: 20px !important;
-  font-size: 14px;
-  border-left: 2px solid #dce7a1;
-  padding-left: 10px;
-  margin-top: 5px;
-  display: block !important;
-  cursor: default !important; 
-}
-
-/* If you want to make sure it doesn't change color on hover either */
-.toc li.sub a:hover {
-  color: inherit; 
-}
-/* Fix Centering and Font Size for pasted content */
-.content h2, .content h3 {
-  text-align: left !important;
-  display: block !important;
-  margin-top: 30px;
-}
-
-.content p, .content p span {
-  font-size: 18px !important;
-  line-height: 1.8;
-  text-align: left !important;
-}
-
-/* Image handling */
-.content img.blog-mid-img {
-  max-width: 100%;
-  height: auto;
-  margin: 40px auto;
-  display: block;
-  border-radius: 10px;
+  .content { padding: 24px 18px; border-radius: 12px; }
+  .content h1 { font-size: 24px; }
+  .content h2, .content h2 span { font-size: 20px !important; }
+  .content h3, .content h3 span { font-size: 17px !important; }
+  .content p, .content p span { font-size: 15px !important; }
+  .content li, .content li span { font-size: 15px !important; }
+  .toc { padding: 18px; }
 }

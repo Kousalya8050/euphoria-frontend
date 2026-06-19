@@ -224,6 +224,8 @@ const BlogPage = () => {
   }, []);
 
 
+  const [visibleCount, setVisibleCount] = useState(6);
+
   const [selectedCategory, setSelectedCategory] = useState(null);
   const handleCategoryClick = (category) => {
     // ALL
@@ -256,6 +258,7 @@ const BlogPage = () => {
   useEffect(() => {
     const categoryFromUrl = searchParams.get("category");
     setSelectedCategory(categoryFromUrl || null);
+    setVisibleCount(6);
   }, [searchParams]);
 
 
@@ -331,10 +334,21 @@ const BlogPage = () => {
 
 
         <section className="posts-grid">
-  {(Array.isArray(filteredPosts) ? filteredPosts : []).map(post => (
-    <BlogPostCard key={post.id} post={post} />
-  ))}
-</section>
+          {(Array.isArray(filteredPosts) ? filteredPosts : []).slice(0, visibleCount).map(post => (
+            <BlogPostCard key={post.id} post={post} />
+          ))}
+        </section>
+
+        {filteredPosts.length > visibleCount && (
+          <div className="load-more-wrapper">
+            <button
+              className="load-more-blogs-btn"
+              onClick={() => setVisibleCount(c => c + 6)}
+            >
+              Load More
+            </button>
+          </div>
+        )}
          {/* --- FOOTER SECTION --- */}
                       {/* <footer className="euphoria-footer">
                       <div

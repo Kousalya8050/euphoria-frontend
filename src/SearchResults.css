@@ -271,6 +271,7 @@
   /* Basic line clamping for the snippet */
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -337,21 +338,21 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  margin-bottom: 50px;
-   max-width: 1500px;
-   margin: 0 auto 50px; 
-   padding: 0 20px;
+  max-width: 1500px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
 }
 
 @media (max-width: 992px) {
-  .posts-grid {
+  .posts-grid1 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .posts-grid {
+  .posts-grid1 {
     grid-template-columns: 1fr;
+    padding: 0 12px;
   }
 }
 
@@ -456,10 +457,22 @@ button_s:hover {
   overflow-x: hidden; /* Prevents horizontal scroll from the swirl */
 }
 .blog-content_s {
-    
   margin: 0 auto;
-  position: relative; /* To appear above the swirl */
+  position: relative;
   z-index: 1;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .blog-content_s {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-content_s {
+    padding: 0 10px;
+  }
 }
 .blog-header_s {
   text-align: center;

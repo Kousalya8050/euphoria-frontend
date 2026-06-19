@@ -20,6 +20,7 @@ const Header = () => {
       <Link to="/" className="logo" onClick={closeMenu}><img src={headerLogo} alt="Euphoria" className="logo-img" /></Link>
 
       <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
+        <button className="nav-close-btn" onClick={closeMenu} aria-label="Close menu">✕</button>
         <Link to="/" onClick={closeMenu}>Home</Link>
         <Link to="/about" onClick={closeMenu}>About Us</Link>
         <Link to="/blogs" onClick={closeMenu}>Blogs</Link>
@@ -32,9 +33,11 @@ const Header = () => {
         <Link to="/rss_feeds" onClick={closeMenu}>News</Link>
       </nav>
 
-      <button 
-        className={`hamburger-menu ${isMenuOpen ? "active" : ""}`} 
-        onClick={toggleMenu} 
+      {isMenuOpen && <div className="nav-overlay" onClick={closeMenu} />}
+
+      <button
+        className={`hamburger-menu ${isMenuOpen ? "active" : ""}`}
+        onClick={toggleMenu}
         aria-label="Toggle menu"
       >
         <span></span>

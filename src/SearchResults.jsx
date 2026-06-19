@@ -3,7 +3,6 @@ import {  useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import Modal from "react-modal";
 import "./SearchResults.css";
-import { Link } from 'react-router-dom';
 import "./BlogPage.css"; 
 
 Modal.setAppElement("#root");
@@ -133,30 +132,8 @@ export default function SearchResults() {
     return `${m}:${String(s).padStart(2, "0")}`;
   };
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
-
   return (
     <>
-      <header className="header">
-        <Link to="/" className="logo" onClick={closeMenu}>Euphoria</Link>
-        <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
-          <Link to="/" onClick={closeMenu}>Home</Link>
-          <Link to="/about" onClick={closeMenu}>About Us</Link>
-          <Link to="/blog" onClick={closeMenu}>Blog</Link>
-          <Link to="/videolessons" onClick={closeMenu}>Video Lessons</Link>
-          <Link to="/lifelessons" onClick={closeMenu}>Life Lessons</Link>
-          <Link to="/faq" onClick={closeMenu}>FAQ</Link>
-          <Link to="/psychotherapy" onClick={closeMenu}>Psychotherapy Types</Link>
-          <Link to="/resources" onClick={closeMenu}>Resources</Link>
-          <Link to="/contactus" onClick={closeMenu}>Contact Us</Link>
-        </nav>
-        <button className={`hamburger-menu ${isMenuOpen ? "active" : ""}`} onClick={toggleMenu} aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </header>
-      
       <div className="blog-page-container_s">
         <main className="blog-content_s">
           <header className="blog-header_s">

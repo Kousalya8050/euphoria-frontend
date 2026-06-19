@@ -3,7 +3,7 @@ import axios from 'axios';
 import Modal from 'react-modal'; // Using react-modal as requested
 import './LifeLessonsPage.css';
 import Footer from "./Footer_page";
-import video_lesson1 from './assets/video_lessonspage/video_lesson1.png';
+import banner from './assets/homepage/banner_for_landing.jpg';
 
 Modal.setAppElement('#root');
 
@@ -146,8 +146,9 @@ useEffect(() => {
   return (
     <div className="life-lessons-container">
       <h3 className="life_heading_h3">Life Lessons</h3>
-      <div className="first_img_container_l">
-        <img className="first_image_l" src={video_lesson1} alt="Life Lessons Banner" />
+      <div className="lessons-hero-banner">
+        <img src={banner} alt="Life Lessons Banner" className="lessons-hero-bg" />
+        <div className="lessons-hero-overlay"></div>
       </div>
 
       

@@ -3,7 +3,7 @@ import axios from 'axios';
 import Modal from 'react-modal';
 import './VideoLessonsPage.css';
 import Footer from "./Footer_page";
-import video_lesson1 from './assets/video_lessonspage/video_lesson1.png';
+import banner from './assets/homepage/banner_for_landing.jpg';
 
 Modal.setAppElement('#root');
 
@@ -67,8 +67,9 @@ const VideoLessons = () => {
   return (
     <div className="video-lessons-container">
       <h3 className="video_heading_h3">Video Lessons</h3>
-      <div className="first_img_container">
-        <img className="first_image" src={video_lesson1} alt="Banner" />
+      <div className="lessons-hero-banner">
+        <img src={banner} alt="Video Lessons Banner" className="lessons-hero-bg" />
+        <div className="lessons-hero-overlay"></div>
       </div>
 
       <div className="tab-buttons">
