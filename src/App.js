@@ -20,6 +20,8 @@ import BlogPage from "./BlogPage";
 import BlogDetails from "./BlogDetails";
 import RssBlogPage from "./RssBlogPage";
 import LandingPage from "./LandingPage";
+import PrivacyPolicyPage from "./PrivacyPolicyPage";
+import TermsAndConditionsPage from "./TermsAndConditionsPage";
 
 function App() {
   const location = useLocation();
@@ -58,6 +60,8 @@ function App() {
           
           {/* Optional: keeps the specific path working too */}
           <Route path="/landing_page" element={<LandingPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
 
           <Route
             path="/create-blog"

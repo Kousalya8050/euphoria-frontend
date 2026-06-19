@@ -89,6 +89,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className="footer-legal-bar">
+        <span>© {new Date().getFullYear()} MindWork360. All rights reserved.</span>
+        <div className="footer-legal-links">
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <span className="footer-legal-sep">|</span>
+          <Link to="/terms-and-conditions">Terms &amp; Conditions</Link>
+        </div>
+      </div>
     </footer>
   );
 };
