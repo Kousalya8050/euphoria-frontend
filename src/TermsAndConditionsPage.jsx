@@ -24,7 +24,7 @@ const TermsAndConditionsPage = () => {
       {/* Content Card */}
       <div className="legal-card-wrapper">
         <div className="legal-card">
-          <span className="legal-badge">Last Updated: July 16, 2026</span>
+          <span className="legal-badge">Last Updated: July 16, 2025</span>
 
           <div className="legal-section">
             <h2>MindWork360 Site Terms</h2>
