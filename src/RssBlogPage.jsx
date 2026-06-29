@@ -56,9 +56,6 @@ const RssBlogPage = () => {
   };
 
   const getImageUrl = (blog, index) => {
-    if (blog.image && blog.image.trim() !== "" && blog.image !== "null") {
-      return blog.image;
-    }
     const folder = categoryToFolder(blog.category);
     const imgs = folder && categoryFallbacks[folder]?.length ? categoryFallbacks[folder] : rootFallbacks;
     return imgs[index % imgs.length];
