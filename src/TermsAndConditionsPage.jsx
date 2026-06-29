@@ -1,220 +1,262 @@
 import { useEffect } from 'react';
 import './LegalPage.css';
 import Footer from './Footer_page';
+import banner from './assets/homepage/banner_for_landing.jpg';
 
 const TermsAndConditionsPage = () => {
   useEffect(() => {
-    document.title = 'Terms & Conditions | MindWork360';
+    document.title = 'Terms of Service | MindWork360';
   }, []);
 
   return (
     <div className="legal-page">
       {/* Hero Banner */}
-      <div className="legal-hero">
-        <h1 className="legal-hero-title">Terms &amp; Conditions</h1>
-        <p className="legal-hero-subtitle">
-          Please read these terms carefully before using our platform
-        </p>
+      <div className="legal-hero-banner">
+        <img src={banner} alt="Terms of Service Banner" className="legal-hero-bg" />
+        <div className="legal-hero-overlay">
+          <h1 className="legal-hero-title">Terms of Service</h1>
+          <p className="legal-hero-subtitle">
+            Please read these terms carefully before using our platform
+          </p>
+        </div>
       </div>
 
       {/* Content Card */}
       <div className="legal-card-wrapper">
         <div className="legal-card">
-          <span className="legal-badge">Last Updated: June 19, 2026</span>
+          <span className="legal-badge">Last Updated: July 16, 2026</span>
 
-          {/* 1. Acceptance of Terms */}
           <div className="legal-section">
-            <h2>1. Acceptance of Terms</h2>
+            <h2>MindWork360 Site Terms</h2>
             <p>
-              By accessing or using the MindWork360 website and any related services, you agree to
-              be bound by these Terms and Conditions and our Privacy Policy. If you do not agree with
-              any part of these terms, you must not use our platform. These terms constitute a legally
-              binding agreement between you and MindWork360.
+              This site located at "mindwork360.com" is a website (Site) owned and operated by
+              MindWork360 Inc. and/or its affiliates (MindWork360 or Our or We or Us) and is intended
+              to provide information that might be of interest to users.
             </p>
             <p>
-              We reserve the right to modify these Terms at any time. We will notify users of
-              significant changes by updating the "Last Updated" date on this page and, where
-              applicable, through direct communication. Your continued use of the platform following
-              any modifications constitutes acceptance of the updated Terms.
+              Your access to, and use of the Site hosted at "mindwork360.com" and any other websites
+              controlled by MindWork360 (together Our Sites) and all the content of them that
+              MindWork360 and its subsidiaries and affiliated companies may make available to you, as
+              well as any services We may provide through any of Our Sites, are governed by and subject
+              to these MindWork360 Site Terms (Terms) and all applicable laws. Please read them carefully.
+            </p>
+            <p>
+              By accessing and browsing Our Sites, you accept, without limitation or qualification,
+              these Terms and acknowledge that Other Agreements between you and MindWork360 are, subject
+              to section 12 (Other Agreements; Access to Software and Services) of these Terms,
+              superseded and of no force or effect.
             </p>
           </div>
 
-          {/* 2. Use of the Website */}
           <div className="legal-section">
-            <h2>2. Use of the Website</h2>
+            <h2>Copyright</h2>
             <p>
-              MindWork360 grants you a limited, non-exclusive, non-transferable, and revocable license
-              to access and use our platform for personal, non-commercial purposes. This license does
-              not include the right to resell or commercially exploit any part of the service, collect
-              or use any product listings or descriptions, or make any derivative use of the platform
-              or its content.
-            </p>
-            <p>
-              You agree to use our website only for lawful purposes and in a manner that does not
-              infringe the rights of others or restrict their enjoyment of the platform. You must not
-              use automated systems, bots, or scrapers to access our content without prior written
-              permission. We reserve the right to terminate access for users who violate these guidelines.
-            </p>
-            <p>
-              You are responsible for maintaining the confidentiality of your account credentials and
-              for all activities that occur under your account. Please notify us immediately if you
-              become aware of any unauthorized use of your account or any other breach of security.
+              All content of Our Sites, including but not limited to the text, graphics, logos, button
+              icons, audio clips, video clips, data compilations, Software, and images, and their
+              arrangement or compilation on Our Sites (Content), unless otherwise noted, are the
+              copyrighted material of MindWork360 or its content providers and are protected by United
+              States and international copyright laws. Copyright &copy; 2005-2020 MindWork360. All
+              rights reserved.
             </p>
           </div>
 
-          {/* 3. Intellectual Property */}
           <div className="legal-section">
-            <h2>3. Intellectual Property</h2>
+            <h2>Trademarks</h2>
             <p>
-              All content on MindWork360, including but not limited to text, graphics, logos, icons,
-              images, audio clips, videos, and software, is the property of MindWork360 or its content
-              suppliers and is protected by applicable intellectual property laws. You may not reproduce,
-              distribute, modify, or create derivative works without our prior written consent.
-            </p>
-            <p>
-              The MindWork360 name, logo, and all related product and service names, design marks, and
-              slogans are trademarks of MindWork360. You are not permitted to use these marks without
-              our express written permission. Unauthorized use of our trademarks may constitute an
-              infringement of our rights and applicable laws.
-            </p>
-            <p>
-              If you believe that content on our platform infringes your copyright, please contact us
-              with a detailed notice. We will investigate all claims and, where appropriate, remove
-              infringing content in accordance with applicable law.
+              "MindWork360" and the MindWork360 logo and other MindWork360 graphics, logos and service
+              names are trademarks, registered trademarks, or trade dress of MindWork360 in the United
+              States and/or other countries. MindWork360's trademarks or trade dress may not be used
+              in connection with any other product or service that is not MindWork360's, or in any
+              manner that is likely to cause confusion among existing or future customers, or in any
+              manner which denigrates or discredits MindWork360. All other trademarks and logos or
+              registered trademarks and logos found on Our Sites or mentioned in them belong to their
+              respective owners. Nothing contained on Our Sites should be construed as granting, by
+              implication, estoppel, or otherwise, any license or right to use any trademark displayed
+              on Our Sites without the written permission of MindWork360 or such third party that owns
+              the trademarks. MindWork360 will enforce its intellectual property rights to the fullest
+              extent permitted by law. You may not use the name, logo, proprietary Content or any
+              trademark of MindWork360 without MindWork360's express written permission.
             </p>
           </div>
 
-          {/* 4. User Conduct */}
           <div className="legal-section">
-            <h2>4. User Conduct</h2>
+            <h2>Limited License</h2>
             <p>
-              Users of MindWork360 are expected to engage respectfully and constructively with all
-              content and community features on the platform. You agree not to post, upload, or
-              transmit any material that is harmful, threatening, abusive, harassing, defamatory,
-              obscene, or otherwise objectionable. We reserve the right to remove such content at
-              our sole discretion.
-            </p>
-            <p>
-              You must not attempt to gain unauthorized access to any part of our platform, other
-              users' accounts, or computer systems connected to our services. Any attempt to interfere
-              with the proper functioning of the website, including through the use of viruses or
-              denial-of-service attacks, is strictly prohibited and may result in legal action.
-            </p>
-            <p>
-              Impersonating any person or entity, or falsely claiming an affiliation with any person
-              or organization, is not permitted on our platform. We may suspend or terminate accounts
-              found to be engaged in such behavior without prior notice.
+              MindWork360 grants you a limited, revocable, non-exclusive license to access and make
+              personal use of Our Sites (License), and not to download (except for page caching) or
+              modify any portion of it without MindWork360's express written consent. This License is
+              for online access only and does not allow you to commercially exploit Our Sites or any
+              of their Content. This License does not allow you to make derivatives of Our Site or use
+              any data mining or other data extraction or gathering tools on Our Sites. Unless otherwise
+              specified by MindWork360 in a separate license or Other Agreement your right to use any
+              Software, data, documentation or other Content that you access or download from Our Sites
+              is subject to these Terms. You may create a hyperlink to Our Site homepage subject to
+              strict compliance with these Terms. Any unauthorized use of Our Sites in contravention of
+              these Terms or a breach of this License terminates the permissions granted under this
+              License with immediate effect.
             </p>
           </div>
 
-          {/* 5. Disclaimer of Warranties */}
           <div className="legal-section">
-            <h2>5. Disclaimer of Warranties</h2>
+            <h2>Access to Our Sites</h2>
             <p>
-              MindWork360 is provided on an "as is" and "as available" basis without any warranties
-              of any kind, either express or implied. We do not warrant that the platform will be
-              uninterrupted, error-free, or free of viruses or other harmful components. To the
-              fullest extent permitted by law, we disclaim all warranties, including implied warranties
-              of merchantability, fitness for a particular purpose, and non-infringement.
+              When you access Our Sites, you are responsible for complying with these Terms as well as
+              any and all use of Our Sites through any account that you may setup through or on Our
+              Sites. Some Content will only be available to you if you have created an account.
             </p>
             <p>
-              The content available on MindWork360 is intended for general informational purposes only
-              and does not constitute professional medical, psychological, or therapeutic advice.
-              Always seek the guidance of a qualified health professional regarding any questions or
-              concerns you may have about your mental health or well-being.
+              Whenever you access Our Sites or create or maintain any account on Our Sites you agree
+              to provide true, accurate, current, and complete information. It is your responsibility
+              to obtain and maintain all equipment, services and Software needed for access to and use
+              of Our Sites as well as paying any related charges. It is also your responsibility to
+              maintain the confidentiality of your login credentials and password(s) and to restrict
+              access to your computing device used to access your account. Should you believe your
+              password or other security information for any of Our Sites has been breached in any way,
+              you must immediately notify Us. MindWork360 reserves the right to refuse you access to
+              Our Sites and to terminate accounts in Our sole discretion.
             </p>
           </div>
 
-          {/* 6. Limitation of Liability */}
           <div className="legal-section">
-            <h2>6. Limitation of Liability</h2>
+            <h2>Professional Services and Advice</h2>
             <p>
-              To the maximum extent permitted by applicable law, MindWork360 and its affiliates,
-              directors, employees, and agents shall not be liable for any indirect, incidental,
-              special, consequential, or punitive damages, including loss of profits, data, goodwill,
-              or other intangible losses, arising out of or in connection with your use of our platform
-              or these Terms.
-            </p>
-            <p>
-              In no event shall our total liability to you for all claims arising from or related to
-              these Terms or the use of our services exceed the amount you have paid to us in the
-              twelve months preceding the event giving rise to the liability. Some jurisdictions do
-              not allow the exclusion of certain warranties or limitation of liability, so some of
-              these limitations may not apply to you.
-            </p>
-            <p>
-              We shall not be held responsible for any delays or failures in performance resulting
-              from causes beyond our reasonable control, including natural disasters, government
-              actions, labor disputes, internet outages, or other force majeure events.
+              In accessing any of Our Sites, no client, advisory, fiduciary or professional relationship
+              is implicated or established and neither MindWork360 nor any other person is, in connection
+              with Our Sites, engaged in rendering auditing, accounting, tax, legal, advisory, consulting
+              or other professional services or advice.
             </p>
           </div>
 
-          {/* 7. Third-Party Content */}
           <div className="legal-section">
-            <h2>7. Third-Party Content</h2>
+            <h2>Liability and Warranties</h2>
             <p>
-              Our platform may display or link to content, products, and services from third parties.
-              This content is provided solely as a convenience and does not constitute an endorsement
-              or recommendation by MindWork360. We have no control over third-party content and
-              accept no responsibility for it.
+              OUR SITES AND ALL CONTENT IN THEM HAS BEEN COMPILED FROM A VARIETY OF SOURCES AND OUR
+              SITES MAY INCLUDE TECHNICAL INACCURACIES OR TYPOGRAPHICAL ERRORS. EVERYTHING ON OUR SITES
+              (INCLUDING SOFTWARE) IS PROVIDED TO YOU "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+              EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+              MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT. YOUR USE OF OUR
+              SITES IS ENTIRELY AT YOUR OWN RISK.
             </p>
             <p>
-              Any transactions you enter into with third parties found on or through our platform are
-              solely between you and that third party. We are not responsible for any loss or damage
-              arising from such transactions. We encourage you to conduct your own due diligence
-              before engaging with any third-party service or content provider.
+              MINDWORK360 DOES NOT WARRANT THAT OUR SITES, VARIOUS SERVICES PROVIDED THROUGH OUR SITES,
+              AND ANY INFORMATION, SOFTWARE OR OTHER MATERIAL DOWNLOADED FROM OUR SITES, WILL BE
+              UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
+            </p>
+            <p>
+              MINDWORK360 MAKES NO WARRANTIES OR REPRESENTATIONS AS TO THE ACCURACY OF THE CONTENT ON
+              OUR SITES. MINDWORK360 ASSUMES NO LIABILITY OR RESPONSIBILITY FOR ANY ERRORS OR OMISSIONS
+              IN THE CONTENT OF OUR SITES. MINDWORK360 USES ALL REASONABLE EFFORT TO ENSURE THE
+              ACCURACY OF THE CONTENT ON OUR SITES BUT RESERVES THE RIGHT TO CHANGE IN ITS SOLE
+              DISCRETION OUR SITES, IN ANY WAY AND/OR AT ANY TIME, WITHOUT NOTICE.
+            </p>
+            <p>
+              UNLESS SPECIFIED IN AN OTHER AGREEMENT BETWEEN YOU AND US, AND TO THE EXTENT ALLOWABLE
+              UNDER APPLICABLE LAW, MINDWORK360 SHALL NOT BE LIABLE FOR ANY DAMAGES OF ANY KIND ARISING
+              FROM YOUR USE OF OUR SITES OR FROM YOUR USE OF ANY CONTENT (INCLUDING SOFTWARE) OR
+              SERVICES INCLUDED ON OR MADE AVAILABLE TO YOU THROUGH OUR SITES, INCLUDING, WITHOUT
+              LIMITATION, DIRECT, INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL, OR CONSEQUENTIAL DAMAGES,
+              AND INCLUDING, WITHOUT LIMITATION, ANY LOST REVENUES, LOST PROFITS, OR THIRD PARTY
+              CLAIMS, EVEN IF MINDWORK360 HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES OR FOR
+              ANY CLAIM BY ANOTHER PARTY.
             </p>
           </div>
 
-          {/* 8. Termination */}
           <div className="legal-section">
-            <h2>8. Termination</h2>
+            <h2>External Links</h2>
             <p>
-              We reserve the right to suspend or terminate your access to MindWork360 at any time,
-              with or without cause, and with or without notice, at our sole discretion. Grounds for
-              termination include, but are not limited to, violation of these Terms, fraudulent
-              activity, or behavior that harms other users or the integrity of the platform.
-            </p>
-            <p>
-              Upon termination, your right to use the platform will immediately cease. Any provisions
-              of these Terms that by their nature should survive termination — including intellectual
-              property provisions, disclaimers, and limitations of liability — shall remain in effect.
-              You may also delete your account at any time by contacting our support team.
+              Links on Our Sites may lead to servers maintained by individuals or organizations other
+              than MindWork360. MindWork360 has no control and makes no warranties or representations
+              as to the accuracy, timeliness, suitability or any other aspect of the information located
+              on such servers, and neither monitors nor endorses such servers or content.
             </p>
           </div>
 
-          {/* 9. Governing Law */}
           <div className="legal-section">
-            <h2>9. Governing Law</h2>
+            <h2>Submission of Personal Information</h2>
             <p>
-              These Terms and Conditions shall be governed by and construed in accordance with the
-              laws of the State of California, United States, without regard to its conflict of law
-              provisions. Any disputes arising out of or relating to these Terms shall be subject to
-              the exclusive jurisdiction of the state and federal courts located in San Francisco
-              County, California.
-            </p>
-            <p>
-              If any provision of these Terms is found to be invalid or unenforceable, the remaining
-              provisions shall continue to be valid and enforceable to the fullest extent permitted
-              by law. Our failure to enforce any right or provision of these Terms will not be
-              considered a waiver of those rights.
+              Please read MindWork360's Privacy Policy. These Terms are deemed to incorporate, and
+              should be read together with, MindWork360's Privacy Policy.
             </p>
           </div>
 
-          {/* 10. Contact Us */}
           <div className="legal-section">
-            <h2>10. Contact Us</h2>
+            <h2>Images</h2>
             <p>
-              If you have any questions, concerns, or feedback about these Terms and Conditions,
-              we encourage you to reach out to our team. We are committed to addressing your inquiries
-              in a timely and transparent manner and will do our best to resolve any concerns you may have.
-            </p>
-            <p>
-              You can contact us by email at <strong>legal@mindwork360.com</strong> or by writing to
-              MindWork360, 42 Wellness Avenue, Suite 310, San Francisco, CA 94103, United States.
-              We aim to respond to all legal and terms-related inquiries within five business days.
+              Images of people or places displayed on Our Sites are either the property of, or used
+              with permission by, MindWork360. Your use of these images is strictly prohibited unless
+              specifically permitted by these Terms, specific permission provided elsewhere on Our Sites
+              or you write directly to and obtain permission from MindWork360. Please contact{' '}
+              <a href="mailto:360mindwork@gmail.com">360mindwork@gmail.com</a> for permission.
             </p>
           </div>
+
+          <div className="legal-section">
+            <h2>Revisions to Content</h2>
+            <p>
+              MindWork360 may at any time revise these Terms by updating this posting. You are bound
+              by the most current Terms every time you visit Our Sites, therefore you should periodically
+              and carefully review these Terms to which you are bound.
+            </p>
+          </div>
+
+          <div className="legal-section">
+            <h2>Other Agreements; Access to Software and Services</h2>
+            <p>
+              MindWork360 may provide products (such as hardware or software), services (such as
+              software subscription services, hardware maintenance or repair or software maintenance,
+              installation, or training) or access via Our Sites under the terms of a separate agreement
+              between You and MindWork360, such as a license agreement or separate terms of sale and
+              warranty terms (each, an Other Agreement). MindWork360's obligations regarding any product,
+              service, or access that it makes available to you under any Other Agreement shall be
+              governed solely by the Other Agreement under which such product, service or access is
+              provided and these Terms shall not be deemed or construed to alter the terms of any such
+              Other Agreement. If there is an inconsistency between these Terms and any Other Agreement,
+              the terms of the Other Agreement will control.
+            </p>
+            <p>
+              For example, the use of any software that is made available to download from Our Sites
+              (Software) is governed by the terms of the end user license agreement, if any, that
+              accompanies or is included with the Software (License Agreement). You may not install any
+              Software that is accompanied by or includes a License Agreement unless you first have
+              agreed to the License Agreement. If there is no License Agreement, then these Terms will
+              govern your use of that Software.
+            </p>
+          </div>
+
+          <div className="legal-section">
+            <h2>Choice of Law, Jurisdiction and Severability</h2>
+            <p>
+              The contents of Our Sites are governed by the laws of the state of Delaware in the United
+              States, and any claims rising directly or indirectly out of any materials contained on Our
+              Sites are subject to these same laws without regard to any conflict of law principles.
+            </p>
+            <p>
+              Any dispute that arises out of your use of Our Sites or to services provided by MindWork360
+              where the aggregated amount of such claim is greater than $10,000 shall be heard in a state
+              or federal court in the State of California, and you consent to the exclusive jurisdiction
+              of such courts.
+            </p>
+            <p>
+              If any clause of these Terms shall be deemed to be invalid, void or unenforceable for any
+              reason, that clause shall be deemed severable and shall not affect the enforceability of
+              the remainder of these Terms.
+            </p>
+          </div>
+
+          <div className="legal-section">
+            <h2>Changes to Terms of Service</h2>
+            <p>
+              You can review the most current version of the Terms of Service at any time at this page.
+            </p>
+            <p>
+              We reserve the right, at our sole discretion, to update, change or replace any part of
+              these Terms of Service by posting updates and changes to our website. It is your
+              responsibility to check our website periodically for changes. Your continued use of or
+              access to our website or the Services following the posting of any changes to these Terms
+              of Service constitutes acceptance of those changes.
+            </p>
+          </div>
+
         </div>
       </div>
 

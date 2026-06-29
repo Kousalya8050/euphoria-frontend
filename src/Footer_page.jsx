@@ -7,7 +7,7 @@ import Facebook from './assets/footer/facebook_final_icon.png';
 import Linkedin from './assets/footer/linkedin_finale_icon.png';
 import Twitter from './assets/footer/Twitter_final_icon.png';
 import Bluesky from './assets/footer/bsky_final_icon.png'
-import footerLogo from './assets/header/320px90pxwithoutbackground.png'
+import footerLogo from './assets/320x90(1).png'
 
 import footerWaveImage from './assets/homepage/footer.png';
 
@@ -94,7 +94,7 @@ const Footer = () => {
         <div className="footer-legal-links">
           <Link to="/privacy-policy">Privacy Policy</Link>
           <span className="footer-legal-sep">|</span>
-          <Link to="/terms-and-conditions">Terms &amp; Conditions</Link>
+          <Link to="/terms-of-service">Terms of Service</Link>
         </div>
       </div>
     </footer>

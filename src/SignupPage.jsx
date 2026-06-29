@@ -193,9 +193,7 @@ useEffect(() => {
           <div className="help-section">
             <h2>How can we help?</h2>
             <p>
-              Let's talk about you and your product vision. Everything we do is customized for your specific needs.
-              We look forward to connecting with you to discuss how PROFLOCA can help you make your vision a reality!
-              Email us to schedule a consult. We will respond to you as soon as we can.
+              Send us a message and let’s get the conversation started.
             </p>
           </div>
 

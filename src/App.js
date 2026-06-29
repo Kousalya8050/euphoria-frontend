@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-
 import Header from "./Header";
 import HomePage from "./HomePage";
 import AboutUsPage from "./AboutUsPage";
@@ -15,13 +14,21 @@ import ResourcesSection from "./ResourcesSection";
 import CreateBlog from "./CreateBlog";
 import ProtectedRoute from "./ProtectedRoute";
 import AdminLogin from "./AdminLogin";
-import SearchResults from "./SearchResults"
+import SearchResults from "./SearchResults";
 import BlogPage from "./BlogPage";
 import BlogDetails from "./BlogDetails";
 import RssBlogPage from "./RssBlogPage";
 import LandingPage from "./LandingPage";
 import PrivacyPolicyPage from "./PrivacyPolicyPage";
 import TermsAndConditionsPage from "./TermsAndConditionsPage";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   const location = useLocation();
@@ -33,6 +40,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       {shouldShowHeader && <Header />}
 
       <main>
@@ -61,7 +69,7 @@ function App() {
           {/* Optional: keeps the specific path working too */}
           <Route path="/landing_page" element={<LandingPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+          <Route path="/terms-of-service" element={<TermsAndConditionsPage />} />
 
           <Route
             path="/create-blog"
