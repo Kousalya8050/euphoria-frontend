@@ -12,7 +12,7 @@ const TermsAndConditionsPage = () => {
       </Helmet>
       {/* Hero Banner */}
       <div className="legal-hero-banner">
-        <img src={banner} alt="Terms of Service Banner" className="legal-hero-bg" />
+        <img src={banner} alt="Terms of Service Banner" title="Terms of Service — MindWork360" className="legal-hero-bg" />
         <div className="legal-hero-overlay">
           <h1 className="legal-hero-title">Terms of Service</h1>
           <p className="legal-hero-subtitle">

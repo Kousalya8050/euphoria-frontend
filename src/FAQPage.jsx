@@ -119,12 +119,12 @@ const FAQPage = () => {
   </div>
 
   <div className="faq-banner-image-section"> {/* NEW SECTION for image/ellipses */}
-    <img src={faqBanner} alt="FAQ Banner" className="faq-banner-image" />
+    <img src={faqBanner} alt="FAQ Banner" title="Frequently Asked Questions — MindWork360" className="faq-banner-image" />
 
     {/* Ellipse Images (These can stay, their CSS will handle visibility) */}
-    <img src={ellipse3} alt="ellipse" className="ellipse-img1 ellipse1" />
-    <img src={ellipse1} alt="ellipse" className="ellipse-img2 ellipse3" />
-    <img src={ellipse2} alt="ellipse" className="ellipse-img3 ellipse2" />
+    <img src={ellipse3} alt="" title="" className="ellipse-img1 ellipse1" />
+    <img src={ellipse1} alt="" title="" className="ellipse-img2 ellipse3" />
+    <img src={ellipse2} alt="" title="" className="ellipse-img3 ellipse2" />
   </div>
 </div>
       
@@ -179,7 +179,7 @@ const FAQPage = () => {
                   <div className="euphoria-footer-socials">
                     {socialLinks.map((social) => (
                       <a key={social.name} href={social.path} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
-                        <img src={social.icon} alt={social.name} />
+                        <img src={social.icon} alt={social.name} title={social.name} />
                       </a>
                     ))}
                   </div>

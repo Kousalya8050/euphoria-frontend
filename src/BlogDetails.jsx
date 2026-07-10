@@ -121,10 +121,11 @@ const BlogDetails = () => {
       </Helmet>
       <section className="blog-banner">
         {blog.banner_image && (
-          <img 
-            src={getSafeUrl(blog.banner_image)} 
-            alt="Banner" 
-            className="banner-image" 
+          <img
+            src={getSafeUrl(blog.banner_image)}
+            alt={blog.blog_title || "Blog Banner"}
+            title={blog.blog_title || "MindWork360 Blog"}
+            className="banner-image"
           />
         )}
       </section>
@@ -181,16 +182,16 @@ const BlogDetails = () => {
 
           <div id="content">
             <div dangerouslySetInnerHTML={{ __html: cleanHTML(blog.blog_content1) }} />
-            {blog.image1 && <img src={getSafeUrl(blog.image1)} alt="" className="blog-mid-img" />}
+            {blog.image1 && <img src={getSafeUrl(blog.image1)} alt={blog.blog_title || "Blog image"} title={blog.blog_title || "MindWork360 Blog"} className="blog-mid-img" />}
             
             <div dangerouslySetInnerHTML={{ __html: cleanHTML(blog.blog_content2) }} />
             <div dangerouslySetInnerHTML={{ __html: cleanHTML(blog.blog_content3) }} />
             
-            {blog.image2 && <img src={getSafeUrl(blog.image2)} alt="" className="blog-mid-img" />}
+            {blog.image2 && <img src={getSafeUrl(blog.image2)} alt={blog.blog_title || "Blog image"} title={blog.blog_title || "MindWork360 Blog"} className="blog-mid-img" />}
             
             <div dangerouslySetInnerHTML={{ __html: cleanHTML(blog.blog_content4) }} />
             
-            {blog.image3 && <img src={getSafeUrl(blog.image3)} alt="" className="blog-mid-img" />}
+            {blog.image3 && <img src={getSafeUrl(blog.image3)} alt={blog.blog_title || "Blog image"} title={blog.blog_title || "MindWork360 Blog"} className="blog-mid-img" />}
             
             <div dangerouslySetInnerHTML={{ __html: cleanHTML(blog.blog_content5) }} />
           </div>

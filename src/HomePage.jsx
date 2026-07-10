@@ -62,6 +62,7 @@ const HomePage = () => {
           <img
             src={post.image}
             alt={post.title || "Blog image"}
+            title={post.title || "MindWork360 Blog"}
             className="post-card2-image"
           />
         </div>
@@ -338,8 +339,8 @@ useEffect(() => {
         <title>MindWork360 | Virtual Assistant & Healthcare Support Services</title>
         <meta name="description" content="Partner with MindWork360 for professional virtual assistant, healthcare administration, and business support services designed to increase productivity and growth." />
       </Helmet>
-      <img src={rightWave} alt="" role="presentation" className="decorative-wave left-waves" />
-      <img src={rightWave} alt="" role="presentation" className="decorative-wave right-wave" />
+      <img src={rightWave} alt="" title="" role="presentation" className="decorative-wave left-waves" />
+      <img src={rightWave} alt="" title="" role="presentation" className="decorative-wave right-wave" />
       {/* <header className="header">
       <div className="green-bar">
       <div className="logo">Euphoria</div>
@@ -362,10 +363,10 @@ useEffect(() => {
       {/* Hero Banner */}
       <section className="hero-section home-hero-section">
         <div className="hero-image-container">
-          <img src={banner} alt="MindWork360 Banner" className="hero-bg" />
+          <img src={banner} alt="MindWork360 Banner" title="MindWork360 — Mental Health & Healing Community" className="hero-bg" />
           <div className="hero-overlay">
             <div className="hero-text-box">
-              <img src={logo} alt="MindWork360 Logo" className="hero-logo" />
+              <img src={logo} alt="MindWork360 Logo" title="MindWork360" className="hero-logo" />
               <p>A Mental Health and Healing Community for Those Looking to Heal, Learn and Improve Their Lives.</p>
               <p>We Want you to Live Your Best Life.</p>
               <p>Share with Someone Who You Think May Benefit From Our Work.</p>
@@ -376,7 +377,7 @@ useEffect(() => {
 
       <section className="banner-grid">
         <div className="banner-card card-1">
-          <img src={homepage1} alt="There is a way to be happy — mental wellness inspiration" />
+          <img src={homepage1} alt="There is a way to be happy — mental wellness inspiration" title="There Is a Way To Be Happy" />
           <div className="banner-text">
             There Is a Way To Be Happy:<br />
             If You Don’t Expect Anything,<br />
@@ -384,15 +385,15 @@ useEffect(() => {
           </div>
         </div>
         <div className="banner-card card-2">
-          <img src={homepage2} alt="A smile is the beauty of the soul" />
+          <img src={homepage2} alt="A smile is the beauty of the soul" title="A Smile Is The Beauty Of The Soul" />
           <div className="banner-text1">A Smile Is The Beauty Of The Soul</div>
         </div>
         <div className="banner-card card-3">
-          <img src={homepage3} alt="Happiness is a habit — cultivate it" />
+          <img src={homepage3} alt="Happiness is a habit — cultivate it" title="Happiness Is a Habit – Cultivate It" />
           <div className="banner-text2">Happiness Is a Habit – Cultivate It.</div>
         </div>
         <div className="banner-card card-4">
-          <img src={homepage4} alt="You will be exactly as happy as you decide to be" />
+          <img src={homepage4} alt="You will be exactly as happy as you decide to be" title="You Will Be Exactly As Happy As You Decide To Be" />
           <div className="banner-text3">You Will Be Exactly As Happy As You Decide To Be.</div>
         </div>
       </section>
@@ -401,7 +402,7 @@ useEffect(() => {
         <div className="mobile-carousel-container" ref={containerRef}>
           {images.map((img, index) => (
             <div className="mobile-carousel-slide" key={index}>
-              <img src={img.src} alt={typeof img.text === "string" ? img.text : `Mental health inspiration slide ${index + 1}`} className="mobile-carousel-image" loading="lazy" />
+              <img src={img.src} alt={typeof img.text === "string" ? img.text : `Mental health inspiration slide ${index + 1}`} title={typeof img.text === "string" ? img.text : `Mental health inspiration slide ${index + 1}`} className="mobile-carousel-image" loading="lazy" />
               <div className="mobile-carousel-text">{img.text}</div>
             </div>
           ))}
@@ -520,6 +521,7 @@ useEffect(() => {
               <img
                 src={category.imgSrc}
                 alt={`${category.label} — mental health category`}
+                title={`${category.label} — MindWork360`}
                 className="category-image-homepage"
                 loading="lazy"
               />
@@ -556,7 +558,7 @@ useEffect(() => {
       />
 
       <button className="search-icon" onClick={handleSearch}>
-        <img src={homepagesearch} alt="Search" />
+        <img src={homepagesearch} alt="Search" title="Search MindWork360" />
       </button>
     </div>
 
@@ -580,7 +582,8 @@ useEffect(() => {
         {/* <span>{item.type === 'video' ? "🎥 " : "📝 "}</span> */}
         <img
           src={item.type === "video" ? videoIcon : blogIcon}
-          alt="icon"
+          alt={item.type === "video" ? "Video" : "Blog"}
+          title={item.type === "video" ? "Video result" : "Blog result"}
           className="suggestion-icon"
         />
         {item.type === 'video' ? item.snippet.title : item.blog_title}

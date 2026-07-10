@@ -152,7 +152,7 @@ const LifeLessons = () => {
       </Helmet>
       <h3 className="life_heading_h3">Life Lessons</h3>
       <div className="lessons-hero-banner">
-        <img src={banner} alt="Life Lessons Banner" className="lessons-hero-bg" />
+        <img src={banner} alt="Life Lessons Banner" title="Life Lessons — MindWork360" className="lessons-hero-bg" />
         <div className="lessons-hero-overlay"></div>
       </div>
 
@@ -181,7 +181,7 @@ const LifeLessons = () => {
             {videos.map(video => (
               <div key={video.id} className="video-card_l" onClick={() => setSelectedVideo(video.id)}>
                 <div className="thumbnail-wrapper_l">
-                  <img src={video.snippet.thumbnails.medium.url} alt={video.snippet.title} />
+                  <img src={video.snippet.thumbnails.medium.url} alt={video.snippet.title} title={video.snippet.title} />
                   <span className="video-duration_l">{formatDuration(video.contentDetails.duration)}</span>
                 </div>
                 <div className="video-title_l">{video.snippet.title}</div>

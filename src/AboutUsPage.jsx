@@ -61,7 +61,7 @@ const AboutUsPage = () => {
       </Helmet>
 
       <main className="about-us-content">
-        <img src={aboutUsBanner} alt="Team holding emoji faces" className="about-us-banner-image" />
+        <img src={aboutUsBanner} alt="Team holding emoji faces" title="MindWork360 Team" className="about-us-banner-image" />
 
         <div className="about-us-text-section">
           <h3 className="about-us-subtitle">About Us</h3>
@@ -75,7 +75,8 @@ const AboutUsPage = () => {
       <div className="collage-container">
         {collageImages.map((image, index) => (
           <div key={index} className={`collage-image-wrapper image-${index + 1}`}>
-            <img src={image} alt={`Collage item ${index + 1}`} />
+            <img src={image} alt={`MindWork360 mental health community team — photo ${index + 1}`}
+            title={`MindWork360 Community — photo ${index + 1}`} />
           </div>
         ))}
       </div>
@@ -85,7 +86,8 @@ const AboutUsPage = () => {
   <div className="collage-container desktop-collage">
     {collageImages.map((image, index) => (
       <div key={index} className={`collage-image-wrapper image-${index + 1}`}>
-        <img src={image} alt={`Collage item ${index + 1}`} />
+        <img src={image} alt={`MindWork360 mental health community team — photo ${index + 1}`}
+            title={`MindWork360 Community — photo ${index + 1}`} />
       </div>
     ))}
   </div>
@@ -111,7 +113,8 @@ const AboutUsPage = () => {
         <div className="collage-carousel-slide">
           <img
             src={image}
-            alt={`Collage item ${index + 1}`}
+            alt={`MindWork360 mental health community team — photo ${index + 1}`}
+            title={`MindWork360 Community — photo ${index + 1}`}
             className="collage-carousel-image"
           />
         </div>
@@ -140,7 +143,8 @@ const AboutUsPage = () => {
       <div className="collage-carousel-slide">
         <img
           src={image}
-          alt={`Collage item ${index + 1}`}
+          alt={`MindWork360 mental health community team — photo ${index + 1}`}
+            title={`MindWork360 Community — photo ${index + 1}`}
           className="collage-carousel-image"
         />
       </div>
@@ -162,7 +166,7 @@ const AboutUsPage = () => {
               <p className="about-us-paragraph">{paragraphText}</p>
             </div>
             <div className="info-image-block">
-              <img src={infoImage1} alt="Woman expressing emotions with cards" />
+              <img src={infoImage1} alt="Woman expressing emotions with cards" title="Expressing emotions — mental health awareness" />
             </div>
           </div>
 
@@ -175,6 +179,7 @@ const AboutUsPage = () => {
               <img
                 src={infoImage2}
                 alt="Silhouette of a person meditating at sunset"
+                title="Meditation and mindfulness — MindWork360"
               />
             </div>
           </div>
@@ -206,7 +211,7 @@ const AboutUsPage = () => {
                     <div className="euphoria-footer-socials">
                       {socialLinks.map((social) => (
                         <a key={social.name} href={social.path} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
-                          <img src={social.icon} alt={social.name} />
+                          <img src={social.icon} alt={social.name} title={social.name} />
                         </a>
                       ))}
                     </div>

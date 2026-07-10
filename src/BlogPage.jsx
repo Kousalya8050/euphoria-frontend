@@ -113,6 +113,7 @@ const BlogPostCard = ({ post }) => {
         <img
           src={getSafeImageUrl(post.image)}
           alt={post.title || "Blog image"}
+          title={post.title || "MindWork360 Blog"}
           className="post-card-image"
         />
       </div>
@@ -377,7 +378,7 @@ const BlogPage = () => {
                             <div className="euphoria-footer-socials">
                               {socialLinks.map((social) => (
                                 <a key={social.name} href={social.path} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
-                                  <img src={social.icon} alt={social.name} />
+                                  <img src={social.icon} alt={social.name} title={social.name} />
                                 </a>
                               ))}
                             </div>

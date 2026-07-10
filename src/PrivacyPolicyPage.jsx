@@ -12,7 +12,7 @@ const PrivacyPolicyPage = () => {
       </Helmet>
       {/* Hero Banner */}
       <div className="legal-hero-banner">
-        <img src={banner} alt="Privacy Policy Banner" className="legal-hero-bg" />
+        <img src={banner} alt="Privacy Policy Banner" title="Privacy Policy — MindWork360" className="legal-hero-bg" />
         <div className="legal-hero-overlay">
           <h1 className="legal-hero-title">Privacy Policy</h1>
           <p className="legal-hero-subtitle">

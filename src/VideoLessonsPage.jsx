@@ -70,7 +70,7 @@ const VideoLessons = () => {
       </Helmet>
       <h3 className="video_heading_h3">Video Lessons</h3>
       <div className="lessons-hero-banner">
-        <img src={banner} alt="Video Lessons Banner" className="lessons-hero-bg" />
+        <img src={banner} alt="Video Lessons Banner" title="Video Lessons — MindWork360" className="lessons-hero-bg" />
         <div className="lessons-hero-overlay"></div>
       </div>
 
@@ -108,6 +108,7 @@ const VideoLessons = () => {
                     <img
                       src={item.snippet?.thumbnails?.high?.url || item.snippet?.thumbnails?.medium?.url}
                       alt={item.snippet?.title}
+                      title={item.snippet?.title}
                     />
                     <span className="video-duration">
                       {activeTab === "shorts" ? "Short" : formatDuration(item.contentDetails?.duration)}

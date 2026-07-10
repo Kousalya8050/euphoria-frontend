@@ -172,22 +172,22 @@ const ResourcesSection = () => {
       <div className="images-layout desktop-only_r">
         <div className="img-box never-give-up">
           <div className="bg-square green-bg"></div>
-          <img src={neverGiveUp} alt="Never Give Up" />
+          <img src={neverGiveUp} alt="Never Give Up" title="Never Give Up — MindWork360" />
         </div>
 
         <div className="img-box learn-to-rest">
           <div className="bg-square lightgreen-bg"></div>
-          <img src={learnToRest} alt="Learn to Rest" />
+          <img src={learnToRest} alt="Learn to Rest" title="Learn to Rest — MindWork360" />
         </div>
 
         <div className="img-box blurry-focus">
           <div className="bg-square darkgreen-bg"></div>
-          <img src={whenLifeGetsBlurry} alt="When Life Gets Blurry" />
+          <img src={whenLifeGetsBlurry} alt="When Life Gets Blurry" title="When Life Gets Blurry — MindWork360" />
         </div>
 
         <div className="img-box success-revenge">
           <div className="bg-square lime-bg"></div>
-          <img src={successRevenge} alt="Success is the Best Revenge" />
+          <img src={successRevenge} alt="Success is the Best Revenge" title="Success is the Best Revenge — MindWork360" />
         </div>
       </div>
 
@@ -198,7 +198,8 @@ const ResourcesSection = () => {
             <div className="mobile-carousel-slide_r" key={index}>
               <img
                 src={img.src}
-                alt={`Slide ${index + 1}`}
+                alt={img.text}
+                title={img.text}
                 className="mobile-carousel-image_r"
               />
               {/* <div className="mobile-carousel-text">{img.text}</div> */}
@@ -642,7 +643,7 @@ const ResourcesSection = () => {
           <button className="connect-button" onClick={() => navigate("/contactus")} >Connect with Us</button>
         </div>
         <div className="contact-right_r">
-          <img src={contactIllustration} alt="Contact Illustration" />
+          <img src={contactIllustration} alt="Contact Illustration" title="Contact MindWork360 — We're Here to Help" />
         </div>
       </div>
 

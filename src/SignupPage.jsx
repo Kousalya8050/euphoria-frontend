@@ -332,7 +332,7 @@ useEffect(() => {
   </div>
 
   <div className="recaptcha-right">
-    <img src={catpcha} alt="captcha" className="recaptcha-image" />
+    <img src={catpcha} alt="captcha" title="reCAPTCHA verification" className="recaptcha-image" />
     <div className="recaptcha-logo">reCAPTCHA</div>
     <div className="recaptcha-terms">Privacy - Terms</div>
   </div>

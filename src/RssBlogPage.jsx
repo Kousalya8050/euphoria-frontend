@@ -125,10 +125,11 @@ const RssBlogPage = () => {
                   <div key={blog.id || index} className="rss-card">
                     <div className="rss-card-image">
                       {/* ✅ Pass 'index' here to guarantee unique sequence */}
-                      <img 
-                        src={getImageUrl(blog, index)} 
-                        alt={blog.title} 
-                        loading="lazy" 
+                      <img
+                        src={getImageUrl(blog, index)}
+                        alt={blog.title}
+                        title={blog.title}
+                        loading="lazy"
                       />
                     </div>
                     

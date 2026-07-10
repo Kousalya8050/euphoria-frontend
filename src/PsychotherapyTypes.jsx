@@ -137,7 +137,7 @@ useEffect(() => {
       <div className="psy-intro-section">
         <div className="psy-intro-left">
           <div className="psy-intro-bg-box"></div>
-          <img src={introImagePsycho} alt="Psychotherapy Intro" className="psy-intro-img" />
+          <img src={introImagePsycho} alt="Psychotherapy Intro" title="What Is Psychotherapy — MindWork360" className="psy-intro-img" />
         </div>
         <div className="psy-intro-right">
           <h3 className="psy-intro-title">WHAT IS PSYCHOTHERAPY?</h3>
@@ -164,10 +164,10 @@ useEffect(() => {
             </ul>
           </div>
           <div className="therapy-image-wrapper">
-            <img src={psychodynamicImg} alt="Psychodynamic Therapy" className="therapy-img" />
-            <img src={circleImage} alt="Circle graphic" className="circle-image" />
-            <img src={Ellipse1} alt="Circle graphic" className="green-circle" />
-            <img src={Ellipse2} alt="Circle graphic" className="green-circle1" />
+            <img src={psychodynamicImg} alt="Psychodynamic Therapy" title="Psychodynamic Therapy — MindWork360" className="therapy-img" />
+            <img src={circleImage} alt="" title="" className="circle-image" />
+            <img src={Ellipse1} alt="" title="" className="green-circle" />
+            <img src={Ellipse2} alt="" title="" className="green-circle1" />
            
           </div>
         </div>
@@ -175,8 +175,8 @@ useEffect(() => {
         {/* Section 2: Image Left, Content Right */}
         <div className="therapy-type-block reverse">
           <div className="therapy-image-wrapper">
-            <img src={behavioralImg} alt="Behavioral Therapy" className="therapy-img3" />
-            <img src={Ellipse3} alt="Circle graphic" className="green-circle2" />
+            <img src={behavioralImg} alt="Behavioral Therapy" title="Behavioral Therapy — MindWork360" className="therapy-img3" />
+            <img src={Ellipse3} alt="" title="" className="green-circle2" />
           </div>
           <div className="therapy-text">
             <h4>Behavioral Therapy</h4>
@@ -191,8 +191,8 @@ useEffect(() => {
         {/* Section 3: Image Farther Left, Content Right */}
         <div className="therapy-type-block reverse offset-image-left">
           <div className="therapy-image-wrapper offset-img-wrapper">
-            <img src={cognitiveImg} alt="Cognitive Therapy" className="therapy-img1" />
-            <img src={Ellipse1} alt="Circle graphic" className="green-circle3" />
+            <img src={cognitiveImg} alt="Cognitive Therapy" title="Cognitive Therapy — MindWork360" className="therapy-img1" />
+            <img src={Ellipse1} alt="" title="" className="green-circle3" />
           </div>
           <div className="therapy-text">
             <h4>Cognitive Therapy</h4>
@@ -215,15 +215,15 @@ useEffect(() => {
             </ul>
           </div>
           <div className="therapy-image-wrapper">
-            <img src={humanisticImg} alt="Humanistic Therapy" className="therapy-img3" />
-            <img src={Ellipse2} alt="Circle graphic" className="green-circle4" />
+            <img src={humanisticImg} alt="Humanistic Therapy" title="Humanistic Therapy — MindWork360" className="therapy-img3" />
+            <img src={Ellipse2} alt="" title="" className="green-circle4" />
           </div>
         </div>
 
         {/* Section 5: Image Left, Content Right */}
         <div className="therapy-type-block reverse">
           <div className="therapy-image-wrapper">
-            <img src={holisticImg} alt="Holistic Therapy" className="therapy-img2" />
+            <img src={holisticImg} alt="Holistic Therapy" title="Holistic & Integrative Therapy — MindWork360" className="therapy-img2" />
           </div>
           <div className="therapy-text">
             <h4>Holistic & Integrative Therapy</h4>
@@ -250,14 +250,14 @@ useEffect(() => {
             </ul>
           </div>
           <div className="therapy-image-wrapper">
-            <img src={familyImg} alt="Humanistic Therapy" className="therapy-img3" />
-            <img src={Ellipse3} alt="Circle graphic" className="green-circle5" />
+            <img src={familyImg} alt="Family & Couples Therapy" title="Family & Couples Therapy — MindWork360" className="therapy-img3" />
+            <img src={Ellipse3} alt="" title="" className="green-circle5" />
           </div>
         </div>
         {/* Section 7: Image Left, Content Right */}
         <div className="therapy-type-block reverse">
           <div className="therapy-image-wrapper">
-            <img src={otherImg} alt="Holistic Therapy" className="therapy-img" />
+            <img src={otherImg} alt="Other Specialized Therapies" title="Other Specialized Therapies — MindWork360" className="therapy-img" />
           </div>
           <div className="therapy-text">
             <h4>Other Specialized Therapies</h4>
@@ -351,12 +351,12 @@ useEffect(() => {
 <img src={Vector4} alt="Icon1" className="therapy-icon vector8" />
 <img src={Vector5} alt="Icon1" className="therapy-icon vector8" />
 <img src={Vector6} alt="Icon1" className="therapy-icon vector9" /> */}
-  <img src={Icon1} alt="Icon1" className="therapy-icon icon1" />
-  <img src={Icon2} alt="Icon2" className="therapy-icon icon2" />
-  <img src={Icon3} alt="Icon3" className="therapy-icon icon3" />
-  <img src={Icon5} alt="Icon4" className="therapy-icon icon4" />
-  <img src={Icon4} alt="Icon5" className="therapy-icon icon5" />
-  <img src={Icon6} alt="Icon6" className="therapy-icon icon6" />
+  <img src={Icon1} alt="" title="" className="therapy-icon icon1" />
+  <img src={Icon2} alt="" title="" className="therapy-icon icon2" />
+  <img src={Icon3} alt="" title="" className="therapy-icon icon3" />
+  <img src={Icon5} alt="" title="" className="therapy-icon icon4" />
+  <img src={Icon4} alt="" title="" className="therapy-icon icon5" />
+  <img src={Icon6} alt="" title="" className="therapy-icon icon6" />
 
   <div className="therapy-center-text">How Exactly Can Therapy Help Us?</div>
 
@@ -376,7 +376,7 @@ useEffect(() => {
   <div className="therapy-center-text">How Exactly Can Therapy Help Us?</div>
 
   <div className="therapy-mobile-pair">
-    <img src={Icon1} alt="Icon1" className="therapy-icon" />
+    <img src={Icon1} alt="" title="" className="therapy-icon" />
     <div className="therapy-benefit-texts">
       <div className="benefit-text">Improved Self-Awareness</div>
       <div className="benefit-text">Emotional Support</div>
@@ -384,7 +384,7 @@ useEffect(() => {
   </div>
 
   <div className="therapy-mobile-pair">
-    <img src={Icon2} alt="Icon2" className="therapy-icon" />
+    <img src={Icon2} alt="" title="" className="therapy-icon" />
     <div className="therapy-benefit-texts">
       <div className="benefit-text">Better Relationships</div>
       <div className="benefit-text">Behavioral Change</div>
@@ -392,7 +392,7 @@ useEffect(() => {
   </div>
 
   <div className="therapy-mobile-pair">
-    <img src={Icon3} alt="Icon3" className="therapy-icon" />
+    <img src={Icon3} alt="" title="" className="therapy-icon" />
     <div className="therapy-benefit-texts">
       <div className="benefit-text">Goal Clarity and Motivation</div>
       <div className="benefit-text">Mental Health Management</div>
@@ -400,7 +400,7 @@ useEffect(() => {
   </div>
 
   <div className="therapy-mobile-pair">
-    <img src={Icon4} alt="Icon4" className="therapy-icon" />
+    <img src={Icon4} alt="" title="" className="therapy-icon" />
     <div className="therapy-benefit-texts">
       <div className="benefit-text">Healing from Trauma</div>
       <div className="benefit-text">Coping Strategies</div>
@@ -408,7 +408,7 @@ useEffect(() => {
   </div>
 
   <div className="therapy-mobile-pair">
-    <img src={Icon5} alt="Icon5" className="therapy-icon5" />
+    <img src={Icon5} alt="" title="" className="therapy-icon5" />
     <div className="therapy-benefit-texts">
       <div className="benefit-text">Problem-Solving Skills</div>
       <div className="benefit-text">Increased Resilience</div>

@@ -1,16 +1,14 @@
 // LoginPage.jsx
 
-import React, { useState, useEffect } from 'react'; // 1. Import useState
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // 2. Import the eye icons
+import { Helmet } from 'react-helmet-async';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import './LoginPage.css';
 import rightWave from './assets/homepage/wave-middle-right.png';
 
 const LoginPage = () => {
 
-  useEffect(() => {
-      document.title = "Login Page | MindWork360";
-   }, []);
     
         useEffect(() => {
           document.body.classList.add('no-scroll');
@@ -28,8 +26,12 @@ const LoginPage = () => {
 
   return (
     <div className="login-page-container">
-        <img src={rightWave} alt="Decorative middle left wave" className="decorative-wave-l left-waves-l" />
-        <img src={rightWave} alt="Decorative middle right wave" className="decorative-wave-l right-wave-l" />
+      <Helmet>
+        <title>Login | MindWork360</title>
+        <meta name="description" content="Log in to your MindWork360 account to access mental health resources, community forums, and personalized content." />
+      </Helmet>
+        <img src={rightWave} alt="" title="" className="decorative-wave-l left-waves-l" />
+        <img src={rightWave} alt="" title="" className="decorative-wave-l right-wave-l" />
       <div className="login-form-wrapper">
         <h2>Log in</h2>
 

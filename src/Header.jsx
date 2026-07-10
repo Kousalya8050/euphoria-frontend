@@ -14,10 +14,10 @@ const Header = () => {
 
   return (
     <header className="header">
-      <img src={topLeftWave} alt="" className="decorative-wave top-left-wave" />
-      <img src={leftWave} alt="" className="decorative-wave left-wave" />
+      <img src={topLeftWave} alt="" title="" className="decorative-wave top-left-wave" />
+      <img src={leftWave} alt="" title="" className="decorative-wave left-wave" />
 
-      <Link to="/" className="logo" onClick={closeMenu}><img src={headerLogo} alt="Euphoria" className="logo-img" /></Link>
+      <Link to="/" className="logo" onClick={closeMenu}><img src={headerLogo} alt="MindWork360 Logo" title="MindWork360 — Mental Health & Healing Community" className="logo-img" /></Link>
 
       {/* Desktop nav — visible ≥1280px, excludes Resources / Life Lessons / News */}
       <nav className="desktop-nav">

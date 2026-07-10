@@ -81,19 +81,21 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section className="hero-section">
   <div className="hero-image-container">
-    <img 
-      src={banner} 
-      alt="MindWork360 Banner" 
-      className="hero-bg" 
+    <img
+      src={banner}
+      alt="MindWork360 Banner"
+      title="MindWork360 — Mental Health & Healing Community"
+      className="hero-bg"
     />
 
     <div className="hero-overlay">
       <div className="hero-text-box">
         
         {/* Logo */}
-        <img 
+        <img
           src={logo}
-          alt="MindWork360 Logo" 
+          alt="MindWork360 Logo"
+          title="MindWork360"
           className="hero-logo"
         />
 

@@ -49,7 +49,7 @@ const Footer = () => {
 
           {/* Logo */}
           <div className="euphoria-footer-logo">
-            <Link to="/"><img src={footerLogo} alt="Euphoria" className="footer-logo-img" />
+            <Link to="/"><img src={footerLogo} alt="MindWork360 Logo" title="MindWork360 — Mental Health & Healing Community" className="footer-logo-img" />
             </Link>           
             </div>
 
@@ -81,7 +81,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label={social.name}
                 >
-                  <img src={social.icon} alt={social.name} style={{ height: "45px", width: "45px" }} />
+                  <img src={social.icon} alt={social.name} title={social.name} style={{ height: "45px", width: "45px" }} />
                 </a>
               ))}
             </div>

@@ -26,7 +26,7 @@ const BlogPostCard = ({ post }) => {
   return (
     <div className="post-card1">
       <div className="post-card1-image-wrapper">
-        <img src={imageUrl} alt={post.blog_title} className="post-card1-image" />
+        <img src={imageUrl} alt={post.blog_title} title={post.blog_title} className="post-card1-image" />
       </div>
       <div className="post-card1-content">
         <h3 className="post-card1-title">{post.blog_title}</h3>
@@ -173,7 +173,7 @@ export default function SearchResults() {
                     <div className="video-card_s" key={video.id} onClick={() => setSelectedVideo(video.id)} 
                     >
                       <div className="thumbnail-wrapper_s">
-                        <img src={video.snippet?.thumbnails?.medium?.url} alt="" />
+                        <img src={video.snippet?.thumbnails?.medium?.url} alt={video.snippet?.title} title={video.snippet?.title} />
                         <span className="duration-tag_s">{formatDuration(video.contentDetails?.duration)}</span>
                       </div>
                       <h4>{video.snippet?.title}</h4>
