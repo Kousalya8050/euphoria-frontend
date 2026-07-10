@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
+import { Helmet } from 'react-helmet-async';
 import './VideoLessonsPage.css';
 import Footer from "./Footer_page";
 import banner from './assets/homepage/banner_for_landing.jpg';
@@ -19,9 +20,6 @@ const VideoLessons = () => {
   const [allVideos, setAllVideos] = useState([]);
   const [activeTab, setActiveTab] = useState('lessons'); // 'lessons' (Videos) or 'shorts'
 
-  useEffect(() => {
-    document.title = "Video Lessons | MindWork360";
-  }, []);
 
   // Format ISO duration (e.g. PT5M30S -> 5:30)
   const formatDuration = (isoDuration) => {
@@ -66,6 +64,10 @@ const VideoLessons = () => {
 
   return (
     <div className="video-lessons-container">
+      <Helmet>
+        <title>MindWork360 Video Lessons | Learn Healthcare Skills</title>
+        <meta name="description" content="Access informative video lessons covering healthcare outsourcing, virtual assistant services, medical administration, and career development." />
+      </Helmet>
       <h3 className="video_heading_h3">Video Lessons</h3>
       <div className="lessons-hero-banner">
         <img src={banner} alt="Video Lessons Banner" className="lessons-hero-bg" />

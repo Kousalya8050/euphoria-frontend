@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import './LandingPage.css';
 import banner from './assets/homepage/banner_for_landing.jpg';
 import logo from './assets/header/320px90pxwithoutbackground.png';
@@ -11,9 +12,6 @@ const LandingPage = () => {
   const [modalType, setModalType] = useState('success'); // 'success' or 'error'
   const [modalMessage, setModalMessage] = useState("");
 
-  useEffect(() => {
-    document.title = "Join the Community | MindWork360";
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -71,6 +69,10 @@ const LandingPage = () => {
 
   return (
     <div className="euphoria-landing">
+      <Helmet>
+        <title>Join the Community | MindWork360</title>
+        <meta name="description" content="Join MindWork360 — a supportive mental health and healing community. Sign up for early access and connect with others on your journey to well-being." />
+      </Helmet>
       {/* Ticker Bar */}
       <div className="top-community-bar" onClick={scrollToSignup}>
         Join The Euphoria Community — Sign Up for Early Access

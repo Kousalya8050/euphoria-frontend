@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Modal from 'react-modal'; // Using react-modal as requested
+import Modal from 'react-modal';
+import { Helmet } from 'react-helmet-async'; // Using react-modal as requested
 import './LifeLessonsPage.css';
 import Footer from "./Footer_page";
 import banner from './assets/homepage/banner_for_landing.jpg';
@@ -14,9 +15,6 @@ Modal.setAppElement('#root');
 
 const LifeLessons = () => {
 
-useEffect(() => {
-    document.title = "Life Lessons | MindWork360";
- }, []);
 
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -143,8 +141,15 @@ useEffect(() => {
   //   if (nextPageToken) fetchVideos(nextPageToken);
   // };
 
+  const selectedVideoData = selectedVideo ? videos.find(v => v.id === selectedVideo) : null;
+  const selectedVideoTitle = selectedVideoData?.snippet?.title;
+
   return (
     <div className="life-lessons-container">
+      <Helmet>
+        <title>{selectedVideoTitle ? `${selectedVideoTitle} | MindWork360` : 'Life Lessons | Personal Growth & Well-Being | MindWork360'}</title>
+        <meta name="description" content={selectedVideoTitle ? `Watch "${selectedVideoTitle}" on MindWork360 — life lessons for personal growth and mental well-being.` : 'Explore inspiring life lessons, practical insights, and expert guidance from MindWork360 to build resilience, improve emotional well-being, and grow with confidence.'} />
+      </Helmet>
       <h3 className="life_heading_h3">Life Lessons</h3>
       <div className="lessons-hero-banner">
         <img src={banner} alt="Life Lessons Banner" className="lessons-hero-bg" />

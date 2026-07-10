@@ -1,4 +1,5 @@
-import React, { useState, useEffect} from "react";
+import React, { useState } from "react";
+import { Helmet } from 'react-helmet-async';
 import './FAQPage.css';
 import './Disclaimer.css';
 import faqBanner from './assets/faq/photo-woman-with-sad-happy-paper-faces.png';
@@ -96,9 +97,6 @@ const allQuestions = [
 
 const FAQPage = () => {
 
-  useEffect(() => {
-     document.title = "FAQ Page | MindWork360";
-  }, []);
 
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(allQuestions.length / ITEMS_PER_PAGE);
@@ -109,7 +107,11 @@ const FAQPage = () => {
   return (
     
     <div className="faq-container">
-        
+      <Helmet>
+        <title>MindWork360 FAQ | Help Center, Support & Common Questions</title>
+        <meta name="description" content="Explore the MindWork360 FAQ page for quick answers about platform features, user accounts, subscriptions, technical issues, and customer support." />
+      </Helmet>
+
         <div className="faq-banner-outer-wrapper"> {/* NEW WRAPPER */}
   <div className="faq-banner-title-section"> {/* NEW SECTION for heading/underline */}
     <h2 className="faq-banner-heading">Frequently Asked Questions</h2>

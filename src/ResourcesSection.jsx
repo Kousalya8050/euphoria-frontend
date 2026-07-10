@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Helmet } from 'react-helmet-async';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './ResourcesSection.css';
@@ -13,9 +14,6 @@ import contactIllustration from './assets/resources/contact2.jpg';
 
 const ResourcesSection = () => {
 
-  useEffect(() => {
-          document.title = "Resources | MindWork360";
-       }, []);
 
   const [popup, setPopup] = useState({
       show: false,
@@ -140,6 +138,10 @@ const ResourcesSection = () => {
   }, [popup.show]);
     return (
       <div className="resources-container">
+        <Helmet>
+          <title>Mental Health Resources | Guides & Tools | MindWork360</title>
+          <meta name="description" content="Access trusted mental health resources, self-help guides, wellness articles, coping strategies, and expert insights to improve your emotional well-being with MindWork360." />
+        </Helmet>
         <h2 className="resources-heading">RESOURCES</h2>
   
         {/* <div className="images-layout">

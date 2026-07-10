@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 import { getBlogBySlug } from "./blogService";
 import "./BlogDetails.css";
 import Footer from "./Footer_page";
@@ -31,11 +32,6 @@ const BlogDetails = () => {
     return `${API_URL}/${path}`;
   };
 
-  useEffect(() => {
-    if (blog?.blog_title) {
-      document.title = `${blog.blog_title} | MindWork360`;
-    }
-  }, [blog]);
 
   useEffect(() => {
     getBlogBySlug(slug).then(setBlog).catch(console.error);
@@ -119,6 +115,10 @@ const BlogDetails = () => {
 
   return (
     <div className="blog-page">
+      <Helmet>
+        <title>{blog.blog_title ? `${blog.blog_title} | MindWork360` : 'Blog | MindWork360'}</title>
+        <meta name="description" content={blog.excerpt ? blog.excerpt.replace(/<[^>]+>/g, '').substring(0, 160) : 'Read this article on MindWork360 — mental health and psychology insights.'} />
+      </Helmet>
       <section className="blog-banner">
         {blog.banner_image && (
           <img 

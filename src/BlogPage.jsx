@@ -1,5 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 
 import './BlogPage.css';
@@ -173,9 +174,6 @@ const BlogPage = () => {
   // Show all tags for desktop, limited for mobile
   const visibleTags = isMobile ? tags.slice(0, 10) : tags;
 
-  useEffect(() => {
-    document.title = "Blog Page | MindWork360";
-  }, []);
 
 
   useEffect(() => {
@@ -270,8 +268,11 @@ const BlogPage = () => {
 
   return (
     <div className="blog-page-container">
-      
-      
+      <Helmet>
+        <title>MindWork360 Blogs | Healthcare & Virtual Assistant Insights</title>
+        <meta name="description" content="Explore the MindWork360 blog for expert insights on healthcare outsourcing, virtual assistants, medical administration, business growth, and industry trends." />
+      </Helmet>
+
       <main className="blog-content">
         <header className="blog-header">
           <p className="blog-subtitle">Blogs</p>

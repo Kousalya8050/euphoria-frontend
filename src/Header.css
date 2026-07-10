@@ -251,7 +251,7 @@ body, html {
     padding: 10px 16px;
     min-height: 52px;
   }
-  .logo-img { width: 320px; }
+  .logo-img { width: 230px; }
   .nav { width: 100vw; max-height: 100vh; }
   .nav a { font-size: 1.05rem; padding: 14px 20px; }
 }

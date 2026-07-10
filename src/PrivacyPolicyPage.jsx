@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import './LegalPage.css';
 import Footer from './Footer_page';
 import banner from './assets/homepage/banner_for_landing.jpg';
 
 const PrivacyPolicyPage = () => {
-  useEffect(() => {
-    document.title = 'Privacy Policy | MindWork360';
-  }, []);
-
   return (
     <div className="legal-page">
+      <Helmet>
+        <title>Privacy Policy | MindWork360 Data Protection & Privacy</title>
+        <meta name="description" content="Learn how MindWork360 protects your privacy, handles personal information, uses cookies, and safeguards your data in accordance with our Privacy Policy." />
+      </Helmet>
       {/* Hero Banner */}
       <div className="legal-hero-banner">
         <img src={banner} alt="Privacy Policy Banner" className="legal-hero-bg" />

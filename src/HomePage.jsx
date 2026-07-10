@@ -31,6 +31,9 @@ import blogIcon from "./assets/homepage/blog4.png";
 // import whatsappIcon from './assets/social-whatsapp.svg';
 // import facebookIcon from './assets/social-facebook.svg';
 import rightWave from './assets/homepage/wave-middle-right.png';
+import banner from './assets/homepage/banner_for_landing.jpg';
+import logo from './assets/header/320px90pxwithoutbackground.png';
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -204,9 +207,6 @@ const HomePage = () => {
   const containerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    document.title = "Home Page | MindWork360";
- }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -334,10 +334,12 @@ useEffect(() => {
 
   return (
     <div className="homepage-container">
-      {/* These are the new decorative images placed in the background */}
-     
-      <img src={rightWave} alt="Decorative middle left wave" className="decorative-wave left-waves" />
-      <img src={rightWave} alt="Decorative middle right wave" className="decorative-wave right-wave" />
+      <Helmet>
+        <title>MindWork360 | Virtual Assistant & Healthcare Support Services</title>
+        <meta name="description" content="Partner with MindWork360 for professional virtual assistant, healthcare administration, and business support services designed to increase productivity and growth." />
+      </Helmet>
+      <img src={rightWave} alt="" role="presentation" className="decorative-wave left-waves" />
+      <img src={rightWave} alt="" role="presentation" className="decorative-wave right-wave" />
       {/* <header className="header">
       <div className="green-bar">
       <div className="logo">Euphoria</div>
@@ -357,9 +359,24 @@ useEffect(() => {
         </div>
       </header> */}
 
+      {/* Hero Banner */}
+      <section className="hero-section home-hero-section">
+        <div className="hero-image-container">
+          <img src={banner} alt="MindWork360 Banner" className="hero-bg" />
+          <div className="hero-overlay">
+            <div className="hero-text-box">
+              <img src={logo} alt="MindWork360 Logo" className="hero-logo" />
+              <p>A Mental Health and Healing Community for Those Looking to Heal, Learn and Improve Their Lives.</p>
+              <p>We Want you to Live Your Best Life.</p>
+              <p>Share with Someone Who You Think May Benefit From Our Work.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="banner-grid">
         <div className="banner-card card-1">
-          <img src={homepage1} alt="Card 1" />
+          <img src={homepage1} alt="There is a way to be happy — mental wellness inspiration" />
           <div className="banner-text">
             There Is a Way To Be Happy:<br />
             If You Don’t Expect Anything,<br />
@@ -367,15 +384,15 @@ useEffect(() => {
           </div>
         </div>
         <div className="banner-card card-2">
-          <img src={homepage2} alt="Card 2" />
+          <img src={homepage2} alt="A smile is the beauty of the soul" />
           <div className="banner-text1">A Smile Is The Beauty Of The Soul</div>
         </div>
         <div className="banner-card card-3">
-          <img src={homepage3} alt="Card 3" />
+          <img src={homepage3} alt="Happiness is a habit — cultivate it" />
           <div className="banner-text2">Happiness Is a Habit – Cultivate It.</div>
         </div>
         <div className="banner-card card-4">
-          <img src={homepage4} alt="Card 4" />
+          <img src={homepage4} alt="You will be exactly as happy as you decide to be" />
           <div className="banner-text3">You Will Be Exactly As Happy As You Decide To Be.</div>
         </div>
       </section>
@@ -384,7 +401,7 @@ useEffect(() => {
         <div className="mobile-carousel-container" ref={containerRef}>
           {images.map((img, index) => (
             <div className="mobile-carousel-slide" key={index}>
-              <img src={img.src} alt={`Slide ${index + 1}`} className="mobile-carousel-image" />
+              <img src={img.src} alt={typeof img.text === "string" ? img.text : `Mental health inspiration slide ${index + 1}`} className="mobile-carousel-image" loading="lazy" />
               <div className="mobile-carousel-text">{img.text}</div>
             </div>
           ))}
@@ -502,8 +519,9 @@ useEffect(() => {
             >
               <img
                 src={category.imgSrc}
-                alt={category.label}
+                alt={`${category.label} — mental health category`}
                 className="category-image-homepage"
+                loading="lazy"
               />
               <p className="category-label-homepage">{category.label}</p>
             </div>

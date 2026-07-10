@@ -1,4 +1,4 @@
-import { useEffect} from "react";
+import { Helmet } from 'react-helmet-async';
 import './AboutUsPage.css';
 import './Disclaimer.css';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -34,9 +34,6 @@ import infoImage2 from './assets/aboutuspage/infoImage2.png'; // Meditating silh
 
 
 const AboutUsPage = () => {
-  useEffect(() => {
-    document.title = "About Us | MindWork360";
-  }, []);
   // Array to make mapping over grid images easier
   const collageImages = [
     gridImg1, gridImg2, gridImg3, gridImg4, gridImg5,
@@ -58,8 +55,10 @@ const AboutUsPage = () => {
 
   return (
     <div className="about-us-page-container">
-
-      
+      <Helmet>
+        <title>About MindWork360 | Trusted Healthcare Support Partner</title>
+        <meta name="description" content="Meet MindWork360 and learn how our expert virtual assistants and healthcare professionals help businesses improve efficiency and streamline operations." />
+      </Helmet>
 
       <main className="about-us-content">
         <img src={aboutUsBanner} alt="Team holding emoji faces" className="about-us-banner-image" />

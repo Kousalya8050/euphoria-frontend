@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Helmet } from 'react-helmet-async';
 
 import './PsychotherapyTypes.css';
 import './Disclaimer.css';
@@ -39,9 +40,6 @@ import Icon6 from './assets/psychotherapy/icon6.svg';
 
 const PsychotherapyTypes = () => {
 
-  useEffect(() => {
-        document.title = "Psychotherapy Types | MindWork360";
-     }, []);
 
   const [popup, setPopup] = useState({
         show: false,
@@ -129,6 +127,10 @@ useEffect(() => {
 
   return (
     <>
+    <Helmet>
+      <title>Psychotherapy & Counseling Services | MindWork360</title>
+      <meta name="description" content="Get professional psychotherapy and counseling at MindWork360. Our licensed therapists provide confidential support for anxiety, depression, stress, trauma, relationships, and overall mental well-being." />
+    </Helmet>
     <div className="therapy-container">
     <h3 className="psy_heading_h3">Psychotherapy Types</h3>
       {/* Intro Section */}

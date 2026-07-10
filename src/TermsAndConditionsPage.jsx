@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import './LegalPage.css';
 import Footer from './Footer_page';
 import banner from './assets/homepage/banner_for_landing.jpg';
 
 const TermsAndConditionsPage = () => {
-  useEffect(() => {
-    document.title = 'Terms of Service | MindWork360';
-  }, []);
-
   return (
     <div className="legal-page">
+      <Helmet>
+        <title>MindWork360 Terms of Service | Terms & Conditions</title>
+        <meta name="description" content="Review the MindWork360 Terms of Service for information about user rights, responsibilities, acceptable use, account policies, and legal terms for our platform." />
+      </Helmet>
       {/* Hero Banner */}
       <div className="legal-hero-banner">
         <img src={banner} alt="Terms of Service Banner" className="legal-hero-bg" />

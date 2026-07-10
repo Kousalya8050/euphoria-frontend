@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {  useNavigate, useSearchParams } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 import axios from "axios";
 import Modal from "react-modal";
 import "./SearchResults.css";
@@ -62,9 +63,6 @@ export default function SearchResults() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const [selectedVideo, setSelectedVideo] = useState(null);
-  useEffect(() => {
-    document.title = "Search Results Page | MindWork360";
-}, []);
 
   useEffect(() => {
 
@@ -134,6 +132,10 @@ export default function SearchResults() {
 
   return (
     <>
+      <Helmet>
+        <title>{query ? `${query} | Search Results | MindWork360` : 'Search Results | MindWork360'}</title>
+        <meta name="description" content={query ? `Search results for "${query}" on MindWork360 — mental health blogs, videos, and resources.` : 'Search MindWork360 for mental health articles, videos, and resources.'} />
+      </Helmet>
       <div className="blog-page-container_s">
         <main className="blog-content_s">
           <header className="blog-header_s">

@@ -3,9 +3,11 @@ Allow: /
 Allow: /blogs/
 Allow: /video/
 
-# Block search results from being indexed
+# Block non-public pages
 Disallow: /search
-Disallow: /admin
+Disallow: /admin_login
 Disallow: /login
+Disallow: /create-blog
+Disallow: /landing_page
 
 Sitemap: https://mindwork360.com/sitemap.xml

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import 'react-phone-input-2/lib/style.css';
 import axios from "axios";
 import PhoneInput from 'react-phone-input-2';
@@ -11,7 +12,6 @@ import catpcha  from './assets/contactus/recaptcha-logo.jpeg';
 const ContactUs = () => {
 
   useEffect(() => {
-    document.title = "Contact Us | MindWork360";
 }, []);
 
   const [popup, setPopup] = useState({
@@ -183,6 +183,10 @@ useEffect(() => {
 
   return (
     <>
+      <Helmet>
+        <title>Contact MindWork360 | Mental Health Support & Inquiries</title>
+        <meta name="description" content="Get in touch with MindWork360 for mental health services, psychotherapy appointments, customer support, partnerships, or general inquiries." />
+      </Helmet>
       <Header />
 
       {/* ✅ Contact Form Section - ORIGINAL JSX STRUCTURE (NO CHANGES) */}

@@ -419,6 +419,20 @@
       height: 26px !important;
       width: 26px !important;
     }
+
+    /* Ensure logo link and image are centred on small phones */
+    .euphoria-footer-logo {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
+
+    .euphoria-footer-logo a {
+      display: flex !important;
+      justify-content: center !important;
+      width: 100% !important;
+    }
   }
 
 /* ── Legal bottom bar ─────────────────────────────── */

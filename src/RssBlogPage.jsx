@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from 'react-helmet-async';
 import "./RssBlogPage.css";
 import Footer from "./Footer_page";
 
@@ -40,7 +41,6 @@ const RssBlogPage = () => {
   const [visibleCount, setVisibleCount] = useState(12);
 
   useEffect(() => {
-    document.title = "News And Updates | MindWork360";
   }, []);
 
   const formatCategory = (str) => {
@@ -94,6 +94,10 @@ const RssBlogPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>MindWork360 RSS Feeds | Mental Health Updates & News</title>
+        <meta name="description" content="Follow MindWork360 RSS feeds for the latest mental health articles, psychotherapy insights, wellness resources, life lessons, and platform updates." />
+      </Helmet>
       <div className="rss-container">
         <h1 className="rss-title">News And Updates</h1>
 
