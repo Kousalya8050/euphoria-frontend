@@ -75,7 +75,7 @@ const AboutUsPage = () => {
       <div className="collage-container">
         {collageImages.map((image, index) => (
           <div key={index} className={`collage-image-wrapper image-${index + 1}`}>
-            <img src={image} alt={`MindWork360 mental health community team — photo ${index + 1}`}
+            <img src={image} alt={`MindWork360 mental health community team — ${index + 1}`}
             title={`MindWork360 Community — photo ${index + 1}`} />
           </div>
         ))}
@@ -86,7 +86,7 @@ const AboutUsPage = () => {
   <div className="collage-container desktop-collage">
     {collageImages.map((image, index) => (
       <div key={index} className={`collage-image-wrapper image-${index + 1}`}>
-        <img src={image} alt={`MindWork360 mental health community team — photo ${index + 1}`}
+        <img src={image} alt={`MindWork360 mental health community team — ${index + 1}`}
             title={`MindWork360 Community — photo ${index + 1}`} />
       </div>
     ))}
@@ -113,7 +113,7 @@ const AboutUsPage = () => {
         <div className="collage-carousel-slide">
           <img
             src={image}
-            alt={`MindWork360 mental health community team — photo ${index + 1}`}
+            alt={`MindWork360 mental health community team — ${index + 1}`}
             title={`MindWork360 Community — photo ${index + 1}`}
             className="collage-carousel-image"
           />
@@ -143,7 +143,7 @@ const AboutUsPage = () => {
       <div className="collage-carousel-slide">
         <img
           src={image}
-          alt={`MindWork360 mental health community team — photo ${index + 1}`}
+          alt={`MindWork360 mental health community team — ${index + 1}`}
             title={`MindWork360 Community — photo ${index + 1}`}
           className="collage-carousel-image"
         />
