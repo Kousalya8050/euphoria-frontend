@@ -34,7 +34,7 @@ function App() {
   const location = useLocation();
 
   // ✅ Added "/" and "/landing_page" to hide the Header on the Landing Page
-  const hideHeaderOn = ["/", "/landing_page", "/admin_login", "/contactus"];
+  const hideHeaderOn = ["/landing_page", "/admin_login", "/contactus"];
 
   const shouldShowHeader = !hideHeaderOn.includes(location.pathname);
 
