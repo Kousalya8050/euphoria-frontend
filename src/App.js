@@ -45,10 +45,7 @@ function App() {
 
       <main>
         <Routes>
-          {/* ✅ THE CHANGE: The root path now points to the Landing Page */}
-          <Route path="/" element={<LandingPage />} />
-          
-          {/* ✅ Move the original HomePage to /home if you still want it accessible */}
+          <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
 
           <Route path="/about" element={<AboutUsPage />} />
