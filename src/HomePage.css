@@ -1244,6 +1244,7 @@ line-height: 35px;
 }
 .search-icon img {
   width: 24px;
+  height: 24px;
   cursor: pointer;
 }
 
@@ -1392,7 +1393,7 @@ background: #E1E2AD;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
-  color: #777;
+  color: #555;
 }
 
 .read-more-link2 {

@@ -9,7 +9,10 @@ const TermsAndConditionsPage = () => {
       <Helmet>
         <title>MindWork360 Terms of Service | Terms & Conditions</title>
         <meta name="description" content="Review the MindWork360 Terms of Service for information about user rights, responsibilities, acceptable use, account policies, and legal terms for our platform." />
+        <link rel="canonical" href="https://mindwork360.com/terms-of-service" />
       </Helmet>
+      <h1 className="seo-only">Terms of Service | MindWork360 Terms & Conditions</h1>
+      <h2 className="seo-only">MindWork360 User Rights, Responsibilities & Legal Terms</h2>
       {/* Hero Banner */}
       <div className="legal-hero-banner">
         <img src={banner} alt="Terms of Service Banner" title="Terms of Service — MindWork360" className="legal-hero-bg" />

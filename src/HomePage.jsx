@@ -338,7 +338,10 @@ useEffect(() => {
       <Helmet>
         <title>MindWork360 | Virtual Assistant & Healthcare Support Services</title>
         <meta name="description" content="Partner with MindWork360 for professional virtual assistant, healthcare administration, and business support services designed to increase productivity and growth." />
+        <link rel="canonical" href="https://mindwork360.com/" />
       </Helmet>
+      <h1 className="seo-only">MindWork360 — Mental Health & Healing Community</h1>
+      <h2 className="seo-only">Explore Mental Health Blogs, Videos and Resources</h2>
       <img src={rightWave} alt="" title="" role="presentation" className="decorative-wave left-waves" />
       <img src={rightWave} alt="" title="" role="presentation" className="decorative-wave right-wave" />
       {/* <header className="header">

@@ -149,7 +149,10 @@ const LifeLessons = () => {
       <Helmet>
         <title>{selectedVideoTitle ? `${selectedVideoTitle} | MindWork360` : 'Life Lessons | Personal Growth & Well-Being | MindWork360'}</title>
         <meta name="description" content={selectedVideoTitle ? `Watch "${selectedVideoTitle}" on MindWork360 — life lessons for personal growth and mental well-being.` : 'Explore inspiring life lessons, practical insights, and expert guidance from MindWork360 to build resilience, improve emotional well-being, and grow with confidence.'} />
+        <link rel="canonical" href="https://mindwork360.com/lifelessons" />
       </Helmet>
+      <h1 className="seo-only">Life Lessons | Personal Growth & Well-Being | MindWork360</h1>
+      <h2 className="seo-only">Inspiring Life Lessons for Mental Health & Personal Growth</h2>
       <h3 className="life_heading_h3">Life Lessons</h3>
       <div className="lessons-hero-banner">
         <img src={banner} alt="Life Lessons Banner" title="Life Lessons — MindWork360" className="lessons-hero-bg" />

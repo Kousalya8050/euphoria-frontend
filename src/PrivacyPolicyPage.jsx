@@ -9,7 +9,10 @@ const PrivacyPolicyPage = () => {
       <Helmet>
         <title>Privacy Policy | MindWork360 Data Protection & Privacy</title>
         <meta name="description" content="Learn how MindWork360 protects your privacy, handles personal information, uses cookies, and safeguards your data in accordance with our Privacy Policy." />
+        <link rel="canonical" href="https://mindwork360.com/privacy-policy" />
       </Helmet>
+      <h1 className="seo-only">Privacy Policy | MindWork360 Data Protection & Privacy</h1>
+      <h2 className="seo-only">How MindWork360 Collects, Uses & Protects Your Personal Data</h2>
       {/* Hero Banner */}
       <div className="legal-hero-banner">
         <img src={banner} alt="Privacy Policy Banner" title="Privacy Policy — MindWork360" className="legal-hero-bg" />

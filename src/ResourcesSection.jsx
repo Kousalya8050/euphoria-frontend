@@ -141,7 +141,10 @@ const ResourcesSection = () => {
         <Helmet>
           <title>Mental Health Resources | Guides & Tools | MindWork360</title>
           <meta name="description" content="Access trusted mental health resources, self-help guides, wellness articles, coping strategies, and expert insights to improve your emotional well-being with MindWork360." />
+          <link rel="canonical" href="https://mindwork360.com/resources" />
         </Helmet>
+        <h1 className="seo-only">Mental Health Resources | MindWork360</h1>
+        <h2 className="seo-only">Trusted Mental Health Organizations & Wellness Guides</h2>
         <h2 className="resources-heading">RESOURCES</h2>
   
         {/* <div className="images-layout">

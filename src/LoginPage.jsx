@@ -33,6 +33,8 @@ const LoginPage = () => {
         <img src={rightWave} alt="" title="" className="decorative-wave-l left-waves-l" />
         <img src={rightWave} alt="" title="" className="decorative-wave-l right-wave-l" />
       <div className="login-form-wrapper">
+        <h1 className="seo-only">Login | MindWork360</h1>
+        <h2 className="seo-only">Access Your MindWork360 Account</h2>
         <h2>Log in</h2>
 
         <button className="social-btn google-btn">Continue with Google</button>

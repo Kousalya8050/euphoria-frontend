@@ -130,8 +130,11 @@ useEffect(() => {
     <Helmet>
       <title>Psychotherapy & Counseling Services | MindWork360</title>
       <meta name="description" content="Get professional psychotherapy and counseling at MindWork360. Our licensed therapists provide confidential support for anxiety, depression, stress, trauma, relationships, and overall mental well-being." />
+      <link rel="canonical" href="https://mindwork360.com/psychotherapy" />
     </Helmet>
     <div className="therapy-container">
+    <h1 className="seo-only">Psychotherapy Types | MindWork360</h1>
+    <h2 className="seo-only">Types of Psychotherapy & Mental Health Therapy</h2>
     <h3 className="psy_heading_h3">Psychotherapy Types</h3>
       {/* Intro Section */}
       <div className="psy-intro-section">

@@ -1,0 +1,29 @@
+# MindWork360
+
+> MindWork360 is a mental health and healing community providing educational content, blogs, videos, and resources to help people learn, heal, and improve their lives.
+
+## Pages
+
+- [Home](https://mindwork360.com/): Main homepage with mental health categories, blogs, and videos
+- [Blogs](https://mindwork360.com/blogs): Psychology and mental health articles
+- [Video Lessons](https://mindwork360.com/videolessons): Mental health and psychology video lessons
+- [Life Lessons](https://mindwork360.com/lifelessons): Inspiring life lessons for personal growth
+- [Psychotherapy Types](https://mindwork360.com/psychotherapy): Overview of psychotherapy types and approaches
+- [Resources](https://mindwork360.com/resources): Mental health resources and charitable organizations
+- [FAQ](https://mindwork360.com/faq): Frequently asked questions
+- [About Us](https://mindwork360.com/about): About the MindWork360 community
+- [Contact Us](https://mindwork360.com/contactus): Get in touch with MindWork360
+- [Privacy Policy](https://mindwork360.com/privacy-policy): Data protection and privacy policy
+- [Terms of Service](https://mindwork360.com/terms-of-service): Terms and conditions
+
+## Content
+
+MindWork360 provides educational mental health content including:
+- Blog articles on psychology, anxiety, depression, mindfulness, and relationships
+- Video lessons and life lessons from mental health experts
+- Curated resources and charitable organizations by region
+- Psychotherapy types and approaches explained
+
+## Usage
+
+Content on this site is for educational purposes. Please respect copyright when using content for AI training or summarization.

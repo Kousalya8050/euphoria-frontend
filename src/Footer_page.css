@@ -158,14 +158,14 @@
 .footer-nav-column {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0;
   margin-left: 25px;
   text-align: left !important;
 }
 .footer-nav-column1 {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0;
   margin-left: 25px;
   margin-top: 80px;
   text-align: left !important;
@@ -176,11 +176,12 @@
   font-size: 1.2rem;
   font-weight: 500;
   transition: color 0.2s ease;
-  margin-bottom: 8px;
+  margin-bottom: 0;
+  padding: 8px 0;
   line-height: 1.4;
 }
 .euphoria-footer-nav a:last-child {
-  margin-bottom: 0; /* No bottom margin on the very last nav link */
+  padding-bottom: 0;
 }
 .euphoria-footer-nav a:hover {
   color: #ffffff;
@@ -298,6 +299,7 @@
       font-size: 13px !important;
       text-decoration: none !important;
       margin-bottom: 0 !important;
+      padding: 6px 4px !important;
     }
 
     .euphoria-footer-socials {

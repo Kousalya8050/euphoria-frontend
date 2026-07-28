@@ -67,7 +67,10 @@ const VideoLessons = () => {
       <Helmet>
         <title>MindWork360 Video Lessons | Learn Healthcare Skills</title>
         <meta name="description" content="Access informative video lessons covering healthcare outsourcing, virtual assistant services, medical administration, and career development." />
+        <link rel="canonical" href="https://mindwork360.com/videolessons" />
       </Helmet>
+      <h1 className="seo-only">Video Lessons | Mental Health Videos | MindWork360</h1>
+      <h2 className="seo-only">Watch Mental Health & Psychology Video Lessons</h2>
       <h3 className="video_heading_h3">Video Lessons</h3>
       <div className="lessons-hero-banner">
         <img src={banner} alt="Video Lessons Banner" title="Video Lessons — MindWork360" className="lessons-hero-bg" />

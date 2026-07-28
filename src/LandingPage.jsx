@@ -73,6 +73,8 @@ const LandingPage = () => {
         <title>Join the Community | MindWork360</title>
         <meta name="description" content="Join MindWork360 — a supportive mental health and healing community. Sign up for early access and connect with others on your journey to well-being." />
       </Helmet>
+      <h1 className="seo-only">Join MindWork360 — Mental Health & Healing Community</h1>
+      <h2 className="seo-only">Sign Up for Early Access to MindWork360</h2>
       {/* Ticker Bar */}
       <div className="top-community-bar" onClick={scrollToSignup}>
         Join The Euphoria Community — Sign Up for Early Access

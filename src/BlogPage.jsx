@@ -272,9 +272,12 @@ const BlogPage = () => {
       <Helmet>
         <title>MindWork360 Blogs | Healthcare & Virtual Assistant Insights</title>
         <meta name="description" content="Explore the MindWork360 blog for expert insights on healthcare outsourcing, virtual assistants, medical administration, business growth, and industry trends." />
+        <link rel="canonical" href="https://mindwork360.com/blogs" />
       </Helmet>
 
       <main className="blog-content">
+        <h1 className="seo-only">Blogs | Psychology & Mental Health Articles | MindWork360</h1>
+        <h2 className="seo-only">Psychology & Mental Health Articles — MindWork360 Blog</h2>
         <header className="blog-header">
           <p className="blog-subtitle">Blogs</p>
           <h1 className="blog-main-title">A Place To Have Fun, Learn and Heal</h1>

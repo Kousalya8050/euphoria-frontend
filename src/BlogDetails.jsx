@@ -118,7 +118,10 @@ const BlogDetails = () => {
       <Helmet>
         <title>{blog.blog_title ? `${blog.blog_title} | MindWork360` : 'Blog | MindWork360'}</title>
         <meta name="description" content={blog.excerpt ? blog.excerpt.replace(/<[^>]+>/g, '').substring(0, 160) : 'Read this article on MindWork360 — mental health and psychology insights.'} />
+        <link rel="canonical" href={`https://mindwork360.com/blogs/${blog.slug}`} />
       </Helmet>
+      <h1 className="seo-only">{blog.blog_title ? `${blog.blog_title} | MindWork360` : 'Blog | MindWork360'}</h1>
+      <h2 className="seo-only">{blog.product_category ? `${blog.product_category} — MindWork360 Blog` : 'Mental Health & Psychology — MindWork360 Blog'}</h2>
       <section className="blog-banner">
         {blog.banner_image && (
           <img

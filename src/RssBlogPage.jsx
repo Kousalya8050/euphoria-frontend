@@ -97,8 +97,11 @@ const RssBlogPage = () => {
       <Helmet>
         <title>MindWork360 RSS Feeds | Mental Health Updates & News</title>
         <meta name="description" content="Follow MindWork360 RSS feeds for the latest mental health articles, psychotherapy insights, wellness resources, life lessons, and platform updates." />
+        <link rel="canonical" href="https://mindwork360.com/rss_feeds" />
       </Helmet>
       <div className="rss-container">
+        <h1 className="seo-only">Mental Health News & Updates | MindWork360</h1>
+        <h2 className="seo-only">Latest Mental Health Articles & Psychology News</h2>
         <h1 className="rss-title">News And Updates</h1>
 
         <div className="rss-filters">

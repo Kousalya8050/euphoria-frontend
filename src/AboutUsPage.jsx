@@ -34,11 +34,22 @@ import infoImage2 from './assets/aboutuspage/infoImage2.png'; // Meditating silh
 
 
 const AboutUsPage = () => {
-  // Array to make mapping over grid images easier
   const collageImages = [
-    gridImg1, gridImg2, gridImg3, gridImg4, gridImg5,
-    gridImg6, gridImg7, gridImg8, gridImg9, gridImg10,
-    gridImg11, gridImg12, gridImg13, gridImg14, gridImg15
+    { src: gridImg1,  w: 145, h: 182 },
+    { src: gridImg2,  w: 150, h: 150 },
+    { src: gridImg3,  w: 144, h: 116 },
+    { src: gridImg4,  w: 255, h: 170 },
+    { src: gridImg5,  w: 157, h: 157 },
+    { src: gridImg6,  w: 287, h: 162 },
+    { src: gridImg7,  w: 275, h: 184 },
+    { src: gridImg8,  w: 145, h: 145 },
+    { src: gridImg9,  w: 163, h: 163 },
+    { src: gridImg10, w: 150, h: 178 },
+    { src: gridImg11, w: 277, h: 168 },
+    { src: gridImg12, w: 145, h: 204 },
+    { src: gridImg13, w: 147, h: 208 },
+    { src: gridImg14, w: 172, h: 172 },
+    { src: gridImg15, w: 145, h: 205 },
   ];
   const paragraphText = `We’re committed to keeping MindWork360 supportive, respectful, and constructive. That means we encourage empathy, privacy, and thoughtful discussion—and we prioritize content that helps people move forward (not feel judged, dismissed, or overwhelmed). If you’re sharing, you’ll be met with compassion. If you’re looking for ideas, you’ll find tools and perspectives. And if you’re not ready to post, you’re welcome to simply read and learn at your own pace.
   
@@ -58,10 +69,13 @@ const AboutUsPage = () => {
       <Helmet>
         <title>About MindWork360 | Trusted Healthcare Support Partner</title>
         <meta name="description" content="Meet MindWork360 and learn how our expert virtual assistants and healthcare professionals help businesses improve efficiency and streamline operations." />
+        <link rel="canonical" href="https://mindwork360.com/about" />
       </Helmet>
 
       <main className="about-us-content">
-        <img src={aboutUsBanner} alt="Team holding emoji faces" title="MindWork360 Team" className="about-us-banner-image" />
+        <h1 className="seo-only">About Us | MindWork360 — Mental Health & Healing Community</h1>
+        <h2 className="seo-only">About MindWork360 — Our Mission & Mental Health Community</h2>
+        <img src={aboutUsBanner} width="376" height="207" alt="Team holding emoji faces" title="MindWork360 Team" className="about-us-banner-image" />
 
         <div className="about-us-text-section">
           <h3 className="about-us-subtitle">About Us</h3>
@@ -86,7 +100,7 @@ const AboutUsPage = () => {
   <div className="collage-container desktop-collage">
     {collageImages.map((image, index) => (
       <div key={index} className={`collage-image-wrapper image-${index + 1}`}>
-        <img src={image} alt={`MindWork360 mental health community team — ${index + 1}`}
+        <img src={image.src} width={image.w} height={image.h} alt={`MindWork360 mental health community team — ${index + 1}`}
             title={`MindWork360 Community — photo ${index + 1}`} />
       </div>
     ))}
@@ -142,7 +156,9 @@ const AboutUsPage = () => {
     <SwiperSlide key={index} className="collage-swiper-slide">
       <div className="collage-carousel-slide">
         <img
-          src={image}
+          src={image.src}
+          width={image.w}
+          height={image.h}
           alt={`MindWork360 mental health community team — ${index + 1}`}
             title={`MindWork360 Community — photo ${index + 1}`}
           className="collage-carousel-image"
@@ -166,7 +182,7 @@ const AboutUsPage = () => {
               <p className="about-us-paragraph">{paragraphText}</p>
             </div>
             <div className="info-image-block">
-              <img src={infoImage1} alt="Woman expressing emotions with cards" title="Expressing emotions — mental health awareness" />
+              <img src={infoImage1} width="516" height="445" alt="Woman expressing emotions with cards" title="Expressing emotions — mental health awareness" />
             </div>
           </div>
 
@@ -178,6 +194,8 @@ const AboutUsPage = () => {
             <div className="info-image-block">
               <img
                 src={infoImage2}
+                width="516"
+                height="467"
                 alt="Silhouette of a person meditating at sunset"
                 title="Meditation and mindfulness — MindWork360"
               />

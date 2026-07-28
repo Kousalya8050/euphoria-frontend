@@ -186,10 +186,13 @@ useEffect(() => {
       <Helmet>
         <title>Contact MindWork360 | Mental Health Support & Inquiries</title>
         <meta name="description" content="Get in touch with MindWork360 for mental health services, psychotherapy appointments, customer support, partnerships, or general inquiries." />
+        <link rel="canonical" href="https://mindwork360.com/contactus" />
       </Helmet>
       <Header />
 
       {/* ✅ Contact Form Section - ORIGINAL JSX STRUCTURE (NO CHANGES) */}
+      <h1 className="seo-only">Contact MindWork360 | Mental Health Support & Inquiries</h1>
+      <h2 className="seo-only">Send Us a Message — Mental Health Support & Partnerships</h2>
       <h2 className="contact-container1">Contact Us</h2>
       <div className="contact-container">
         {/* contact-left (contains both help and locations for desktop) */}

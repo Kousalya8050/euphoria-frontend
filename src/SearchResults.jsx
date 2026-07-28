@@ -138,6 +138,8 @@ export default function SearchResults() {
       </Helmet>
       <div className="blog-page-container_s">
         <main className="blog-content_s">
+        <h1 className="seo-only">Search Results | MindWork360</h1>
+        <h2 className="seo-only">Find Mental Health Blogs, Videos & Resources</h2>
           <header className="blog-header_s">
             {/* --- DYNAMIC HEADER LABELS --- */}
             <p className="blog-subtitle_s">
