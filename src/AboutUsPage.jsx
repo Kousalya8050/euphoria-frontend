@@ -67,8 +67,8 @@ const AboutUsPage = () => {
   return (
     <div className="about-us-page-container">
       <Helmet>
-        <title>About MindWork360 | Trusted Healthcare Support Partner</title>
-        <meta name="description" content="Meet MindWork360 and learn how our expert virtual assistants and healthcare professionals help businesses improve efficiency and streamline operations." />
+        <title>About MindWork360 | Mental Health & Healing Community</title>
+        <meta name="description" content="Learn about MindWork360, a mental health and healing community providing educational articles and videos to help people understand psychology, relationships, and personal growth." />
         <link rel="canonical" href="https://mindwork360.com/about" />
       </Helmet>
 

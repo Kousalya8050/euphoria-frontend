@@ -65,8 +65,8 @@ const VideoLessons = () => {
   return (
     <div className="video-lessons-container">
       <Helmet>
-        <title>MindWork360 Video Lessons | Learn Healthcare Skills</title>
-        <meta name="description" content="Access informative video lessons covering healthcare outsourcing, virtual assistant services, medical administration, and career development." />
+        <title>MindWork360 Video Lessons | Mental Health & Psychology Videos</title>
+        <meta name="description" content="Watch mental health and psychology video lessons covering emotional well-being, relationships, personal growth, and practical everyday life skills." />
         <link rel="canonical" href="https://mindwork360.com/videolessons" />
       </Helmet>
       <h1 className="seo-only">Video Lessons | Mental Health Videos | MindWork360</h1>

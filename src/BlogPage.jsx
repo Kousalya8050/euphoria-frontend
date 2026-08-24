@@ -270,8 +270,8 @@ const BlogPage = () => {
   return (
     <div className="blog-page-container">
       <Helmet>
-        <title>MindWork360 Blogs | Healthcare & Virtual Assistant Insights</title>
-        <meta name="description" content="Explore the MindWork360 blog for expert insights on healthcare outsourcing, virtual assistants, medical administration, business growth, and industry trends." />
+        <title>MindWork360 Blog | Mental Health & Psychology Articles</title>
+        <meta name="description" content="Explore the MindWork360 blog for expert insights on mental health, psychology, relationships, personal growth, and emotional well-being." />
         <link rel="canonical" href="https://mindwork360.com/blogs" />
       </Helmet>
 

@@ -108,8 +108,8 @@ const FAQPage = () => {
     
     <div className="faq-container">
       <Helmet>
-        <title>MindWork360 FAQ | Help Center, Support & Common Questions</title>
-        <meta name="description" content="Explore the MindWork360 FAQ page for quick answers about platform features, user accounts, subscriptions, technical issues, and customer support." />
+        <title>MindWork360 FAQ | Mental Health Questions Answered</title>
+        <meta name="description" content="Find answers to common questions about mental health, psychology, and how MindWork360's educational articles and videos can help you." />
         <link rel="canonical" href="https://mindwork360.com/faq" />
       </Helmet>
       <h1 className="seo-only">Frequently Asked Questions | MindWork360</h1>

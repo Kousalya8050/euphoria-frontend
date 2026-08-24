@@ -2,6 +2,13 @@ import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Header";
 import HomePage from "./HomePage";
+import HomePageNew from "./HomePageNew";
+import MentalHealthPage from "./MentalHealthPage";
+import PsychologyPage from "./PsychologyPage";
+import RelationshipsPage from "./RelationshipsPage";
+import PersonalGrowthPage from "./PersonalGrowthPage";
+import TherapyPage from "./TherapyPage";
+import HealthLifestylePage from "./HealthLifestylePage";
 import AboutUsPage from "./AboutUsPage";
 import LoginPage from "./LoginPage";
 import SignupPage from "./SignupPage";
@@ -47,7 +54,14 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/home-new" element={<HomePageNew />} />
 
+          <Route path="/mental-health" element={<MentalHealthPage />} />
+          <Route path="/psychology" element={<PsychologyPage />} />
+          <Route path="/relationships" element={<RelationshipsPage />} />
+          <Route path="/personal-growth" element={<PersonalGrowthPage />} />
+          <Route path="/therapy" element={<TherapyPage />} />
+          <Route path="/health-lifestyle" element={<HealthLifestylePage />} />
           <Route path="/about" element={<AboutUsPage />} />
           <Route path="/videolessons" element={<VideoLessonsPage />} />
           <Route path="/lifelessons" element={<LifeLessonsPage />} />

@@ -152,7 +152,7 @@
 .euphoria-footer-nav {
   display: flex; /* flex-direction: column; */
   align-items: flex-start;
-  margin-top: 51px;
+  margin-top: 40px;
   gap: 30px;
 }
 .footer-nav-column {
@@ -173,7 +173,7 @@
 .euphoria-footer-nav a {
   color: #d4edd4;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   transition: color 0.2s ease;
   margin-bottom: 0;

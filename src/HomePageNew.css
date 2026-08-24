@@ -1,0 +1,205 @@
+/* HomePageNew.css — styles unique to the /home-new draft page.
+   Deliberately namespaced with "hn-" so nothing here bleeds onto the live /home page. */
+
+/* Hero — height is driven by the text box's own content instead of a fixed vh,
+   so a longer headline/paragraph can never overflow and overlap the section below. */
+.hn-hero-section {
+  height: auto !important;
+  min-height: 380px;
+  margin-bottom: 50px;
+}
+.hero-section {
+    position: relative;
+    height: 80vh;
+    /* min-height: 600px; */
+    width: 100%;
+}
+
+.hn-hero-section .hero-image-container {
+  position: relative;
+  height: auto;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.hn-hero-section .hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: 0;
+}
+
+.hn-hero-section .hero-overlay {
+  position: relative;
+  inset: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  z-index: 2;
+  min-height: 380px;
+}
+
+.hn-hero-section .hero-text-box {
+  max-width: 560px;
+}
+
+.hn-hero-section .hero-text-box h1 {
+  font-size: clamp(22px, 3.6vw, 32px);
+  margin-bottom: 14px;
+}
+
+.hn-hero-section .hero-text-box p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.hn-hero-section .hero-logo {
+  max-width: 200px;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 768px) {
+  .hn-hero-section .hero-text-box {
+    padding: 24px 18px;
+  }
+
+  .hn-hero-section .hero-logo {
+    max-width: 140px;
+  }
+}
+
+.hn-text-section {
+  max-width: 1204px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.hn-section-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #1F5706;
+  margin: 0 0 40px;
+}
+
+.hn-question-line {
+  font-size: 23px;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+.hn-question-line:last-of-type {
+  margin-bottom: 16px;
+}
+
+.hn-section-text {
+  font-size: 23px;
+  line-height: 1.6;
+  color: #000000;
+  margin: 0 0 16px;
+}
+
+.hn-section-text--centered {
+  max-width: 1204px;
+  margin: 0 auto 16px;
+}
+
+/* Pillars grid */
+.hn-pillars-section {
+  max-width: 1204px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.hn-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 0;
+}
+
+.hn-pillar-card {
+  cursor: pointer;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+}
+
+.hn-pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.hn-pillar-image {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+}
+
+.hn-pillar-label {
+  padding: 14px 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #1F5706;
+  margin: 0;
+}
+
+.hn-articles-section,
+.hn-videos-section {
+  max-width: 1204px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.hn-faq-section {
+  max-width: 1204px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.hn-faq-section .hn-section-title {
+  text-align: center;
+}
+
+/* Override FAQPage.css's 25px item spacing to match the tighter within-section rhythm used elsewhere on this page */
+.hn-faq-section .faq-item {
+  margin: 0 auto 16px auto;
+}
+
+@media (max-width: 992px) {
+  .hn-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hn-section-title {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hn-section-text,
+  .hn-question-line {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hn-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
