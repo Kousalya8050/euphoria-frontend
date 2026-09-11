@@ -9,48 +9,45 @@
   overflow-x: hidden;
 }
 
-/* Hero — soft gradient band with decorative blurred shapes, no image asset required */
+/* Hero — real photo behind a light gradient scrim for text legibility */
 .ts-hero {
   position: relative;
   max-width: 100%;
   margin: 0 0 70px;
-  padding: 90px 20px 80px;
+  padding: 40px 20px 30px;
   text-align: center;
-  background: linear-gradient(180deg, #eaf5e4 0%, #f8fdf6 55%, #ffffff 100%);
   overflow: hidden;
 }
 
-.ts-hero::before,
-.ts-hero::after {
-  content: '';
+.ts-hero-bg {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(10px);
-  opacity: 0.5;
-  pointer-events: none;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
 }
 
-.ts-hero::before {
-  width: 260px;
-  height: 260px;
-  background: #cdeab8;
-  top: -80px;
-  left: -60px;
-}
-
-.ts-hero::after {
-  width: 320px;
-  height: 320px;
-  background: #d7f0e6;
-  bottom: -120px;
-  right: -80px;
+.ts-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 5, 0.12);
+  z-index: 1;
 }
 
 .ts-hero-inner {
   position: relative;
-  max-width: 780px;
-  margin: 0 auto;
-  z-index: 1;
+  max-width: 700px;
+  margin: 35px auto;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px) brightness(1.6);
+  -webkit-backdrop-filter: blur(8px) brightness(1.6);
+  border: 2px solid var(--ts-green);
+  border-radius: 28px;
+  padding: 50px 55px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
 }
 
 .ts-h1 {
@@ -435,7 +432,11 @@
   }
 
   .ts-hero {
-    padding: 60px 20px 60px;
+    padding: 20px 20px 20px;
+  }
+
+  .ts-hero-inner {
+    padding: 30px 24px;
   }
 
   .ts-h1 {

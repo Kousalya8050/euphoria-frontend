@@ -89,6 +89,7 @@ body, html {
   width: min(420px, 92vw);
   height: auto;
   max-height: 100vh;
+  box-sizing: border-box;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;

@@ -5,6 +5,7 @@ import "./HomePage.css";
 import "./FAQPage.css";
 import "./PersonalGrowthPage.css";
 import Footer from "./Footer_page";
+import pgBanner from "./assets/banner_images/15.jpeg";
 
 const API_URL =
   window.location.hostname === "localhost"
@@ -120,6 +121,8 @@ const PersonalGrowthPage = () => {
 
       {/* Hero */}
       <section className="pg-hero">
+        <img src={pgBanner} alt="" role="presentation" className="pg-hero-bg" />
+        <div className="pg-hero-scrim" />
         <div className="pg-hero-inner">
           <h1 className="pg-h1">Personal Growth</h1>
           <p className="pg-hero-text">

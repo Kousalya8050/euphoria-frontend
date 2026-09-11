@@ -5,6 +5,7 @@ import "./HomePage.css";
 import "./FAQPage.css";
 import "./PsychologyPage.css";
 import Footer from "./Footer_page";
+import psBanner from "./assets/banner_images/14.jpeg";
 
 const API_URL =
   window.location.hostname === "localhost"
@@ -105,6 +106,8 @@ const PsychologyPage = () => {
 
       {/* Hero */}
       <section className="ps-hero">
+        <img src={psBanner} alt="" role="presentation" className="ps-hero-bg" />
+        <div className="ps-hero-scrim" />
         <div className="ps-hero-inner">
           <h1 className="ps-h1">Psychology</h1>
           <p className="ps-hero-text">

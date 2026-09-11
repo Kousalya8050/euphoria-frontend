@@ -5,6 +5,7 @@ import "./HomePage.css";
 import "./FAQPage.css";
 import "./RelationshipsPage.css";
 import Footer from "./Footer_page";
+import relBanner from "./assets/banner_images/relationship.jpeg";
 
 const API_URL =
   window.location.hostname === "localhost"
@@ -121,6 +122,8 @@ const RelationshipsPage = () => {
 
       {/* Hero */}
       <section className="rel-hero">
+        <img src={relBanner} alt="" role="presentation" className="rel-hero-bg" />
+        <div className="rel-hero-scrim" />
         <div className="rel-hero-inner">
           <h1 className="rel-h1">Relationship</h1>
           <p className="rel-hero-text">

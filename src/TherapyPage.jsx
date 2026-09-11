@@ -5,6 +5,7 @@ import "./HomePage.css";
 import "./FAQPage.css";
 import "./TherapyPage.css";
 import Footer from "./Footer_page";
+import tsBanner from "./assets/banner_images/17.jpeg";
 
 const API_URL =
   window.location.hostname === "localhost"
@@ -157,6 +158,8 @@ const TherapyPage = () => {
 
       {/* Hero */}
       <section className="ts-hero">
+        <img src={tsBanner} alt="" role="presentation" className="ts-hero-bg" />
+        <div className="ts-hero-scrim" />
         <div className="ts-hero-inner">
           <h1 className="ts-h1">Therapy & Self-Help</h1>
           <p className="ts-hero-text">

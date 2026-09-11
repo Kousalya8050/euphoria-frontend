@@ -19,15 +19,14 @@ const Header = () => {
 
       <Link to="/" className="logo" onClick={closeMenu}><img src={headerLogo} alt="MindWork360 Logo" title="MindWork360 — Mental Health & Healing Community" className="logo-img" /></Link>
 
-      {/* Desktop nav — visible ≥1280px, excludes Resources / Life Lessons / News */}
+      {/* Desktop nav — visible ≥1280px. Home and Contact Us live in the hamburger menu only. */}
       <nav className="desktop-nav">
-        <Link to="/">Home</Link>
         <Link to="/about">About Us</Link>
         <Link to="/blogs">Blogs</Link>
         <Link to="/videolessons">Video Lessons</Link>
         <Link to="/faq">FAQ</Link>
         <Link to="/psychotherapy">Psychotherapy Types</Link>
-        <Link to="/contactus">Contact Us</Link>
+        <Link to="/mental-health">Mental Health</Link>
       </nav>
 
       {/* Hamburger slide-in panel — all items + Privacy + Terms */}
@@ -40,9 +39,15 @@ const Header = () => {
         <Link to="/lifelessons" onClick={closeMenu}>Life Lessons</Link>
         <Link to="/faq" onClick={closeMenu}>FAQ</Link>
         <Link to="/psychotherapy" onClick={closeMenu}>Psychotherapy Types</Link>
-        <Link to="/resources" onClick={closeMenu}>Resources</Link>
+        <Link to="/resources" onClick={closeMenu}>How To Get Help</Link>
         <Link to="/contactus" onClick={closeMenu}>Contact Us</Link>
         <Link to="/rss_feeds" onClick={closeMenu}>News</Link>
+        <Link to="/mental-health" onClick={closeMenu}>Mental Health</Link>
+        <Link to="/psychology" onClick={closeMenu}>Psychology</Link>
+        <Link to="/relationships" onClick={closeMenu}>Relationships</Link>
+        <Link to="/personal-growth" onClick={closeMenu}>Personal Growth</Link>
+        <Link to="/therapy" onClick={closeMenu}>Therapy & Self-Help</Link>
+        <Link to="/health-lifestyle" onClick={closeMenu}>Health & Lifestyle</Link>
         <Link to="/privacy-policy" onClick={closeMenu}>Privacy Policy</Link>
         <Link to="/terms-of-service" onClick={closeMenu}>Terms of Service</Link>
       </nav>

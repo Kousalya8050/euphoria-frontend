@@ -5,6 +5,7 @@ import "./HomePage.css";
 import "./FAQPage.css";
 import "./MentalHealthPage.css";
 import Footer from "./Footer_page";
+import mhBanner from "./assets/banner_images/11.jpeg";
 
 const API_URL =
   window.location.hostname === "localhost"
@@ -217,6 +218,8 @@ const MentalHealthPage = () => {
 
       {/* Hero */}
       <section className="mh-hero">
+        <img src={mhBanner} alt="" role="presentation" className="mh-hero-bg" />
+        <div className="mh-hero-scrim" />
         <div className="mh-hero-inner">
           <h1 className="mh-h1">Mental Health</h1>
           <p className="mh-hero-text">

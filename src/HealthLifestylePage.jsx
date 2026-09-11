@@ -5,6 +5,7 @@ import "./HomePage.css";
 import "./FAQPage.css";
 import "./HealthLifestylePage.css";
 import Footer from "./Footer_page";
+import hlBanner from "./assets/banner_images/16.jpeg";
 
 const API_URL =
   window.location.hostname === "localhost"
@@ -139,6 +140,8 @@ const HealthLifestylePage = () => {
 
       {/* Hero */}
       <section className="hl-hero">
+        <img src={hlBanner} alt="" role="presentation" className="hl-hero-bg" />
+        <div className="hl-hero-scrim" />
         <div className="hl-hero-inner">
           <h1 className="hl-h1">Health & Lifestyle</h1>
           <p className="hl-hero-text">

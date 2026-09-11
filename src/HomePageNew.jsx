@@ -278,8 +278,7 @@ const HomePageNew = () => {
       <Helmet>
         <title>MindWork360 | Understand How You Think, Feel and Behave</title>
         <meta name="description" content="Mindwork360 helps you understand the psychology behind everyday life through evidence-informed articles and practical insights on mental health, relationships, and personal growth." />
-        <link rel="canonical" href="https://mindwork360.com/home-new" />
-        <meta name="robots" content="noindex, nofollow" />
+        <link rel="canonical" href="https://mindwork360.com/" />
         <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
       </Helmet>
 

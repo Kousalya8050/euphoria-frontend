@@ -52,7 +52,7 @@ function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePageNew />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/home-new" element={<HomePageNew />} />
 
