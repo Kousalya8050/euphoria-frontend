@@ -294,6 +294,11 @@ const HealthLifestylePage = () => {
           management, brain health, and everyday healthy habits.
         </p>
 
+        {articles.length === 0 ? (
+          <p style={{ fontSize: "18px", color: "#777", margin: "20px 0" }}>
+            No blogs available for this category.
+          </p>
+        ) : (
         <div className="hl-articles-grid">
           {articles.map((post) => (
             <div className="post-card2" key={post.id}>
@@ -324,6 +329,7 @@ const HealthLifestylePage = () => {
             </div>
           ))}
         </div>
+        )}
 
         <div className="hl-view-all">
           <button

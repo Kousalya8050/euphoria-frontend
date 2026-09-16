@@ -97,6 +97,11 @@ const VideoLessons = () => {
       ) : (
         <>
           <div className="video-grid">
+            {videos.length === 0 && (
+              <p style={{ fontSize: "18px", color: "#777", gridColumn: "1 / -1", textAlign: "center" }}>
+                No videos available.
+              </p>
+            )}
             {videos.map((item) => {
               // IMPORTANT: Extract ID correctly. Playlist items hide the VideoID here:
               const videoId = item.snippet?.resourceId?.videoId || item.id;

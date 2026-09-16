@@ -464,11 +464,17 @@ const HomePageNew = () => {
           Discover practical insights on mental health, psychology, relationships, personal growth, and healthy living.
         </p>
 
+        {recentPosts.length === 0 ? (
+          <p style={{ fontSize: "18px", color: "#777", margin: "20px 0" }}>
+            No blogs available.
+          </p>
+        ) : (
         <div className="posts-grid2">
           {recentPosts.map(blog => (
             <BlogPostCardHomepage key={blog.id} post={blog} />
           ))}
         </div>
+        )}
 
         <div className="load-more-container1">
           <button className="load-more-btn1" onClick={() => navigate("/blogs")}>
@@ -490,6 +496,11 @@ const HomePageNew = () => {
         ) : (
           <>
             <div className="video-grid">
+              {homeVideos.length === 0 && (
+                <p style={{ fontSize: "18px", color: "#777", gridColumn: "1 / -1", textAlign: "center" }}>
+                  No videos available.
+                </p>
+              )}
               {homeVideos.map((item) => {
                 const videoId = item.snippet?.resourceId?.videoId || item.id;
                 return (

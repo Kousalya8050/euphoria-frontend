@@ -181,6 +181,11 @@ const LifeLessons = () => {
       ) : (
         <>
           <div className="video-grid_l">
+            {videos.length === 0 && (
+              <p style={{ fontSize: "18px", color: "#777", gridColumn: "1 / -1", textAlign: "center" }}>
+                No videos available.
+              </p>
+            )}
             {videos.map(video => (
               <div key={video.id} className="video-card_l" onClick={() => setSelectedVideo(video.id)}>
                 <div className="thumbnail-wrapper_l">
@@ -202,9 +207,8 @@ const LifeLessons = () => {
     {loadingMore ? 'Loading...' : 'Load More'}
   </button>
 )}
-<Footer />
           </div>
-          
+
         </>
       )}
 
@@ -227,7 +231,8 @@ const LifeLessons = () => {
           </div>
         )}
       </Modal>
-      
+
+      <Footer />
     </div>
   );
 };

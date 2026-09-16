@@ -338,11 +338,17 @@ const BlogPage = () => {
         </section>
 
 
+        {filteredPosts.length === 0 ? (
+          <p style={{ fontSize: "18px", color: "#777", textAlign: "center", margin: "40px 0", minHeight: "124vh" }}>
+            No blogs available for this category.
+          </p>
+        ) : (
         <section className="posts-grid">
           {(Array.isArray(filteredPosts) ? filteredPosts : []).slice(0, visibleCount).map(post => (
             <BlogPostCard key={post.id} post={post} />
           ))}
         </section>
+        )}
 
         {filteredPosts.length > visibleCount && (
           <div className="load-more-wrapper">

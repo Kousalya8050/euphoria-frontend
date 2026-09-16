@@ -247,6 +247,11 @@ const PersonalGrowthPage = () => {
           growth goals, personal development, and building a more intentional life.
         </p>
 
+        {articles.length === 0 ? (
+          <p style={{ fontSize: "18px", color: "#777", margin: "20px 0" }}>
+            No blogs available for this category.
+          </p>
+        ) : (
         <div className="pg-articles-grid">
           {articles.map((post) => (
             <div className="post-card2" key={post.id}>
@@ -277,6 +282,7 @@ const PersonalGrowthPage = () => {
             </div>
           ))}
         </div>
+        )}
 
         <div className="pg-view-all">
           <button
