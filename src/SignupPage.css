@@ -54,7 +54,7 @@
   font-size: 30px;
   
   text-align: center;
-  margin-top: 5px;
+  margin-top: 30px;
 }
 .locations-grid {
   display: grid;
@@ -89,6 +89,19 @@ form {
   display: flex;
   flex-direction: column;
   flex: 1;
+  margin-bottom: 15px;
+}
+.signin-input-box:last-child {
+  margin-bottom: 0;
+}
+/* First/Last Name sit side by side (row layout) inside .form-group above 767px, which
+   already carries its own margin-bottom for that whole row — don't double up on this pair.
+   Below 767px, .name-row switches to a stacked column and needs each box's own
+   margin-bottom for spacing between them, so this reset only applies above that breakpoint. */
+@media (min-width: 768px) {
+  .name-row .signin-input-box {
+    margin-bottom: 0;
+  }
 }
 .form-group {
   display: flex;

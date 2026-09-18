@@ -160,6 +160,7 @@ const BlogPage = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [tags, setTags] = useState([]);
   const [blogPosts, setBlogPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const handleExploreMore = () => setShowPopup(true);
   const handleClosePopup = () => setShowPopup(false);
@@ -215,10 +216,12 @@ const BlogPage = () => {
           console.warn("Unexpected /api/blogs response shape — using empty array");
           setBlogPosts([]);
         }
+        setLoading(false);
       })
       .catch((err) => {
         console.error("Failed to load blogs:", err);
         setBlogPosts([]); // keep UI safe
+        setLoading(false);
       });
   }, []);
 
@@ -338,8 +341,12 @@ const BlogPage = () => {
         </section>
 
 
-        {filteredPosts.length === 0 ? (
-          <p style={{ fontSize: "18px", color: "#777", textAlign: "center", margin: "40px 0", minHeight: "124vh" }}>
+        {loading ? (
+          <p style={{ fontSize: "18px", color: "#777", textAlign: "center", margin: "40px 0", minHeight: "25vh" }}>
+            Loading...
+          </p>
+        ) : filteredPosts.length === 0 ? (
+          <p style={{ fontSize: "18px", color: "#777", textAlign: "center", margin: "40px 0", minHeight: "25vh" }}>
             No blogs available for this category.
           </p>
         ) : (

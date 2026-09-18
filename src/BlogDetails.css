@@ -117,6 +117,15 @@
 .arrow.open { transform: rotate(180deg); }
 .toc-body { display: block; }
 
+/* The toggle only actually does anything below 1024px (see the media query below,
+   where .toc-body is hidden by default and .show reveals it). On desktop, .toc-body
+   is always visible regardless of state, so the arrow has no effect there — hide it
+   at desktop widths instead of showing a control that appears to do nothing. */
+@media (min-width: 1025px) {
+  .toc-header { cursor: default; }
+  .arrow { display: none; }
+}
+
 /* H3 sub-items */
 .toc li.sub {
   margin-left: 16px !important;

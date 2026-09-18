@@ -232,6 +232,8 @@ const ResourcesSection = () => {
                   "India",
                   "Germany",
                   "USA",
+                  "Switzerland",
+                  "Australia",
                 ] 
               ),
             ].map((region) => (

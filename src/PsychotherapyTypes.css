@@ -227,10 +227,13 @@
   }
   
   .therapy-text h5 {
-    color: #183a0d;
-    font-size: 18px;
+    /* color: #183a0d;
+    font-size: 18px; */
     /* margin-top: 20px;
     margin-bottom: 8px; */
+    color: #183a0d;
+    font-size: 24px;
+    margin-bottom: 10px;
   }
   
   .therapy-text ul {
@@ -327,6 +330,7 @@
     color: #2a5c00;
     font-weight: bold;
     margin-bottom: 20px;
+    margin-top: 0px;
   }
   
   .newsletter-left p {

@@ -14,14 +14,27 @@ const BlogPostCard = ({ post }) => {
     if (!post.slug) return;
     navigate(`/blogs/${post.slug}`);
   };
-  const API_URL =
-  window.location.hostname === "localhost"
-    ? "http://localhost:3000"
-    : "https://euphoria-backend-oii0.onrender.com";
+  const getSafeImageUrl = (imagePath) => {
+    if (!imagePath || imagePath === "null") return "https://via.placeholder.com/400x250";
 
-  const imageUrl = post.banner_image 
-    ? `${API_URL}/${post.banner_image.replace(/\\/g, '/')}` 
-    : "https://via.placeholder.com/400x250";
+    // If the URL is already broken (contains two https), try to extract the second one
+    if (imagePath.includes("https://") && imagePath.lastIndexOf("https://") > 0) {
+      return imagePath.substring(imagePath.lastIndexOf("https://"));
+    }
+
+    // If it's already a full URL, return as is
+    if (imagePath.startsWith("http")) return imagePath;
+
+    // Otherwise, it's an old local relative path
+    const API_URL =
+      window.location.hostname === "localhost"
+        ? "http://localhost:3000"
+        : "https://euphoria-backend-oii0.onrender.com";
+
+    return `${API_URL}/${imagePath.replace(/\\/g, '/')}`;
+  };
+
+  const imageUrl = getSafeImageUrl(post.banner_image);
 
   return (
     <div className="post-card1">
