@@ -115,7 +115,7 @@ background: #E1E2AD;
     /* Add some other styles to make it look like a card */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        max-height: 85vh;
+        max-height: 72vh;
   }
   
   .post-card:hover {
