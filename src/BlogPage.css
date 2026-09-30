@@ -115,9 +115,12 @@ background: #E1E2AD;
     /* Add some other styles to make it look like a card */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        max-height: 72vh;
-
-    
+    /* Grow with content (a fixed max-height made text overflow the card)
+       and let cards in the same row share the same height */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
   }
   
   .post-card:hover {
@@ -143,7 +146,7 @@ background: #E1E2AD;
   .post-card-content {
     display: flex;
     flex-direction: column;
-    padding: 35px;
+    padding: 24px 12px 8px;
     flex-grow: 1; /* Allows the meta section to stick to the bottom */
   }
   
@@ -158,13 +161,21 @@ background: #E1E2AD;
     color: #555;
     line-height: 1.6;
     margin: 0 0 20px 0;
-    flex-grow: 1;
+    /* Keep long excerpts to 3 lines so cards stay a consistent size */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    overflow-wrap: anywhere;
   }
-  
+
   .post-card-meta {
     display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto; /* Pin Read More row to the bottom of the card */
     font-size: 16px;
     color: #777;
   }
