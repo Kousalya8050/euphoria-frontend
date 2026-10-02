@@ -4,7 +4,8 @@ import { Helmet } from 'react-helmet-async';
 import axios from "axios";
 import Modal from "react-modal";
 import "./SearchResults.css";
-import "./BlogPage.css"; 
+import "./BlogPage.css";
+import Footer from "./Footer_page";
 
 Modal.setAppElement("#root");
 
@@ -219,6 +220,8 @@ export default function SearchResults() {
             </>
           )}
         </main>
+
+        <Footer />
 
         <Modal isOpen={!!selectedVideo} onRequestClose={() => setSelectedVideo(null)} className="video-modal" overlayClassName="video-overlay">
           {selectedVideo && (

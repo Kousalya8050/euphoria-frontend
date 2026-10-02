@@ -17,6 +17,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* The header's decorative waves are absolutely positioned and taller than
+   short pages, which left empty space below the footer. Clip them to the app.
+   (clip, not hidden, so position: sticky elements keep working) */
+#root {
+  overflow: clip;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
