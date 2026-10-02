@@ -91,7 +91,12 @@ const allQuestions = [
   },
   {
     question: 'Q20. How can I contact your team?',
-    answer: 'You can reach us through our Contact Us page or by using the contact information provided on the website. We aim to respond to inquiries as promptly as possible.',
+    answer: (
+      <>
+        You can reach us through our Contact Us page or by writing to us at{' '}
+        <a href="mailto:help@mindwork360.com">help@mindwork360.com</a>. We aim to respond to inquiries as promptly as possible.
+      </>
+    ),
   },
 ];
 
