@@ -1,154 +1,86 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
-import Modal from 'react-modal';
-import { Helmet } from 'react-helmet-async'; // Using react-modal as requested
+import { Helmet } from 'react-helmet-async';
 import './LifeLessonsPage.css';
 import Footer from "./Footer_page";
 import banner from './assets/homepage/banner_for_landing.jpg';
 
-Modal.setAppElement('#root');
-
-// const API_KEY = 'AIzaSyCngySm9tpqUTHvEqP6jaOHUsDVlov3AKI';
-// const CHANNEL_ID = 'UC9pRPRlo6wIOakEOi_2RWwA'; 
-
-
-
-const LifeLessons = () => {
-
-
-  const [videos, setVideos] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [loadingMore] = useState(false);
-  // const [nextPageToken, setNextPageToken] = useState('');
-  const [allVideos, setAllVideos] = useState([]);
-  const [activeTab, setActiveTab] = useState('lessons'); // 'lessons' or 'shorts'
-
-  const formatDuration = (isoDuration) => {
-    const match = isoDuration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
-    const hours = match[1] ? parseInt(match[1]) : 0;
-    const minutes = match[2] ? parseInt(match[2]) : 0;
-    const seconds = match[3] ? parseInt(match[3]) : 0;
-
-    if (hours > 0) {
-      return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    }
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-  };
-
-  useEffect(() => {
-    fetchVideos_l('', true);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeTab]);
-  // const fetchVideos = async (pageToken = '', isNewTab = false) => {
-  //   if (pageToken) setLoadingMore(true);
-  //   else setLoading(true);
-
-  //   try {
-  //     const searchRes = await axios.get('https://www.googleapis.com/youtube/v3/search', {
-  //       params: {
-  //         key: API_KEY,
-  //         channelId: CHANNEL_ID,
-  //         part: 'snippet',
-  //         order: 'date',
-  //         maxResults: 50,
-  //         type: 'video',
-  //         pageToken: pageToken,
-  //       }
-  //     });
-
-  //     const videoIds = searchRes.data.items.map(item => item.id.videoId).join(',');
-
-  //     const videosRes = await axios.get('https://www.googleapis.com/youtube/v3/videos', {
-  //       params: {
-  //         key: API_KEY,
-  //         id: videoIds,
-  //         part: 'snippet,statistics,contentDetails',
-  //       }
-  //     });
-
-  //     const filtered = videosRes.data.items.filter(video => {
-  //       const duration = video.contentDetails.duration;
-  //       const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
-  //       const totalSeconds =
-  //         (parseInt(match[1] || 0) * 3600) +
-  //         (parseInt(match[2] || 0) * 60) +
-  //         (parseInt(match[3] || 0));
-
-  //       return activeTab === 'shorts' ? totalSeconds < 60 : totalSeconds >= 60;
-  //     });
-
-  //     const nextSet = filtered.slice(0, 10); // Show only first 10 relevant
-  //     setNextPageToken(searchRes.data.nextPageToken || '');
-
-  //     setVideos(prev => isNewTab ? nextSet : [...prev, ...nextSet]);
-  //   } catch (err) {
-  //     console.error('Error fetching videos', err);
-  //   } finally {
-  //     setLoading(false);
-  //     setLoadingMore(false);
-  //   }
-  // };
-
-  // const fetchVideos = async () => {
-  //   setLoading(true);
-  
-  //   try {
-  //     const res = await axios.get(
-  //       `http://localhost:3000/api/youtube/${activeTab}`
-  //     );
-  
-  //     setVideos(res.data.data.slice(0, 15)); // show first 15
-  //   } catch (error) {
-  //     console.error("Error loading videos", error);
-  //   }
-  
-  //   setLoading(false);
-  // };
-  const API_URL =
+const API_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:3000"
     : "https://euphoria-backend-oii0.onrender.com";
 
-  const fetchVideos_l = async () => {
-    setLoading(true);
-  
+const formatDuration = (isoDuration) => {
+  const match = (isoDuration || '').match(/PT(\d+H)?(\d+M)?(\d+S)?/);
+  if (!match) return '';
+  const hours = match[1] ? parseInt(match[1]) : 0;
+  const minutes = match[2] ? parseInt(match[2]) : 0;
+  const seconds = match[3] ? parseInt(match[3]) : 0;
+
+  if (hours > 0) {
+    return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  }
+  return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+};
+
+const thumbnailUrl = (snippet) =>
+  snippet?.thumbnails?.high?.url || snippet?.thumbnails?.medium?.url || snippet?.thumbnails?.default?.url;
+
+const LifeLessons = () => {
+  const [playlists, setPlaylists] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Player view: the open playlist, its videos, and which one is playing
+  const [selectedPlaylist, setSelectedPlaylist] = useState(null);
+  const [playlistVideos, setPlaylistVideos] = useState([]);
+  const [loadingVideos, setLoadingVideos] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const playerRef = useRef(null);
+
+  useEffect(() => {
+    const fetchPlaylists = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.get(`${API_URL}/api/youtube/playlists`);
+        const all = res.data.data || [];
+        setPlaylists(all.filter(p => p.contentDetails?.itemCount > 0));
+      } catch (error) {
+        console.error("Error loading playlists", error);
+      }
+      setLoading(false);
+    };
+    fetchPlaylists();
+  }, []);
+
+  const openPlaylist = async (playlist) => {
+    setSelectedPlaylist(playlist);
+    setPlaylistVideos([]);
+    setCurrentIndex(0);
+    setLoadingVideos(true);
+    window.scrollTo({ top: playerRef.current?.offsetTop ?? 0, behavior: 'smooth' });
+
     try {
-      const res = await axios.get(
-        `${API_URL}/api/youtube_l/${activeTab}`
-      );
-  
-      const all = res.data.data || [];
-  
-      setAllVideos(all);          // store everything
-      setVideos(all.slice(0, 10)); // show first 10
+      const res = await axios.get(`${API_URL}/api/youtube/playlists/${playlist.id}/videos`);
+      setPlaylistVideos(res.data.data || []);
     } catch (error) {
-      console.error("Error loading videos", error);
+      console.error("Error loading playlist videos", error);
     }
-  
-    setLoading(false);
-  };
-  
-  const handleLoadMore = () => {
-    const currentCount = videos.length;
-  
-    const nextItems = allVideos.slice(currentCount, currentCount + 10);
-  
-    setVideos(prev => [...prev, ...nextItems]);
+    setLoadingVideos(false);
   };
 
-  // const handleLoadMore = () => {
-  //   if (nextPageToken) fetchVideos(nextPageToken);
-  // };
+  const closePlaylist = () => {
+    setSelectedPlaylist(null);
+    setPlaylistVideos([]);
+  };
 
-  const selectedVideoData = selectedVideo ? videos.find(v => v.id === selectedVideo) : null;
-  const selectedVideoTitle = selectedVideoData?.snippet?.title;
+  const currentVideo = playlistVideos[currentIndex];
+  const currentVideoTitle = currentVideo?.snippet?.title;
 
   return (
     <div className="life-lessons-container">
       <Helmet>
-        <title>{selectedVideoTitle ? `${selectedVideoTitle} | MindWork360` : 'Life Lessons | Personal Growth & Well-Being | MindWork360'}</title>
-        <meta name="description" content={selectedVideoTitle ? `Watch "${selectedVideoTitle}" on MindWork360 — life lessons for personal growth and mental well-being.` : 'Explore inspiring life lessons, practical insights, and expert guidance from MindWork360 to build resilience, improve emotional well-being, and grow with confidence.'} />
+        <title>{currentVideoTitle ? `${currentVideoTitle} | MindWork360` : 'Life Lessons | Personal Growth & Well-Being | MindWork360'}</title>
+        <meta name="description" content={currentVideoTitle ? `Watch "${currentVideoTitle}" on MindWork360 — life lessons for personal growth and mental well-being.` : 'Explore inspiring life lessons, practical insights, and expert guidance from MindWork360 to build resilience, improve emotional well-being, and grow with confidence.'} />
         <link rel="canonical" href="https://mindwork360.com/lifelessons" />
       </Helmet>
       <h1 className="seo-only">Life Lessons | Personal Growth & Well-Being | MindWork360</h1>
@@ -159,78 +91,92 @@ const LifeLessons = () => {
         <div className="lessons-hero-overlay"></div>
       </div>
 
-      
-
-      <div className="tab-buttons_l">
-        <button
-          className={activeTab === 'lessons' ? 'active-tab' : ''}
-          onClick={() => setVideos([]) || setActiveTab('lessons')}
-        >
+      <div className="tab-buttons_l" ref={playerRef}>
+        {/* Single "Videos" section; clicking it also returns to the playlist list */}
+        <button className="active-tab" onClick={closePlaylist}>
           Videos
-        </button>
-        <button
-          className={activeTab === 'shorts' ? 'active-tab' : ''}
-          onClick={() => setVideos([]) || setActiveTab('shorts')}
-        >
-          Shorts
         </button>
       </div>
 
-      {loading ? (
-        <div className="loading-state_l">Loading {activeTab}...</div>
-      ) : (
-        <>
-          <div className="video-grid_l">
-            {videos.length === 0 && (
-              <p style={{ fontSize: "18px", color: "#777", gridColumn: "1 / -1", textAlign: "center" }}>
-                No videos available.
-              </p>
-            )}
-            {videos.map(video => (
-              <div key={video.id} className="video-card_l" onClick={() => setSelectedVideo(video.id)}>
-                <div className="thumbnail-wrapper_l">
-                  <img src={video.snippet.thumbnails.medium.url} alt={video.snippet.title} title={video.snippet.title} />
-                  <span className="video-duration_l">{formatDuration(video.contentDetails.duration)}</span>
+      {selectedPlaylist ? (
+        <div className="playlist-view_l">
+          <button className="back-to-playlists_l" onClick={closePlaylist}>
+            ← All playlists
+          </button>
+
+          {loadingVideos ? (
+            <div className="loading-state_l">Loading videos...</div>
+          ) : playlistVideos.length === 0 ? (
+            <p className="empty-state_l">No videos available in this playlist.</p>
+          ) : (
+            <div className="playlist-layout_l">
+              <div className="playlist-player_l">
+                <div className="modal-player-wrapper_l">
+                  <iframe
+                    key={currentVideo.id}
+                    title={currentVideoTitle || "YouTube Video Player"}
+                    src={`https://www.youtube.com/embed/${currentVideo.id}?autoplay=1&rel=0`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
-                <div className="video-title_l">{video.snippet.title}</div>
-                <div className="video-meta_l">
-                  <span>{parseInt(video.statistics.viewCount).toLocaleString()} Views</span>
-                  <span>{new Date(video.snippet.publishedAt).toLocaleDateString()}</span>
+                <h4 className="now-playing-title_l">{currentVideoTitle}</h4>
+                <div className="video-meta_l now-playing-meta_l">
+                  <span>{parseInt(currentVideo.statistics?.viewCount || 0).toLocaleString()} Views</span>
+                  <span>{new Date(currentVideo.snippet.publishedAt).toLocaleDateString()}</span>
                 </div>
               </div>
-            ))}
-          </div>
 
-          <div className="load-more-container_l">
-          {videos.length < allVideos.length && (
-  <button onClick={handleLoadMore} disabled={loadingMore}>
-    {loadingMore ? 'Loading...' : 'Load More'}
-  </button>
-)}
-          </div>
-
-        </>
+              <aside className="playlist-sidebar_l">
+                <div className="playlist-sidebar-header_l">
+                  <div className="playlist-sidebar-title_l">{selectedPlaylist.snippet.title}</div>
+                  <div className="playlist-sidebar-count_l">
+                    {currentIndex + 1} / {playlistVideos.length}
+                  </div>
+                </div>
+                <ol className="playlist-items_l">
+                  {playlistVideos.map((video, index) => (
+                    <li
+                      key={video.id}
+                      className={`playlist-item_l ${index === currentIndex ? 'active' : ''}`}
+                      onClick={() => setCurrentIndex(index)}
+                    >
+                      <span className="playlist-item-index_l">
+                        {index === currentIndex ? '▶' : index + 1}
+                      </span>
+                      <div className="playlist-item-thumb_l">
+                        <img src={video.snippet.thumbnails?.medium?.url} alt={video.snippet.title} title={video.snippet.title} />
+                        <span className="video-duration_l">{formatDuration(video.contentDetails?.duration)}</span>
+                      </div>
+                      <div className="playlist-item-title_l">{video.snippet.title}</div>
+                    </li>
+                  ))}
+                </ol>
+              </aside>
+            </div>
+          )}
+        </div>
+      ) : loading ? (
+        <div className="loading-state_l">Loading playlists...</div>
+      ) : (
+        <div className="video-grid_l">
+          {playlists.length === 0 && (
+            <p className="empty-state_l" style={{ gridColumn: "1 / -1" }}>
+              No videos available.
+            </p>
+          )}
+          {playlists.map(playlist => (
+            <div key={playlist.id} className="video-card_l" onClick={() => openPlaylist(playlist)}>
+              <div className="thumbnail-wrapper_l">
+                <img src={thumbnailUrl(playlist.snippet)} alt={playlist.snippet.title} title={playlist.snippet.title} />
+                <span className="playlist-count_l">▶ {playlist.contentDetails.itemCount} videos</span>
+              </div>
+              <div className="video-title_l">{playlist.snippet.title}</div>
+            </div>
+          ))}
+        </div>
       )}
-
-      <Modal
-        isOpen={!!selectedVideo}
-        onRequestClose={() => setSelectedVideo(null)}
-        className="video-modal_l"
-        overlayClassName="video-overlay_l"
-        contentLabel="Video Player Modal"
-      >
-        {selectedVideo && (
-          <div className="modal-player-wrapper_l">
-            <iframe
-              title="YouTube Video Player"
-              src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        )}
-      </Modal>
 
       <Footer />
     </div>

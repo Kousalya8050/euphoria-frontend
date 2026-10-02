@@ -108,6 +108,11 @@ form {
   flex-direction: column;
   margin-bottom: 15px;
 }
+/* LandingPage.css also defines a global .form-group (margin-bottom: 25px) that can load
+   after this file and add extra space under the name row — keep it at 15px here. */
+.contact-right .form-group {
+  margin-bottom: 15px;
+}
 .signin-label {
   font-size: 20px;
   margin-bottom: 5px;

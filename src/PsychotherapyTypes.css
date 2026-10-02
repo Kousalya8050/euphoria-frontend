@@ -316,7 +316,7 @@
     display: flex;
     justify-content: space-between;
     padding: 60px 5%;
-    align-items: flex-start;
+    align-items: baseline; /* line up "Name" with the heading's text */
     flex-wrap: wrap;
     margin-top: 65px;
   }
