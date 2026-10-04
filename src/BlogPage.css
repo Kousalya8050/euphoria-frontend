@@ -100,7 +100,8 @@
     margin-bottom: 40px;
     margin-left: 155px;
     margin-right: 155px;
-    min-height: 112vh;
+    /* Size rows to their content so a single row of cards isn't stretched */
+    align-content: start;
   }
   
   /* --- The Grid Item (Your Card) --- */
