@@ -45,23 +45,23 @@ const pillarsList = [
 
 const homeFaqs = [
   {
-    question: 'What is Mindwork360?',
-    answer: 'Mindwork360 is an educational website that helps you understand psychology, mental health, relationships, personal growth, and healthy living through easy-to-understand articles and videos.',
+    question: 'What is MindWork360?',
+    answer: 'MindWork360 is an educational website that helps you understand psychology, mental health, relationships, personal growth, and healthy living through easy-to-understand articles and videos.',
   },
   {
-    question: 'Who is Mindwork360 for?',
-    answer: 'Mindwork360 is for anyone who wants to understand themselves better, build healthier relationships, improve their well-being, or learn more about how the mind works.',
+    question: 'Who is MindWork360 for?',
+    answer: 'MindWork360 is for anyone who wants to understand themselves better, build healthier relationships, improve their well-being, or learn more about how the mind works.',
   },
   {
-    question: 'What topics can I learn about on Mindwork360?',
+    question: 'What topics can I learn about on MindWork360?',
     answer: 'You can explore topics related to mental health, psychology, relationships, personal growth, therapy and self-help, and health and lifestyle.',
   },
   {
-    question: 'Where does the information on Mindwork360 come from?',
+    question: 'Where does the information on MindWork360 come from?',
     answer: 'Our content is created using reliable sources, psychological concepts, and evidence-informed information, presented in a simple and practical way for everyday readers.',
   },
   {
-    question: 'Does Mindwork360 have videos?',
+    question: 'Does MindWork360 have videos?',
     answer: 'Yes. Along with articles, we also create videos to make learning about psychology, mental health, relationships, and personal growth more engaging and accessible.',
   },
 ];
@@ -194,7 +194,9 @@ const HomePageNew = () => {
     axios
       .get(`${API_URL}/api/search-all?q=${searchText}`)
       .then((res) => {
-        const videoSuggestions = (res.data.videos || []).map(v => ({ ...v, type: 'video' }));
+        const videoSuggestions = (res.data.videos || [])
+          .filter((v, i, arr) => arr.findIndex(x => (x.id?.videoId || x.id) === (v.id?.videoId || v.id)) === i)
+          .map(v => ({ ...v, type: 'video' }));
         const blogSuggestions = (res.data.blogs || []).map(b => ({ ...b, type: 'blog' }));
         setSuggestions([...videoSuggestions, ...blogSuggestions]);
       })
@@ -277,7 +279,7 @@ const HomePageNew = () => {
     <div className="homepage-container">
       <Helmet>
         <title>MindWork360 | Understand How You Think, Feel and Behave</title>
-        <meta name="description" content="Mindwork360 helps you understand the psychology behind everyday life through evidence-informed articles and practical insights on mental health, relationships, and personal growth." />
+        <meta name="description" content="MindWork360 helps you understand the psychology behind everyday life through evidence-informed articles and practical insights on mental health, relationships, and personal growth." />
         <link rel="canonical" href="https://mindwork360.com/" />
         <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
       </Helmet>
@@ -295,7 +297,7 @@ const HomePageNew = () => {
               <h1>Understand Why You Think, Feel and Behave the Way You Do.</h1>
               <p>
                 Why do some arguments stay with us long after they're over? Why are some habits so hard to break?
-                Mindwork360 helps you understand the psychology behind everyday life through evidence-informed
+                MindWork360 helps you understand the psychology behind everyday life through evidence-informed
                 articles and practical insights you can actually relate to.
               </p>
             </div>
@@ -356,7 +358,7 @@ const HomePageNew = () => {
         <p className="hn-question-line">How can I become happier, calmer, or more confident?</p>
         <p className="hn-section-text">Questions like these are something we all ask at different stages of life.</p>
         <p className="hn-section-text">
-          At Mindwork360, you'll find practical, evidence-informed insights that help you understand your thoughts,
+          At MindWork360, you'll find practical, evidence-informed insights that help you understand your thoughts,
           emotions, relationships, and everyday experiences. Whether you're looking for answers, a fresh perspective,
           or practical ways to improve your everyday life, we're here to help you explore, learn, and grow.
         </p>
