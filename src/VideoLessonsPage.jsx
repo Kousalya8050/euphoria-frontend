@@ -96,7 +96,7 @@ const VideoLessons = () => {
         <div className="loading-state">Loading {activeTab}...</div>
       ) : (
         <>
-          <div className="video-grid">
+          <div className={`video-grid ${activeTab === 'shorts' ? 'shorts-grid' : ''}`}>
             {videos.length === 0 && (
               <p style={{ fontSize: "18px", color: "#777", gridColumn: "1 / -1", textAlign: "center" }}>
                 No videos available.

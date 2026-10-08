@@ -89,7 +89,10 @@ export default function SearchResults() {
     setLoading(true);
     axios.get(`${API_URL}/api/search-all?q=${query}`)
       .then((res) => {
-        const vids = res.data.videos || [];
+        // Backend merges several YouTube caches, so the same video can appear more than once
+        const vids = (res.data.videos || []).filter(
+          (v, i, arr) => arr.findIndex(x => (x.id?.videoId || x.id) === (v.id?.videoId || v.id)) === i
+        );
         const blgs = res.data.blogs || [];
         
         setVideos(vids);

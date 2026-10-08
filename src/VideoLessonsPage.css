@@ -99,18 +99,28 @@
     overflow: hidden;
     transition: 0.3s;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    max-height: 34vh;
-
   }
-  
+
   .video-card:hover {
     transform: scale(1.03);
   }
-  
+
+  /* hqdefault thumbnails are 4:3 with black bars; 16:9 + cover shows exactly the video frame */
   .video-card img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
+    display: block;
+  }
+
+  /* Shorts are vertical: narrower columns and a 9:16 frame, which crops away the side bars */
+  .video-grid.shorts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 220px));
+    justify-content: center;
+  }
+
+  .shorts-grid .video-card img {
+    aspect-ratio: 9 / 16;
   }
   
   .video-title {

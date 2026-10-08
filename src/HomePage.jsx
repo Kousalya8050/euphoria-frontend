@@ -277,7 +277,9 @@ useEffect(() => {
     .get(`${API_URL}/api/search-all?q=${searchText}`)
     .then((res) => {
       // Combine blogs and videos into one list for suggestions
-      const videoSuggestions = (res.data.videos || []).map(v => ({ ...v, type: 'video' }));
+      const videoSuggestions = (res.data.videos || [])
+        .filter((v, i, arr) => arr.findIndex(x => (x.id?.videoId || x.id) === (v.id?.videoId || v.id)) === i)
+        .map(v => ({ ...v, type: 'video' }));
       const blogSuggestions = (res.data.blogs || []).map(b => ({ ...b, type: 'blog' }));
       setSuggestions([...videoSuggestions, ...blogSuggestions]);
     })
