@@ -28,10 +28,10 @@ const navLinks = [
 
 const socialLinks = [
   { name: "YouTube", icon: YouTube, path: "https://www.youtube.com/@mindwork360" },
-  { name: "Instagram", icon: Instagram, path: "#" },
+  { name: "Instagram", icon: Instagram, path: "https://www.instagram.com/mindwork360" },
   { name: "Facebook", icon: Facebook, path: "https://www.facebook.com/mindwork360/" },
   { name: "LinkedIn", icon: Linkedin, path: "http://linkedin.com/company/mindwork360" },
-  { name: "Twitter", icon: Twitter, path: "#" },
+  { name: "Twitter", icon: Twitter, path: "https://x.com/MindWork360" },
   { name: "Bluesky", icon: Bluesky, path: "https://bsky.app/profile/360mindwork.bsky.social" },
 ];
 
